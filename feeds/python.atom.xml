@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://chengyanlai.github.io/" rel="alternate"></link><link href="http://chengyanlai.github.io/feeds/python.atom.xml" rel="self"></link><id>http://chengyanlai.github.io/</id><updated>2013-11-09T21:00:00-08:00</updated><entry><title>Python function *arg and **kwarg</title><link href="http://chengyanlai.github.io/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
+&lt;h3&gt;The single asterisk form (&lt;code&gt;*arg&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;This form gives you to pass several variables into a function. This following example pass one formal argument &lt;code&gt;x=1.0&lt;/code&gt; and three non-keyword arguments, &lt;code&gt;2.0,3.0,4.0&lt;/code&gt;,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;  
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;  
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;arg&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;non-keyword argument:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arg&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;first argument is:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;2.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Run this code is going to give you the result&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;
+&lt;span class="n"&gt;non&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;2.0&lt;/span&gt;
+&lt;span class="n"&gt;non&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt;
+&lt;span class="n"&gt;non&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;4.0&lt;/span&gt;
+&lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;2.0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;The double asterisk form (&lt;code&gt;**kwarg&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;The keyword argument needs you to specify the keyword. Look the following example.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;x = &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+    &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
+    &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;b&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;keyword argument: a=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;b=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;c=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Test-1&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Test-2&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;2.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Test-3&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;5.0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Test-4&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;3.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;4.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;5.0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I set the default value as &lt;code&gt;a=1.0 b=1.0&lt;/code&gt; and &lt;code&gt;c=1.0&lt;/code&gt;.&lt;br /&gt;
+We then run it to test.  &lt;/p&gt;
+&lt;p&gt;Result shows&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
+&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
+
+&lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;2.0&lt;/span&gt;
+&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;
+
+&lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt;
+&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;4.0&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt;
+
+&lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;4.0&lt;/span&gt;
+&lt;span class="n"&gt;keyword&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;4.0&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enjoy powerful python.&lt;/p&gt;</summary></entry><entry><title>"Python package for OSX"</title><link href="http://chengyanlai.github.io/blog/2013/11/08/python-package-for-osx/" rel="alternate"></link><updated>2013-11-08T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-11-08:blog/2013/11/08/python-package-for-osx/</id><summary type="html">&lt;h2&gt;First word, I am running OSX 10.8&lt;/h2&gt;
+&lt;p&gt;There are several choices on the market, including the apple one within the os. In order to get all I need at once, I usually choose one from the following. Of cause, you can download the source code and install from it. The advantage of using those packages is that they are well maintained. Thus, the update and upgrade are easier!&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.continuum.io/"&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I feel it is slower than EPD.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.enthought.com/products/epd/"&gt;Enthough Python Distribution(EPD)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It is now provided with the Canopy. I had hard time on installing it on a remote server which has no x-sesssion provided. Basically, I had hard time on setting up the environment on a remote server. If you know how, please leave a comment!&lt;br /&gt;
+I think both Anaconda and EPD provide the installer for Windows and Linux&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://fonnesbeck.github.io/ScipySuperpack/"&gt;Scipy Superpack&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is the first thing I have tried and succeeded, easy and fast&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;. &lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The similar alternatives are &lt;a href="http://www.macports.org/"&gt;Macport&lt;/a&gt; and &lt;a href="http://fink.thetis.ig42.org/"&gt;Fink&lt;/a&gt;. Th detail difference are compared by &lt;a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/"&gt;Ted Wise&lt;/a&gt;
+Example(Homebrew):
+Installation is super easy, it is depended on ruby and git. &lt;br /&gt;
+Please check the Software Installation section in &lt;a href="{{%20root_url%20}}/blog/2013/10/24/osx-mavericks/"&gt;my another post&lt;/a&gt; for installation.&lt;br /&gt;
+Xcode command-line tool(CLT) and XQartz(X11) are beforehand.  &lt;/p&gt;
+&lt;h4&gt;Installation&lt;/h4&gt;
+&lt;p&gt;Once installation success, check this before we start&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew doctor
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If everything looks good(no error message), let's get started.&lt;/p&gt;
+&lt;p&gt;Set the right path in &lt;code&gt;.bash_profile&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/bin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;/usr/local/bin/&lt;/code&gt; is the default path for everything installed from Homebrew&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;We need these prerequisites&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install gfortran python
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Tap those to add formula&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap homebrew/science
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap samueljohn/python
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap michaelwimmer/kwant
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The last one is not need unless you want it like me.&lt;/p&gt;
+&lt;p&gt;Install Numpy, Scipy&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install numpy scipy matplotlib
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You may need other packages (use &lt;code&gt;pip&lt;/code&gt;), just follow the message from Homebrew!&lt;br /&gt;
+It is not as difficult as you think.&lt;/p&gt;
+&lt;h4&gt;Update and Upgrade&lt;/h4&gt;
+&lt;p&gt;Using the following command,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and you will see, for example&lt;/p&gt;
+&lt;p&gt;&lt;img alt="update" src="https://dl.dropboxusercontent.com/u/165978/python-package-for-osx-fig0.png" /&gt; &lt;/p&gt;
+&lt;p&gt;. If the update fails, you need to reset it by &lt;code&gt;git&lt;/code&gt; command. The following command might help&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/
+&lt;span class="nv"&gt;$ &lt;/span&gt;git reset --hard FETCH_HEAD
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let's assume the update is good. If you find anything you want to upgrade on the update list, just run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew upgrade &lt;span class="o"&gt;{&lt;/span&gt;package name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As easy as it!&lt;/p&gt;
+&lt;h2&gt;Last word, Python conflict!&lt;/h2&gt;
+&lt;p&gt;I have installed the Anaconda, EPD Canopy, and Homebrew python on my '09 Macbook Pro. I am not using anaconda because I feel slow. I am running the Homebrew version on my Terminal, and EPD Canopy on TextMate. So far, I didn't discover any conflict, or I am too stupid to find out. All my python codes can be executed well on both TextMate or on terminal command &lt;code&gt;python -i whatever.py&lt;/code&gt;. &lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;I haven't try to use the Scipy Superpack for a while, but I think it is still working.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;I have installed both Anaconda and EPD on Debian already. I never use Windows, sorry.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;The actual files are in the folder called &lt;code&gt;Cellar&lt;/code&gt;, but a symbolic link is created in the &lt;code&gt;/usr/local/bin/&lt;/code&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary></entry></feed>

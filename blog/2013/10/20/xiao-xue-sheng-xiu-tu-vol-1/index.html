@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>"小學生修圖 vol. 1"</title>
+        <meta charset="utf-8" />
+        <link href="http://chengyanlai.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Full Atom Feed" />
+        <link href="http://chengyanlai.github.io/feeds/gimp.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Categories Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/pygment.css" />
+
+        <script src="http://chengyanlai.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+              
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://chengyanlai.github.io">Little Things about Everything <strong>Never Stop Learning</strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://chengyanlai.github.io">Home</a></li>
+
+                <li><a href="http://chengyanlai.github.io/archives.html">Archives</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/1-chenyen.html">Chen-Yen Lai</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/1-yaoan.html">Yao-An Chan</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/9-links.html">Links</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://chengyanlai.github.io/blog/2013/10/20/xiao-xue-sheng-xiu-tu-vol-1/" rel="bookmark"
+                   title="Permalink to "小學生修圖 vol. 1"">"小學生修圖 vol. 1"</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2013-10-20T00:00:00">
+                Sun 20 October 2013
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://chengyanlai.github.io/author/chen-yen-lai.html">Chen-Yen Lai</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>不知道大家是不是都有錢可以買Photoshop，或是總是可以找到ＯＯＸＸ。如果像我一樣怕死或是沒有時間去好好Google，可以試試看<a href="http://www.gimp.org">Gimp</a>。唯一的缺點似乎是所謂「錄製某一些動作」然後「批次處理」沒有Photoshop來得方便！所以Gimp下只好學習如何使用python-fu以及script-fu。</p>
+<p>今天跟大家分享一個讓照片變鮮豔的方法，當然如果你是清淡口味的話就請離開了！</p>
+<p>概念很簡單，就是用圖層疊加的方法！其實四句話就說完了，還寫一篇blog？！</p>
+<h3>Step-by-Step</h3>
+<ul>
+<li>匯入照片。</li>
+</ul>
+<p><img alt="loadimage" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig0.png" /></p>
+<p>覺得已經很鮮豔了，那你趕快離開！</p>
+<ul>
+<li>拷貝圖層，<code>mode</code>改成<code>screen</code>，然後<code>opacity</code>調成50。(這是變亮的效果)</li>
+</ul>
+<p><img alt="screen" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig1.png" /></p>
+<ul>
+<li>拷貝圖層，<code>mode</code>改成<code>overlay</code>。 (這是鮮豔的效果)</li>
+</ul>
+<p><img alt="overlay" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig2.png" /></p>
+<ul>
+<li>針對<code>overlay</code>這個圖層，我們要來做<code>color mixer</code>！<ol>
+<li>到<code>Colors</code>選單裡面的<code>Components</code>選<code>Channel Mixer...</code>.</li>
+<li>針對<code>Output channel: Red</code> - 把 <code>Red</code> 調成 150，把 <code>Green</code> 調成 -25，把 <code>Blue</code> 調成 -25。</li>
+<li>針對<code>Output channel: Green</code> - 把 <code>Red</code> 調成 -25，把 <code>Green</code> 調成 150，把 <code>Blue</code> 調成 -25。</li>
+<li>針對<code>Output channel: Blue</code> - 把 <code>Red</code> 調成 -25，把 <code>Green</code> 調成 -25，把 <code>Blue</code> 調成 150<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>。</li>
+</ol>
+</li>
+</ul>
+<p><img alt="colormix" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig3.png" /></p>
+<p>Preview就已經看到效果啦！</p>
+<ul>
+<li>到圖層的地方做<code>Merge Visible Layers...</code></li>
+</ul>
+<p><img alt="mergelayer" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig4.png" /></p>
+<ul>
+<li>輸出啦！</li>
+</ul>
+<p><img alt="sideside" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig5.png" /></p>
+<p>我應該不用說哪張是修改前吧！</p>
+<h3>Python-fu</h3>
+<p>煩死了，我只要一個按鈕解決可以嗎？<br />
+當然可以!</p>
+<h4>下載安裝</h4>
+<ul>
+<li>請到我的GitHub下載<a href="https://github.com/chengyanlai/gimp_python/blob/master/My-Vivid.py">這個python程式</a>。  </li>
+<li>如果你也是OSX，恭喜你，請把這個檔案複製到<code>/Applications/Gimp.app/Contents/Resources/lib/gimp/2.0/plug-ins/</code><sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">3</a></sup>。然後到該路徑下執行<code>chmod 755 *py</code>。<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>  </li>
+<li>重開<code>Gimp</code>，你應該可以在選單<code>Filters</code>-&gt;<code>ChenYen</code>看到<code>Color Mix</code></li>
+</ul>
+<h4>執行</h4>
+<ul>
+<li>匯入照片。</li>
+<li>選擇<code>Filters</code>-&gt;<code>ChenYen</code>-&gt;<code>Color Mix</code>! 這不是廢話嗎？</li>
+</ul>
+<p><img alt="mypy" src="https://dl.dropboxusercontent.com/u/165978/gimp-fifth-grade-1-fig6.png" /></p>
+<ul>
+<li>視窗出來了，有三個值可以設定<ol>
+<li>Screen Opacity: 就是<code>screen layer</code>的<code>opacity</code>，預設是50。</li>
+<li>Overlay Opacity: 就是<code>overlay layer</code>的<code>opacity</code>，預設是100。</li>
+<li>Base Color: 就是在<a href="#step">Step-byStep</a>裡面的150(/100)，預設是1.5(對應到150喔)。</li>
+</ol>
+</li>
+<li>剩下的就自動處理啦！</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>是不是(150,-25,-25)不是重點，重點是加起來是100！&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>把它改成可以被執行。&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>你的python plugin路徑。&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "blog/2013/10/20/xiao-xue-sheng-xiu-tu-vol-1/";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://mypelicansite.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<section>
+    <h4>
+        Hello
+    </h4>
+    <p>
+        We are <a href="http://chengyanlai.github.io/pages/1-chenyen.html">Chen-Yen Lai (賴承彥)</a> and <a href="http://chengyanlai.github.io/pages/1-yaoan.html">Yao-An Chan (詹堯安)</a>. 
+        We are here to share our life with our friends. 
+        We are currently living in Riverside, CA USA. 
+        Feel free to contact us through <a href="mailto:chengyanlai@gmail.com">email</a>.
+    </p>
+</section><section>
+    <h4>
+        Authors
+    </h4>
+    <h4>
+<a href="http://www.flickr.com/photos/xavierweathertoplai/9468924220/" title="LCT_3372 by ChenYen.Lai, on Flickr"><img src="http://farm3.staticflickr.com/2824/9468924220_28cf488b58_m.jpg" width="240" height="159" alt="LCT_3372"></a>
+    </h4>
+    <h6>
+        <a href="/author/yao-an-chan.html">Yao-An's Posts</a><br>
+    </h6>
+    <h6>
+        <a href="/author/chen-yen-lai.html">Chen-Yen's Posts</a>
+    </h6>
+</section><section>
+    <h4>
+<a href="http://babygraph.com/index_e.php" target="_blank">K Growth Chart</a>
+<div style="text-align:center;">
+<embed src="http://data.sub.jp/baby/bagra.swf" FlashVars="number=35821" width="480" height="640" 
+quality="high" wmode="transparent" name="baby" align="middle" type="application/x-shockwave-flash" />
+</div>
+    </h4>
+</section>
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="http://chengyanlai.github.io/archives.html">Archives</a></li>
+      <li><a href="http://chengyanlai.github.io/pages/1-chenyen.html">Chen-Yen Lai</a></li>
+      <li><a href="http://chengyanlai.github.io/pages/1-yaoan.html">Yao-An Chan</a></li>
+      <li><a href="http://chengyanlai.github.io/pages/9-links.html">Links</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="http://chengyanlai.github.io/category/baking.html">Baking</a></li>
+		<li><a href="http://chengyanlai.github.io/category/blogging-engine.html">Blogging Engine</a></li>
+		<li><a href="http://chengyanlai.github.io/category/cooking.html">Cooking</a></li>
+		<li><a href="http://chengyanlai.github.io/category/food.html">Food</a></li>
+		<li><a href="http://chengyanlai.github.io/category/games.html">Games</a></li>
+		<li><a href="http://chengyanlai.github.io/category/gimp.html">Gimp</a></li>
+		<li><a href="http://chengyanlai.github.io/category/kessler.html">Kessler</a></li>
+		<li><a href="http://chengyanlai.github.io/category/lifetw.html">Life@TW</a></li>
+		<li><a href="http://chengyanlai.github.io/category/lifeus.html">Life@US</a></li>
+		<li><a href="http://chengyanlai.github.io/category/lo-ma-ji.html">Lo-ma-ji</a></li>
+		<li><a href="http://chengyanlai.github.io/category/misc.html">misc</a></li>
+		<li><a href="http://chengyanlai.github.io/category/movie-drama.html">Movie-Drama</a></li>
+		<li><a href="http://chengyanlai.github.io/category/osx.html">OSX</a></li>
+		<li><a href="http://chengyanlai.github.io/category/pregnancy.html">Pregnancy</a></li>
+		<li><a href="http://chengyanlai.github.io/category/python.html">Python</a></li>
+		<li><a href="http://chengyanlai.github.io/category/travel.html">Travel</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="http://chengyanlai.github.io/tag/latex.html">Latex</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/you-yin-le-bu-ji-mo.html">有音樂不寂寞</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/ri-ben-lu-xing.html">日本旅行</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/bao-zi-man-tou.html">包子饅頭</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/mei-guo-xin-xian-sheng-huo.html">美國新鮮生活</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/us-national-park.html">US National Park</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/tai-wan-mei-shi.html">台灣美食</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/octopress.html">Octopress</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/mei-guo-lu-xing.html">美國旅行</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/yu-er-le.html">育兒樂</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/wo-de-lu-shou-zhi.html">我的綠手指</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/huai-yun-sheng-zi-za-ji.html">懷孕生子雜記</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/tu-shu-gu-chang-tui-jian.html">圖書股長推薦</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/blantecguo-zhi-ji.html">Blantec果汁機</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/mian-bao.html">麵包</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/xi-dian-dan-gao.html">西點蛋糕</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/mei-guo-mei-shi.html">美國美食</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
+	    <li class="tag-4"><a href="http://chengyanlai.github.io/tag/fusion.html">Fusion</a></li>
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://www.facebook.com/chenyenlai">Chen-Yen's Facebook</a></li>
+    <li><a href="http://www.flickr.com/photos/xavierweathertoplai/">Chen-Yen's Flickr</a></li>
+    <li><a href="http://www.facebook.com/yaoanchan">Yao-An's Facebook</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                    <br />
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a> - 
+                    Free Domain Provider <a href="http://my.dot.tk/cgi-bin/amb/landing.dottk?nr=747808::13091085::1" target="_new">Dot.TK</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                <li><div class="btn primary"><a href="https://github.com/chengyanlai" target="_blank">Github</a></div></li>
+
+                <li><div class="btn twitter"><a href="https://twitter.com/chenyenlai" target="_blank">Twitter</a></div></li>
+
+                <li><div class="btn facebook"><a href="https://www.facebook.com/chenyenlai" target="_blank">Facebook</a></div></li>
+
+                <li><div class="btn danger"><a href="https://plus.google.com/+ChenYenLai" target="_blank">Google+</a></div></li>
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'mypelicansite';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://chengyanlai.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/plugins.js"></script>
+
+</body>
+</html>

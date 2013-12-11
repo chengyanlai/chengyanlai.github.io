@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://chengyanlai.github.io/" rel="alternate"></link><link href="http://chengyanlai.github.io/feeds/osx.atom.xml" rel="self"></link><id>http://chengyanlai.github.io/</id><updated>2013-11-21T16:14:35-08:00</updated><entry><title>"LaTeX and BibTeX from Papers"</title><link href="http://chengyanlai.github.io/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
+&lt;p&gt;You need to pay for the Paper app, it only has OSX and Windows(WTF!) version, sorry.&lt;/p&gt;
+&lt;h3&gt;Export bib from Papers&lt;/h3&gt;
+&lt;p&gt;Papers allow you to export your entire library to single file &lt;/p&gt;
+&lt;p&gt;&lt;img alt="InPapers" src="https://dl.dropboxusercontent.com/u/165978/papers-bibtex-latex-fig0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Next, you would need to put the file to the right PATH(It is painful in some way)&lt;/p&gt;
+&lt;h3&gt;Put bib to the right PATH&lt;/h3&gt;
+&lt;p&gt;I know nothing about Windows for these days. For OSX, I am using the &lt;a href="http://www.tug.org/mactex/"&gt;MacTex&lt;/a&gt; distribution, and I figure it out that the right path is &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/Library/texmf/bibtex/bib/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If the folder is not there, please create it! Then copy your file to that path. Remember you need to update your bibtex file every time you update your library(I mean when you are going to use .bib).&lt;/p&gt;
+&lt;h3&gt;In LaTeX&lt;/h3&gt;
+&lt;p&gt;So, the only thing you need to do in &lt;code&gt;.tex&lt;/code&gt; file is&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="se"&gt;\b&lt;/span&gt;ibliographystyle&lt;span class="o"&gt;{&lt;/span&gt;apsrev4-1&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="se"&gt;\b&lt;/span&gt;ibliography&lt;span class="o"&gt;{&lt;/span&gt;My_Ref&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. This is just an example. Because I am using RevTex, so the style is &lt;code&gt;apsrev4-1&lt;/code&gt;. Second line means you have a file called and located at &lt;code&gt;${HOME}/Library/texmf/bibtex/bib/My_Ref.bib&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Maintain the title&lt;/h3&gt;
+&lt;p&gt;If You import an article which has some latex form, for example, name of compound like
+&lt;code&gt;La_2CuO_4&lt;/code&gt; or atoms &lt;code&gt;^{40}K&lt;/code&gt; should appear like $La_2CuO_4\text{ or } ^{40}K$.  &lt;/p&gt;
+&lt;p&gt;This would, however, cause error message during compile of Bibtex. We need to manually edit it in 
+the &lt;code&gt;Papers&lt;/code&gt; to become &lt;code&gt;La$_2$CuO$_4$&lt;/code&gt; or &lt;code&gt;$^{40}$K&lt;/code&gt;. The small edit would ease the problem that you need to edit the &lt;code&gt;.bib&lt;/code&gt; every time Bibtex compile.&lt;/p&gt;
+&lt;h4&gt;Style list&lt;/h4&gt;
+&lt;p&gt;You can choose different kinds of styles in reference. You need to find different &lt;code&gt;.bst&lt;/code&gt; files for it. For each journal, they have corresponding style. For example, you can search &lt;code&gt;nature.bst&lt;/code&gt; to find the the style for &lt;a href="http://nature.com"&gt;Nature&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once you have the &lt;code&gt;bst&lt;/code&gt; files you want, you need to put it into right path to let &lt;code&gt;latex&lt;/code&gt; to find it. For OSX and MacTex installed, the path is located at&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/Library/texmf/bibtex/bst/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. Just copy all &lt;code&gt;.bst&lt;/code&gt; files into it and &lt;code&gt;LaTeX&lt;/code&gt; will find find it. All you need to do in &lt;code&gt;.tex&lt;/code&gt; file is the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="se"&gt;\b&lt;/span&gt;ibliographystyle&lt;span class="o"&gt;{&lt;/span&gt;nature&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Latex"></category></entry><entry><title>"OSX Mavericks Installation and Setup"</title><link href="http://chengyanlai.github.io/blog/2013/10/24/osx-mavericks-installation-and-setup/" rel="alternate"></link><updated>2013-10-24T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-10-24:blog/2013/10/24/osx-mavericks-installation-and-setup/</id><summary type="html">&lt;p&gt;I run all the following in order to setup my OSX Mavericks. I prefer clean install!&lt;/p&gt;
+&lt;p&gt;Since I have remove my SuperDrive on my 2009 Macbook Pro, I have two harddrives. One is the SSD shipped with Apple, the other HD is installed on the slot of old SuperDrive. I would like to move my home folder to the 2nd HD.&lt;/p&gt;
+&lt;p&gt;The following setup is also worked if you try to do partition on single harddrive.&lt;/p&gt;
+&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{%20root_url%20}}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Move Home Folder&lt;/h2&gt;
+&lt;p&gt;After clean install, there is basically nothing new on home folder. You still have to move it, however, due to the reason that the Library folder.&lt;/p&gt;
+&lt;h3&gt;Copy the home folder to the other drive&lt;/h3&gt;
+&lt;p&gt;Use the following command to check the drive&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ls /Volume/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="findvol" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-from-scratch-fig0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;I install my Mavericks on the SSD called &lt;code&gt;Mavericks&lt;/code&gt;. I want to move my home folder to HD call &lt;code&gt;HD&lt;/code&gt;.&lt;br /&gt;
+Using the following command on terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo ditto -v /Users/&lt;span class="o"&gt;{&lt;/span&gt;Username&lt;span class="o"&gt;}&lt;/span&gt;/ /Volumes/HD/Users/&lt;span class="o"&gt;{&lt;/span&gt;Username&lt;span class="o"&gt;}&lt;/span&gt;/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, where &lt;code&gt;ditto&lt;/code&gt; is &lt;code&gt;cp&lt;/code&gt; for OSX. It will copy entire home folder of {Username} to the &lt;code&gt;HD&lt;/code&gt;. Your old home folder still intact.&lt;/p&gt;
+&lt;h3&gt;Relocate the home folder for system&lt;/h3&gt;
+&lt;p&gt;Go to the &lt;code&gt;System Preference&lt;/code&gt; =&amp;gt; &lt;code&gt;Users &amp;amp; Groups&lt;/code&gt;, then right click on {Username} =&amp;gt; choose &lt;code&gt;Advanced Options&lt;/code&gt;
+&lt;img alt="AdjustPath" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-from-scratch-fig1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;. Click &lt;code&gt;Choose&lt;/code&gt; on the &lt;code&gt;Home directory&lt;/code&gt;, and choose the &lt;code&gt;/Volumes/HD/Users/{Username}/&lt;/code&gt;. After this the system is going to restart because you change the home folder. Let's do it.&lt;/p&gt;
+&lt;h3&gt;Test the result&lt;/h3&gt;
+&lt;p&gt;Open Terminal and type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and it shows&lt;/p&gt;
+&lt;p&gt;&lt;img alt="EchoHome" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-from-scratch-fig2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;. It is DONE!&lt;/p&gt;
+&lt;h3&gt;Delete the old home folder&lt;/h3&gt;
+&lt;p&gt;If you wish to delete the old home folder, you can go ahead an do it the following command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /Users/
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo rm -rf &lt;span class="o"&gt;{&lt;/span&gt;Username&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Software Installation&lt;/h3&gt;
+&lt;p&gt;Here is the software list I will definitely install on my OSX.
+This is not a complete list, but other things are easy to find.&lt;/p&gt;
+&lt;h3&gt;Xcode&lt;/h3&gt;
+&lt;p&gt;You can do this via &lt;code&gt;App Store&lt;/code&gt;. After download, simply just install it. All I need is the command line tool(CLT), like &lt;code&gt;make&lt;/code&gt;. 
+To make sure the CLT is install, do the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;xcode-select --install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;XQartz&lt;/h3&gt;
+&lt;p&gt;Apple no longer provide the X11, but we still can get it by clicking the X11 in &lt;code&gt;Utilities&lt;/code&gt; folder. It will guide you to the XQartz site.&lt;br /&gt;
+Download it and install it.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://brew.sh"&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I need some library like &lt;code&gt;boost&lt;/code&gt; to run my code, and I plan to get it here. Also it provide the python, numpy, scipy, and matplotlib etc..&lt;br /&gt;
+To install, basically run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ruby -e &lt;span class="s2"&gt;&amp;quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, then you will be ready to brew.
+Here is my list to do&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;brew install wget&lt;/code&gt; - the missing command in osx.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew install gfortran&lt;/code&gt; - the fortran compiler.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew install boost&lt;/code&gt; - the library used by fci.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The following is for python, numpy, scipy, matplotlib, and &lt;a href="http://kwant-project.org/"&gt;kwant&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Add &lt;code&gt;export PATH=/usr/local/bin:$PATH&lt;/code&gt; in the &lt;code&gt;~/.bash_profile&lt;/code&gt; to make sure system find the correct python.&lt;br /&gt;
+&lt;code&gt;brew install python&lt;/code&gt; - the python maintained by homebrew.&lt;br /&gt;
+Tap the three followings&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap homebrew/science
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap samueljohn/python
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap michaelwimmer/kwant
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Install &lt;code&gt;numpy&lt;/code&gt; and &lt;code&gt;scipy&lt;/code&gt; first&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install nose
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install numpy scipy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Before going to &lt;code&gt;matplolib&lt;/code&gt;, I need to do this due to the error message I got when installing &lt;code&gt;matplolib&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip-2.7 install python-dateutil
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip-2.7 install pyparsing
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install matplotlib
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install kwant
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, I have all I need so far from Homebrew.
+The alternatives are &lt;a href="http://www.macports.org/"&gt;Macport&lt;/a&gt; or &lt;a href="http://fink.thetis.ig42.org/"&gt;Fink&lt;/a&gt;, and the detail difference is provided by &lt;a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/"&gt;Ted Wise&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://store.continuum.io/cshop/anaconda/"&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This is the alternative way to have python, numpy, scipy, and matplotlib. Usually they provide the academic license for free.&lt;/p&gt;
+&lt;p&gt;This installer is going to modify the &lt;code&gt;$PATH&lt;/code&gt; in &lt;code&gt;.~/.bash_profile&lt;/code&gt;. You can manipulate the &lt;code&gt;$PATH&lt;/code&gt; to choose which python you want to use. To know that, you can type &lt;code&gt;which python&lt;/code&gt; in terminal.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.enthought.com/products/epd/"&gt;EPD Canopy&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It is something like Anaconda, but I feel EPD is faster. I have both of them on my computer, also the one from Homebrew.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.tug.org/mactex/"&gt;MacTeX&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;My compiler and editor, TeXShop, for tex files.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://macromates.com/"&gt;TextMate&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A very useful text editor. Make sure that only v2.0 support Mavericks(by date 10/23). You can install the command-line version of it in the preference, so you can use it in terminal by typing &lt;code&gt;mate&lt;/code&gt;. 
+If you like to use it as git (or svn) editor, remember to use &lt;code&gt;mate -w&lt;/code&gt;. I usually do the following in gitconfig&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global core.editor &lt;span class="s2"&gt;&amp;quot;mate -w&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, so Textmate will open when I commit.
+The python command can be set in the &lt;code&gt;Variables&lt;/code&gt; of &lt;code&gt;Preferences&lt;/code&gt;. For example, I want to run EPD Canopy on TextMate I will modify my PATH to &lt;code&gt;/path/to/Canopy/enviroment/User/bin:$PATH&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://decimus.net/DTerm"&gt;DTerm&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A very useful command line tool if you only need one command.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://itunes.apple.com/us/app/go2shell/id445770608?mt=12"&gt;Go2Shell&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Another terminal program which open a new terminal window in current finder path.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.gimp.org/"&gt;Gimp&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;My photoshop.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://inkscape.org"&gt;Inkscape&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Vector figures editor. You need X11 to run this.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://hugin.sourceforge.net"&gt;Hugin&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A free software to do panorama.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://qtpfsgui.sourceforge.net"&gt;Luminance HDR&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Just like its name.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.alfredapp.com/"&gt;Alfread&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Get it from &lt;code&gt;App Store&lt;/code&gt;. Very easy to use and not cost a lot of resources.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.videolan.org/vlc/index.html"&gt;VLC&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;How can anyone miss this wonderful player?&lt;/p&gt;
+&lt;h3&gt;&lt;a href="http://www.openoffice.org/"&gt;OpenOffice&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I need this to open xls files used in iLearn (Fuck!).&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://code.google.com/p/macfuse/"&gt;Mackfuse&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The only purpose is to read NTFS files.&lt;/p&gt;</summary></entry><entry><title>"OSX Mavericks bootable USB drive "</title><link href="http://chengyanlai.github.io/blog/2013/10/23/osx-mavericks-bootable-usb-drive/" rel="alternate"></link><updated>2013-10-23T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-10-23:blog/2013/10/23/osx-mavericks-bootable-usb-drive/</id><summary type="html">&lt;p&gt;I don't know if you like to do the clean install, but it is always good to have the bootable usb drive. If you have multiple MACs, you can take advantage for not downloading the 5.5G Mavericaks installer.&lt;/p&gt;
+&lt;p&gt;OSX Marvericks provides a very easy way to create the bootable USB drive.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Format your USB drive&lt;/h3&gt;
+&lt;p&gt;Make sure you have a USB which is larger than 5.5G(I use 8G), and format it into Mac OS Extended (Journaled).
+Here I just name it &lt;code&gt;Untitled&lt;/code&gt;. Earaed it!
+&lt;img alt="osx-mavericks-bootable-usb-drive-fig0.png" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-bootable-usb-drive-fig0.png" /&gt;&lt;/p&gt;
+&lt;h3&gt;Make the drive&lt;/h3&gt;
+&lt;p&gt;Once it is done, and you have the Mavericks installer in you &lt;code&gt;Application&lt;/code&gt; folder.
+Type the following in the terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo /Applications/Install&lt;span class="se"&gt;\ &lt;/span&gt;OS&lt;span class="se"&gt;\ &lt;/span&gt;X&lt;span class="se"&gt;\ &lt;/span&gt;Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install&lt;span class="se"&gt;\ &lt;/span&gt;OS&lt;span class="se"&gt;\ &lt;/span&gt;X&lt;span class="se"&gt;\ &lt;/span&gt;Mavericks.app --nointeraction
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You will see this on your terminal&lt;/p&gt;
+&lt;p&gt;&lt;img alt="osx-mavericks-bootable-usb-drive-fig1.png" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-bootable-usb-drive-fig1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;It takes about 20 mins to complete, be patient.&lt;/p&gt;
+&lt;p&gt;Read more at this &lt;a href="http://www.gottabemobile.com/2013/10/22/perform-clean-install-os-x-mavericks/#iA8WYhaBRRRieeGl.99"&gt;site&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>"OSX Library folder"</title><link href="http://chengyanlai.github.io/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;Go to&lt;/code&gt; function&lt;/h4&gt;
+&lt;p&gt;When you are in Finder, simply just use &lt;code&gt;Command-Shift-g&lt;/code&gt;. There will be a pop-up on your finder, we then type &lt;code&gt;~/Library/&lt;/code&gt;, the library folder will be opened.&lt;/p&gt;
+&lt;h4&gt;In the &lt;code&gt;Go&lt;/code&gt; menu&lt;/h4&gt;
+&lt;p&gt;On the top menu, you can see there is a &lt;code&gt;Go&lt;/code&gt; menu. You can not see the &lt;code&gt;Library&lt;/code&gt; button until you hit &lt;code&gt;Alt&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Keyboard shortcut&lt;/h4&gt;
+&lt;p&gt;You can set up the keyboard shortcut in the &lt;code&gt;Preference&lt;/code&gt;.&lt;br /&gt;
+Go to &lt;code&gt;Preference&lt;/code&gt;-&amp;gt;&lt;code&gt;Keyboard&lt;/code&gt;-&amp;gt;&lt;code&gt;Shortcuts&lt;/code&gt;. On the left, choose &lt;code&gt;App shortcuts&lt;/code&gt;. After that, you can see the &lt;code&gt;+&lt;/code&gt; button appears. Click it, it would show you&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="https://dl.dropboxusercontent.com/u/165978/osx-library-folder-fig0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Choose &lt;code&gt;Finder&lt;/code&gt; in the &lt;code&gt;Application&lt;/code&gt;, then type &lt;code&gt;Library&lt;/code&gt; in the &lt;code&gt;Menu Title&lt;/code&gt;. Finally, set up the shortcut you want in &lt;code&gt;Keyboard Shortcut&lt;/code&gt;.&lt;br /&gt;
+Next time, you can use that shortcut to open &lt;code&gt;Library&lt;/code&gt; folder just like we open the &lt;code&gt;Application&lt;/code&gt; folder by &lt;code&gt;Command-Alt-A&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Make it appear in other App&lt;/h4&gt;
+&lt;p&gt;If you need to save file directly in to subfolder of library folder, you need to change the flag to make it no hidden!&lt;br /&gt;
+Open your terminal and type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;chflags nohidden ~/Library
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, you then can see it at save menu in other applications.&lt;/p&gt;
+&lt;p&gt;If you want to go back to the hidden mode, just type&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;chflags hidden ~/Library
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;in terminal.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;BSD command &lt;code&gt;chflags&lt;/code&gt; -- change file flags.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary></entry><entry><title>"Fusion Drive on OSX"</title><link href="http://chengyanlai.github.io/blog/2013/10/01/fusion-drive-on-osx/" rel="alternate"></link><updated>2013-10-01T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-10-01:blog/2013/10/01/fusion-drive-on-osx/</id><summary type="html">&lt;h2&gt;Setup Fusion Drive&lt;/h2&gt;
+&lt;p&gt;First of all, you will need to reinstall os and everything you needed, so start backup your files.
+You need to boot from a flash drive or the installation dmg, then you need to go to the terminal to do the following.&lt;/p&gt;
+&lt;h3&gt;Check your storage&lt;/h3&gt;
+&lt;p&gt;First to check your storage and find their Volume ID by entering the following in terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Create CoreStorage&lt;/h3&gt;
+&lt;p&gt;After obtaining the two storage you want to setup as a single Fusion drive, you can use the command
+    :::bash
+    $ diskutil cs create {drivename} {driveIDs}&lt;/p&gt;
+&lt;p&gt;. This command can be broken down into&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;diskutil - the command-line version of Disk Utility.&lt;/li&gt;
+&lt;li&gt;cs -  Core Storage in short, which is necessary for Fusion.&lt;/li&gt;
+&lt;li&gt;creat - creates a Core Storage group.&lt;/li&gt;
+&lt;li&gt;drivername -  this is the name of the drive and how you want it to appear in Disk Utility (not the Finder – that comes later). You can call it whatever you want!&lt;/li&gt;
+&lt;li&gt;driveIDs - these are the drive IDs of the drives you want as part of your Fusion, separated by a space.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Format CoreStorage&lt;/h3&gt;
+&lt;p&gt;Then, we need to obtain the {groupString} to format the Fusion drive. Using the following command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil cs list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. Once you obtain it, we can start to format it by&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil cs createVolume &lt;span class="o"&gt;{&lt;/span&gt;groupString&lt;span class="o"&gt;}&lt;/span&gt; jhfs+ &lt;span class="o"&gt;{&lt;/span&gt;volumeName&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;size&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, where&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;jhfs+ – the format of the drive. This is Apple Extended Format (journaled), which is recommended for drives with an OS installed on it.&lt;/li&gt;
+&lt;li&gt;volumeName - the actual name of the volume, how it should appear underneath the icon.&lt;/li&gt;
+&lt;li&gt;size - this is the size of the volume.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Reboot and Install OSX!&lt;/h3&gt;
+&lt;h2&gt;Split up Fusion drive&lt;/h2&gt;
+&lt;p&gt;First step, you need to find the unique identifier for the logical volume group. You can do this by typing&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil coreStorage list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, so you might see following&lt;/p&gt;
+&lt;p&gt;&lt;img alt="corelist" src="https://dl.dropboxusercontent.com/u/165978/osx-fusion-drive-fig0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;. In the above example, you can find the ID is 7B6B........
+If you want to split this logic volume, type the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil coreStorage delete &lt;span class="o"&gt;{&lt;/span&gt;Logic Volume ID&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After destroying the CoreStorage Logical Volume Group, system formats the drives for you as normal OSX Extended (Journaled) volumes (JHFS+). This is the normal type of volume that you would install OS X on or use to format an external drive.&lt;/p&gt;</summary><category term="Fusion"></category></entry></feed>
