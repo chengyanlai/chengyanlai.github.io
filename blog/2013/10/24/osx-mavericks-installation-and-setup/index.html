@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>"OSX Mavericks Installation and Setup"</title>
+        <meta charset="utf-8" />
+        <link href="http://chengyanlai.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Full Atom Feed" />
+        <link href="http://chengyanlai.github.io/feeds/osx.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Categories Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/pygment.css" />
+
+        <script src="http://chengyanlai.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+              
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://chengyanlai.github.io">Little Things about Everything <strong>Never Stop Learning</strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://chengyanlai.github.io">Home</a></li>
+
+                <li><a href="http://www.chenyen-yaoan.tk/archives.html">Archives</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/1-chenyen.html">Chen-Yen Lai</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/1-yaoan.html">Yao-An Chan</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/9-links.html">Links</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://chengyanlai.github.io/blog/2013/10/24/osx-mavericks-installation-and-setup/" rel="bookmark"
+                   title="Permalink to "OSX Mavericks Installation and Setup"">"OSX Mavericks Installation and Setup"</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2013-10-24T21:00:00">
+                Thu 24 October 2013
+              </abbr>
+              <address class="vcard author">
+                By <a class="url fn" href="http://chengyanlai.github.io/author/chen-yen-lai.html">Chen-Yen Lai</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>I run all the following in order to setup my OSX Mavericks. I prefer clean install!</p>
+<p>Since I have remove my SuperDrive on my 2009 Macbook Pro, I have two harddrives. One is the SSD shipped with Apple, the other HD is installed on the slot of old SuperDrive. I would like to move my home folder to the 2nd HD.</p>
+<p>The following setup is also worked if you try to do partition on single harddrive.</p>
+<p>The details on how to do bootable USB drive and clean install, please refer to <a href="{{%20root_url%20}}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/">my another post</a>.</p>
+<h2>Move Home Folder</h2>
+<p>After clean install, there is basically nothing new on home folder. You still have to move it, however, due to the reason that the Library folder.</p>
+<h3>Copy the home folder to the other drive</h3>
+<p>Use the following command to check the drive</p>
+<div class="highlight"><pre><span class="nv">$ </span>ls /Volume/
+</pre></div>
+
+
+<p><img alt="findvol" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-from-scratch-fig0.png" /></p>
+<p>I install my Mavericks on the SSD called <code>Mavericks</code>. I want to move my home folder to HD call <code>HD</code>.<br />
+Using the following command on terminal</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo ditto -v /Users/<span class="o">{</span>Username<span class="o">}</span>/ /Volumes/HD/Users/<span class="o">{</span>Username<span class="o">}</span>/
+</pre></div>
+
+
+<p>, where <code>ditto</code> is <code>cp</code> for OSX. It will copy entire home folder of {Username} to the <code>HD</code>. Your old home folder still intact.</p>
+<h3>Relocate the home folder for system</h3>
+<p>Go to the <code>System Preference</code> =&gt; <code>Users &amp; Groups</code>, then right click on {Username} =&gt; choose <code>Advanced Options</code>
+<img alt="AdjustPath" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-from-scratch-fig1.png" /></p>
+<p>. Click <code>Choose</code> on the <code>Home directory</code>, and choose the <code>/Volumes/HD/Users/{Username}/</code>. After this the system is going to restart because you change the home folder. Let's do it.</p>
+<h3>Test the result</h3>
+<p>Open Terminal and type</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>
+</pre></div>
+
+
+<p>, and it shows</p>
+<p><img alt="EchoHome" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-from-scratch-fig2.png" /></p>
+<p>. It is DONE!</p>
+<h3>Delete the old home folder</h3>
+<p>If you wish to delete the old home folder, you can go ahead an do it the following command</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /Users/
+<span class="nv">$ </span>sudo rm -rf <span class="o">{</span>Username<span class="o">}</span>
+</pre></div>
+
+
+<h3>Software Installation</h3>
+<p>Here is the software list I will definitely install on my OSX.
+This is not a complete list, but other things are easy to find.</p>
+<h3>Xcode</h3>
+<p>You can do this via <code>App Store</code>. After download, simply just install it. All I need is the command line tool(CLT), like <code>make</code>. 
+To make sure the CLT is install, do the following</p>
+<div class="highlight"><pre><span class="nv">$ </span>xcode-select --install
+</pre></div>
+
+
+<h3>XQartz</h3>
+<p>Apple no longer provide the X11, but we still can get it by clicking the X11 in <code>Utilities</code> folder. It will guide you to the XQartz site.<br />
+Download it and install it.</p>
+<h3><a href="http://brew.sh">Homebrew</a></h3>
+<p>I need some library like <code>boost</code> to run my code, and I plan to get it here. Also it provide the python, numpy, scipy, and matplotlib etc..<br />
+To install, basically run</p>
+<div class="highlight"><pre><span class="nv">$ </span>ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&quot;</span>
+</pre></div>
+
+
+<p>, then you will be ready to brew.
+Here is my list to do</p>
+<ol>
+<li><code>brew install wget</code> - the missing command in osx.</li>
+<li><code>brew install gfortran</code> - the fortran compiler.</li>
+<li><code>brew install boost</code> - the library used by fci.</li>
+</ol>
+<p>The following is for python, numpy, scipy, matplotlib, and <a href="http://kwant-project.org/">kwant</a></p>
+<p>Add <code>export PATH=/usr/local/bin:$PATH</code> in the <code>~/.bash_profile</code> to make sure system find the correct python.<br />
+<code>brew install python</code> - the python maintained by homebrew.<br />
+Tap the three followings</p>
+<div class="highlight"><pre><span class="nv">$ </span>brew tap homebrew/science
+<span class="nv">$ </span>brew tap samueljohn/python
+<span class="nv">$ </span>brew tap michaelwimmer/kwant
+</pre></div>
+
+
+<p>Install <code>numpy</code> and <code>scipy</code> first</p>
+<div class="highlight"><pre><span class="nv">$ </span>pip install nose
+<span class="nv">$ </span>brew install numpy scipy
+</pre></div>
+
+
+<p>Before going to <code>matplolib</code>, I need to do this due to the error message I got when installing <code>matplolib</code></p>
+<div class="highlight"><pre><span class="nv">$ </span>pip-2.7 install python-dateutil
+<span class="nv">$ </span>pip-2.7 install pyparsing
+<span class="nv">$ </span>brew install matplotlib
+<span class="nv">$ </span>brew install kwant
+</pre></div>
+
+
+<p>Now, I have all I need so far from Homebrew.
+The alternatives are <a href="http://www.macports.org/">Macport</a> or <a href="http://fink.thetis.ig42.org/">Fink</a>, and the detail difference is provided by <a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/">Ted Wise</a></p>
+<h3><a href="https://store.continuum.io/cshop/anaconda/">Anaconda</a></h3>
+<p>This is the alternative way to have python, numpy, scipy, and matplotlib. Usually they provide the academic license for free.</p>
+<p>This installer is going to modify the <code>$PATH</code> in <code>.~/.bash_profile</code>. You can manipulate the <code>$PATH</code> to choose which python you want to use. To know that, you can type <code>which python</code> in terminal.</p>
+<h3><a href="https://www.enthought.com/products/epd/">EPD Canopy</a></h3>
+<p>It is something like Anaconda, but I feel EPD is faster. I have both of them on my computer, also the one from Homebrew.</p>
+<h3><a href="http://www.tug.org/mactex/">MacTeX</a></h3>
+<p>My compiler and editor, TeXShop, for tex files.</p>
+<h3><a href="http://macromates.com/">TextMate</a></h3>
+<p>A very useful text editor. Make sure that only v2.0 support Mavericks(by date 10/23). You can install the command-line version of it in the preference, so you can use it in terminal by typing <code>mate</code>. 
+If you like to use it as git (or svn) editor, remember to use <code>mate -w</code>. I usually do the following in gitconfig</p>
+<div class="highlight"><pre><span class="nv">$ </span>git config --global core.editor <span class="s2">&quot;mate -w&quot;</span>
+</pre></div>
+
+
+<p>, so Textmate will open when I commit.
+The python command can be set in the <code>Variables</code> of <code>Preferences</code>. For example, I want to run EPD Canopy on TextMate I will modify my PATH to <code>/path/to/Canopy/enviroment/User/bin:$PATH</code>.</p>
+<h3><a href="http://decimus.net/DTerm">DTerm</a></h3>
+<p>A very useful command line tool if you only need one command.</p>
+<h3><a href="https://itunes.apple.com/us/app/go2shell/id445770608?mt=12">Go2Shell</a></h3>
+<p>Another terminal program which open a new terminal window in current finder path.</p>
+<h3><a href="http://www.gimp.org/">Gimp</a></h3>
+<p>My photoshop.</p>
+<h3><a href="http://inkscape.org">Inkscape</a></h3>
+<p>Vector figures editor. You need X11 to run this.</p>
+<h3><a href="http://hugin.sourceforge.net">Hugin</a></h3>
+<p>A free software to do panorama.</p>
+<h3><a href="http://qtpfsgui.sourceforge.net">Luminance HDR</a></h3>
+<p>Just like its name.</p>
+<h3><a href="http://www.alfredapp.com/">Alfread</a></h3>
+<p>Get it from <code>App Store</code>. Very easy to use and not cost a lot of resources.</p>
+<h3><a href="http://www.videolan.org/vlc/index.html">VLC</a></h3>
+<p>How can anyone miss this wonderful player?</p>
+<h3><a href="http://www.openoffice.org/">OpenOffice</a></h3>
+<p>I need this to open xls files used in iLearn (Fuck!).</p>
+<h3><a href="https://code.google.com/p/macfuse/">Mackfuse</a></h3>
+<p>The only purpose is to read NTFS files.</p>
+            </div><!-- /.entry-content -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "blog/2013/10/24/osx-mavericks-installation-and-setup/";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://mypelicansite.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<section>
+    <h4>
+        Hello
+    </h4>
+    <p>
+        We are <a href="http://chengyanlai.github.io/pages/1-chenyen.html">Chen-Yen Lai (賴承彥)</a> and <a href="http://chengyanlai.github.io/pages/1-yaoan.html">Yao-An Chan (詹堯安)</a>. 
+        We are here to share our life with our friends. 
+        We are currently living in Riverside, CA USA. 
+        Feel free to contact us through <a href="mailto:chengyanlai@gmail.com">email</a>.
+    </p>
+</section><section>
+    <h4>
+        Authors
+    </h4>
+    <h4>
+<a href="http://www.flickr.com/photos/xavierweathertoplai/9468924220/" title="LCT_3372 by ChenYen.Lai, on Flickr"><img src="http://farm3.staticflickr.com/2824/9468924220_28cf488b58_m.jpg" width="240" height="159" alt="LCT_3372"></a>
+    </h4>
+    <h6>
+        <a href="/author/yao-an-chan.html">Yao-An's Posts</a><br>
+    </h6>
+    <h6>
+        <a href="/author/chen-yen-lai.html">Chen-Yen's Posts</a>
+    </h6>
+</section><section>
+    <h4>
+<a href="http://babygraph.com/index_e.php" target="_blank">K Growth Chart</a>
+<div style="text-align:center;">
+<embed src="http://data.sub.jp/baby/bagra.swf" FlashVars="number=35821" width="480" height="640" 
+quality="high" wmode="transparent" name="baby" align="middle" type="application/x-shockwave-flash" />
+</div>
+    </h4>
+</section>
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="http://www.chenyen-yaoan.tk/archives.html">Archives</a></li>
+      <li><a href="http://chengyanlai.github.io/pages/1-chenyen.html">Chen-Yen Lai</a></li>
+      <li><a href="http://chengyanlai.github.io/pages/1-yaoan.html">Yao-An Chan</a></li>
+      <li><a href="http://chengyanlai.github.io/pages/9-links.html">Links</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="http://chengyanlai.github.io/category/baking.html">Baking</a></li>
+		<li><a href="http://chengyanlai.github.io/category/blogging-engine.html">Blogging Engine</a></li>
+		<li><a href="http://chengyanlai.github.io/category/cooking.html">Cooking</a></li>
+		<li><a href="http://chengyanlai.github.io/category/food.html">Food</a></li>
+		<li><a href="http://chengyanlai.github.io/category/games.html">Games</a></li>
+		<li><a href="http://chengyanlai.github.io/category/gimp.html">Gimp</a></li>
+		<li><a href="http://chengyanlai.github.io/category/kessler.html">Kessler</a></li>
+		<li><a href="http://chengyanlai.github.io/category/lifetw.html">Life@TW</a></li>
+		<li><a href="http://chengyanlai.github.io/category/lifeus.html">Life@US</a></li>
+		<li><a href="http://chengyanlai.github.io/category/lo-ma-ji.html">Lo-ma-ji</a></li>
+		<li><a href="http://chengyanlai.github.io/category/misc.html">misc</a></li>
+		<li><a href="http://chengyanlai.github.io/category/movie-drama.html">Movie-Drama</a></li>
+		<li><a href="http://chengyanlai.github.io/category/osx.html">OSX</a></li>
+		<li><a href="http://chengyanlai.github.io/category/pregnancy.html">Pregnancy</a></li>
+		<li><a href="http://chengyanlai.github.io/category/python.html">Python</a></li>
+		<li><a href="http://chengyanlai.github.io/category/travel.html">Travel</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/you-yin-le-bu-ji-mo.html">有音樂不寂寞</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/yu-er-le.html">育兒樂</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/mei-guo-xin-xian-sheng-huo.html">美國新鮮生活</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/bao-zi-man-tou.html">包子饅頭</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/huai-yun-sheng-zi-za-ji.html">懷孕生子雜記</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/xi-dian-dan-gao.html">西點蛋糕</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/blantecguo-zhi-ji.html">Blantec果汁機</a></li>
+	    <li class="tag-4"><a href="http://chengyanlai.github.io/tag/latex.html">Latex</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/tai-wan-mei-shi.html">台灣美食</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/wo-de-lu-shou-zhi.html">我的綠手指</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/mian-bao.html">麵包</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/tu-shu-gu-chang-tui-jian.html">圖書股長推薦</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/mei-guo-lu-xing.html">美國旅行</a></li>
+	    <li class="tag-4"><a href="http://chengyanlai.github.io/tag/fusion.html">Fusion</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/octopress.html">Octopress</a></li>
+	    <li class="tag-3"><a href="http://chengyanlai.github.io/tag/mei-guo-mei-shi.html">美國美食</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/ri-ben-lu-xing.html">日本旅行</a></li>
+	    <li class="tag-2"><a href="http://chengyanlai.github.io/tag/us-national-park.html">US National Park</a></li>
+	    <li class="tag-1"><a href="http://chengyanlai.github.io/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
+</ul>
+
+
+<nav class="widget">
+  <h4>Social</h4>
+  <ul>
+    <li><a href="http://www.facebook.com/chenyenlai">Chen-Yen's Facebook</a></li>
+    <li><a href="http://www.flickr.com/photos/xavierweathertoplai/">Chen-Yen's Flickr</a></li>
+    <li><a href="http://www.facebook.com/yaoanchan">Yao-An's Facebook</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+                    <br />
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a> - 
+                    Free Domain Provider <a href="http://my.dot.tk/cgi-bin/amb/landing.dottk?nr=747808::13091085::1" target="_new">Dot.TK</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                <li><div class="btn primary"><a href="https://github.com/chengyanlai" target="_blank">Github</a></div></li>
+
+                <li><div class="btn twitter"><a href="https://twitter.com/chenyenlai" target="_blank">Twitter</a></div></li>
+
+                <li><div class="btn facebook"><a href="https://www.facebook.com/chenyenlai" target="_blank">Facebook</a></div></li>
+
+                <li><div class="btn danger"><a href="https://plus.google.com/+ChenYenLai" target="_blank">Google+</a></div></li>
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'mypelicansite';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://chengyanlai.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/plugins.js"></script>
+
+</body>
+</html>
