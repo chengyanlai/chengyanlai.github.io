@@ -73,6 +73,103 @@
         <div class="eleven columns">
 		         <ol id="post-list">
 				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2013/11/17/my-octopress-and-heroku-3/" rel="bookmark" title="Permalink to My Octopress and Heroku - 3">My Octopress and Heroku - 3</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-11-17T15:14:00"> 
+                                        Post on: 
+                                        Sun 17 November 2013 </abbr>
+<address class="vcard author">
+                                        By
+                                         <a class="url fn" href="http://www.chenyen-yaoan.tk/author/chen-yen-lai.html">Chen-Yen Lai</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <h2>Blogspot Posts 到 Octopress</h2>
+<p>如果你已經有Blog，而且並不想要放棄你的心血結晶，在GitHub可以找到一個Ruby程式，基本上你只需要匯出你的posts！<br />
+Run一行Command，複製匯出的檔案到octopress的<code>_post</code>檔案夾！你就可成功從Blogspot轉換到octopress！  </p>
+<p>到你的Blogspot control center，匯出你的Blog！<br />
+<img alt="Blogspot Control" src="https://dl.dropboxusercontent.com/u/165978/blog-to-octopress/fig0.png" />  </p>
+<p>下載這個 <a href="https://gist.github.com/chengyanlai/7492278">Ruby程式</a>.<br />
+把匯出的<code>blog-xxxx-xx-xx.xml</code>檔案跟剛剛下載的<code>Ruby</code>程式放在一起，開啟你的Terminal，執行  </p>
+<div class="highlight"><pre><span class="nv">$ </span>ruby import.rb blog-xxxx-xx-xx.xml
+</pre></div>
+
+
+<p>基本上它會產生兩個資料夾，<code>_post</code> and <code>_draft</code>！你可以在<code>_post</code>裡面找到你所有的published posts，<code>_draft</code>裡面找到你所有的unpublished posts！所有的檔案都是<code>html</code><br />
+所有你要做的就是把<code>_post</code>跟<code>_draft</code>裡面的files拷貝到你的 ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://www.chenyen-yaoan.tk/blog/2013/11/17/my-octopress-and-heroku-3/" rel="bookmark" title="Permalink to My Octopress and Heroku - 3">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										Tagged as 
+											<a class="danger label" href="http://www.chenyen-yaoan.tk/tag/blogging-engine.html">Blogging Engine</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="bookmark" title="Permalink to My Octopress and Heroku - 2">My Octopress and Heroku - 2</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-11-15T21:00:00"> 
+                                        Post on: 
+                                        Fri 15 November 2013 </abbr>
+<address class="vcard author">
+                                        By
+                                         <a class="url fn" href="http://www.chenyen-yaoan.tk/author/chen-yen-lai.html">Chen-Yen Lai</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <p>Octopress的好處就是可以隨意的更改以及裝自己想要的plugin，或是你熟<code>Ruby</code>，你也可以自己寫plugin，剛設置好的blog其實已經很夠用，但是當你的blog漸漸壯大或是你要匯入你之前的文章(數百篇)，那加一些有用的plugin就變得很必要了！</p>
+<h3>建立中文 Categories Sidebar</h3>
+<p><code>Octopress 2.1</code> 已經提供中文category，我們只要使用正確的url就可以了！<br />
+有幾件事必須要先完成  </p>
+<p>加入這個<code>ruby</code> plugin在你的 <code>plugins</code> 路徑下。</p>
+<div class="highlight"><pre><span class="k">module</span> <span class="nn">Jekyll</span>
+<span class="k">class</span> <span class="nc">CategoryListTag</span> <span class="o">&lt;</span> <span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Tag</span>
+<span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">categories</span><span class="o">.</span><span class="n">keys</span>
+    <span class="n">categories</span><span class="o">.</span><span class="n">sort</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">category</span><span class="o">|</span>
+        <span class="n">posts_in_category</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">categories</span><span class="o">[</span><span class="n">category</span><span class="o">].</span><span class="n">size ...</span></pre></div> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="bookmark" title="Permalink to My Octopress and Heroku - 2">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										Tagged as 
+											<a class="danger label" href="http://www.chenyen-yaoan.tk/tag/blogging-engine.html">Blogging Engine</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
+				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="bookmark" title="Permalink to My Octopress and Heroku - 1">My Octopress and Heroku - 1</a></h2> </header>
+				                <footer class="post-info">
+				                    <abbr class="published" title="2013-11-13T22:46:00"> 
+                                        Post on: 
+                                        Wed 13 November 2013 </abbr>
+<address class="vcard author">
+                                        By
+                                         <a class="url fn" href="http://www.chenyen-yaoan.tk/author/chen-yen-lai.html">Chen-Yen Lai</a></address>				                </footer><!-- /.post-info -->
+				                <div class="entry-content"> <h2>前言</h2>
+<p><a href="http://octopress.org">Octopress</a> 是一套Blog Framework。也是這個 Blog 正在用的系統。<br />
+可以參考名人xdite的<a href="http://blog.xdite.net/posts/2011/10/08/what-is-octopress">早期文章</a>，市面上還有其他做static site的package，像是python做的<a href="http://github.com/hyde/hyde">hyde</a>跟<a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a>，以及一樣是<code>Ruby</code>的<a href="http://middlemanapp.com">MIDDLEMAN</a>  <br />
+這篇文章記錄我自己從零開始的設置，從clone octopress到把最基本的blog製造出來～</p>
+<p>This entire process is not going to cost you more than 30 mins unless you meet trouble on <code>Ruby</code> dependencies.  </p>
+<p>This is not going to hurt anything on ...</p> </div><!-- /.entry-content -->
+
+								<div class="medium primary btn"><a href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="bookmark" title="Permalink to My Octopress and Heroku - 1">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+								<div class="row tag-row">
+										Tagged as 
+											<a class="danger label" href="http://www.chenyen-yaoan.tk/tag/blogging-engine.html">Blogging Engine</a>
+								</div>
+
+
+
+				        </article></li>
+				        <li><article class="hentry">
 				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/" rel="bookmark" title="Permalink to 明天就要回台灣了！">明天就要回台灣了！</a></h2> </header>
 				                <footer class="post-info">
 				                    <abbr class="published" title="2010-08-22T09:37:00"> 
@@ -268,88 +365,6 @@ To jenniferchen0915@yahoo.com.tw<br />已經回信給你囉:D<br />謝謝詢問�
 
 
 				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2010/02/16/xin-nian-kuai-le/" rel="bookmark" title="Permalink to 新年快樂">新年快樂</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2010-02-16T14:45:00"> 
-                                        Post on: 
-                                        Tue 16 February 2010 </abbr>
-<address class="vcard author">
-                                        By
-                                         <a class="url fn" href="http://www.chenyen-yaoan.tk/author/yao-an-chan.html">Yao-An Chan</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <div class='post'>
-<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_mvtDPM7iODU/S3sku3DS4dI/AAAAAAAAGJU/JNoGuoFefSc/s1600-h/newy.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 285px;" src="http://3.bp.blogspot.com/_mvtDPM7iODU/S3sku3DS4dI/AAAAAAAAGJU/JNoGuoFefSc/s400/newy.jpg" alt="fig" id="BLOGGER_PHOTO_ID_5438981362450358738" border="0" /></a><br />又是新的一年，元旦、農曆新年都過了，但我的內心還是小小的不敢相信時間過的這麼快，連結婚也都快要週年慶了，對一個始終堅信自己是青春少女的心靈而言，這一切實在是快的令人心驚。我想一定是"快樂的時光總是過得特別快"，感謝讓我這麼幸福的重要的人們，各位新年快樂！^___^<br /><br />p.s. 圖片來自母校放在臉書上的相片，真是先進，是工讀生放上去的嗎？</div>
-
-<h2>Comments</h2>
-
-<div class='comments'>
-<div class='comment'>
-<div class='author'>慧文表姊</div>
-<div class='content'>
-新年快樂!<br />今年阿姨們依舊到四舊家歡唱，不過小朋友睡ㄉ睡，逃ㄉ逃[去逛思夢樂]。<br />哈哈哈~<br />虎年行大運!!</div>
-</div>
-</div> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://www.chenyen-yaoan.tk/blog/2010/02/16/xin-nian-kuai-le/" rel="bookmark" title="Permalink to 新年快樂">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										Tagged as 
-											<a class="danger label" href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a>
-								</div>
-
-
-
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2009/06/27/x-bike-xin-ji-lu-30km/" rel="bookmark" title="Permalink to x-bike 新紀錄 30km">x-bike 新紀錄 30km</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2009-06-27T09:32:00"> 
-                                        Post on: 
-                                        Sat 27 June 2009 </abbr>
-<address class="vcard author">
-                                        By
-                                         <a class="url fn" href="http://www.chenyen-yaoan.tk/author/yao-an-chan.html">Yao-An Chan</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <div class='post'>
-今天不連續的採了30公里的腳踏車，卡路里歡樂表已經破千了！<br />真希望有好好的燃燒我的脂肪。</div> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://www.chenyen-yaoan.tk/blog/2009/06/27/x-bike-xin-ji-lu-30km/" rel="bookmark" title="Permalink to x-bike 新紀錄 30km">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										Tagged as 
-											<a class="danger label" href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a>
-								</div>
-
-
-
-				        </article></li>
-				        <li><article class="hentry">
-				                <header> <h2 class="entry-title"><a href="http://www.chenyen-yaoan.tk/blog/2009/04/12/yao-shang-ban-liao/" rel="bookmark" title="Permalink to 要上班了">要上班了</a></h2> </header>
-				                <footer class="post-info">
-				                    <abbr class="published" title="2009-04-12T04:38:00"> 
-                                        Post on: 
-                                        Sun 12 April 2009 </abbr>
-<address class="vcard author">
-                                        By
-                                         <a class="url fn" href="http://www.chenyen-yaoan.tk/author/yao-an-chan.html">Yao-An Chan</a></address>				                </footer><!-- /.post-info -->
-				                <div class="entry-content"> <div class='post'>
-放假太久，現在覺得要上班很有壓力。<br />希望我明天去不要打瞌睡。冏<br /><br />想要寫遊記，希望可以趕快寫好。</div> </div><!-- /.entry-content -->
-
-								<div class="medium primary btn"><a href="http://www.chenyen-yaoan.tk/blog/2009/04/12/yao-shang-ban-liao/" rel="bookmark" title="Permalink to 要上班了">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-								<div class="row tag-row">
-										Tagged as 
-											<a class="danger label" href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a>
-								</div>
-
-
-
-				        </article></li>
 				</ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -395,8 +410,6 @@ quality="high" wmode="transparent" name="baby" align="middle" type="application/
 
 <h4><i class="icon-folder icon-large"></i>Categories</h4>
 <ul>
-		<li><a href="http://www.chenyen-yaoan.tk/category/blogging-engine.html">Blogging Engine (3)
-        </a></li>
 		<li><a href="http://www.chenyen-yaoan.tk/category/cooking-backing.html">Cooking-Backing (49)
         </a></li>
 		<li><a href="http://www.chenyen-yaoan.tk/category/food.html">Food (12)
@@ -411,7 +424,7 @@ quality="high" wmode="transparent" name="baby" align="middle" type="application/
         </a></li>
 		<li><a href="http://www.chenyen-yaoan.tk/category/lo-ma-ji.html">Lo-ma-ji (1)
         </a></li>
-		<li><a href="http://www.chenyen-yaoan.tk/category/misc.html">misc (39)
+		<li><a href="http://www.chenyen-yaoan.tk/category/misc.html">misc (42)
         </a></li>
 		<li><a href="http://www.chenyen-yaoan.tk/category/movie-drama-book.html">Movie-Drama-Book (9)
         </a></li>
@@ -428,37 +441,37 @@ quality="high" wmode="transparent" name="baby" align="middle" type="application/
 
 <h4><i class="icon-tag icon-large"></i>Tags</h4>
     <ul id="cloud">
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/yosemite.html">Yosemite</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/blendtexguo-zhi-ji.html">Blendtex果汁機</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/deathvalley.html">DeathValley</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ri-ben-lu-xing.html">日本旅行</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/mian-bao.html">麵包</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
             <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/grandcanyon.html">GrandCanyon</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-mei-shi.html">台灣美食</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/.html"></a></li>
             <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/you-yin-le-bu-ji-mo.html">有音樂不寂寞</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-lu-xing.html">美國旅行</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/octopress.html">Octopress</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tu-shu-gu-chang-tui-jian.html">圖書股長推薦</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-xin-xian-sheng-huo.html">美國新鮮生活</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/brycecanyon.html">BryceCanyon</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-mei-shi.html">美國美食</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/games.html">Games</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/zion.html">Zion</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/latex.html">Latex</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/nationalpark.html">NationalPark</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/deathvalley.html">DeathValley</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/mian-bao.html">麵包</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/bao-zi-man-tou.html">包子饅頭</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/yu-er-le.html">育兒樂</a></li>
             <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/xi-dian-dan-gao.html">西點蛋糕</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
             <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/wo-de-lu-shou-zhi.html">我的綠手指</a></li>
             <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huai-yun-sheng-zi-za-ji.html">懷孕生子雜記</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/yu-er-le.html">育兒樂</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/bao-zi-man-tou.html">包子饅頭</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ri-ben-lu-xing.html">日本旅行</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-mei-shi.html">美國美食</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/brycecanyon.html">BryceCanyon</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-lu-xing.html">美國旅行</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/yosemite.html">Yosemite</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/blogging-engine.html">Blogging Engine</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/latex.html">Latex</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/nationalpark.html">NationalPark</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/zion.html">Zion</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tu-shu-gu-chang-tui-jian.html">圖書股長推薦</a></li>
             <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/fusion.html">Fusion</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-mei-shi.html">台灣美食</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/blendtexguo-zhi-ji.html">Blendtex果汁機</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/games.html">Games</a></li>
     </ul>
 <!-- /.Tags -->
 
@@ -479,7 +492,7 @@ quality="high" wmode="transparent" name="baby" align="middle" type="application/
 </div> </div><!-- /.row -->
 
 <p class="paginator">
-    Page 1 / 4
+    Page 1 / 5
         <a href="http://www.chenyen-yaoan.tk/category/misc2.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->

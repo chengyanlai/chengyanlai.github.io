@@ -1,5 +1,398 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/misc.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2010-08-22T09:37:00-07:00</updated><entry><title>明天就要回台灣了！</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/" rel="alternate"></link><updated>2010-08-22T09:37:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-22:blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/</id><summary type="html">&lt;div class='post'&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/misc.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2013-11-17T15:14:00-08:00</updated><entry><title>My Octopress and Heroku - 3</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/17/my-octopress-and-heroku-3/" rel="alternate"></link><updated>2013-11-17T15:14:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-17:blog/2013/11/17/my-octopress-and-heroku-3/</id><summary type="html">&lt;h2&gt;Blogspot Posts 到 Octopress&lt;/h2&gt;
+&lt;p&gt;如果你已經有Blog，而且並不想要放棄你的心血結晶，在GitHub可以找到一個Ruby程式，基本上你只需要匯出你的posts！&lt;br /&gt;
+Run一行Command，複製匯出的檔案到octopress的&lt;code&gt;_post&lt;/code&gt;檔案夾！你就可成功從Blogspot轉換到octopress！  &lt;/p&gt;
+&lt;p&gt;到你的Blogspot control center，匯出你的Blog！&lt;br /&gt;
+&lt;img alt="Blogspot Control" src="https://dl.dropboxusercontent.com/u/165978/blog-to-octopress/fig0.png" /&gt;  &lt;/p&gt;
+&lt;p&gt;下載這個 &lt;a href="https://gist.github.com/chengyanlai/7492278"&gt;Ruby程式&lt;/a&gt;.&lt;br /&gt;
+把匯出的&lt;code&gt;blog-xxxx-xx-xx.xml&lt;/code&gt;檔案跟剛剛下載的&lt;code&gt;Ruby&lt;/code&gt;程式放在一起，開啟你的Terminal，執行  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ruby import.rb blog-xxxx-xx-xx.xml
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;基本上它會產生兩個資料夾，&lt;code&gt;_post&lt;/code&gt; and &lt;code&gt;_draft&lt;/code&gt;！你可以在&lt;code&gt;_post&lt;/code&gt;裡面找到你所有的published posts，&lt;code&gt;_draft&lt;/code&gt;裡面找到你所有的unpublished posts！所有的檔案都是&lt;code&gt;html&lt;/code&gt;&lt;br /&gt;
+所有你要做的就是把&lt;code&gt;_post&lt;/code&gt;跟&lt;code&gt;_draft&lt;/code&gt;裡面的files拷貝到你的&lt;code&gt;path/to/octopress/source/_post&lt;/code&gt; and &lt;code&gt;path/to/octopress/source/_draft&lt;/code&gt;&lt;br /&gt;
+最後就是&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rake generate
+&lt;span class="nv"&gt;$ &lt;/span&gt;rake preview
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;就大功告成了！&lt;/p&gt;</summary><category term="Blogging Engine"></category></entry><entry><title>My Octopress and Heroku - 2</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="alternate"></link><updated>2013-11-15T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-15:blog/2013/11/15/my-octopress-and-heroku-2/</id><summary type="html">&lt;p&gt;Octopress的好處就是可以隨意的更改以及裝自己想要的plugin，或是你熟&lt;code&gt;Ruby&lt;/code&gt;，你也可以自己寫plugin，剛設置好的blog其實已經很夠用，但是當你的blog漸漸壯大或是你要匯入你之前的文章(數百篇)，那加一些有用的plugin就變得很必要了！&lt;/p&gt;
+&lt;h3&gt;建立中文 Categories Sidebar&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Octopress 2.1&lt;/code&gt; 已經提供中文category，我們只要使用正確的url就可以了！&lt;br /&gt;
+有幾件事必須要先完成  &lt;/p&gt;
+&lt;p&gt;加入這個&lt;code&gt;ruby&lt;/code&gt; plugin在你的 &lt;code&gt;plugins&lt;/code&gt; 路徑下。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;module&lt;/span&gt; &lt;span class="nn"&gt;Jekyll&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryListTag&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="ss"&gt;Liquid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="ss"&gt;:Tag&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;categories&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;registers&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:site&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;
+    &lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+        &lt;span class="n"&gt;posts_in_category&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;registers&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:site&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;
+        &lt;span class="n"&gt;category_dir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;registers&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:site&lt;/span&gt;&lt;span class="o"&gt;].&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;category_dir&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;li class=&amp;#39;category&amp;#39;&amp;gt;&amp;lt;a href=&amp;#39;/&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;category_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_url&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&amp;#39;&amp;gt;&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; (&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;posts_in_category&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;)&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+        &lt;span class="n"&gt;html&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="ss"&gt;Liquid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="ss"&gt;:Template&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;register_tag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;category_list&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;Jekyll&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="ss"&gt;:CategoryListTag&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;加入下面這個 &lt;code&gt;categories.html&lt;/code&gt; 在 &lt;code&gt;source/_includes/custom/asides/&lt;/code&gt; 路徑下。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Categories&lt;span class="nt"&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;ul&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;categories&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    {% category_list %}
+  &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;把&lt;code&gt;custom/asides/categories.html&lt;/code&gt;加入你的&lt;code&gt;_config.yml&lt;/code&gt;，&lt;code&gt;rake generate&lt;/code&gt;之後就可以顯示你的Categories Sidebar.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# list each of the sidebar modules you want to include, in the order you want them to appear.&lt;/span&gt;
+&lt;span class="c1"&gt;# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &amp;#39;custom/asides/custom_aside_name.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;default_asides&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;custom&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;about&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;googleplus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;custom&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;flickr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;recent_posts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;custom&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;delicious&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;asides&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pinboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;建立 Monthly Archives&lt;/h3&gt;
+&lt;p&gt;這是一個很經典的Blogspot有的功能，但是Octopress並沒有內建，因為不實用吧！
+但是你想要他出現也是很簡單，有一個&lt;a href="https://github.com/rcmdnk/monthly-archive"&gt;現成的Plugin&lt;/a&gt;. 按照他的&lt;code&gt;README.md&lt;/code&gt;，做就可以了！&lt;/p&gt;
+&lt;h3&gt;建立 Author's archives for multiple authors&lt;/h3&gt;
+&lt;p&gt;如果你要建立多人編輯的blog，而且想要可以區分出誰Post了哪些東西，這裡提供一個簡單的方法，我只是增加一個page，並沒有生產出一個folder放某個作者的Posts。我想，但是我不會寫Ruby。而且我在GitHub上找到的plugin沒有辦法使用!&lt;br /&gt;
+首先，建立作者的Page&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rake new_page&lt;span class="o"&gt;[&lt;/span&gt;author_name/index.markdown&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;按照下面的方法編輯剛剛產生的檔案，這是我的範例，請按照你的方式修改！至少你要改掉Front matter裡的&lt;code&gt;author&lt;/code&gt; and &lt;code&gt;title&lt;/code&gt;吧&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;---
+layout: page
+title: Chen-Yen&amp;#39;s Archives
+author: chengyanlai
+comments: false
+sharing: false
+footer: false
+---
+&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;blog-archives&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    {% assign index = true %}
+    {% for post in site.posts %}
+        {% if post.author contains page.author %}
+            {% capture this_year %}{{ post.date | date: &amp;quot;%Y&amp;quot; }}{% endcapture %}
+            {% unless year == this_year %}
+            {% assign year = this_year %}
+            &lt;span class="nt"&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;{{ year }}&lt;span class="nt"&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+            {% endunless %}
+            {% assign content = post.content %}
+            &lt;span class="nt"&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+                {% include archive_post.html %}
+            &lt;span class="nt"&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+        {% endif %}
+    {% endfor %}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Google web font and FontFace&lt;/h3&gt;
+&lt;h4&gt;Google Web Font&lt;/h4&gt;
+&lt;p&gt;Octopress提供了一個可以簡易更改字體的方法，先到&lt;a href="http://www.google.com/fonts"&gt;Google Fonts&lt;/a&gt;找你要的字體！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="find fonts" src="https://dl.dropboxusercontent.com/u/165978/blog-to-octopress/octopress_font-fig0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;選好之後選擇右下角的&lt;code&gt;Use&lt;/code&gt;，接下來你看到這兩個有用的欄位&lt;/p&gt;
+&lt;p&gt;&lt;img alt="font code" src="https://dl.dropboxusercontent.com/u/165978/blog-to-octopress/octopress_font-fig1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;把第三個欄位的&lt;code&gt;code&lt;/code&gt;，就是那個 &lt;code&gt;&amp;lt;link href='.....'&amp;gt;&lt;/code&gt; 加到你的&lt;code&gt;source/_includes/custom/head.html&lt;/code&gt;&lt;br /&gt;
+然後第四個欄位的&lt;code&gt;code&lt;/code&gt;，就是那個 &lt;code&gt;font-family: 'Doppio One', sans-serif&lt;/code&gt;，就可以直接用在你的&lt;code&gt;sass/custom/_fonts.scss&lt;/code&gt;&lt;br /&gt;
+像是&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$sans&lt;/span&gt;: &lt;span class="s1"&gt;&amp;#39;Doppio One&amp;#39;&lt;/span&gt;, sans-serif;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可以試試看各個欄位是什麼，畢竟這是Octopress的樂趣之一啊！&lt;/p&gt;
+&lt;h4&gt;FontFace&lt;/h4&gt;
+&lt;p&gt;事實上，Octopress也可以直接用FontFace，只要你提供正確的WebFont files!&lt;br /&gt;
+可以到這個網頁&lt;a href="http://www.fontsquirrel.com"&gt;Fonts Squirrel&lt;/a&gt;找到你要的字體，他也提供&lt;code&gt;Webfont Generator&lt;/code&gt;(在 Navigation bar上！)&lt;br /&gt;
+找到你要的字體，下載下來它會是&lt;code&gt;.ttf&lt;/code&gt;，但這是不夠的！你必須要用他的&lt;code&gt;WEBFONT GENERATOR&lt;/code&gt;，他會要求你上傳，然後做成一個package給你！(Sweet)，
+這個package裡面只有某些檔案是必要的，而你必須在你的&lt;code&gt;source&lt;/code&gt;裡面找到一個folder存放他們！&lt;br /&gt;
+我是建立了一個資料夾&lt;code&gt;source/assets/fontface&lt;/code&gt;，以&lt;code&gt;New Circle&lt;/code&gt;當例子的話，你需要把下面的檔案存進去&lt;code&gt;source/assets/fontface&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;new_cicle_gordita_italic-webfont.eot
+new_cicle_gordita_italic-webfont.svg
+new_cicle_gordita_italic-webfont.ttf
+new_cicle_gordita_italic-webfont.woff
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;另外一個需要用到的檔案就是&lt;code&gt;stylysheet.css&lt;/code&gt;，首先更改裡面的內容，replace &lt;code&gt;url('&lt;/code&gt; by &lt;code&gt;url('/assets/fontface/&lt;/code&gt;，對路徑的修正！&lt;/p&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;_typography.css&lt;/span&gt; &lt;a href='/code/css/_typography.css'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cm"&gt;/* Generated by Font Squirrel (http://www.fontsquirrel.com) on November 22, 2013 */&lt;/span&gt;
+
+&lt;span class="p"&gt;@&lt;/span&gt;&lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;face&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;family:&lt;/span&gt; &lt;span class="p"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;new_ciclegordita_italic&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;;&lt;/span&gt;
+    &lt;span class="nl"&gt;src:&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;assets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fontface&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new_cicle_gordita_italic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webfont&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;eot&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;);&lt;/span&gt;
+    &lt;span class="nl"&gt;src:&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;assets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fontface&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new_cicle_gordita_italic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webfont&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;eot&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;iefix&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;)&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;embedded&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;opentype&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;),&lt;/span&gt;
+         &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;assets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fontface&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new_cicle_gordita_italic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webfont&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;woff&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;)&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;woff&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;),&lt;/span&gt;
+         &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;assets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fontface&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new_cicle_gordita_italic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webfont&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ttf&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;)&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;truetype&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;),&lt;/span&gt;
+         &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;assets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fontface&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;new_cicle_gordita_italic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;webfont&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;#&lt;/span&gt;&lt;span class="n"&gt;new_ciclegordita_italic&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;)&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;&amp;#39;);&lt;/span&gt;
+    &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;weight:&lt;/span&gt; &lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;style:&lt;/span&gt; &lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;再來就是把這個檔案的內容加到&lt;code&gt;sass/custom/_typography.css&lt;/code&gt;，如果你沒有這個檔案就建立他吧！&lt;br /&gt;
+現在你已經建立了自己的FontFace，使用的話就跟上面用WebFont一樣，更改&lt;code&gt;sass/custom/_fonts.scss&lt;/code&gt;就可以了！&lt;/p&gt;</summary><category term="Blogging Engine"></category></entry><entry><title>My Octopress and Heroku - 1</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="alternate"></link><updated>2013-11-13T22:46:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-13:blog/2013/11/13/my-octopress-and-heroku-1/</id><summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://octopress.org"&gt;Octopress&lt;/a&gt; 是一套Blog Framework。也是這個 Blog 正在用的系統。&lt;br /&gt;
+可以參考名人xdite的&lt;a href="http://blog.xdite.net/posts/2011/10/08/what-is-octopress"&gt;早期文章&lt;/a&gt;，市面上還有其他做static site的package，像是python做的&lt;a href="http://github.com/hyde/hyde"&gt;hyde&lt;/a&gt;跟&lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt;，以及一樣是&lt;code&gt;Ruby&lt;/code&gt;的&lt;a href="http://middlemanapp.com"&gt;MIDDLEMAN&lt;/a&gt;  &lt;br /&gt;
+這篇文章記錄我自己從零開始的設置，從clone octopress到把最基本的blog製造出來～&lt;/p&gt;
+&lt;p&gt;This entire process is not going to cost you more than 30 mins unless you meet trouble on &lt;code&gt;Ruby&lt;/code&gt; dependencies.  &lt;/p&gt;
+&lt;p&gt;This is not going to hurt anything on your personal computer, why not give it a shot! Especially if you are already tired for Blogspot and WordPress,
+you must try the Markdown blogging framework.  &lt;/p&gt;
+&lt;p&gt;If you are not ready for working with &lt;code&gt;git&lt;/code&gt; and terminal, you can also try &lt;a href="http://logdown.com"&gt;Logdown&lt;/a&gt; or &lt;a href="http://scriptogr.am/"&gt;scriptogr.am&lt;/a&gt;. 
+Logdown is more convenient and support more syntax, but it is not free and/or flexible to edit. On the other hand, scriptogr.am is completely free,  editor for CSS and HTML provided, and sync to Dropbox (How awesome is that!). If one day, you decide to use Octopress. Moving from Logdown (or scriptogr.am) to octopress is super easy!&lt;/p&gt;
+&lt;h2&gt;Install ruby, gem, bundler&lt;/h2&gt;
+&lt;p&gt;說實在我也是完全不懂&lt;code&gt;ruby&lt;/code&gt;！但是這真的不難，只要你願意使用&lt;code&gt;Command line&lt;/code&gt;。其實大部份的步驟跟octopress網頁上提供的相去不遠&lt;br /&gt;
+I follow the steps in the &lt;a href="http://octopress.org/"&gt;Octopress&lt;/a&gt; page, and setup the deployment in &lt;a href="http://www.heroku.com/"&gt;Heroku&lt;/a&gt;. 
+You can do the same.  &lt;/p&gt;
+&lt;p&gt;I fail to install octopress by using &lt;code&gt;rbenv&lt;/code&gt; Ruby(&lt;code&gt;~/.rbenv/bin/ruby&lt;/code&gt;) or Homebrew Ruby(&lt;code&gt;/usr/local/bin/ruby&lt;/code&gt;). Eventually, 
+I have to go back to the system Ruby(&lt;code&gt;/usr/bin/ruby&lt;/code&gt;) to finish the job!  &lt;/p&gt;
+&lt;p&gt;If you never use &lt;code&gt;git&lt;/code&gt;, you need to open your terminal and type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is going to check if you have this command installed. If not, Mavericks will ask you to install command line tool. 
+Mavericks has system &lt;code&gt;ruby&lt;/code&gt; and &lt;code&gt;gem&lt;/code&gt; installed, so you only need to install &lt;code&gt;bundler&lt;/code&gt;. Before we do so, we need 
+to set up a &lt;code&gt;GEM_HOME&lt;/code&gt;, which you have the right access.&lt;br /&gt;
+If you want to try&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;gem install bundler
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, this will fail because you do not have the right access to the system Library folder.&lt;br /&gt;
+Thus, you need to &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo gem install bundler
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The disadvantage is all these things are going to run under &lt;code&gt;root&lt;/code&gt; permission. My way to resolve this is create a &lt;code&gt;.gems&lt;/code&gt; folder under my &lt;code&gt;${HOME}&lt;/code&gt; 
+directory, and set the &lt;code&gt;GEM_HOME&lt;/code&gt; there. I will do the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir ~/.gems
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export GEM_HOME=&amp;quot;$HOME/.gems&amp;quot;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bash_profile
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.bash_profile
+&lt;span class="c"&gt;# Check ruby environment&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;gem env
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, you can check which command you are currently using, for me  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;which ruby
+/usr/bin/ruby
+&lt;span class="nv"&gt;$ &lt;/span&gt;which gem
+/usr/bin/gem
+&lt;span class="nv"&gt;$ &lt;/span&gt;which bundle
+/usr/bin/bundle
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Setup Your Static Blog Site&lt;/h2&gt;
+&lt;p&gt;The sequence of my commands for successful installation is like  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Get the Octopress&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git clone git://github.com/imathis/octopress.git octopress
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;octopress
+&lt;span class="nv"&gt;$ &lt;/span&gt;gem install bundler
+&lt;span class="c"&gt;# If it shows the permission error, check your GEM_HOME&lt;/span&gt;
+&lt;span class="c"&gt;# You need to have write permission&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;bundle install
+&lt;span class="nv"&gt;$ &lt;/span&gt;rake install
+&lt;span class="c"&gt;# Generate the website by using Jekyll&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;rake generate
+&lt;span class="c"&gt;# Preview your blog&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;rake preview
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Basically it is done. After the last command, you can open your browser link to &lt;code&gt;localhost:4000&lt;/code&gt; to see it.
+現在你建立了一個blog在你自己的電腦上，確切說是在一個folder裡面！&lt;br /&gt;
+下一步就是部署你的blog.&lt;/p&gt;
+&lt;h2&gt;Deploy Your Static Blog Site to Heroku - 1&lt;/h2&gt;
+&lt;p&gt;第一種方法跟octopress網頁上的方法是一樣的！如果你沒有Heorku帳號，你必須先建立一個。&lt;br /&gt;
+You need to install &lt;a href="https://toolbelt.heroku.com"&gt;&lt;em&gt;Heroku toolkit&lt;/em&gt;&lt;/a&gt; before you proceed next. If you decide to deploy to other place, please skip this section and refer to others. This approach is provided in the octopress page. I think it is not a good one, so I provide another method to do it like deploy to GitHub pages at next section.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;heroku create &lt;span class="c"&gt;# Heroku is going to ask your account, and setup a ssh key.&lt;/span&gt;
+&lt;span class="c"&gt;# Set heroku to be the default remote for push/fetch&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git config branch.master.remote heroku
+&lt;span class="c"&gt;# Before you proceed next,&lt;/span&gt;
+&lt;span class="c"&gt;# edit the .gitignore in the root of your repository and remove public.&lt;/span&gt;
+&lt;span class="c"&gt;# Because that is the folder Heroku will need.&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git add .
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s1"&gt;&amp;#39;first site updated&amp;#39;&lt;/span&gt;
+&lt;span class="c"&gt;# Push files to remote(heroku) from local(master)&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git push heroku master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's it, you just deployed to Heroku. You can go to your Heroku website and check it out!  &lt;/p&gt;
+&lt;h2&gt;Deploy Your Static Blog Site to Heroku - 2&lt;/h2&gt;
+&lt;p&gt;概念很簡單，因為Heroku只需要知道用什麼語言(rack app)去部署你的網頁，以及你的網頁檔案放在&lt;code&gt;public&lt;/code&gt;檔案夾裡！
+The second method is credited to Joshua Wood&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;. The idea is to copy entire &lt;code&gt;public&lt;/code&gt; folder into a subfolder called &lt;code&gt;_heorku&lt;/code&gt; (just like the &lt;code&gt;_deploy&lt;/code&gt; for github page). Thus, all we need to push to Heroku is just this subfolder.&lt;br /&gt;
+The procedure is the following  &lt;/p&gt;
+&lt;h3&gt;Create the subfolder and put essentials&lt;/h3&gt;
+&lt;p&gt;Let's say we use the subfolder name &lt;code&gt;_heroku&lt;/code&gt;. In your octopuses root folder, do  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir _heroku
+&lt;span class="nv"&gt;$ &lt;/span&gt;cp Gemfile config.ru _heroku
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. Then we need to modify the &lt;code&gt;Gemfile&lt;/code&gt; to&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;http://rubygems.org&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sinatra&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;1.2.6&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and this would be enough for Heroku to do deployment.&lt;/p&gt;
+&lt;h3&gt;Setup Heroku in the subfolder&lt;/h3&gt;
+&lt;p&gt;Go to the subfolder and set up your Heroku app. You will need the &lt;a href="https://toolbelt.heroku.com"&gt;&lt;em&gt;Heroku toolkit&lt;/em&gt;&lt;/a&gt;.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;_heroku
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir public &lt;span class="c"&gt;# create this folder for later usage&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;bundle install &lt;span class="c"&gt;# in order to generate Gemfile.lock&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git init .
+&lt;span class="nv"&gt;$ &lt;/span&gt;git add .
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -m &lt;span class="s2"&gt;&amp;quot;initial commit&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;heroku create
+&lt;span class="nv"&gt;$ &lt;/span&gt;git push heroku master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, you have your Heroku app setup. Before you proceed next, you can add an &lt;code&gt;public/index.html&lt;/code&gt; to test the result.  &lt;/p&gt;
+&lt;h3&gt;Setup Rakefile to easily deploy&lt;/h3&gt;
+&lt;p&gt;This is the most difficult part. Open your &lt;code&gt;Rakefile&lt;/code&gt; and change the following variables.&lt;/p&gt;
+&lt;p&gt;Tell Rakefile to find the function heroku to deploy&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;deploy_default&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;heroku&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pushing master(local) to heroku(remote)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;deploy_branch&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;master&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Your website is located at &lt;code&gt;_heorku&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;deploy_dir&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;_heroku&amp;quot;&lt;/span&gt;   &lt;span class="c1"&gt;# deploy directory (for Github pages deployment)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and add this function to the end of the Rakefile.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;desc&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deploy basic rack app to heroku&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;multitask&lt;/span&gt; &lt;span class="ss"&gt;:heroku&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;## Deploying to Heroku &amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;Dir&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;deploy_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/public/*&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;rm_rf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nb"&gt;system&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cp -R &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;public_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/* &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;deploy_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/public&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;## copying &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;public_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; to &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;deploy_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/public&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;deploy_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+        &lt;span class="nb"&gt;system&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;git add .&amp;quot;&lt;/span&gt;
+        &lt;span class="nb"&gt;system&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;git add -u&amp;quot;&lt;/span&gt;
+        &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;## Committing: Site updated at &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="no"&gt;Time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Site updated at &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="no"&gt;Time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="nb"&gt;system&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;git commit -m &amp;#39;&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39;&amp;quot;&lt;/span&gt;
+        &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;## Pushing generated &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;deploy_dir&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; website&amp;quot;&lt;/span&gt;
+        &lt;span class="nb"&gt;system&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;git push heroku &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;deploy_branch&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+        &lt;span class="nb"&gt;puts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;## Heroku deploy complete&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once it is all set, you can deploy just like people do to GihHub page&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rake generate &lt;span class="c"&gt;# generate the site&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;rake deploy &lt;span class="c"&gt;# deploy to heroku&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or just&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rake gen_deploy &lt;span class="c"&gt;# This is rake integrate; rake generate; rake deploy&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I think this is the better way to do it if you have backup in github because this only push the static site to Heroku. In such way that you can minimize the repo size on Heroku, and the deploy is faster than pushing entire repo to remote.  &lt;/p&gt;
+&lt;h2&gt;Custom Heroku App Name&lt;/h2&gt;
+&lt;p&gt;If you do the deployment to Heroku like me, it will generate an App with random names. 
+You can use your own domain name by following &lt;a href="https://devcenter.heroku.com/articles/custom-domains"&gt;the setting&lt;/a&gt;. 
+You can actually just change the name for the app by doing&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;heroku apps:rename newname
+http://newname.heroku.com/ | git@heroku.com:newname.git
+Git remote heroku updated
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This command will do everything for you, including the &lt;code&gt;git&lt;/code&gt; remote address, so you can keep up with &lt;code&gt;git push heroku master&lt;/code&gt; without any trouble. 
+After this change, you can visit your site at &lt;code&gt;http://{newname}.herokuapp.com&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Backup Entire Repo to GitHub&lt;/h2&gt;
+&lt;p&gt;If you want to keep your website a backup, you can do it on &lt;a href="http://github.com/"&gt;GitHub&lt;/a&gt;. The dark side is that will be opened to everyone!&lt;br /&gt;
+1. Go to the GitHub website and &lt;a href="https://help.github.com/articles/create-a-repo"&gt;Create a repo&lt;/a&gt;. Please do not add any file, including &lt;code&gt;README.mb&lt;/code&gt;!&lt;br /&gt;
+2. Back to your terminal, and do the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Add the GitHub repo to the remote list&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git remote add &lt;span class="o"&gt;{&lt;/span&gt;Name Whatever You Want&lt;span class="o"&gt;}&lt;/span&gt; git@github.com/username/&lt;span class="o"&gt;{&lt;/span&gt;Name of repo on GitHub&lt;span class="o"&gt;}&lt;/span&gt;.git
+&lt;span class="c"&gt;# Suppose I name it github, and my repo name on GitHub is My_Octopress&lt;/span&gt;
+&lt;span class="c"&gt;# You can check your git remote list&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git remote -v
+github  git@github.com:username/My_Octopress.git &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
+github  git@github.com:username/My_Octopress.git &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
+heroku  git@heroku.com:blogname.git &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
+heroku  git@heroku.com:blogname.git &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
+origin  git://github.com/imathis/octopress.git &lt;span class="o"&gt;(&lt;/span&gt;fetch&lt;span class="o"&gt;)&lt;/span&gt;
+origin  git://github.com/imathis/octopress.git &lt;span class="o"&gt;(&lt;/span&gt;push&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first two are the remote you just added. Second two are your website on Heroku. The last two you don't have the right to &lt;code&gt;push&lt;/code&gt; are the source code of octopress. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Push to GitHub remote(github) from local(master)&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git push github master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here, you might learn about &lt;code&gt;git&lt;/code&gt; a little more - Git supports multiple remotes, which is commonly used when forking a repo.&lt;/p&gt;
+&lt;h3&gt;Remember to backup regularly&lt;/h3&gt;
+&lt;p&gt;This backup thing is not automatically, you need to push your master to the remote every time you want a backup. Just do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Back up to GitHub&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git push github master
+&lt;span class="c"&gt;# Publish your blog&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git push heroku master &lt;span class="c"&gt;#if you deploy by method 1&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;rake gen_deploy &lt;span class="c"&gt;#if you deploy by method 2&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Fix the preview blank page on Safari 7 of Mavericks&lt;/h2&gt;
+&lt;p&gt;Somehow, WEBrick has problem with the safari, the issue is reported &lt;a href="https://github.com/imathis/octopress/issues/1395#issuecomment-28829065"&gt;here (closed)&lt;/a&gt;. Therefore, I decide to use &lt;code&gt;thin&lt;/code&gt;. Here is how it woks.&lt;br /&gt;
+Add the gems to &lt;code&gt;Gemfile&lt;/code&gt;, and install it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;gem &lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;thin&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; Gemfile
+&lt;span class="nv"&gt;$ &lt;/span&gt;bundle install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This would do all works for you. Now try&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rake preview
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and open &lt;code&gt;localhost:4000&lt;/code&gt; on Safari!&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Official page &lt;a href="https://devcenter.heroku.com/articles/renaming-apps"&gt;Here&lt;/a&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;Please see original post &lt;a href="http://joshuawood.net/how-to-deploy-jekyll-slash-octopress-to-heroku/"&gt;here&lt;/a&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary><category term="Blogging Engine"></category></entry><entry><title>明天就要回台灣了！</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/" rel="alternate"></link><updated>2010-08-22T09:37:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-22:blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/_mvtDPM7iODU/THFQAX8W1aI/AAAAAAAAIMQ/JE4QsK_EqZ4/s1600/Screen+shot+2010-08-22+at+9.26.11+AM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://3.bp.blogspot.com/_mvtDPM7iODU/THFQAX8W1aI/AAAAAAAAIMQ/JE4QsK_EqZ4/s320/Screen+shot+2010-08-22+at+9.26.11+AM.png" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;因為明天就要去搭飛機了，想說來對照一下現在台灣的天氣，結果在早上9點半的現在，兩地的氣溫竟然是一樣的耶！但台灣這打雷的圖示倒是讓我心驚了一下！這到底是怎樣，是叫我趕快把本來沒有要帶的傘放進包包嗎？&lt;br /&gt;&lt;br /&gt;話說傘在這裡幾乎無用武之地，除了冬天幾乎不下雨，下雨也不一定大到要撐傘（通常從停車場走到家裡只要幾十秒），更別說要遮陽啦！這裡的女孩們不來這一套的...&lt;br /&gt;&lt;br /&gt;總之，想念的台灣，終於要回去了，希望今晚不要高興得睡不著耶！哈哈！&lt;/div&gt;</summary><category term="內心小小獨白"></category></entry><entry><title>回台灣的購物清單</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/21/hui-tai-wan-de-gou-wu-qing-dan/" rel="alternate"></link><updated>2010-08-21T18:58:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-21:blog/2010/08/21/hui-tai-wan-de-gou-wu-qing-dan/</id><summary type="html">&lt;div class='post'&gt;
 在加州生活其實很方便，很少有什麼是買不到的，只要有錢＄＄＄！&lt;br /&gt;&lt;br /&gt;這次回台灣，想買的都是美國很貴的或是很不滿意的，雖然現在列了一些，但回台灣後，在價值觀嚴重偏差的狀態下，應該是看到什麼都會覺得便宜得想要都買回家吧！希望屆時行李箱不要爆炸了！XD&lt;br /&gt;&lt;br /&gt;暫列一下預計要買的東西：&lt;br /&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;相機＋閃燈&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;保養品雜貨：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;化妝棉&lt;/li&gt;&lt;li&gt;瘦臉霜&lt;/li&gt;&lt;li&gt;面膜&lt;/li&gt;&lt;li&gt;Naive洗面乳&lt;/li&gt;&lt;li&gt;眼藥水&lt;/li&gt;&lt;li&gt;隱形眼鏡&lt;/li&gt;&lt;li&gt;髮飾&lt;/li&gt;&lt;li&gt;浴簾&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;廚房用品：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;菜刀&lt;/li&gt;&lt;li&gt;大瓢羹&lt;/li&gt;&lt;li&gt;剝蒜頭橡皮管&lt;/li&gt;&lt;li&gt;碗夾&lt;/li&gt;&lt;li&gt;開罐器&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;調味料：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;蓮藕粉&lt;/li&gt;&lt;li&gt;菜脯&lt;/li&gt;&lt;li&gt;豆薣&lt;/li&gt;&lt;li&gt;忠字號眷村醬料-麻婆香辣醬&lt;/li&gt;&lt;li&gt;辣豆瓣醬&lt;/li&gt;&lt;li&gt;XO醬&lt;/li&gt;&lt;li&gt;福源白芝麻醬、花生醬&lt;/li&gt;&lt;li&gt;台酒豆腐乳&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;吃的：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;關廟麵&lt;/li&gt;&lt;li&gt;意麵&lt;/li&gt;&lt;li&gt;馬玉山 抹綠奶茶x5&lt;/li&gt;&lt;li&gt;蜂蜜&lt;/li&gt;&lt;li&gt;香草巷40號紅茶&lt;/li&gt;&lt;li&gt;餅乾零食&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/div&gt;</summary><category term="內心小小獨白"></category></entry><entry><title>回台灣想吃的清單</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/17/hui-tai-wan-xiang-chi-de-qing-dan/" rel="alternate"></link><updated>2010-08-17T23:25:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-17:blog/2010/08/17/hui-tai-wan-xiang-chi-de-qing-dan/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;在美國思鄉，想的都是親友跟美食，回台灣有好-多-好-多-想吃的東西，才回去兩週多一點點，好像不夠吃完這些我一時想到的東西，能吃多少就吃多少吧！但感覺我回家後，應該是看到什麼都想吃吧！:D （寫得好像來美國被餓到了:P）&lt;br /&gt;&lt;br /&gt;以下列個小小清單：&lt;br /&gt;&lt;ul&gt;&lt;li&gt;念念不忘小吃：&lt;/li&gt;&lt;/ul&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;鹽酥雞&lt;/li&gt;&lt;li&gt;雞排&lt;/li&gt;&lt;li&gt;滷味&lt;/li&gt;&lt;li&gt;武廟前肉圓&lt;/li&gt;&lt;li&gt;黑白切&lt;/li&gt;&lt;li&gt;土地公臭豆腐&lt;/li&gt;&lt;li&gt;阿川土魠魚羹&lt;/li&gt;&lt;li&gt;阿鳳浮水魚羹&lt;/li&gt;&lt;li&gt;要早起才能吃到的粿仔&lt;/li&gt;&lt;li&gt;黑輪米血&lt;/li&gt;&lt;li&gt;大腸包小腸&lt;/li&gt;&lt;li&gt;蚵仔煎&lt;/li&gt;&lt;li&gt;肉粽&lt;/li&gt;&lt;li&gt;花園夜市亂吃&lt;/li&gt;&lt;li&gt;板橋的肉羹麵&lt;/li&gt;&lt;li&gt;板橋義順蚵仔麵線&lt;/li&gt;&lt;li&gt;台北滷味王的大腸&lt;/li&gt;&lt;li&gt;繕魚意麵&lt;/li&gt;&lt;li&gt;虱目魚湯 / 粥&lt;/li&gt;&lt;li&gt;肉燥飯&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;正餐：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;家裡的菜&lt;/li&gt;&lt;li&gt;老四川麻辣鍋&lt;/li&gt;&lt;li&gt;榕樹下&lt;/li&gt;&lt;li&gt;鼎泰豐&lt;/li&gt;&lt;li&gt;沒吃過的乾杯&lt;/li&gt;&lt;li&gt;牛肉麵&lt;/li&gt;&lt;li&gt;MoMo Paradise 其實我是想念薄片的肉&lt;/li&gt;&lt;li&gt;勺勺客&lt;/li&gt;&lt;li&gt;日本料理&lt;/li&gt;&lt;li&gt;泡麵：味味一品或滿漢大餐&lt;/li&gt;&lt;li&gt;鍋燒意麵&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;甜點：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;神旺巧克力蛋糕，我想我可以吃掉六吋的一半&lt;/li&gt;&lt;li&gt;吊鐘燒&lt;/li&gt;&lt;li&gt;黑砂糖挫冰&lt;/li&gt;&lt;li&gt;還沒有吃到過的香帥芋泥卷&lt;/li&gt;&lt;li&gt;老公說他一定要吃菠蘿麵包跟棋盤蛋糕，我進去麵包店看到喜歡的都要買！！&lt;/li&gt;&lt;li&gt;舊振南喜餅，我的喜餅太好吃了:P&lt;/li&gt;&lt;li&gt;泡芙&lt;/li&gt;&lt;li&gt;依蕾特布丁&lt;/li&gt;&lt;li&gt;統一布丁&lt;/li&gt;&lt;li&gt;豆花&lt;/li&gt;&lt;li&gt;紅豆餅&lt;/li&gt;&lt;li&gt;雞蛋糕&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;餅乾之類來不及吃可以帶來米國的：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;福義軒或是喜年來的蛋捲&lt;/li&gt;&lt;li&gt;脆笛酥&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;飲料：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;波哥：珍珠鮮奶茶、綜合新味、叮哥、茉綠凍飲...等，我想要至少喝個10杯&lt;/li&gt;&lt;li&gt;五十嵐：粉條紅茶、葡萄柚綠&lt;/li&gt;&lt;li&gt;青蛙撞奶&lt;/li&gt;&lt;li&gt;雙全紅茶，去吃榕樹下的時候可以順便喝一下&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;ul&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;
