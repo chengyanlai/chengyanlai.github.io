@@ -39,7 +39,21 @@
 
 &lt;p&gt;上傳所有本地的標簽&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin --tags
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git branch for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/18/git-branch/" rel="alternate"></link><updated>2013-10-18T15:13:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-18:blog/2013/10/18/git-branch/</id><summary type="html">&lt;p&gt;俗話說：用Git不開brach乾脆不要用！
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;checkout&lt;/h4&gt;
+&lt;p&gt;如果只是要看某個tag的文擋&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout tags/&lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;checkout 某個 tag 並開分支&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout -b &lt;span class="o"&gt;{&lt;/span&gt;new_branch_name&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;start_point&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;</summary></entry><entry><title>Git branch for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/18/git-branch/" rel="alternate"></link><updated>2013-10-18T15:13:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-18:blog/2013/10/18/git-branch/</id><summary type="html">&lt;p&gt;俗話說：用Git不開brach乾脆不要用！
 Opening a new branch in Git is like nothing, comparing to svn! It is a good habit to working on the branch other than &lt;code&gt;master&lt;/code&gt; in order to keep &lt;code&gt;mater&lt;/code&gt; intact.&lt;/p&gt;
 &lt;h2&gt;Check your current branch&lt;/h2&gt;
 &lt;p&gt;Let's try it. To check what brach you currently have&lt;/p&gt;
