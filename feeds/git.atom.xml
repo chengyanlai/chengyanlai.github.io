@@ -20,7 +20,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; 表示用 annotated 的 tag，會讓你輸入訊息&lt;code&gt;message&lt;/code&gt;。
     不加&lt;code&gt;-a&lt;/code&gt;的話即是所謂的lightweight tag，基本上屬於個人標記使用。&lt;/li&gt;
-&lt;li&gt;{tag name} 是想要加的tag名字，像是`v1.0"。&lt;/li&gt;
+&lt;li&gt;{tag name} 是想要加的tag名字，像是&lt;code&gt;v1.0&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;{commit SHA} 指定為某個commit下標簽，如果沒有指定，就是最近一次的commit。&lt;br /&gt;
     可以用&lt;code&gt;git log&lt;/code&gt;查看每次commit的&lt;code&gt;SHA&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-m "your commit message"&lt;/code&gt; 文字說明。&lt;/li&gt;

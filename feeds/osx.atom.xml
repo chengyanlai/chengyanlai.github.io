@@ -224,17 +224,19 @@ You need to boot from a flash drive or the installation dmg, then you need to go
 
 
 &lt;h3&gt;Create CoreStorage&lt;/h3&gt;
-&lt;p&gt;After obtaining the two storage you want to setup as a single Fusion drive, you can use the command
-    :::bash
-    $ diskutil cs create {drivename} {driveIDs}&lt;/p&gt;
+&lt;p&gt;After obtaining the two storage you want to setup as a single Fusion drive, you can use the command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil cs create &lt;span class="o"&gt;{&lt;/span&gt;drivename&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;driveIDs&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;. This command can be broken down into&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;diskutil - the command-line version of Disk Utility.&lt;/li&gt;
 &lt;li&gt;cs -  Core Storage in short, which is necessary for Fusion.&lt;/li&gt;
 &lt;li&gt;creat - creates a Core Storage group.&lt;/li&gt;
 &lt;li&gt;drivername -  this is the name of the drive and how you want it to appear in Disk Utility (not the Finder – that comes later). You can call it whatever you want!&lt;/li&gt;
 &lt;li&gt;driveIDs - these are the drive IDs of the drives you want as part of your Fusion, separated by a space.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Format CoreStorage&lt;/h3&gt;
 &lt;p&gt;Then, we need to obtain the {groupString} to format the Fusion drive. Using the following command&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil cs list
@@ -247,11 +249,11 @@ You need to boot from a flash drive or the installation dmg, then you need to go
 
 
 &lt;p&gt;, where&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;jhfs+ – the format of the drive. This is Apple Extended Format (journaled), which is recommended for drives with an OS installed on it.&lt;/li&gt;
 &lt;li&gt;volumeName - the actual name of the volume, how it should appear underneath the icon.&lt;/li&gt;
 &lt;li&gt;size - this is the size of the volume.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Reboot and Install OSX!&lt;/h3&gt;
 &lt;h2&gt;Split up Fusion drive&lt;/h2&gt;
 &lt;p&gt;First step, you need to find the unique identifier for the logical volume group. You can do this by typing&lt;/p&gt;
