@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/git.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2013-12-16T15:18:17-08:00</updated><entry><title>Git tag for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/16/git-tag/" rel="alternate"></link><updated>2013-12-16T15:18:17-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-16:blog/2013/12/16/git-tag/</id><summary type="html">&lt;h2&gt;為重要的版本或是更新標上標簽&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/git.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-01-06T17:38:29-08:00</updated><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
+&lt;p&gt;通常有兩種情況會需要這個功能......  &lt;/p&gt;
+&lt;h3&gt;Pulling into a dirty tree&lt;/h3&gt;
+&lt;p&gt;例如你正在更改的東西和線上的更新有密切關聯，最好的情況是&lt;code&gt;move forward merge&lt;/code&gt;，這樣就不需要更動任何檔案。  &lt;/p&gt;
+&lt;p&gt;但是如果出現了&lt;code&gt;conflict&lt;/code&gt;，那就會需要用這個&lt;code&gt;stash&lt;/code&gt;的功能......&lt;br /&gt;
+最簡單的使用，像下面的例子。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git pull
+ ...
+file foobar not up to date, cannot merge.
+&lt;span class="nv"&gt;$ &lt;/span&gt;git stash
+&lt;span class="nv"&gt;$ &lt;/span&gt;git pull
+&lt;span class="nv"&gt;$ &lt;/span&gt;git stash pop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Interrupted workflow&lt;/h3&gt;
+&lt;p&gt;第二個情況是你正在處理某個問題，例如在某個&lt;code&gt;branch&lt;/code&gt;，但是卻要緊急的回到&lt;code&gt;master&lt;/code&gt;處理一個bug，通常你可以先開個臨時的&lt;code&gt;branch&lt;/code&gt;然後&lt;code&gt;commit&lt;/code&gt;你的files，像這樣  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout -b my_wip
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;WIP&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;回到&lt;code&gt;master&lt;/code&gt;處理bug&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout master
+&lt;span class="nv"&gt;$ &lt;/span&gt;edit emergency fix
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;再回到剛剛的&lt;code&gt;branch&lt;/code&gt;繼續開發&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout my_wip
+&lt;span class="nv"&gt;$ &lt;/span&gt;git reset --soft HEAD^
+&lt;span class="c"&gt;# ... continue hacking ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用&lt;code&gt;stash&lt;/code&gt;可以簡化上面的步驟，像這樣&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git stash
+&lt;span class="nv"&gt;$ &lt;/span&gt;edit emergency fix
+&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git stash pop
+&lt;span class="c"&gt;# ... continue hacking ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git tag for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/16/git-tag/" rel="alternate"></link><updated>2013-12-16T15:18:17-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-16:blog/2013/12/16/git-tag/</id><summary type="html">&lt;h2&gt;為重要的版本或是更新標上標簽&lt;/h2&gt;
 &lt;h4&gt;列出所有的標簽&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git tag
 &lt;/pre&gt;&lt;/div&gt;

@@ -108,7 +108,7 @@ zhong-wen
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;/figure&gt;</summary><category term="Website Builder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
+&lt;/figure&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
 &lt;h3&gt;The single asterisk form (&lt;code&gt;*arg&lt;/code&gt;)&lt;/h3&gt;
 &lt;p&gt;This form gives you to pass several variables into a function. This following example pass one formal argument &lt;code&gt;x=1.0&lt;/code&gt; and three non-keyword arguments, &lt;code&gt;2.0,3.0,4.0&lt;/code&gt;,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;  
@@ -178,7 +178,9 @@ We then run it to test.  &lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Enjoy powerful python.&lt;/p&gt;</summary></entry><entry><title>Python package for OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/08/python-package-for-osx/" rel="alternate"></link><updated>2013-11-08T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-08:blog/2013/11/08/python-package-for-osx/</id><summary type="html">&lt;h2&gt;First word, I am running OSX 10.8&lt;/h2&gt;
+&lt;p&gt;Enjoy powerful python.&lt;/p&gt;
+&lt;h3&gt;The order of arguments - Python Syntax&lt;/h3&gt;
+&lt;p&gt;Be careful when you call a function, we always put non-keyword argument in front of keyword argument. &lt;/p&gt;</summary></entry><entry><title>Python package for OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/08/python-package-for-osx/" rel="alternate"></link><updated>2013-11-08T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-08:blog/2013/11/08/python-package-for-osx/</id><summary type="html">&lt;h2&gt;First word, I am running OSX 10.8&lt;/h2&gt;
 &lt;p&gt;There are several choices on the market, including the apple one within the os. In order to get all I need at once, I usually choose one from the following. Of cause, you can download the source code and install from it. The advantage of using those packages is that they are well maintained. Thus, the update and upgrade are easier!&lt;/p&gt;
 &lt;h3&gt;&lt;a href="http://www.continuum.io/"&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I feel it is slower than EPD.&lt;/p&gt;
