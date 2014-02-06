@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-01-06T17:38:29-08:00</updated><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-02-06T07:38:29-08:00</updated><entry><title>Git subtree for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/06/git-subtree-split/" rel="alternate"></link><updated>2014-02-06T07:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-06:blog/2014/02/06/git-subtree-split/</id><summary type="html">&lt;h2&gt;Submodule&lt;/h2&gt;
+&lt;p&gt;If you have some sub-programs like plotting tool, which only produces visuals of data generated from original main program, 
+you can make it as a submodule.&lt;/p&gt;
+&lt;p&gt;Just make a folder and initialize, then add your remote (you need to create it somewhere like GitHub)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir foo
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;foo
+&lt;span class="nv"&gt;$ &lt;/span&gt;git init
+&lt;span class="nv"&gt;$ &lt;/span&gt;git remote add origin git@github.com:my-user/new-project.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is nothing like create a project. &lt;br /&gt;
+However, you would need to do one more step for the submodule. Go back to the project folder and add it. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ..
+&lt;span class="nv"&gt;$ &lt;/span&gt;git submodule add git@github.com:my-user/new-project.git foo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here, &lt;code&gt;git&lt;/code&gt; is going to create a file named &lt;code&gt;.gitmodules&lt;/code&gt; indicates &lt;code&gt;path&lt;/code&gt; and &lt;code&gt;url&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Split Super-project&lt;/h2&gt;
+&lt;p&gt;Let's say if you didn't do it as a submodule at the beginning, then you want to separate it from super-project.&lt;br /&gt;
+We would need &lt;code&gt;git subtree split&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;Go into the project root&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;path-to-my-project
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create a branch which only contains commits of 'foo'&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git subtree split --prefix&lt;span class="o"&gt;=&lt;/span&gt;foo --branch&lt;span class="o"&gt;=&lt;/span&gt;foo-only
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remove folder 'foo' from the super-project&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm -rf ./foo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create a git repo for new folder 'foo' (you need to create a repo somewhere like GitHub). In project folder,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir foo
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;pushd &lt;/span&gt;foo
+&lt;span class="nv"&gt;$ &lt;/span&gt;git init
+&lt;span class="nv"&gt;$ &lt;/span&gt;git remote add origin git@github.com:my-user/new-project.git
+&lt;span class="nv"&gt;$ &lt;/span&gt;git pull ../ foo-only
+&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin -u master
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;popd&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add folder as a git submodule to super-project&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git submodule add git@github.com:my-user/new-project.git foo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For detailed documentation (man page), please read &lt;a href="https://github.com/apenwarr/git-subtree/blob/master/git-subtree.txt"&gt;git-subtree.txt&lt;/a&gt;.&lt;br /&gt;
+Thanks to &lt;a href="http://stackoverflow.com/a/1307969/3011790"&gt;this post at StackOverflow&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
 &lt;p&gt;通常有兩種情況會需要這個功能......  &lt;/p&gt;
 &lt;h3&gt;Pulling into a dirty tree&lt;/h3&gt;
 &lt;p&gt;例如你正在更改的東西和線上的更新有密切關聯，最好的情況是&lt;code&gt;move forward merge&lt;/code&gt;，這樣就不需要更動任何檔案。  &lt;/p&gt;
@@ -58,7 +112,7 @@ file foobar not up to date, cannot merge.
 &lt;iframe src="http://www.flickr.com/photos/xavierweathertoplai/9437563313/in/set-72157634904831540/player/" width="332" height="500" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h2&gt;Final Word&lt;/h2&gt;
-&lt;p&gt;我們在這裡算是玩了一天半，我覺得整個兩天可以很充實也很足夠，這不是個趕場的國家公園，最好是可以住在Crater Lake Lodge好好享受Crater Lake 24hr不同的景色！如果可以，外加半天的遊湖行程應該可以非常滿足。&lt;/p&gt;</summary><category term="NationalPark"></category><category term="CraterLake"></category></entry><entry><title>2013 夏季公路旅行 Summer Road Trip Crater Lake - Day5 : Garfield Peak, Cleetwood Cove Trail</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/04/np-crater-lake-day5/" rel="alternate"></link><updated>2014-01-04T14:00:00-08:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-04:blog/2014/01/04/np-crater-lake-day5/</id><summary type="html">&lt;p&gt;&lt;a href="../np-crater-lake-day6"&gt;Crater Lake Day2&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;我們在這裡算是玩了一天半，我覺得整個兩天可以很充實也很足夠，這不是個趕場的國家公園，最好是可以住在Crater Lake Lodge好好享受Crater Lake 24hr不同的景色！如果可以，外加半天的遊湖行程應該可以非常滿足。&lt;/p&gt;</summary><category term="NationalPark"></category><category term="CraterLake"></category></entry><entry><title>2013 夏季公路旅行 Summer Road Trip Crater Lake - Day5 : Garfield Peak, Cleetwood Cove Trail</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/04/np-crater-lake-day5/" rel="alternate"></link><updated>2014-01-04T14:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-04:blog/2014/01/04/np-crater-lake-day5/</id><summary type="html">&lt;p&gt;&lt;a href="../np-crater-lake-day6"&gt;Crater Lake Day2&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Crate Lake Lodge&lt;/h2&gt;
 &lt;p&gt;這個Lodge大概是我碰過最難訂的一間，我們想說三個月前訂，結果是連三個月之後都沒有了(驚)！我想要不就是每天打電話看有沒有人退訂，要不就要一年前先定好了吧！因為這是個完完全全的夏季公園，其實一年下來營業期間也不長，加上沒有很大，遊客也不算少吧！(老人真的很多錢跟時間......)&lt;br /&gt;
 第二方案應該是露營！如果是像我們從Lassen過來，中途可以在Medford採買，我覺得應該很方便，畢竟露營是Lassen的第一選擇！&lt;br /&gt;
