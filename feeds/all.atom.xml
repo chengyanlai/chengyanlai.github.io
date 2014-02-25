@@ -154,7 +154,21 @@ We would need &lt;code&gt;git subtree split&lt;/code&gt;!&lt;/p&gt;
 
 
 &lt;p&gt;For detailed documentation (man page), please read &lt;a href="https://github.com/apenwarr/git-subtree/blob/master/git-subtree.txt"&gt;git-subtree.txt&lt;/a&gt;.&lt;br /&gt;
-Thanks to &lt;a href="http://stackoverflow.com/a/1307969/3011790"&gt;this post at StackOverflow&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
+Thanks to &lt;a href="http://stackoverflow.com/a/1307969/3011790"&gt;this post at StackOverflow&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Delete a submodule&lt;/h2&gt;
+&lt;p&gt;First, following command removes the whole &lt;code&gt;submodule.&amp;lt;name&amp;gt;&lt;/code&gt; section from &lt;code&gt;.git/config&lt;/code&gt; for the given submodule.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git submodule deinit foo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next, Let &lt;code&gt;git rm&lt;/code&gt; help us by not only removing the submodule from the work tree but by also removing the &lt;code&gt;submodule.&amp;lt;submodule name&amp;gt;&lt;/code&gt; section from the &lt;code&gt;.gitmodules&lt;/code&gt; file and stage both.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm -rf foo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Finally, remove it from working tree by&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm --cached foo
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
 &lt;p&gt;通常有兩種情況會需要這個功能......  &lt;/p&gt;
 &lt;h3&gt;Pulling into a dirty tree&lt;/h3&gt;
 &lt;p&gt;例如你正在更改的東西和線上的更新有密切關聯，最好的情況是&lt;code&gt;move forward merge&lt;/code&gt;，這樣就不需要更動任何檔案。  &lt;/p&gt;
