@@ -92,7 +92,15 @@ Trail&lt;br /&gt;
 
 &lt;h2&gt;Final Word&lt;/h2&gt;
 &lt;p&gt;我們玩了兩次Zion，我想說Observation Point絕對是第一選擇，無論是在安全性上或是可看性上都大勝，Angels Landing會有名應該就單單純純只是要拉鐵鏈好玩(那不如去爬Half Dome!)以及穿上&lt;code&gt;I Hike to Angels Landing&lt;/code&gt;的T-shirt。不過兩條步道都屬於要早起攻頂以取得順光的Zion Canyon!&lt;br /&gt;
-Zion現在吸引我的就只剩下 The Narrow 的朔溪行程，但是要背小K朔溪，我想是遙遙無期了！&lt;/p&gt;</summary><category term="NationalPark"></category><category term="Zion"></category></entry><entry><title>Git subtree for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/06/git-subtree-split/" rel="alternate"></link><updated>2014-02-06T07:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-06:blog/2014/02/06/git-subtree-split/</id><summary type="html">&lt;h2&gt;Submodule&lt;/h2&gt;
+Zion現在吸引我的就只剩下 The Narrow 的朔溪行程，但是要背小K朔溪，我想是遙遙無期了！&lt;/p&gt;</summary><category term="NationalPark"></category><category term="Zion"></category></entry><entry><title>布尿布使用心得</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/07/bu-niao-bu-shi-yong-xin-de/" rel="alternate"></link><updated>2014-02-07T23:09:07-08:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-07:blog/2014/02/07/bu-niao-bu-shi-yong-xin-de/</id><summary type="html">&lt;p&gt;因為一開始有的單一尺寸的還太大 只有一半穿了比較剛好;超過8磅之後就很少用紙尿布了&lt;/p&gt;
+&lt;p&gt;如果你是要用Hybrid的，我覺得groVia跟Thirsties都很不錯，而且推薦買他們家自己的吸水墊，表面非常乾爽，乾到有時候我都會誤以為寶寶沒尿尿，摸到下層才發現非常的濕！&lt;/p&gt;
+&lt;p&gt;我們家寶寶用gDiaper會漏尿。不是每次都漏，但越用越常漏，他的中間是塑膠殼可以裝吸水墊，可是那邊跟大腿很不合，常常包到後來得大腿很緊肚子很鬆，但尿都從大腿那邊漏。gDiaper尺寸分很多，我們買剛好的，比其他所有的布尿布都小件，可是卻很不合身，真的一大包單一尺寸的反而不會漏。不知道是不是因為我們家寶寶比較瘦？但還在磅數範圍內，大腿都緊到有勒痕，讓我越包越不爽，大概包到接近磅數限制我就放棄用它了。&lt;/p&gt;
+&lt;p&gt;其他all in one或口袋型的&lt;/p&gt;
+&lt;p&gt;我們有買liner回來墊在吸水墊上面 這樣大便就直接把liner丟掉就好了 可以少洗很多
+可是有點懷疑這樣會比較容易紅屁屁 因為大便跟liner會整個貼著屁股&lt;/p&gt;
+&lt;p&gt;不過因為一天10次大便 我想不紅屁屁也難;是我屁股也擦到痛了XD&lt;/p&gt;
+&lt;p&gt;剛滿月左右是每天換8-13次 尿布
+不過喝母乳的寶寶大便幾乎不會臭 所以洗尿布沒有很痛苦啦&lt;/p&gt;</summary><category term=""></category></entry><entry><title>Git subtree for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/06/git-subtree-split/" rel="alternate"></link><updated>2014-02-06T07:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-06:blog/2014/02/06/git-subtree-split/</id><summary type="html">&lt;h2&gt;Submodule&lt;/h2&gt;
 &lt;p&gt;If you have some sub-programs like plotting tool, which only produces visuals of data generated from original main program, 
 you can make it as a submodule.&lt;/p&gt;
 &lt;p&gt;Just make a folder and initialize, then add your remote (you need to create it somewhere like GitHub)&lt;/p&gt;
@@ -1599,7 +1607,82 @@ git config --global push.default simple
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;to check your setting.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
+&lt;p&gt;to check your setting.&lt;/p&gt;</summary></entry><entry><title>SSH login without password</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/" rel="alternate"></link><updated>2013-10-15T16:05:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-15:blog/2013/10/15/ssh-tricks/</id><summary type="html">&lt;h2&gt;Create SSH key&lt;/h2&gt;
+&lt;p&gt;Beforehand - You need to know where is the server (It's not helping!), and you need to create a new ssh-key like the following command at your home directory&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class="s2"&gt;&amp;quot;{Your email}&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;During the process, you will see&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; Generating public/private rsa key pair.  
+ Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/home/a/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: **&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Created directory &lt;span class="s1"&gt;&amp;#39;${HOME}/.ssh&amp;#39;&lt;/span&gt;.  
+ Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for &lt;/span&gt;no passphrase&lt;span class="o"&gt;)&lt;/span&gt;: **&lt;span class="o"&gt;{&lt;/span&gt;You can choose to create or leave empty.&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Enter same passphrase again: **&lt;span class="o"&gt;{&lt;/span&gt;Do the same as above&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Your identification has been saved in &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.  
+ Your public key has been saved in &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.pub.  
+ The key fingerprint is: 3e:4f:05:79:3a:9f:96:7c:3b:ad:e9:58:37:bc:37:e4 a@A
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After that you can see two files in the directory &lt;code&gt;${HOME}/.ssh/&lt;/code&gt;, they are &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.pub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first is your &lt;code&gt;Private Key&lt;/code&gt;, and second is the &lt;code&gt;Public Key&lt;/code&gt;. Remember &lt;strong&gt;&lt;em&gt;NOT&lt;/em&gt;&lt;/strong&gt; to share your &lt;code&gt;Private Key&lt;/code&gt; to anyone. &lt;/p&gt;
+&lt;h2 id="prot"&gt;Protected Private Key&lt;/h2&gt;
+&lt;p&gt;If you chose to add the password during the key generation above, you need to do this to prevent the typing during every time you login (That's our goal!). Do the following command after the key is generated&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -K ~/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It'll prompt for your passphrase if necessary, then add it to your Keychain[^2]. This only works for this local computer. If you move your private key to another, you need to type the passphrase. &lt;/p&gt;
+&lt;h2&gt;Config SSH Host&lt;/h2&gt;
+&lt;p&gt;Next we need to edit the file located at ${HOME}/.ssh/config. If the file is not there, please create it. Add the following lines.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Host {You Name It!}
+    HostName {The url of the ssh server}
+    Port 22{unless the port is changed}
+    User {login username}
+    IdentityFile &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.ssh/{Name of the key}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;h2&gt;Make Server Knows You&lt;/h2&gt;
+&lt;p&gt;Here comes the most important part. You need to add the public key to the file on the server by using the following command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cat &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.ssh/{Name of the key}.pub | ssh {You Name It!} &amp;#39;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is basically all done. Now, we can try&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh &lt;span class="o"&gt;{&lt;/span&gt;You Name It!&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to connect.&lt;/p&gt;
+&lt;h2&gt;SSH agent&lt;/h2&gt;
+&lt;p&gt;You can check if your &lt;code&gt;Private Key&lt;/code&gt; is loaded by &lt;code&gt;SSH agent&lt;/code&gt;[^3]. Type this in terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and it will you which key is loaded. If the key you need is not shown, you need to add it by&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add /path/to/the/private key/&lt;span class="o"&gt;{&lt;/span&gt;the private key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. Then check again&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;it should be there. &lt;/p&gt;
+&lt;h3&gt;Notes&lt;/h3&gt;
+&lt;p&gt;You can also refer to &lt;a href="http://www-uxsup.csx.cam.ac.uk/~aia21/osx/leopard-ssh.html"&gt;this page&lt;/a&gt;.&lt;br /&gt;
+As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
 &lt;h4&gt;&lt;code&gt;Go to&lt;/code&gt; function&lt;/h4&gt;
 &lt;p&gt;When you are in Finder, simply just use &lt;code&gt;Command-Shift-g&lt;/code&gt;. There will be a pop-up on your finder, we then type &lt;code&gt;~/Library/&lt;/code&gt;, the library folder will be opened.&lt;/p&gt;
 &lt;h4&gt;In the &lt;code&gt;Go&lt;/code&gt; menu&lt;/h4&gt;

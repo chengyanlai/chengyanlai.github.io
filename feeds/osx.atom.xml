@@ -182,7 +182,82 @@ Type the following in the terminal&lt;/p&gt;
 &lt;p&gt;You will see this on your terminal&lt;/p&gt;
 &lt;p&gt;&lt;img alt="osx-mavericks-bootable-usb-drive-fig1.png" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-bootable-usb-drive-fig1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;It takes about 20 mins to complete, be patient.&lt;/p&gt;
-&lt;p&gt;Read more at this &lt;a href="http://www.gottabemobile.com/2013/10/22/perform-clean-install-os-x-mavericks/#iA8WYhaBRRRieeGl.99"&gt;site&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
+&lt;p&gt;Read more at this &lt;a href="http://www.gottabemobile.com/2013/10/22/perform-clean-install-os-x-mavericks/#iA8WYhaBRRRieeGl.99"&gt;site&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>SSH login without password</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/" rel="alternate"></link><updated>2013-10-15T16:05:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-15:blog/2013/10/15/ssh-tricks/</id><summary type="html">&lt;h2&gt;Create SSH key&lt;/h2&gt;
+&lt;p&gt;Beforehand - You need to know where is the server (It's not helping!), and you need to create a new ssh-key like the following command at your home directory&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class="s2"&gt;&amp;quot;{Your email}&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;During the process, you will see&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; Generating public/private rsa key pair.  
+ Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/home/a/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: **&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Created directory &lt;span class="s1"&gt;&amp;#39;${HOME}/.ssh&amp;#39;&lt;/span&gt;.  
+ Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for &lt;/span&gt;no passphrase&lt;span class="o"&gt;)&lt;/span&gt;: **&lt;span class="o"&gt;{&lt;/span&gt;You can choose to create or leave empty.&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Enter same passphrase again: **&lt;span class="o"&gt;{&lt;/span&gt;Do the same as above&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Your identification has been saved in &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.  
+ Your public key has been saved in &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.pub.  
+ The key fingerprint is: 3e:4f:05:79:3a:9f:96:7c:3b:ad:e9:58:37:bc:37:e4 a@A
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After that you can see two files in the directory &lt;code&gt;${HOME}/.ssh/&lt;/code&gt;, they are &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.pub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first is your &lt;code&gt;Private Key&lt;/code&gt;, and second is the &lt;code&gt;Public Key&lt;/code&gt;. Remember &lt;strong&gt;&lt;em&gt;NOT&lt;/em&gt;&lt;/strong&gt; to share your &lt;code&gt;Private Key&lt;/code&gt; to anyone. &lt;/p&gt;
+&lt;h2 id="prot"&gt;Protected Private Key&lt;/h2&gt;
+&lt;p&gt;If you chose to add the password during the key generation above, you need to do this to prevent the typing during every time you login (That's our goal!). Do the following command after the key is generated&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -K ~/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It'll prompt for your passphrase if necessary, then add it to your Keychain[^2]. This only works for this local computer. If you move your private key to another, you need to type the passphrase. &lt;/p&gt;
+&lt;h2&gt;Config SSH Host&lt;/h2&gt;
+&lt;p&gt;Next we need to edit the file located at ${HOME}/.ssh/config. If the file is not there, please create it. Add the following lines.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Host {You Name It!}
+    HostName {The url of the ssh server}
+    Port 22{unless the port is changed}
+    User {login username}
+    IdentityFile &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.ssh/{Name of the key}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;h2&gt;Make Server Knows You&lt;/h2&gt;
+&lt;p&gt;Here comes the most important part. You need to add the public key to the file on the server by using the following command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cat &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.ssh/{Name of the key}.pub | ssh {You Name It!} &amp;#39;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is basically all done. Now, we can try&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh &lt;span class="o"&gt;{&lt;/span&gt;You Name It!&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to connect.&lt;/p&gt;
+&lt;h2&gt;SSH agent&lt;/h2&gt;
+&lt;p&gt;You can check if your &lt;code&gt;Private Key&lt;/code&gt; is loaded by &lt;code&gt;SSH agent&lt;/code&gt;[^3]. Type this in terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and it will you which key is loaded. If the key you need is not shown, you need to add it by&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add /path/to/the/private key/&lt;span class="o"&gt;{&lt;/span&gt;the private key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. Then check again&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;it should be there. &lt;/p&gt;
+&lt;h3&gt;Notes&lt;/h3&gt;
+&lt;p&gt;You can also refer to &lt;a href="http://www-uxsup.csx.cam.ac.uk/~aia21/osx/leopard-ssh.html"&gt;this page&lt;/a&gt;.&lt;br /&gt;
+As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
 &lt;h4&gt;&lt;code&gt;Go to&lt;/code&gt; function&lt;/h4&gt;
 &lt;p&gt;When you are in Finder, simply just use &lt;code&gt;Command-Shift-g&lt;/code&gt;. There will be a pop-up on your finder, we then type &lt;code&gt;~/Library/&lt;/code&gt;, the library folder will be opened.&lt;/p&gt;
 &lt;h4&gt;In the &lt;code&gt;Go&lt;/code&gt; menu&lt;/h4&gt;
