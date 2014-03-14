@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/osx.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2013-11-21T16:14:35-08:00</updated><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/osx.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-03-14T10:07:01-07:00</updated><entry><title>Simple Bash Tips - copy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/03/14/bash-cp-xargs/" rel="alternate"></link><updated>2014-03-14T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-03-14:blog/2014/03/14/bash-cp-xargs/</id><summary type="html">&lt;h2&gt;Command &lt;code&gt;cp&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cp&lt;/code&gt; only can copy file(s) into single folder.
+For example,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cp foo.txt folder1 folder2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Above command will try to copy &lt;code&gt;foo.txt&lt;/code&gt; and &lt;code&gt;folder1&lt;/code&gt; into &lt;code&gt;folder2&lt;/code&gt;. It will fail, however, since 
+&lt;code&gt;folder1&lt;/code&gt; is directory, not file!  &lt;/p&gt;
+&lt;p&gt;If what you want is to copy &lt;code&gt;foo.txt&lt;/code&gt; into &lt;code&gt;folder1&lt;/code&gt; and &lt;code&gt;folder2&lt;/code&gt;, you need to use loop!&lt;/p&gt;
+&lt;h2&gt;Use &lt;code&gt;xargs&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;It is good to check out the man page for &lt;code&gt;xargs&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here, I only cover the very basic usage.&lt;/p&gt;
+&lt;p&gt;In parent folder, suppose we have a file &lt;code&gt;foo.txt&lt;/code&gt;.&lt;br /&gt;
+If we want to copy this file to some subfolders, like &lt;code&gt;folder1&lt;/code&gt;, &lt;code&gt;folder2&lt;/code&gt;, etc...&lt;br /&gt;
+, we can simply do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;folder* | xargs -n 1 cp foo.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The above command will execute &lt;code&gt;cp&lt;/code&gt; multiple times, depend on how many folder you have in prefix &lt;code&gt;folder&lt;/code&gt;.&lt;br /&gt;
+The &lt;code&gt;-n&lt;/code&gt; tells &lt;code&gt;xargs&lt;/code&gt; how many arguments you have, here is &lt;code&gt;1&lt;/code&gt;, since &lt;code&gt;cp&lt;/code&gt; is utility of &lt;code&gt;xargs&lt;/code&gt;.&lt;br /&gt;
+If you need to copy two or more files, just change the number&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;folder* | xargs -n 2 cp foo1.txt foo2.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enjoy!&lt;/p&gt;</summary></entry><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
 &lt;p&gt;You need to pay for the Paper app, it only has OSX and Windows(WTF!) version, sorry.&lt;/p&gt;
 &lt;h3&gt;Export bib from Papers&lt;/h3&gt;
 &lt;p&gt;Papers allow you to export your entire library to single file &lt;/p&gt;
