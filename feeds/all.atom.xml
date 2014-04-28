@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-03-15T23:09:07-07:00</updated><entry><title>布尿布使用心得</title><link href="http://www.chenyen-yaoan.tk/blog/2014/03/15/bu-niao-bu-shi-yong-xin-de/" rel="alternate"></link><updated>2014-03-15T23:09:07-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2014-03-15:blog/2014/03/15/bu-niao-bu-shi-yong-xin-de/</id><summary type="html">&lt;p&gt;&lt;img alt="fig1" src="http://www.chenyen-yaoan.tk/images/Diapers/diaper1.jpg" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-04-29T10:07:01-07:00</updated><entry><title>How to prevent widows and orphans in LaTeX?</title><link href="http://www.chenyen-yaoan.tk/blog/2014/04/29/latex-remove-widows-orphans/" rel="alternate"></link><updated>2014-04-29T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-04-29:blog/2014/04/29/latex-remove-widows-orphans/</id><summary type="html">&lt;p&gt;在某些文擋裡面，大家會避免某一句子落單在最後(widow)或是開頭(orphan)，在LaTeX裡面，我們可用下面的方式達到這個目的！&lt;/p&gt;
+&lt;h2&gt;使用 widowpenalty&lt;/h2&gt;
+&lt;p&gt;第一種方法是使用&lt;code&gt;\widowpenalty&lt;/code&gt;以及&lt;code&gt;clubpenalty&lt;/code&gt;，LaTeX的預設值是&lt;code&gt;150&lt;/code&gt;，值越大，出現widow跟orphan的機會就越低。
+在&lt;code&gt;\begin{document}&lt;/code&gt;之前下下面的指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\widowpenalty&lt;/span&gt;500
+&lt;span class="k"&gt;\clubpenalty&lt;/span&gt;500
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果想要完全移除可以把值設到10000。&lt;/p&gt;</summary><category term="Latex"></category></entry><entry><title>布尿布使用心得</title><link href="http://www.chenyen-yaoan.tk/blog/2014/03/15/bu-niao-bu-shi-yong-xin-de/" rel="alternate"></link><updated>2014-03-15T23:09:07-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2014-03-15:blog/2014/03/15/bu-niao-bu-shi-yong-xin-de/</id><summary type="html">&lt;p&gt;&lt;img alt="fig1" src="http://www.chenyen-yaoan.tk/images/Diapers/diaper1.jpg" /&gt;&lt;/p&gt;
 &lt;h2&gt;First Word&lt;/h2&gt;
 &lt;p&gt;之前採買的12件布尿布裡，滿月前有的單一尺寸的布尿布對寶寶來說還太大，只有一半穿了比較剛好，所以還是會需要用到一些紙尿布，超過8磅之後就很少用紙尿布了。
 用到小尿布都穿不下了，淘汰了4件，之後再淘汰幾件鬆掉的，陸續添購幾件新的，到目前1歲10個月時是這10件在穿。大概10個月過後，晚上睡覺布尿布還是不太夠吸，漏尿過幾次後，

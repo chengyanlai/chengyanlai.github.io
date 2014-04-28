@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/osx.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-03-14T10:07:01-07:00</updated><entry><title>Simple Bash Tips - copy and xargs</title><link href="http://www.chenyen-yaoan.tk/blog/2014/03/14/bash-cp-xargs/" rel="alternate"></link><updated>2014-03-14T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-03-14:blog/2014/03/14/bash-cp-xargs/</id><summary type="html">&lt;h2&gt;Command cp&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/osx.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-04-29T10:07:01-07:00</updated><entry><title>How to prevent widows and orphans in LaTeX?</title><link href="http://www.chenyen-yaoan.tk/blog/2014/04/29/latex-remove-widows-orphans/" rel="alternate"></link><updated>2014-04-29T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-04-29:blog/2014/04/29/latex-remove-widows-orphans/</id><summary type="html">&lt;p&gt;在某些文擋裡面，大家會避免某一句子落單在最後(widow)或是開頭(orphan)，在LaTeX裡面，我們可用下面的方式達到這個目的！&lt;/p&gt;
+&lt;h2&gt;使用 widowpenalty&lt;/h2&gt;
+&lt;p&gt;第一種方法是使用&lt;code&gt;\widowpenalty&lt;/code&gt;以及&lt;code&gt;clubpenalty&lt;/code&gt;，LaTeX的預設值是&lt;code&gt;150&lt;/code&gt;，值越大，出現widow跟orphan的機會就越低。
+在&lt;code&gt;\begin{document}&lt;/code&gt;之前下下面的指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\widowpenalty&lt;/span&gt;500
+&lt;span class="k"&gt;\clubpenalty&lt;/span&gt;500
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果想要完全移除可以把值設到10000。&lt;/p&gt;</summary><category term="Latex"></category></entry><entry><title>Simple Bash Tips - copy and xargs</title><link href="http://www.chenyen-yaoan.tk/blog/2014/03/14/bash-cp-xargs/" rel="alternate"></link><updated>2014-03-14T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-03-14:blog/2014/03/14/bash-cp-xargs/</id><summary type="html">&lt;h2&gt;Command cp&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;cp&lt;/code&gt; only can copy file(s) into single folder.
 For example,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cp foo.txt folder1 folder2
