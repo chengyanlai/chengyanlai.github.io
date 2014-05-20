@@ -1,5 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2013-12-13T15:50:01-08:00</updated><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-05-20T11:00:00-07:00</updated><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
+安裝順序是重要的！如果發現有問題，請重新安裝。&lt;/p&gt;
+&lt;h2&gt;Set up some taps and update Homebrew&lt;/h2&gt;
+&lt;p&gt;確保 Homebrew 運作正常，加入安裝 Python 需要的 repo。 並且更新 Homebrew！&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew doctor
+&lt;span class="c"&gt;# fix the error shown here&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap homebrew/science &lt;span class="c"&gt;# a lot of cool formulae for scientific tools&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap homebrew/python &lt;span class="c"&gt;# numpy, scipy&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; brew upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install Homebrew python&lt;/h2&gt;
+&lt;p&gt;安裝 Homebrew 的 python。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install python
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Check the python you are using&lt;/h2&gt;
+&lt;p&gt;確認你的 python 是 Homebrew 的，不是系統提供的.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;which python
+&lt;span class="c"&gt;# should be /usr/local/bin/python&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;/usr/local/bin&lt;/code&gt; should be in front of &lt;code&gt;/usr/bin&lt;/code&gt;!&lt;br /&gt;
+若是系統提供的 python，必須修改 &lt;code&gt;~/.bash_profile&lt;/code&gt; 裡面的 &lt;code&gt;PATH&lt;/code&gt;，像是加入&lt;code&gt;export PATH="/usr/local/bin:$PATH"&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Install PIL, imagemagick, graphviz and other&lt;/h2&gt;
+&lt;p&gt;Image generating stuff (qt is nice for viewing).&lt;br /&gt;
+一些圖形界面的 package。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ln -s /usr/local/include/freetype2 /usr/local/include/freetype &lt;span class="c"&gt;# seems freetype can&amp;#39;t be found on some systems otherwise&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install pillow imagemagick graphviz
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install cairo --without-x
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install py2cairo &lt;span class="c"&gt;# this will ask you to download xquartz and install it&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install qt pyqt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install nose and VirtualENV&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv nose
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install numpy and scipy&lt;/h2&gt;
+&lt;p&gt;You can choose to use &lt;code&gt;openblas&lt;/code&gt; or not. If so, run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install openblas
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;then,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install numpy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install scipy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Test the numpy and scipy installation&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew &lt;span class="nb"&gt;test &lt;/span&gt;numpy
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew &lt;span class="nb"&gt;test &lt;/span&gt;scipy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Some cool python libraries&lt;/h3&gt;
+&lt;p&gt;PANDAS (Python Data Analysis Library), especially time series stuff, and NITK (natural language toolkit).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pandas nltk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Math Plot Library (&lt;a href="http://matplotlib.org"&gt;matplotlib&lt;/a&gt;) for plotting.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;matplotlib&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is Symbolic python (&lt;a href="http://sympy.org/en/index.html"&gt;SymPy&lt;/a&gt;).&lt;br /&gt;
+I hope this can beat Mathematica in the future!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install sympy q
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://ipython.org"&gt;IPython&lt;/a&gt; and IPython notebook support.&lt;br /&gt;
+If you are a theoretical physicist, you must try ipython notebook!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install zmq
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ipython&lt;span class="o"&gt;[&lt;/span&gt;zmq,qtconsole,notebook,test&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;使用 ipython notebook&lt;/h4&gt;
+&lt;p&gt;在終端機下直接執行&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ipython notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;就會開啟網頁版ipython.&lt;/p&gt;
+&lt;h3&gt;HTML stuff&lt;/h3&gt;
+&lt;p&gt;Parsing,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install html5lib cssselect pyquery lxml BeautifulSoup
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, webapps / apis&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install Flask Django
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and semantic web stuff: &lt;code&gt;rdf&lt;/code&gt; and &lt;code&gt;sparql&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install rdflib SPARQLWrapper
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Run python scripts in the cloud&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install cloud
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Those steps are referenced from &lt;a href="http://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/"&gt;Jorn's blog&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
 這裡介紹如何使用&lt;code&gt;Python&lt;/code&gt;來做這件事情！&lt;/p&gt;
 &lt;h2&gt;安裝 django and uuslug&lt;/h2&gt;
 &lt;p&gt;這個方法需要用到兩個套件，都可以由&lt;code&gt;pip&lt;/code&gt;來安裝&lt;/p&gt;
@@ -190,6 +304,7 @@ I think both Anaconda and EPD provide the installer for Windows and Linux&lt;sup
 &lt;h3&gt;&lt;a href="http://fonnesbeck.github.io/ScipySuperpack/"&gt;Scipy Superpack&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This is the first thing I have tried and succeeded, easy and fast&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;. &lt;/p&gt;
 &lt;h3&gt;&lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;UPDATED 05/20/2014: We have another post regarding &lt;a href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/"&gt;Homebrew Python installation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The similar alternatives are &lt;a href="http://www.macports.org/"&gt;Macport&lt;/a&gt; and &lt;a href="http://fink.thetis.ig42.org/"&gt;Fink&lt;/a&gt;. Th detail difference are compared by &lt;a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/"&gt;Ted Wise&lt;/a&gt;
 Example(Homebrew):
 Installation is super easy, it is depended on ruby and git. &lt;br /&gt;
