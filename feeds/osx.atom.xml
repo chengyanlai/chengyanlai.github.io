@@ -73,7 +73,7 @@ the &lt;code&gt;Papers&lt;/code&gt; to become &lt;code&gt;La$_2$CuO$_4$&lt;/code
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="Latex"></category></entry><entry><title>OSX Mavericks Installation and Setup</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/24/osx-mavericks-installation-and-setup/" rel="alternate"></link><updated>2013-10-24T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-24:blog/2013/10/24/osx-mavericks-installation-and-setup/</id><summary type="html">&lt;p&gt;I run all the following in order to setup my OSX Mavericks. I prefer clean install!&lt;/p&gt;
 &lt;p&gt;Since I have remove my SuperDrive on my 2009 Macbook Pro, I have two harddrives. One is the SSD shipped with Apple, the other HD is installed on the slot of old SuperDrive. I would like to move my home folder to the 2nd HD.&lt;/p&gt;
 &lt;p&gt;The following setup is also worked if you try to do partition on single harddrive.&lt;/p&gt;
-&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{%20root_url%20}}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{ root_url }}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Move Home Folder&lt;/h2&gt;
 &lt;p&gt;After clean install, there is basically nothing new on home folder. You still have to move it, however, due to the reason that the Library folder.&lt;/p&gt;
 &lt;h3&gt;Copy the home folder to the other drive&lt;/h3&gt;

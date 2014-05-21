@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-05-20T11:00:00-07:00</updated><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-05-21T11:00:00-07:00</updated><entry><title>Python Virtual Environment</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/" rel="alternate"></link><updated>2014-05-21T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-21:blog/2014/05/21/python-virtualenv/</id><summary type="html">&lt;p&gt;如何根據 Project 管理 Python 使用環境?&lt;/p&gt;
+&lt;h2&gt;Homebrew python&lt;/h2&gt;
+&lt;h3&gt;使用 virtualenv 以及 virtualenvwrapper&lt;/h3&gt;
+&lt;p&gt;確定你已經安裝了這兩個套件，如果還沒&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenvwrapper
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;virtualenvwrapper&lt;/code&gt; 並不一定是需要的，但是可以讓管理env更省時省力！  &lt;/p&gt;
+&lt;h4&gt;建立環境&lt;/h4&gt;
+&lt;p&gt;我們這裡介紹的是有使用 virtualenvwrapper 的方法！&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;以上指令就建立了一個 virtual environment，而且會被啟用！  &lt;/p&gt;
+&lt;p&gt;切換環境也很簡單，如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;workon
+&lt;span class="c"&gt;# all available ENV names will be shown here&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;workon &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;ENV name&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;which python
+&lt;span class="c"&gt;# Now, you know this is a enviroment python!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣建立的環境只會有你原本的 python，其他的 site packages 並不會進來！&lt;br /&gt;
+如果你想要建立一個擁有所以已經安裝的 site packages 的環境，只需要加上 &lt;code&gt;--system-site-packages&lt;/code&gt; 像是&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv --system-site-packages &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;就可以了！  &lt;/p&gt;
+&lt;p&gt;如果是要建立不同 python 版本的環境，我們也可以指定，首先，你要知道那個 python 版本的路徑，我們用 python3 為例  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# find python3 path&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;which python3
+&lt;span class="c"&gt;# Here is the path!&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv -p &lt;span class="o"&gt;{&lt;/span&gt;the path shown above&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣就可以建立 python3 專屬的環境了！  &lt;/p&gt;
+&lt;p&gt;在建立環境的同時，通常(!) &lt;code&gt;pip&lt;/code&gt; 跟 &lt;code&gt;setuptools&lt;/code&gt; 也會一起被安裝，所以我們可以根據不同用途的環境安裝不同用途的 packages!&lt;br /&gt;
+舉一個簡單的例子，像是用 &lt;code&gt;pelican&lt;/code&gt; 建立blog.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# 建立一個叫 pelican 的環境，我們不需要任何 site-packages&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv pelican
+&lt;span class="c"&gt;# 安裝需要的元件&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;pip install pelican Markdown
+&lt;span class="c"&gt;# 現在我們就可以開始使用！&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;mkdir to/the/path/of/your/site
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;to/the/path/of/your/site
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;setvirtualenvproject
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最後一步非常方便，這樣可以建立專屬環境的初始路徑(cwd)，一切換到那個環境就會在那個路徑下！  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣就可以開始建立一個 pelican site!&lt;/p&gt;
+&lt;h4&gt;移除環境&lt;/h4&gt;
+&lt;p&gt;在有 virtualenvwrapper 的情形下非常簡單，只需要&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rmvirtualenv &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Nice!&lt;/p&gt;
+&lt;h2&gt;Anaconda&lt;/h2&gt;
+&lt;p&gt;Anaconda 提供了 &lt;code&gt;conda create&lt;/code&gt; 的指令來建立環境，基本用法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;conda create -n py27 &lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2.7 anaconda
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;-n {name}&lt;/code&gt; 這裡的 name 是環境的名字，上面的例子名字就是 &lt;code&gt;py27&lt;/code&gt;，後面接上了 python version &lt;code&gt;2.7&lt;/code&gt; 以及package_spec &lt;code&gt;anaconda&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To be continued......&lt;/p&gt;
+&lt;h2&gt;Canopy&lt;/h2&gt;
+&lt;p&gt;To be continued......&lt;/p&gt;</summary></entry><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
 安裝順序是重要的！如果發現有問題，請重新安裝。&lt;/p&gt;
 &lt;h2&gt;Set up some taps and update Homebrew&lt;/h2&gt;
 &lt;p&gt;確保 Homebrew 運作正常，加入安裝 Python 需要的 repo。 並且更新 Homebrew！&lt;/p&gt;
@@ -38,11 +115,12 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Install nose and VirtualENV&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv nose
+&lt;h2&gt;Install nose and Virtual Environment&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv virtualenvwrapper nose
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;請看&lt;a href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/"&gt;另一篇 post&lt;/a&gt; 有關如何使用 virtualenv&lt;/p&gt;
 &lt;h2&gt;Install numpy and scipy&lt;/h2&gt;
 &lt;p&gt;You can choose to use &lt;code&gt;openblas&lt;/code&gt; or not. If so, run&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install openblas
@@ -68,7 +146,7 @@
 
 
 &lt;p&gt;Math Plot Library (&lt;a href="http://matplotlib.org"&gt;matplotlib&lt;/a&gt;) for plotting.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;matplotlib&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install matplotlib
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -308,7 +386,7 @@ I think both Anaconda and EPD provide the installer for Windows and Linux&lt;sup
 &lt;p&gt;The similar alternatives are &lt;a href="http://www.macports.org/"&gt;Macport&lt;/a&gt; and &lt;a href="http://fink.thetis.ig42.org/"&gt;Fink&lt;/a&gt;. Th detail difference are compared by &lt;a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/"&gt;Ted Wise&lt;/a&gt;
 Example(Homebrew):
 Installation is super easy, it is depended on ruby and git. &lt;br /&gt;
-Please check the Software Installation section in &lt;a href="{{%20root_url%20}}/blog/2013/10/24/osx-mavericks/"&gt;my another post&lt;/a&gt; for installation.&lt;br /&gt;
+Please check the Software Installation section in &lt;a href="{{ root_url }}/blog/2013/10/24/osx-mavericks/"&gt;my another post&lt;/a&gt; for installation.&lt;br /&gt;
 Xcode command-line tool(CLT) and XQartz(X11) are beforehand.  &lt;/p&gt;
 &lt;h4&gt;Installation&lt;/h4&gt;
 &lt;p&gt;Once installation success, check this before we start&lt;/p&gt;
