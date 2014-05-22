@@ -76,7 +76,37 @@
 &lt;p&gt;&lt;code&gt;-n {name}&lt;/code&gt; 這裡的 name 是環境的名字，上面的例子名字就是 &lt;code&gt;py27&lt;/code&gt;，後面接上了 python version &lt;code&gt;2.7&lt;/code&gt; 以及package_spec &lt;code&gt;anaconda&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;To be continued......&lt;/p&gt;
 &lt;h2&gt;Canopy&lt;/h2&gt;
-&lt;p&gt;To be continued......&lt;/p&gt;</summary></entry><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
+&lt;p&gt;To be continued......&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
 安裝順序是重要的！如果發現有問題，請重新安裝。&lt;/p&gt;
 &lt;h2&gt;Set up some taps and update Homebrew&lt;/h2&gt;
 &lt;p&gt;確保 Homebrew 運作正常，加入安裝 Python 需要的 repo。 並且更新 Homebrew！&lt;/p&gt;
@@ -191,7 +221,37 @@ If you are a theoretical physicist, you must try ipython notebook!&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Those steps are referenced from &lt;a href="http://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/"&gt;Jorn's blog&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
+&lt;p&gt;Those steps are referenced from &lt;a href="http://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/"&gt;Jorn's blog&lt;/a&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
 這裡介紹如何使用&lt;code&gt;Python&lt;/code&gt;來做這件事情！&lt;/p&gt;
 &lt;h2&gt;安裝 django and uuslug&lt;/h2&gt;
 &lt;p&gt;這個方法需要用到兩個套件，都可以由&lt;code&gt;pip&lt;/code&gt;來安裝&lt;/p&gt;
@@ -300,7 +360,37 @@ zhong-wen
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;/figure&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
+&lt;/figure&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
 &lt;h3&gt;The single asterisk form (&lt;code&gt;*arg&lt;/code&gt;)&lt;/h3&gt;
 &lt;p&gt;This form gives you to pass several variables into a function. This following example pass one formal argument &lt;code&gt;x=1.0&lt;/code&gt; and three non-keyword arguments, &lt;code&gt;2.0,3.0,4.0&lt;/code&gt;,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;  
@@ -457,4 +547,34 @@ It is not as difficult as you think.&lt;/p&gt;
 &lt;p&gt;The actual files are in the folder called &lt;code&gt;Cellar&lt;/code&gt;, but a symbolic link is created in the &lt;code&gt;/usr/local/bin/&lt;/code&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary></entry></feed>
+&lt;/div&gt;&lt;script type= "text/javascript"&gt;
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+&lt;/script&gt;
+</summary></entry></feed>
