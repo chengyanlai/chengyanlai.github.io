@@ -1,5 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2013-11-09T21:00:00-08:00</updated><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-05-21T11:00:00-07:00</updated><entry><title>Python Virtual Environment</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/" rel="alternate"></link><updated>2014-05-21T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-21:blog/2014/05/21/python-virtualenv/</id><summary type="html">&lt;p&gt;如何根據 Project 管理 Python 使用環境?&lt;/p&gt;
+&lt;h2&gt;Homebrew python&lt;/h2&gt;
+&lt;h3&gt;使用 virtualenv 以及 virtualenvwrapper&lt;/h3&gt;
+&lt;p&gt;確定你已經安裝了這兩個套件，如果還沒&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenvwrapper
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;virtualenvwrapper&lt;/code&gt; 並不一定是需要的，但是可以讓管理env更省時省力！  &lt;/p&gt;
+&lt;h4&gt;設定 virtualenvwrapper&lt;/h4&gt;
+&lt;p&gt;加入下列兩行在 &lt;code&gt;.bash_profile&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.virtualenvs
+&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第一行裡的 &lt;code&gt;.virtualenvs&lt;/code&gt; 是管理所有環境的資料夾，必須手動建立！資料夾名稱可以自行決定。&lt;br /&gt;
+設定好了之後，請重新開一個視窗或是 &lt;code&gt;source ~/.bash_profile&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;建立環境&lt;/h4&gt;
+&lt;p&gt;我們這裡介紹的是有使用 virtualenvwrapper 的方法！&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;以上指令就建立了一個 virtual environment，而且會被啟用！  &lt;/p&gt;
+&lt;p&gt;切換環境也很簡單，如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;workon
+&lt;span class="c"&gt;# all available ENV names will be shown here&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;workon &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;ENV name&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;which python
+&lt;span class="c"&gt;# Now, you know this is a enviroment python!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣建立的環境只會有你原本的 python，其他的 site packages 並不會進來！&lt;br /&gt;
+如果你想要建立一個擁有所以已經安裝的 site packages 的環境，只需要加上 &lt;code&gt;--system-site-packages&lt;/code&gt; 像是&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv --system-site-packages &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;就可以了！  &lt;/p&gt;
+&lt;p&gt;如果是要建立不同 python 版本的環境，我們也可以指定，首先，你要知道那個 python 版本的路徑，我們用 python3 為例  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# find python3 path&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;which python3
+&lt;span class="c"&gt;# Here is the path!&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv -p &lt;span class="o"&gt;{&lt;/span&gt;the path shown above&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣就可以建立 python3 專屬的環境了！  &lt;/p&gt;
+&lt;p&gt;在建立環境的同時，通常(!) &lt;code&gt;pip&lt;/code&gt; 跟 &lt;code&gt;setuptools&lt;/code&gt; 也會一起被安裝，所以我們可以根據不同用途的環境安裝不同用途的 packages!&lt;br /&gt;
+舉一個簡單的例子，像是用 &lt;code&gt;pelican&lt;/code&gt; 建立blog.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# 建立一個叫 pelican 的環境，我們不需要任何 site-packages&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv pelican
+&lt;span class="c"&gt;# 安裝需要的元件&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;pip install pelican Markdown
+&lt;span class="c"&gt;# 現在我們就可以開始使用！&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;mkdir to/the/path/of/your/site
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;to/the/path/of/your/site
+&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;setvirtualenvproject
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最後一步非常方便，這樣可以建立專屬環境的初始路徑(cwd)，一切換到那個環境就會在那個路徑下！  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;pelican&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;這樣就可以開始建立一個 pelican site!&lt;/p&gt;
+&lt;h4&gt;移除環境&lt;/h4&gt;
+&lt;p&gt;在有 virtualenvwrapper 的情形下非常簡單，只需要&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rmvirtualenv &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Nice!&lt;/p&gt;
+&lt;h2&gt;Anaconda&lt;/h2&gt;
+&lt;p&gt;Anaconda 提供了 &lt;code&gt;conda create&lt;/code&gt; 的指令來建立環境，基本用法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;conda create -n py27 &lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2.7 anaconda
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;-n {name}&lt;/code&gt; 這裡的 name 是環境的名字，上面的例子名字就是 &lt;code&gt;py27&lt;/code&gt;，後面接上了 python version &lt;code&gt;2.7&lt;/code&gt; 以及package_spec &lt;code&gt;anaconda&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To be continued......&lt;/p&gt;
+&lt;h2&gt;Canopy&lt;/h2&gt;
+&lt;p&gt;To be continued......&lt;/p&gt;</summary></entry><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
+安裝順序是重要的！如果發現有問題，請重新安裝。&lt;/p&gt;
+&lt;h2&gt;Set up some taps and update Homebrew&lt;/h2&gt;
+&lt;p&gt;確保 Homebrew 運作正常，加入安裝 Python 需要的 repo。 並且更新 Homebrew！&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew doctor
+&lt;span class="c"&gt;# fix the error shown here&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap homebrew/science &lt;span class="c"&gt;# a lot of cool formulae for scientific tools&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew tap homebrew/python &lt;span class="c"&gt;# numpy, scipy&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; brew upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install Homebrew python&lt;/h2&gt;
+&lt;p&gt;安裝 Homebrew 的 python。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install python
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Check the python you are using&lt;/h2&gt;
+&lt;p&gt;確認你的 python 是 Homebrew 的，不是系統提供的.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;which python
+&lt;span class="c"&gt;# should be /usr/local/bin/python&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;/usr/local/bin&lt;/code&gt; should be in front of &lt;code&gt;/usr/bin&lt;/code&gt;!&lt;br /&gt;
+若是系統提供的 python，必須修改 &lt;code&gt;~/.bash_profile&lt;/code&gt; 裡面的 &lt;code&gt;PATH&lt;/code&gt;，像是加入&lt;code&gt;export PATH="/usr/local/bin:$PATH"&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Install PIL, imagemagick, graphviz and other&lt;/h2&gt;
+&lt;p&gt;Image generating stuff (qt is nice for viewing).&lt;br /&gt;
+一些圖形界面的 package。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ln -s /usr/local/include/freetype2 /usr/local/include/freetype &lt;span class="c"&gt;# seems freetype can&amp;#39;t be found on some systems otherwise&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install pillow imagemagick graphviz
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install cairo --without-x
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install py2cairo &lt;span class="c"&gt;# this will ask you to download xquartz and install it&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install qt pyqt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install nose and Virtual Environment&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install virtualenv virtualenvwrapper nose
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;請看&lt;a href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/"&gt;另一篇 post&lt;/a&gt; 有關如何使用 virtualenv&lt;/p&gt;
+&lt;h2&gt;Install numpy and scipy&lt;/h2&gt;
+&lt;p&gt;You can choose to use &lt;code&gt;openblas&lt;/code&gt; or not. If so, run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install openblas
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;then,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install numpy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install scipy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Test the numpy and scipy installation&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew &lt;span class="nb"&gt;test &lt;/span&gt;numpy
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew &lt;span class="nb"&gt;test &lt;/span&gt;scipy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Some cool python libraries&lt;/h3&gt;
+&lt;p&gt;PANDAS (Python Data Analysis Library), especially time series stuff, and NITK (natural language toolkit).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pandas nltk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Math Plot Library (&lt;a href="http://matplotlib.org"&gt;matplotlib&lt;/a&gt;) for plotting.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install matplotlib
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is Symbolic python (&lt;a href="http://sympy.org/en/index.html"&gt;SymPy&lt;/a&gt;).&lt;br /&gt;
+I hope this can beat Mathematica in the future!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install sympy q
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://ipython.org"&gt;IPython&lt;/a&gt; and IPython notebook support.&lt;br /&gt;
+If you are a theoretical physicist, you must try ipython notebook!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install zmq
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install ipython&lt;span class="o"&gt;[&lt;/span&gt;zmq,qtconsole,notebook,test&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;使用 ipython notebook&lt;/h4&gt;
+&lt;p&gt;在終端機下直接執行&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ipython notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;就會開啟網頁版ipython.&lt;/p&gt;
+&lt;h3&gt;HTML stuff&lt;/h3&gt;
+&lt;p&gt;Parsing,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install html5lib cssselect pyquery lxml BeautifulSoup
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, webapps / apis&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install Flask Django
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and semantic web stuff: &lt;code&gt;rdf&lt;/code&gt; and &lt;code&gt;sparql&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install rdflib SPARQLWrapper
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Run python scripts in the cloud&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install cloud
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Those steps are referenced from &lt;a href="http://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/"&gt;Jorn's blog&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
+這裡介紹如何使用&lt;code&gt;Python&lt;/code&gt;來做這件事情！&lt;/p&gt;
+&lt;h2&gt;安裝 django and uuslug&lt;/h2&gt;
+&lt;p&gt;這個方法需要用到兩個套件，都可以由&lt;code&gt;pip&lt;/code&gt;來安裝&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install django
+&lt;span class="nv"&gt;$ &lt;/span&gt;pip install django-uuslug
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在我們的程式裡，我們直接用&lt;code&gt;uuslug&lt;/code&gt;的function - &lt;code&gt;slugify&lt;/code&gt;!&lt;/p&gt;
+&lt;h4&gt;測試&lt;/h4&gt;
+&lt;p&gt;用一個簡單的測試，就可以知道如何使用！雖然這樣的轉換有點不是很清楚，但是作為網頁的slug已經夠用了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;uuslug&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;slugify&lt;/span&gt;
+&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;中文&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;slug&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;slugify&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;得到結果&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;python slugify-example.py 
+中文
+zhong-wen
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Create Pelican New Post&lt;/h2&gt;
+&lt;p&gt;如果你跟我一樣用過octopress，那有一個功能就是利用&lt;code&gt;Rakefile&lt;/code&gt;來建立新文章，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;rake new_post&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Title&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是這是Pelican所沒有的，不過這很容易辦到，而且可以使用中文的title！像下面這樣的程式就可以了&lt;/p&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;new_post.py&lt;/span&gt; &lt;a href='/code/python/new_post.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;uuslug&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;slugify&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;blog_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;blog_slug&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;slugify&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;IndexError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;blog_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;blog_slug&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;blog_title&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+        &lt;span class="n"&gt;blog_author&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Chen-Yen Lai&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;IndexError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;blog_author&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Yao-An Chan&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;time_now&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; %H:%M:%S&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;blog_slug&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;.md&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;content/&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Date: &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;time_now&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Title: &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;blog_title&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Author: &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;blog_author&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Category: &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Tags: &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Slug: &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;blog_slug&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Summary: &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;Status: draft&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/figure&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
 &lt;h3&gt;The single asterisk form (&lt;code&gt;*arg&lt;/code&gt;)&lt;/h3&gt;
 &lt;p&gt;This form gives you to pass several variables into a function. This following example pass one formal argument &lt;code&gt;x=1.0&lt;/code&gt; and three non-keyword arguments, &lt;code&gt;2.0,3.0,4.0&lt;/code&gt;,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;  
@@ -69,7 +379,9 @@ We then run it to test.  &lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Enjoy powerful python.&lt;/p&gt;</summary></entry><entry><title>Python package for OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/08/python-package-for-osx/" rel="alternate"></link><updated>2013-11-08T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-08:blog/2013/11/08/python-package-for-osx/</id><summary type="html">&lt;h2&gt;First word, I am running OSX 10.8&lt;/h2&gt;
+&lt;p&gt;Enjoy powerful python.&lt;/p&gt;
+&lt;h3&gt;The order of arguments - Python Syntax&lt;/h3&gt;
+&lt;p&gt;Be careful when you call a function, we always put non-keyword argument in front of keyword argument. &lt;/p&gt;</summary></entry><entry><title>Python package for OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/08/python-package-for-osx/" rel="alternate"></link><updated>2013-11-08T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-08:blog/2013/11/08/python-package-for-osx/</id><summary type="html">&lt;h2&gt;First word, I am running OSX 10.8&lt;/h2&gt;
 &lt;p&gt;There are several choices on the market, including the apple one within the os. In order to get all I need at once, I usually choose one from the following. Of cause, you can download the source code and install from it. The advantage of using those packages is that they are well maintained. Thus, the update and upgrade are easier!&lt;/p&gt;
 &lt;h3&gt;&lt;a href="http://www.continuum.io/"&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I feel it is slower than EPD.&lt;/p&gt;
@@ -79,6 +391,7 @@ I think both Anaconda and EPD provide the installer for Windows and Linux&lt;sup
 &lt;h3&gt;&lt;a href="http://fonnesbeck.github.io/ScipySuperpack/"&gt;Scipy Superpack&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;This is the first thing I have tried and succeeded, easy and fast&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;. &lt;/p&gt;
 &lt;h3&gt;&lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;UPDATED 05/20/2014: We have another post regarding &lt;a href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/"&gt;Homebrew Python installation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The similar alternatives are &lt;a href="http://www.macports.org/"&gt;Macport&lt;/a&gt; and &lt;a href="http://fink.thetis.ig42.org/"&gt;Fink&lt;/a&gt;. Th detail difference are compared by &lt;a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/"&gt;Ted Wise&lt;/a&gt;
 Example(Homebrew):
 Installation is super easy, it is depended on ruby and git. &lt;br /&gt;

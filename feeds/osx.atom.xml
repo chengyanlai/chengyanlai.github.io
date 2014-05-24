@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/osx.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2013-11-21T16:14:35-08:00</updated><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/osx.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-04-29T10:07:01-07:00</updated><entry><title>How to prevent widows and orphans in LaTeX?</title><link href="http://www.chenyen-yaoan.tk/blog/2014/04/29/latex-remove-widows-orphans/" rel="alternate"></link><updated>2014-04-29T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-04-29:blog/2014/04/29/latex-remove-widows-orphans/</id><summary type="html">&lt;p&gt;在某些文擋裡面，大家會避免某一句子落單在最後(widow)或是開頭(orphan)，在LaTeX裡面，我們可用下面的方式達到這個目的！&lt;/p&gt;
+&lt;h2&gt;使用 widowpenalty&lt;/h2&gt;
+&lt;p&gt;第一種方法是使用&lt;code&gt;\widowpenalty&lt;/code&gt;以及&lt;code&gt;clubpenalty&lt;/code&gt;，LaTeX的預設值是&lt;code&gt;150&lt;/code&gt;，值越大，出現widow跟orphan的機會就越低。
+在&lt;code&gt;\begin{document}&lt;/code&gt;之前下下面的指令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;\widowpenalty&lt;/span&gt;500
+&lt;span class="k"&gt;\clubpenalty&lt;/span&gt;500
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果想要完全移除可以把值設到10000。&lt;/p&gt;</summary><category term="Latex"></category></entry><entry><title>Simple Bash Tips - copy and xargs</title><link href="http://www.chenyen-yaoan.tk/blog/2014/03/14/bash-cp-xargs/" rel="alternate"></link><updated>2014-03-14T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-03-14:blog/2014/03/14/bash-cp-xargs/</id><summary type="html">&lt;h2&gt;Command cp&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cp&lt;/code&gt; only can copy file(s) into single folder.
+For example,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cp foo.txt folder1 folder2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Above command will try to copy &lt;code&gt;foo.txt&lt;/code&gt; and &lt;code&gt;folder1&lt;/code&gt; into &lt;code&gt;folder2&lt;/code&gt;. It will fail, however, since 
+&lt;code&gt;folder1&lt;/code&gt; is directory, not file!  &lt;/p&gt;
+&lt;p&gt;If what you want is to copy &lt;code&gt;foo.txt&lt;/code&gt; into &lt;code&gt;folder1&lt;/code&gt; and &lt;code&gt;folder2&lt;/code&gt;, you need to use loop!&lt;/p&gt;
+&lt;h2&gt;Use xargs&lt;/h2&gt;
+&lt;p&gt;It is good to check out the man page for &lt;code&gt;xargs&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here, I only cover the very basic usage.&lt;/p&gt;
+&lt;p&gt;In parent folder, suppose we have a file &lt;code&gt;foo.txt&lt;/code&gt;.&lt;br /&gt;
+If we want to copy this file to some subfolders, like &lt;code&gt;folder1&lt;/code&gt;, &lt;code&gt;folder2&lt;/code&gt;, etc...&lt;br /&gt;
+, we can simply do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;folder* | xargs -n 1 cp foo.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The above command will execute &lt;code&gt;cp&lt;/code&gt; multiple times, depend on how many folder you have in prefix &lt;code&gt;folder&lt;/code&gt;.&lt;br /&gt;
+The &lt;code&gt;-n&lt;/code&gt; tells &lt;code&gt;xargs&lt;/code&gt; how many arguments you have, here is &lt;code&gt;1&lt;/code&gt;, since &lt;code&gt;cp&lt;/code&gt; is utility of &lt;code&gt;xargs&lt;/code&gt;.&lt;br /&gt;
+If you need to copy two or more files, just change the number&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo &lt;/span&gt;folder* | xargs -n 2 cp foo1.txt foo2.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enjoy!&lt;/p&gt;</summary></entry><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
 &lt;p&gt;You need to pay for the Paper app, it only has OSX and Windows(WTF!) version, sorry.&lt;/p&gt;
 &lt;h3&gt;Export bib from Papers&lt;/h3&gt;
 &lt;p&gt;Papers allow you to export your entire library to single file &lt;/p&gt;
@@ -182,7 +218,82 @@ Type the following in the terminal&lt;/p&gt;
 &lt;p&gt;You will see this on your terminal&lt;/p&gt;
 &lt;p&gt;&lt;img alt="osx-mavericks-bootable-usb-drive-fig1.png" src="https://dl.dropboxusercontent.com/u/165978/osx-mavericks-bootable-usb-drive-fig1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;It takes about 20 mins to complete, be patient.&lt;/p&gt;
-&lt;p&gt;Read more at this &lt;a href="http://www.gottabemobile.com/2013/10/22/perform-clean-install-os-x-mavericks/#iA8WYhaBRRRieeGl.99"&gt;site&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
+&lt;p&gt;Read more at this &lt;a href="http://www.gottabemobile.com/2013/10/22/perform-clean-install-os-x-mavericks/#iA8WYhaBRRRieeGl.99"&gt;site&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>SSH login without password</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/" rel="alternate"></link><updated>2013-10-15T16:05:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-15:blog/2013/10/15/ssh-tricks/</id><summary type="html">&lt;h2&gt;Create SSH key&lt;/h2&gt;
+&lt;p&gt;Beforehand - You need to know where is the server (It's not helping!), and you need to create a new ssh-key like the following command at your home directory&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class="s2"&gt;&amp;quot;{Your email}&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;During the process, you will see&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; Generating public/private rsa key pair.  
+ Enter file in which to save the key &lt;span class="o"&gt;(&lt;/span&gt;/home/a/.ssh/id_rsa&lt;span class="o"&gt;)&lt;/span&gt;: **&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Created directory &lt;span class="s1"&gt;&amp;#39;${HOME}/.ssh&amp;#39;&lt;/span&gt;.  
+ Enter passphrase &lt;span class="o"&gt;(&lt;/span&gt;empty &lt;span class="k"&gt;for &lt;/span&gt;no passphrase&lt;span class="o"&gt;)&lt;/span&gt;: **&lt;span class="o"&gt;{&lt;/span&gt;You can choose to create or leave empty.&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Enter same passphrase again: **&lt;span class="o"&gt;{&lt;/span&gt;Do the same as above&lt;span class="o"&gt;}&lt;/span&gt;**  
+ Your identification has been saved in &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.  
+ Your public key has been saved in &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.pub.  
+ The key fingerprint is: 3e:4f:05:79:3a:9f:96:7c:3b:ad:e9:58:37:bc:37:e4 a@A
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After that you can see two files in the directory &lt;code&gt;${HOME}/.ssh/&lt;/code&gt;, they are &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;.pub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first is your &lt;code&gt;Private Key&lt;/code&gt;, and second is the &lt;code&gt;Public Key&lt;/code&gt;. Remember &lt;strong&gt;&lt;em&gt;NOT&lt;/em&gt;&lt;/strong&gt; to share your &lt;code&gt;Private Key&lt;/code&gt; to anyone. &lt;/p&gt;
+&lt;h2 id="prot"&gt;Protected Private Key&lt;/h2&gt;
+&lt;p&gt;If you chose to add the password during the key generation above, you need to do this to prevent the typing during every time you login (That's our goal!). Do the following command after the key is generated&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -K ~/.ssh/&lt;span class="o"&gt;{&lt;/span&gt;Name of the key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It'll prompt for your passphrase if necessary, then add it to your Keychain[^2]. This only works for this local computer. If you move your private key to another, you need to type the passphrase. &lt;/p&gt;
+&lt;h2&gt;Config SSH Host&lt;/h2&gt;
+&lt;p&gt;Next we need to edit the file located at ${HOME}/.ssh/config. If the file is not there, please create it. Add the following lines.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Host {You Name It!}
+    HostName {The url of the ssh server}
+    Port 22{unless the port is changed}
+    User {login username}
+    IdentityFile &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.ssh/{Name of the key}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/blockquote&gt;
+&lt;h2&gt;Make Server Knows You&lt;/h2&gt;
+&lt;p&gt;Here comes the most important part. You need to add the public key to the file on the server by using the following command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cat &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;HOME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/.ssh/{Name of the key}.pub | ssh {You Name It!} &amp;#39;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is basically all done. Now, we can try&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh &lt;span class="o"&gt;{&lt;/span&gt;You Name It!&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to connect.&lt;/p&gt;
+&lt;h2&gt;SSH agent&lt;/h2&gt;
+&lt;p&gt;You can check if your &lt;code&gt;Private Key&lt;/code&gt; is loaded by &lt;code&gt;SSH agent&lt;/code&gt;[^3]. Type this in terminal&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;, and it will you which key is loaded. If the key you need is not shown, you need to add it by&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add /path/to/the/private key/&lt;span class="o"&gt;{&lt;/span&gt;the private key&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;. Then check again&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-add -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;it should be there. &lt;/p&gt;
+&lt;h3&gt;Notes&lt;/h3&gt;
+&lt;p&gt;You can also refer to &lt;a href="http://www-uxsup.csx.cam.ac.uk/~aia21/osx/leopard-ssh.html"&gt;this page&lt;/a&gt;.&lt;br /&gt;
+As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
 &lt;h4&gt;&lt;code&gt;Go to&lt;/code&gt; function&lt;/h4&gt;
 &lt;p&gt;When you are in Finder, simply just use &lt;code&gt;Command-Shift-g&lt;/code&gt;. There will be a pop-up on your finder, we then type &lt;code&gt;~/Library/&lt;/code&gt;, the library folder will be opened.&lt;/p&gt;
 &lt;h4&gt;In the &lt;code&gt;Go&lt;/code&gt; menu&lt;/h4&gt;
@@ -224,17 +335,19 @@ You need to boot from a flash drive or the installation dmg, then you need to go
 
 
 &lt;h3&gt;Create CoreStorage&lt;/h3&gt;
-&lt;p&gt;After obtaining the two storage you want to setup as a single Fusion drive, you can use the command
-    :::bash
-    $ diskutil cs create {drivename} {driveIDs}&lt;/p&gt;
+&lt;p&gt;After obtaining the two storage you want to setup as a single Fusion drive, you can use the command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil cs create &lt;span class="o"&gt;{&lt;/span&gt;drivename&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;driveIDs&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;. This command can be broken down into&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;diskutil - the command-line version of Disk Utility.&lt;/li&gt;
 &lt;li&gt;cs -  Core Storage in short, which is necessary for Fusion.&lt;/li&gt;
 &lt;li&gt;creat - creates a Core Storage group.&lt;/li&gt;
 &lt;li&gt;drivername -  this is the name of the drive and how you want it to appear in Disk Utility (not the Finder – that comes later). You can call it whatever you want!&lt;/li&gt;
 &lt;li&gt;driveIDs - these are the drive IDs of the drives you want as part of your Fusion, separated by a space.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Format CoreStorage&lt;/h3&gt;
 &lt;p&gt;Then, we need to obtain the {groupString} to format the Fusion drive. Using the following command&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diskutil cs list
@@ -247,11 +360,11 @@ You need to boot from a flash drive or the installation dmg, then you need to go
 
 
 &lt;p&gt;, where&lt;/p&gt;
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;jhfs+ – the format of the drive. This is Apple Extended Format (journaled), which is recommended for drives with an OS installed on it.&lt;/li&gt;
 &lt;li&gt;volumeName - the actual name of the volume, how it should appear underneath the icon.&lt;/li&gt;
 &lt;li&gt;size - this is the size of the volume.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Reboot and Install OSX!&lt;/h3&gt;
 &lt;h2&gt;Split up Fusion drive&lt;/h2&gt;
 &lt;p&gt;First step, you need to find the unique identifier for the logical volume group. You can do this by typing&lt;/p&gt;
