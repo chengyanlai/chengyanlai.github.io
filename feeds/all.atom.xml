@@ -21,7 +21,8 @@
 &lt;span class="c"&gt;# all available ENV names will be shown here&lt;/span&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;workon &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;ENV name&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$ &lt;/span&gt;which python
-&lt;span class="c"&gt;# Now, you know this is a enviroment python!&lt;/span&gt;
+&lt;span class="c"&gt;# Now, you know this is an enviroment python!&lt;/span&gt;
+&lt;span class="c"&gt;# something like /Users/.../.virtualenvs/{ENV name}/bin/python&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -141,7 +142,7 @@
 &lt;span class="nv"&gt;$ &lt;/span&gt;brew install pillow imagemagick graphviz
 &lt;span class="nv"&gt;$ &lt;/span&gt;brew install cairo --without-x
 &lt;span class="nv"&gt;$ &lt;/span&gt;brew install py2cairo &lt;span class="c"&gt;# this will ask you to download xquartz and install it&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;brew install qt pyqt
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install qt pyqt  &lt;span class="c"&gt;# qt 經常是其他元件的 requirement 像是 ipython&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -153,24 +154,28 @@
 &lt;p&gt;請看&lt;a href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/"&gt;另一篇 post&lt;/a&gt; 有關如何使用 virtualenv&lt;/p&gt;
 &lt;h2&gt;Install numpy and scipy&lt;/h2&gt;
 &lt;p&gt;You can choose to use &lt;code&gt;openblas&lt;/code&gt; or not. If so, run&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install openblas
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# This is optional!&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install openblas
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;then,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew install numpy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# If you use openblas, please comment out below.&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;brew install numpy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;brew install scipy &lt;span class="c"&gt;# --with-openblas&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;Test the numpy and scipy installation&lt;/h3&gt;
+&lt;p&gt;測試是否已經安裝完成...&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;brew &lt;span class="nb"&gt;test &lt;/span&gt;numpy
 &lt;span class="nv"&gt;$ &lt;/span&gt;brew &lt;span class="nb"&gt;test &lt;/span&gt;scipy
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;Some cool python libraries&lt;/h3&gt;
-&lt;p&gt;PANDAS (Python Data Analysis Library), especially time series stuff, and NITK (natural language toolkit).&lt;/p&gt;
+&lt;p&gt;一些科學用途的套件！&lt;/p&gt;
+&lt;p&gt;Python Data Analysis Library (&lt;a href="http://pandas.pydata.org"&gt;pandas&lt;/a&gt;), especially time series stuff, and natural language toolkit (&lt;a href="http://www.nltk.org"&gt;nltk&lt;/a&gt;).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install pandas nltk
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -199,8 +204,9 @@ If you are a theoretical physicist, you must try ipython notebook!&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;就會開啟網頁版ipython.&lt;/p&gt;
+&lt;p&gt;就會開啟網頁版 ipython ，建議搭配 GitHub 跟 &lt;a href="http://nbviewer.ipython.org"&gt;nbviewer&lt;/a&gt; 一起使用，可以快速上線筆記！&lt;/p&gt;
 &lt;h3&gt;HTML stuff&lt;/h3&gt;
+&lt;p&gt;基本上我使用 python 使科學用途，比較少用網頁元件，以下只是參考。&lt;/p&gt;
 &lt;p&gt;Parsing,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;pip install html5lib cssselect pyquery lxml BeautifulSoup
 &lt;/pre&gt;&lt;/div&gt;

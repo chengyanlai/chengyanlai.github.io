@@ -119,7 +119,7 @@
 <span class="nv">$ </span>brew install pillow imagemagick graphviz
 <span class="nv">$ </span>brew install cairo --without-x
 <span class="nv">$ </span>brew install py2cairo <span class="c"># this will ask you to download xquartz and install it</span>
-<span class="nv">$ </span>brew install qt pyqt
+<span class="nv">$ </span>brew install qt pyqt  <span class="c"># qt 經常是其他元件的 requirement 像是 ipython</span>
 </pre></div>
 
 
@@ -131,24 +131,28 @@
 <p>請看<a href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/">另一篇 post</a> 有關如何使用 virtualenv</p>
 <h2>Install numpy and scipy</h2>
 <p>You can choose to use <code>openblas</code> or not. If so, run</p>
-<div class="highlight"><pre><span class="nv">$ </span>brew install openblas
+<div class="highlight"><pre><span class="c"># This is optional!</span>
+<span class="nv">$ </span>brew install openblas
 </pre></div>
 
 
 <p>then,</p>
-<div class="highlight"><pre><span class="nv">$ </span>brew install numpy <span class="c"># --with-openblas</span>
+<div class="highlight"><pre><span class="c"># If you use openblas, please comment out below.</span>
+<span class="nv">$ </span>brew install numpy <span class="c"># --with-openblas</span>
 <span class="nv">$ </span>brew install scipy <span class="c"># --with-openblas</span>
 </pre></div>
 
 
 <h3>Test the numpy and scipy installation</h3>
+<p>測試是否已經安裝完成...</p>
 <div class="highlight"><pre><span class="nv">$ </span>brew <span class="nb">test </span>numpy
 <span class="nv">$ </span>brew <span class="nb">test </span>scipy
 </pre></div>
 
 
 <h3>Some cool python libraries</h3>
-<p>PANDAS (Python Data Analysis Library), especially time series stuff, and NITK (natural language toolkit).</p>
+<p>一些科學用途的套件！</p>
+<p>Python Data Analysis Library (<a href="http://pandas.pydata.org">pandas</a>), especially time series stuff, and natural language toolkit (<a href="http://www.nltk.org">nltk</a>).</p>
 <div class="highlight"><pre><span class="nv">$ </span>pip install pandas nltk
 </pre></div>
 
@@ -177,8 +181,9 @@ If you are a theoretical physicist, you must try ipython notebook!</p>
 </pre></div>
 
 
-<p>就會開啟網頁版ipython.</p>
+<p>就會開啟網頁版 ipython ，建議搭配 GitHub 跟 <a href="http://nbviewer.ipython.org">nbviewer</a> 一起使用，可以快速上線筆記！</p>
 <h3>HTML stuff</h3>
+<p>基本上我使用 python 使科學用途，比較少用網頁元件，以下只是參考。</p>
 <p>Parsing,</p>
 <div class="highlight"><pre><span class="nv">$ </span>pip install html5lib cssselect pyquery lxml BeautifulSoup
 </pre></div>
@@ -329,46 +334,46 @@ quality="high" wmode="transparent" name="baby" align="middle" type="application/
 
 <h4><i class="icon-tag icon-large"></i>Tags</h4>
     <ul id="cloud">
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/craterlake.html">CraterLake</a></li>
             <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/ca.html">CA</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huai-yun-sheng-zi-za-ji.html">懷孕生子雜記</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/websitebuilder.html">WebsiteBuilder</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/zion.html">Zion</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/arches.html">Arches</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/lassenvolcanic.html">LassenVolcanic</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/blendtexguo-zhi-ji.html">Blendtex果汁機</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/brycecanyon.html">BryceCanyon</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-mei-shi.html">美國美食</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/games.html">Games</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/fusion.html">Fusion</a></li>
             <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-lu-xing.html">美國旅行</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ut.html">UT</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/xi-dian-dan-gao.html">西點蛋糕</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/yu-er-le.html">育兒樂</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/canyonlands.html">Canyonlands</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/nv.html">NV</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/grandcanyon.html">GrandCanyon</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/bao-zi-man-tou.html">包子饅頭</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/you-yin-le-bu-ji-mo.html">有音樂不寂寞</a></li>
-            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/capitolreef.html">CapitolReef</a></li>
-            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/or.html">OR</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-mei-shi.html">台灣美食</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/latex.html">Latex</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/wo-de-lu-shou-zhi.html">我的綠手指</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huai-yun-sheng-zi-za-ji.html">懷孕生子雜記</a></li>
             <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tu-shu-gu-chang-tui-jian.html">圖書股長推薦</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/craterlake.html">CraterLake</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/or.html">OR</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/websitebuilder.html">WebsiteBuilder</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ut.html">UT</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/bao-zi-man-tou.html">包子饅頭</a></li>
             <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ri-ben-lu-xing.html">日本旅行</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/canyonlands.html">Canyonlands</a></li>
             <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/deathvalley.html">DeathValley</a></li>
-            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/mian-bao.html">麵包</a></li>
-            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/az.html">AZ</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/you-yin-le-bu-ji-mo.html">有音樂不寂寞</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-mei-shi.html">台灣美食</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/blendtexguo-zhi-ji.html">Blendtex果汁機</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/xi-dian-dan-gao.html">西點蛋糕</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-mei-shi.html">美國美食</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/arches.html">Arches</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/latex.html">Latex</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/zion.html">Zion</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/games.html">Games</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/lassenvolcanic.html">LassenVolcanic</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/fusion.html">Fusion</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/nv.html">NV</a></li>
             <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nationalpark.html">NationalPark</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/mian-bao.html">麵包</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/yu-er-le.html">育兒樂</a></li>
             <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/yosemite.html">Yosemite</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/wo-de-lu-shou-zhi.html">我的綠手指</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/capitolreef.html">CapitolReef</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/brycecanyon.html">BryceCanyon</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/grandcanyon.html">GrandCanyon</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/az.html">AZ</a></li>
     </ul>
 <!-- /.Tags -->
 
