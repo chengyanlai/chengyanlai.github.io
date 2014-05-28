@@ -9,6 +9,15 @@
 
 
 &lt;p&gt;&lt;code&gt;virtualenvwrapper&lt;/code&gt; 並不一定是需要的，但是可以讓管理env更省時省力！  &lt;/p&gt;
+&lt;h4&gt;設定 virtualenvwrapper&lt;/h4&gt;
+&lt;p&gt;加入下列兩行在 &lt;code&gt;.bash_profile&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;WORKON_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.virtualenvs
+&lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第一行裡的 &lt;code&gt;.virtualenvs&lt;/code&gt; 是管理所有環境的資料夾，必須手動建立！資料夾名稱可以自行決定。&lt;br /&gt;
+設定好了之後，請重新開一個視窗或是 &lt;code&gt;source ~/.bash_profile&lt;/code&gt;.&lt;/p&gt;
 &lt;h4&gt;建立環境&lt;/h4&gt;
 &lt;p&gt;我們這裡介紹的是有使用 virtualenvwrapper 的方法！&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkvirtualenv &lt;span class="o"&gt;{&lt;/span&gt;ENV name&lt;span class="o"&gt;}&lt;/span&gt;
