@@ -497,8 +497,12 @@ Then you need to do the following&lt;/p&gt;
 10
 11
 12
-13&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash  &lt;/span&gt;
-git config --global user.name &lt;span class="s2"&gt;&amp;quot;chengyanlai&amp;quot;&lt;/span&gt;
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash  &lt;/span&gt;
+git config --global user.name &lt;span class="s2"&gt;&amp;quot;chenyenlai&amp;quot;&lt;/span&gt;
 git config --global user.email &lt;span class="s2"&gt;&amp;quot;chengyanlai@gmail.com&amp;quot;&lt;/span&gt;
 git config --global color.ui &lt;span class="nb"&gt;true&lt;/span&gt;
 git config --global color.log auto
@@ -506,10 +510,14 @@ git config --global core.editor &lt;span class="s2"&gt;&amp;quot;mate -w&amp;quo
 git config --global alias.st status
 git config --global alias.ci commit
 git config --global alias.co checkout
+git config --global alias.bh branch
 git config --global alias.last &lt;span class="s1"&gt;&amp;#39;log -1 HEAD&amp;#39;&lt;/span&gt;
-git config --global commit.template &lt;span class="nv"&gt;$HOME&lt;/span&gt;/Dropbox/File/git_files/gitmessage.txt
-git config --global core.excludesfile &lt;span class="nv"&gt;$HOME&lt;/span&gt;/Dropbox/File/git_files/gitignore_global
+git config --global alias.slog &lt;span class="s1"&gt;&amp;#39;log --oneline -20&amp;#39;&lt;/span&gt;
+git config --global alias.clni &lt;span class="s1"&gt;&amp;#39;clean -i&amp;#39;&lt;/span&gt;
+git config --global commit.template path/to/the/file/gitmessage.txt
+git config --global core.excludesfile path/to/the/file/gitignore_global
 git config --global push.default simple
+git config --global merge.tool opendiff
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 

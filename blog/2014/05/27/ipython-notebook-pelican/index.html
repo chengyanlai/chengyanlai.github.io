@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>IPython Notebook and Blogging</title>
+        <meta charset="utf-8" />
+        <link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Full Atom Feed" />
+        <link href="http://www.chenyen-yaoan.tk/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Categories Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/custom.css" />
+
+        <script src="http://www.chenyen-yaoan.tk/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.chenyen-yaoan.tk">Little Things about Everything <strong>Never Stop Learning</strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="pretty navbar">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="http://www.chenyen-yaoan.tk">Home</a></li>
+                <li><a href="#">About</a>
+                    <div class="dropdown">
+                        <ul>
+                          <li><a href="http://www.chenyen-yaoan.tk/pages/chenyen.html">Chen-Yen Lai</a></li>
+                          <li><a href="http://www.chenyen-yaoan.tk/pages/yaoan.html">Yao-An Chan</a></li>
+                          <li><a href="http://www.chenyen-yaoan.tk/pages/kessler.html">Kessler Lai</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="http://www.chenyen-yaoan.tk/pages/8-git.html">Git</a></li>
+                <li><a href="http://www.chenyen-yaoan.tk/pages/9-links.html">Links</a></li>
+                <li><a href="http://www.chenyen-yaoan.tk/archives.html">Archives</a>
+                    <div class="dropdown">
+                        <ul>
+                          <li><a href="http://www.chenyen-yaoan.tk/author/chen-yen-lai.html">Chen-Yen's Archives</a></li>
+                          <li><a href="http://www.chenyen-yaoan.tk/author/yao-an-chan.html">Yao-An's Archives</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="http://www.chenyen-yaoan.tk/tags.html">Tag Cloud</a>
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="http://www.chenyen-yaoan.tk/blog/2014/05/27/ipython-notebook-pelican/" rel="bookmark"
+                   title="Permalink to IPython Notebook and Blogging">IPython Notebook and Blogging</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-05-27T10:00:00">
+                <i class="icon-clock icon-medium"></i> Tue 27 May 2014
+              </abbr>
+              <address class="vcard author">
+                <i class="icon-feather icon-medium"></i> <a class="url fn" href="http://www.chenyen-yaoan.tk/author/chen-yen-lai.html">Chen-Yen Lai</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2>安裝 Pelican</h2>
+<p>這裡的步驟是基於有使用 <code>virtualenv</code> 跟 <code>virtualenvwrapper</code> 的人。有關虛擬環境，請詳閱<a href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/">這裡</a></p>
+<div class="highlight"><pre><span class="c"># 建立一個叫 pelican 的環境，我們不需要任何 site-packages</span>
+<span class="nv">$ </span>mkvirtualenv pelican
+<span class="c"># 安裝需要的元件</span>
+<span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>pip install pelican Markdown
+<span class="c"># 現在我們就可以開始使用！</span>
+<span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>mkdir to/the/path/of/your/site
+<span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span><span class="nb">cd </span>to/the/path/of/your/site
+<span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>setvirtualenvproject
+</pre></div>
+
+
+<h3>Pelican Site 初始化</h3>
+<p>快速建立一個 blog，Pelican 提供了以下的指令...</p>
+<div class="highlight"><pre><span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>pelican-quickstart
+</pre></div>
+
+
+<p>執行之後，他會問一些有關這個 blog 的訊息，就據實以答吧！錯了也不會怎樣，了不起再重來就好了XD<br />
+其實這些之後也都可以在調整，基本上是 generate 出 <code>peliconconf.py</code> 還有 <code>publishconf.py</code> 。<br />
+我是選擇使用 <code>Makefile</code> ， 你也可以選擇使用 <code>Fabric</code>......<br />
+現在，你就已經有了基本 blog 的 elements 了～
+可以先預覽一下</p>
+<div class="highlight"><pre><span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>make html
+<span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>make devserver
+</pre></div>
+
+
+<p>開啟瀏覽器連到 <code>localhost:8000</code> ，這就是剛剛建立的 blog！</p>
+<div class="highlight"><pre><span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>./develop_server.sh stop
+</pre></div>
+
+
+<p>就可以停止 localhost。</p>
+<h2>安裝 Pelican Theme</h2>
+<p>其實說安裝，也只不過把它下載下來而已......<br />
+請一併參閱<a href="https://github.com/getpelican/pelican-themes">這裡</a><br />
+想要看預覽，可以連<a href="http://pelican-themes-gallery.place.org">這裡</a>  </p>
+<div class="highlight"><pre><span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>git clone --recursive https://github.com/getpelican/pelican-themes ~/pelican-themes
+</pre></div>
+
+
+<p>使用 Theme 比需要修改 <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span class="n">THEME</span> <span class="o">=</span> <span class="s">&quot;/to/path/of/pelican-themes/theme-name&quot;</span>
+</pre></div>
+
+
+<p>這樣就可以來看一下成果了</p>
+<div class="highlight"><pre><span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>make html
+<span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>make devserver
+</pre></div>
+
+
+<h2>安裝 Pelican Plugin</h2>
+<p>其實說安裝，也只不過把它下載下來而已......(again)<br />
+請一併參閱<a href="https://github.com/getpelican/pelican-plugins">這裡</a></p>
+<div class="highlight"><pre><span class="o">(</span>pelican<span class="o">)</span> <span class="nv">$ </span>git clone https://github.com/getpelican/pelican-plugins
+</pre></div>
+
+
+<h3>Configure Plugin</h3>
+<p>要讓 plugin 順利運作，必須修改 <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span class="c"># For Plugins</span>
+<span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s">&#39;./plugins&#39;</span> <span class="c"># This is the path to your plugins!</span>
+<span class="c"># Then we list all plugins we need.</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;liquid_tags.img&#39;</span><span class="p">,</span> <span class="s">&#39;liquid_tags.video&#39;</span><span class="p">,</span>
+           <span class="s">&#39;liquid_tags.youtube&#39;</span><span class="p">,</span> <span class="s">&#39;liquid_tags.include_code&#39;</span><span class="p">,</span>
+           <span class="s">&#39;liquid_tags.notebook&#39;</span><span class="p">,</span><span class="s">&#39;render_math&#39;</span><span class="p">,</span><span class="s">&#39;googleplus_comments&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>基本上，這裡用了很多 <code>liquid tag</code> plugins ， 還有 <code>render_math</code> 是用來顯示 $\LaTeX$.</p>
+<h3>Publish IPython notebook by Liquid Tag</h3>
+<p>Configure Notebook path in <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;images&#39;</span><span class="p">,</span> <span class="s">&#39;code&#39;</span><span class="p">,</span> <span class="s">&#39;pdf&#39;</span><span class="p">]</span>
+<span class="n">NOTEBOOK_DIR</span> <span class="o">=</span> <span class="s">&#39;code/python/notebooks&#39;</span>
+</pre></div>
+
+
+<p>然後把要發佈的 notebook 存在 <code>to/the/path/of/your/site/content/code/python/notebooks</code> 
+或是你設定的 <code>NOTEBOOK_DIR</code> 就可以了～  </p>
+<p>以下就是使用 <code>liquid tag</code> 嵌入 IPython notebook 的實例......<br />
+只需要加上 <code>{ % notebook blogging-with-the-ipython-notebook-example.ipynb %}</code> 在 post 裡面就可以了！<br />
+請注意上面 <code>{ %</code> 的空格必需要拿掉！  </p>
+<p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="start-ipython-notebook">Start IPython notebook</h2>
+<h3 id="bsic-python-tesing">Bsic Python Tesing</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">print</span><span class="p">(</span><span class="s">&quot;IPython notebook work with pelican blog by using liquid tag plugin&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+IPython notebook work with pelican blog by using liquid tag plugin
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="inline-plotting-test">Inline Plotting Test</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Simply plot the sine function like $\sin(x)$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[12]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+QmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Other functions like $f(\alpha,x)=e^{-\alpha x}\sin(x)$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[13]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="s">&quot;g-&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;g(x)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="s">&quot;r--&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;h(x)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXwAAAEACAYAAACwB81wAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XlcVPX+P/DXwAz7jsg2KAoIgwKiaNJig4pLN0nNFHNB
+JZe6llndLPvWhTLFsszk/rpU7hlqWWEuU26jliIpiguooCDjAAoCyg4znN8fc0UJVGbOzJxZ3s/H
+Yx4w8Dmfz5vJXnPmc875HB7DMAwIIYSYPAuuCyCEEKIfFPiEEGImKPAJIcRMUOATQoiZoMAnhBAz
+QYFPCCFmgnXgSyQShISEICgoCCtWrOi0jVQqRWRkJPr16wexWMx2SEIIIRrgsTkPX6lUIjg4GPv3
+74evry8GDRqE9PR0iESitjbV1dV44okn8Ntvv0EoFKKiogLdunXTSvGEEEK6jtUeflZWFgIDA+Hv
+7w+BQID4+HhkZGS0a/P999/j+eefh1AoBAAKe0II4QirwJfL5fDz82t7LhQKIZfL27XJz89HZWUl
+YmJiEBUVhc2bN7MZkhBCiIb4bDbm8XiPbNPS0oLs7GwcOHAA9fX1iI6OxpAhQxAUFMRmaEIIIWpi
+Ffi+vr6QyWRtz2UyWdvUzV1+fn7o1q0bbG1tYWtri6FDhyInJ6dD4AcGBuLKlStsyiGEELMSEBCA
+goKCrm/AsNDS0sL07t2bKSwsZJqampiIiAgmNze3XZu8vDxm+PDhjEKhYOrq6ph+/foxFy5c6NAX
+y1JMxr///W+uSzAY9FrcQ6/FPfRa3KNubrLaw+fz+UhNTcWoUaOgVCqRmJgIkUiEtLQ0AMC8efMQ
+EhKC0aNHIzw8HBYWFpgzZw5CQ0PZDEsIIUQDrAIfAMaMGYMxY8a0+9m8efPaPX/rrbfw1ltvsR2K
+EEIIC3SlrYGhC9PuodfiHnot7qHXQnOsLrzSJh6PBwMphRBCjIK6uUl7+IQQYiYo8AkhxExQ4BNC
+iJmgwCeEEDNBgU8IIWaCAp8QQswEBT4hhJgJCnxCCDETFPiEEGImKPAJIcRMUOATQoiZoMAnhBAz
+QYFPCCFmggKfEELMBAU+IYSYCQp8QggxExT4hBBiJlgHvkQiQUhICIKCgrBixYoOv5dKpXB2dkZk
+ZCQiIyOxdOlStkPqzI3aG/j61NcYs2UMvFZ6YfR3o5EsTca+K/ugbFVyXR4hhLDC6haHSqUSwcHB
+2L9/P3x9fTFo0CCkp6dDJBK1tZFKpfj888+xc+fOhxfC4S0OFa0KvLrnVWy9sBWjA0djfMh4DPYd
+jJyyHBy/fhy/XfkNTtZO2Dx+M3o49+CkRkII+Tt1c5PPZrCsrCwEBgbC398fABAfH4+MjIx2gQ/A
+oO9V29DSgPgd8WhSNEG2SAYHK4e23/m7+OO5kOfw8bCPsfLYSkR9HYXVo1djStgUDismhBDNsJrS
+kcvl8PPza3suFAohl8vbteHxeDh27BgiIiLwzDPPIDc3l82QWlXVUIWR342Eo5Ujdk7Z2S7s72dp
+YYnFTy7G3ql7kXw4GYskiwz6TYwQQjrDKvB5PN4j2wwYMAAymQw5OTl49dVXMW7cODZDak2zshkj
+No9AlHcUNo3fBCtLq0duM9BnIE68dAIHCg/g02Of6qFKQgjRHlZTOr6+vpDJZG3PZTIZhEJhuzaO
+jo5t348ZMwavvPIKKisr4ebm1qG/pKSktu/FYjHEYjGb8h4q5Y8UeDt44/NRn3fpjesuZxtn7Jm6
+B9Fro+Hn5EfTO4QQvZFKpZBKpRpvz+qgrUKhQHBwMA4cOAAfHx8MHjy4w0HbGzduoHv37uDxeMjK
+ysKkSZNQVFTUsRA9HrTNLc/F0xueRvbcbPg5+z16g06cvXEWIzaNwA8v/ICn/Z/WcoWEEPJoej1o
+y+fzkZqailGjRkGpVCIxMREikQhpaWkAgHnz5uHHH3/EV199BT6fDzs7O2zdupXNkKy1Mq14aedL
+SBYnaxz2ABDuGY7vn/8ek36chJz5OfBy8NJilYQQon2s9vC1SV97+KlZqdh2YRsOzzwMCx77686W
+HFiCixUXsWPSDrWmhgghhC11c9OsrrQtqSlB8uFkfDP2G62EPQB88PQHuFhxEdsvbNdKf4QQoitm
+FfhfnvgSL/Z7ESHdQrTWpw3fBuufW4+FkoUoryvXWr+EEKJtZjOlU9tcC/8v/JE1Jwu9XXtrvf+3
+972Na7evYdvEbVrvmxBCOkNTOg+w/vR6iP3FOgl7AEgWJ+NM2RnsvrxbJ/0TQghbZhH4ylYlvjjx
+Bd6IfkNnY9gKbLEydiUW719MC60RQgySWQT+zks70d2+Ox73e1yn4zzb51m42bphY85GnY5DCCGa
+MIvA/+z4Z3hjiO727u/i8Xj4JPYTfHDoA9S31Ot8PEIIUYfJB/6J6ycgr5FjvGi8XsYbIhyCaL9o
+rM5crZfxCCGkq0w+8P976r/456B/gm/B6qJitSwbtgyfHf8MFfUVehuTEEIexaQDv1nZjIyLGZjS
+T78LnAW5B2Fy38lYdnSZXsclhJCHMenA33dlH/p27wtfJ1+9j73kqSXYcGYD7eUTQgyGSQf+9tzt
+mBQ6iZOxfZ18MTF0Ir488SUn4xNCyN+Z7JW2TYomeH3mhQuvXICPo4/W+lVHQWUBotdG4+prV+Fo
+7fjoDQghRA10pe3//H7ld4R7hnMW9gAQ6BaIEb1H4L8n/8tZDYQQcpfJBj6X0zn3e+eJd7AqcxUa
+FY1cl0IIMXMmGfiNikbsurwLz4c+z3UpiPCKwADvAdhwZgPXpRBCzJxJBv5vBb8h0ivSYO5C9e6T
+7+KTPz+hNXYIIZwyycDfnrsdk/pyP51z1xM9noCngyd2Xd7FdSmEEDNmcoGvaFVg9+XdGB+in6UU
+uuq1wa/hyyw6RZMQwh3WgS+RSBASEoKgoCCsWLHige3++usv8Pl8/PTTT2yHfKgseRZ6ufaCp4On
+TsdR1/OhzyOvPA/nb57nuhRCiJliFfhKpRILFiyARCJBbm4u0tPTkZeX12m7xYsXY/To0Tq/Ufn+
+q/sxotcInY6hCStLK7wc9TLWnFjDdSmEEDPFKvCzsrIQGBgIf39/CAQCxMfHIyMjo0O7NWvWYOLE
+ifDw8GAzXJfsu7oPsQGxOh9HE3MHzsX23O2obKjkuhRCiBliFfhyuRx+fn5tz4VCIeRyeYc2GRkZ
+ePnllwGorgzTlZqmGpwuPY0nezypszHY8HTwRFxwHL7N/pbrUgghZojVmsFdCe/XX38dKSkpbZcA
+P2xKJykpqe17sVgMsVisVj1Hrh3BYN/BsBPYqbWdPr02+DVM2D4Bb0S/odclmwkhxk8qlUIqlWq8
+PavE8fX1hUwma3suk8kgFArbtTl16hTi4+MBABUVFdi7dy8EAgHi4uI69Hd/4Gti39V9iO1tmNM5
+dw30GQihkxC/XvpVbzdlIYSYhr/vCCcnJ6u1PaspnaioKOTn56OoqAjNzc3Ytm1bhyC/evUqCgsL
+UVhYiIkTJ+Krr77qNOy1Yf/V/RjR2/AO2P7dy1Ev4+vsr7kugxBiZlgFPp/PR2pqKkaNGoXQ0FBM
+njwZIpEIaWlpSEtL01aNXVJSU4KSmhIM8B6g13E18bzoeZwsOYmi6iKuSyGEmBGTWR55c85mZFzK
+wI+TftRiVbqzSLII9lb2WDpsKdelEEKMlNkuj7y/sIvTOSUlwPffA3PmANOm6b6wB5g7cC7WnV6H
+FmULZzUQQsyLSQQ+wzDYd+URB2wZBkhKAvr1A378EQgLAz74QG81/p3IQ4RAt0D8evlXzmoghJgX
+kzgvMK8iD1aWVujt2vvBjd54Azh+HMjLAzwfsezCxYtASIh2i+zE3IFz8fWprzFBNEHnYxFCiEns
+4f9Z/Cee9n/64dcFzJsHHDr06LBXKIDJk4GEBNX3OjQxdCJOlZ5CYVWhTschhBDARAI/83omhvgO
+eXijkBDA1vbRnfH5qk8CN28Cs2cDra3aKbITNnwbTAubhm+yv9HZGIQQcpdJBP7x68cxRPiIwFeH
+nR2wYwdQWAgsXKia/9eROQPnYGPORro5CiFE54w+8KsbqyG7I0OYZ5h2O7azA3btAo4dA5bq7tTJ
+UI9QCJ2E+P3K7zobgxBCABMI/Cx5FgZ6D+y4Ls1PP7Gfg3d2BiQS4B//YNfPI8zuPxvrzqzT6RiE
+EGL0gX9c1sl0zo4dwHvvAUotTJN4eAADdHv1bny/eOy7sg8V9RU6HYcQYt6MPvAz5ZntA7+5WTXv
+/s03gLU1d4WpwdnGGc/2eRbfn/ue61IIISbMqAO/lWnFiesn2gf+jz8CwcHAk4a5Jv6DzI6cjbWn
+1+r8jmCEEPNl1IF/+dZlONs4w8vB694P16wBXntNtwPfvKn1LsX+YtxpuoPTZae13jchhABGHviZ
+1/82nZOTA5SVAc8+q7tBL10C+vcHqqq02q0FzwIzI2Zi/en1Wu2XEELuMvrAjxZG3/tBeLjqNEpL
+S90NGhwMjBsHLF6s9a5n9p+J9PPpaFI0ab1vQggx+sBvt4fP4wHe3rofePlyYPdu4OhRrXbb06Un
+wj3DaUE1QohOGG3g1zTVIL8yH/29+ut/cGdn4MsvVevzNGl3bzwhIgGbcjZptU9CCAGMOPBPlpxE
+f6/+sLK04qaACROAwEAgNVW73Yom4Mi1I7hZp/0Dw4QQ82a0gd+lBdN0iccD1q4F5s/XareO1o6I
+C46jc/IJIVpntIF/svQkonyiVE927gRu3NB/ER4egL291rulaR1CiC6wDnyJRIKQkBAEBQVhxYoV
+HX6fkZGBiIgIREZGYuDAgTh48CDbIQEAZ8rOINI7UrVeTmIi0NiolX4NQUyvGFTUV+DcjXNcl0II
+MSGsbmKuVCoRHByM/fv3w9fXF4MGDUJ6ejpEIlFbm7q6Otj/by/43LlzGD9+PAoKCjoWosbNeO80
+3YH3Z964884dWP7xp2ophdOmdcHSkgNL0KxsxsqRK7kuhRBioPR6E/OsrCwEBgbC398fAoEA8fHx
+yMjIaNfG/r4pj9raWnTr1o3NkACAszfOol/3frC0sAR++UV1XryJSYhIwJZzW6Bo1e1dtwgh5oNV
+4Mvlcvj5+bU9FwqFkMvlHdr98ssvEIlEGDNmDL788ks2QwJQTef09+yvujFJRgbw3HOs+2StthaI
+iVF91YLgbsHo6dwT+67s00p/hBDC6ibmD72H7H3GjRuHcePG4ejRo5g+fTouXbrUabukpKS278Vi
+McRicaftcspyVPP358+rlkCOiFC3dO1zcAC8vIAvvgD+7/+00uWMiBnYfHYzxgSN0Up/hBDjJpVK
+IZVKNd6e1Rx+ZmYmkpKSIJFIAADLly+HhYUFFj9k2YGAgABkZWXB3d29fSFqzEUN+mYQVo9ejcct
+/YGzZ4HRozX9E7SroAAYMgS4eBHQwtTVrfpbCPgyAMWLiuFk7aSFAgkhpkSvc/hRUVHIz89HUVER
+mpubsW3bNsTFxbVrc+XKlbaCsrOzAaBD2KtD0arAhZsXENY9DPDxMZywB1QXYk2erFp6QQvc7dwh
+9hdjR+4OrfRHCDFvrAKfz+cjNTUVo0aNQmhoKCZPngyRSIS0tDSkpaUBAHbs2IGwsDBERkZi4cKF
+2Lp1K6uCL9+6DF8nXzhaO7LqR2fefx/YsAEoLtZKd9PDp2Pz2c1a6YsQYt5YTeloU1c/mnx/7nv8
+fPFn/PDCD3qoSkP/+Q8waBAweDDrrpoUTfD93BfZ87LRw7mHFoojhJgKvU7pcOFM2RlEeBrAQdqH
++ec/tRL2AGDNt8bE0InYcnaLVvojhJgvowv8nBs53KyQyaG70zoG8mGMEGKkjCrwGYbB6dLTiKq2
+A4YP57ocvXnc73E0KZuQXZrNdSmEECNmVIFfVlsGJaOE56lLwH0XfJk6Ho+HaWHT6OAtIYQVowr8
+u9M5vD/+AJ56iutyuqauDpDJWHczPWI60s+no0XZooWiCCHmyKgCv+2A7dGjxhP427YBs2ez7ibQ
+LRABrgH4/crvWiiKEGKOjC7wn2gVqm4rGBTEdTldM306cPUqcOQI+67onHxCCAtGFfg5N3IwsIwH
+DB2quuOUMRAIgA8+UK2vw/Ism0l9J0FSIMHtxttaKo4QYk6MJvAbFY0orCqEz4x/AunpXJejnqlT
+VXfkYnnzF3c7d8T0isGOPFpqgRCiPqMJ/Pxb+fB38VfdtJzPapFP/ePzVXv5//436718mtYhhGjK
+aAI/ryIPIg/Roxsaqvh4YNky1t38I+gfOHfjHIpva2etHkKI+TCewC/Pg6ibEQe+paVWjj3QUguE
+EE0ZT+BX5CHUI5TrMgwCLbVACNGEUQX+gFIeoKB7vNJSC4QQTRhF4CtblSi6cQmicS8BLXSlKY/H
+w4zwGdiUs4nrUgghRsQoAr+wuhBP3nEFLzAQsLXluhz2GhpU975lMSVDSy0QQtRlFIGfV56HEbfd
+gchIrkvRDmtrYP16YPdujbvo7dobwd2CISmQaLEwQogpM47Ar8jDoJt80wl8CwvVOfksz8ufET4D
+m87StA4hpGuMJvADi2uB/iZ045Nx4wClEti5U+MuXuj7AvZd2YeqhiotFkYIMVWsA18ikSAkJARB
+QUFYsWJFh99v2bIFERERCA8PxxNPPIGzZ8+qPUZeeR4sevU2rcC3sACSk1V7+a2tGnXhYuOCUYGj
+sP3Cdi0XRwgxRawCX6lUYsGCBZBIJMjNzUV6ejry8vLatenduzeOHDmCs2fP4v3338fcuXPVGoNh
+GOSW58JySzrg6sqmXMMTF6daduHECY27oGkdQkhXsQr8rKwsBAYGwt/fHwKBAPHx8cjIyGjXJjo6
+Gs7OzgCAxx57DNevX1drjJKaEtjwbeBu586mVMPE46nW9o+O1riLkQEjUVBZgILKAi0WRggxRawC
+Xy6Xw+++Ww0KhULI5fIHtl+7di2eeeYZtcYw+StsWZ5mKrAU4MV+L2LjmY1aKogQYqpYLTvJU2Nd
+mEOHDmHdunX4888/H9gmKSmp7XuxWAyxWGz8a+jowcz+MxG3NQ7JMcmw4BnFcXhCiAakUimkUqnG
+27MKfF9fX8juu1+rTCaDUCjs0O7s2bOYM2cOJBIJXB8yD39/4N9l9Ktk6kGEVwTcbN0gLZJiWK9h
+XJdDCNGRuzvCdyUnJ6u1PavdwaioKOTn56OoqAjNzc3Ytm0b4uLi2rUpLi7GhAkT8N133yEwMFDt
+MeRFZxHzZwmbMs3CzIiZWH9mPddlEEIMGKs9fD6fj9TUVIwaNQpKpRKJiYkQiURIS0sDAMybNw8f
+fvghqqqq8PLLLwMABAIBsrKyujyGffZ5BF3hAW+wqdRIfPEF4OwMzJql9qYvhr2If0v/jTtNd+Bk
+7aSD4gghxo7HGMgauzwer8Nyv5UNlVgzzhsfhL0K3sqVHFWmR8ePq26UcvmyavkFNY3fNh7PBj2L
+xAGJOiiOEGJoOsvNhzHoI3x55Xl48pY9eKaypMKjREcDYWHA/z4hqWtmxExsyNmg3ZoIISbDoAM/
+vzIffUsUprOGTlcsW6Z61NSovekzQc/g8q3LdE4+IaRTBh34MtkFuFU1AcHBXJeiP+HhwPDhwKpV
+am8qsBRgathUbDizQft1EUKMnkEHflFFPnLemKK6H6w5+fBDoK5Oo01n9p+JTTmboGxVarkoQoix
+M+jAP9MiA/PKK1yXoX8BAUAnC9F1RbhnODwdPLHv6j4tF0UIMXYGG/gMw6CgsgCBbuqfu2/uEiMT
+8W32t1yXQQgxMAYb+BX1FeBb8OFm68Z1KUZnSr8p2H91P8rryrkuhRBiQAw28PMr82nvXkPONs6I
+C47D5rObuS6FEGJADDbwaTrnPrm5am+SGJmItafXqnVRBiHEtBls4N86l4WZe8u4LoN7SqXqdoi/
+/67WZkN7DkWzshkn5JrfXIUQYloMNvAtTp9B8NXbXJfBPUtLYPly4F//UoV/F/F4PDp4Swhpx2AD
+37qgEJaivlyXYRgmTAAcHIDN6s3JJ0QkYEfeDtQ0qX/VLiHE9Bhk4DMMA7dr5XAKH8R1KYaBxwM+
++wx47z2gtrbLm3k7euPpnk8j/Xy6DosjhBgLgwz8yoZKBFW0wiE8iutSDMeQIcCwYargV8P8qPn4
+78n/0sFbQohhBn7BrXz0qWDACwnhuhTD8vnnwMKFam0yMmAkqhqrcLLkpI6KIoQYC8MM/PJL+HpB
+NODiwnUphsXDQ+3XxIJngbkD5iLtlGZLLhNCTIdBBn7+nUJUPhPDdRkmY1bkLOzI24HbjXTWEyHm
+zCADny660i4vBy+M6D0C3539jutSCCEcosA3E/MHzkfaqTQ6eEuIGWMd+BKJBCEhIQgKCsKKTpb0
+vXjxIqKjo2FjY4PPuniGSX5lPoLcg9iWZtqUStWNUoqLu9Q8plcMGhQNOH79uI4LI4QYKlaBr1Qq
+sWDBAkgkEuTm5iI9PR15eXnt2ri7u2PNmjV46623utRnZUMlWpQt8LDzYFOa6bO0BMRi4NVXu9Tc
+gmeB+QPn4z9//Ue3dRFCDBarwM/KykJgYCD8/f0hEAgQHx+PjIyMdm08PDwQFRUFgUDQpT4LZeew
+K50HHo/HpjTz8PbbwKVLwN9e8weZHTkbe/L3oKyW1igixByxCny5XA4/P7+250KhEHK5nFVB5af/
+QI87FPZdYm0NfPUV8NprXboC19XWFZNCJyHtJJ2iSYg54rPZWNt74UlJScg7uB1uEGCyVAqxWKzV
+/k1STIzq8d57wOrVj2y+YPACjPpuFN596l1YWVrpoUBCiLZIpVJIpVKNt2cV+L6+vpDJZG3PZTIZ
+hEKhxv0lJSXhl9yf0DMkGpEU9l33+eeARNKlpmGeYQjuFowduTswJWyKjgsjhGiTWCxutyOcnJys
+1vaspnSioqKQn5+PoqIiNDc3Y9u2bYiLi+u0bVdPB3S8VgprURibssyPmxvw4otdbv7q4FexJmuN
+DgsihBgiVoHP5/ORmpqKUaNGITQ0FJMnT4ZIJEJaWhrS0lTzxGVlZfDz88OqVauwdOlS9OjRA7UP
+mW92L70D1360aJouxQXH4fqd6zhVcorrUgghesRjDORKHB6PhyZFEwa/bo+TKZXg2ztyXZJJS/kj
+BRcrLmLDuA1cl0II0RCPx1PrYkqDutJWdluG6gBfCns9mDNgDjIuZaC0ppTrUgghemJQgV9UXYRe
+rr24LsP4HT4MzJnz0Cbudu6YGjaV5vIJMSMGFfiF1YXwd/HnugzjN2gQ8Oefj7wl4qIhi/D1qa9R
+29z1u2gRQoyXQQV+UXUR/J39uS7D+NnZAenpwBtvAAUFD2wW4BYAsb8Y606v02NxhBCuGFzg05SO
+lkREAO+/rzpds7n5gc3eevwtrMpcBUWrQo/FEUK4YFCBP+Xz3xFxiW7SoTWvvgr4+ACLFz+wyRDh
+EPg6+uKnvJ/0WBghhAsGFfiBBVXo7tuH6zJMB48HbNoEzJv30GZvPf4WVh5bSWvlE2LiDCrwhZUK
+dO/3GNdlmBYnJ+ARN4Mf22csbjfdxqGiQ3oqihDCBYMK/CYrC1g6043L9c3SwhLvPvkulh5ZynUp
+hBAdMqjAv9ndgesSzNbUsKkoqi7Cn8V/cl0KIURHDCrwa3zcuS7BPOzcqbpF4n0ElgK88+Q7WHqU
+9vIJMVUGFfhHFsdzXYLpUyiAL74AFi0C/naQNiEiAedvnsdf8r84Ko4QoksGFfhePftyXYLp4/OB
+n34CDh0CVq5s9ytrvjXefvxtfHz0Y46KI4TokkEFPi2roCcuLsDevarbI6amtvvVSwNewgn5CeSU
+5XBUHCFEVyjwzZVQCBw8qNrL37Ch7ce2Alv86/F/IelwEmelEUJ0w6DWw1e2KmHBM6j3INN39arq
+a+/ebT9qaGlAn9Q++OGFHzBEOISjwgghj6LuevgGFfgGUgoB8G32t9hybgsOzjio9ZvVE+OkbFWi
+vL4cZbVluFF7A+X15ahurEZVQxVuN91GfUs9GhQNaGhpQEtrC1qZVihblWDAwJJnCUsLS/At+LDh
+28CWbwtbvi3srezhaOUIR2tHOFk7wdXGFW62bnCzdUM3u25wtXWlncCHoMAnWqFoVaDv/+uLNWPW
+YGTASK7LIXqiaFWgoLIAFysu4mLFRVy6dQlF1UUoqi5CSU0JXGxc4OXgBU97T3jYe8DVxhUuNi5w
+tnaGncAOtgJVkFtZWsGCZwELnkXbp3clo4SiVYFGRSMaFY1oaGlAXUsd7jTdQU1TDW433UZVYxWq
+GqpQ2VCJivoK1DTXwNXGFZ4OnvC094SXgxe8HLzg4+jT9hA6CeHj6AMbvg3XL5/eUeAT9hgGUCjw
+w+VfkPJnCv6a8xftZZkgZasSueW5OCY7hlOlp3C67DRyy3Ph7eANkYcIIe4hCO4WjF4uveDv4g8/
+Zz9YWVrptcYWZQtuNdzCzbqbbZ8sSmtLUVpTipLaEsjvyCGvkaOkpgRO1k4QOgnRw7kH/Jz84Ofk
+h54uPdHDuQd6OPeAt4M3LC0s9Vq/ruk98CUSCV5//XUolUq89NJLWNzJyoyvvfYa9u7dCzs7O2zY
+sAGRkZGsCyc69OOPwOefo3XbVgzeOwGLn1iMF/q+wHVVhCVlqxKny07jwNUDOFR0CJnXM9Hdvjui
+/aIxyGcQIr0iEeEVAQcr47vivZVpRXldOWR3ZJDdlkF2R4bi28VtX69VX0NFfQV8HH3a3gB6Oqve
+DO5/UzC2v12vga9UKhEcHIz9+/fD19cXgwYNQnp6OkQiUVubPXv2IDU1FXv27MGJEyewcOFCZGZm
+si6c6FBrK5CSAqxZg5OfLsKUqm9w4ZULet+7I+zdqr+FvQV78evlX7Hvyj54OXhheK/hGNZrGJ7s
+8SQ87D24LlFvmhRNkNfIca36Gq7dvgbZ7f+9Gdy+huLbxSi+XQxbga3q04GzX9unBD9nPwidhPBz
+8oOPow9sBbZc/ylt1M1NPpvBsrKyEBgYCH9/fwBAfHw8MjIy2gX+zp07kZCQAAB47LHHUF1djRs3
+bsDT05OfkOG0AAASRUlEQVTN0ESXLCyAJUuAwYMRNX063hvqhC8jVuGtoQ9eV58YjrLaMuzI3YEf
+cn/A6bLTiPGPwdg+Y7Fq1Cr4OPp0rZPSUqChQXVldmuraikOpRIIDFTdUe3vLl4E6upU3/N49x5B
+QYC9fcf2cjnQ0gJYWqr+vVlaqh4uLoBAoPkf/xDWfGv0du2N3q69O/09wzCoqK/o8CnhfPn5tuel
+NaWwt7KHr6MvfJ184e3gDR9HH3g7eMPb0bvtGIOnvSfsrTr5uznGKvDlcjn8/PzanguFQpw4ceKR
+ba5fv06BbwxGjACysjApfiK2vJuEst8S4OXgxXVVBACuXFGFclUVUF2Nhls3kJt/DCmBpdjffBHP
+9nkWb0S/gZEBI1UHM6dPB7I+ARobVY+GBqCpSXXD+yGdnHo7fz5w7pwqhPl8VShbWABbtgDh4R3b
+L18OnD+vOv5z/2Pz5s7bL1gAZGe3fzNRKgGJBIiK6th+yBDg5Ml7bwx8vurrvn2dt588WVXP3fZ3
+t1m7FujbyRX9b74JXkEBPCws4GFpiQF334Q++kj1Jvc/d98UWpYvRcsfV1CrKEKtIhe1ijrUKRrw
+6dNOOGNdhRu1N8Dj8dDdvjs87Dww43g9/GotYCuwg62VPWyt7GArsEPVixNg1ysILjYucLFxgZO1
+E/gWfGDjRtV/37tnyN19A506VXVTIw2xCvyunq73948cD9ouKSmp7XuxWAyxWKxpaURb/Pxgd/Q4
+ZD+9hncPvIv1z63nuiLTJJcDRUWq/8lLS4GyMtXjzTeB0NCO7T/8EExBAW5Zt+KSsgy5zSVw9fRH
+4vg3sFmc0PGMlfffVwWqra3qYW0N2NiovnYmI0O9+jduVK/9zz+r1/74cVX9CoXqcfcNwtGx8/Yp
+KapPHPe/mSiVQI8enbcfNw6orFS1ufsm1Nqq+sRxHx6Pp5oG6/8U4N1H1YZhVO0ZBnFTpgDe3mAY
+BnUtdW2nr9rc3ILW69dR31yLxpYG3L5dhYaWevxwQoaCc42oaqxCdWM17jTdgQ3fBgv/soR/DR9W
+llawthTAykIAgYUA393cBUGjEEHuQeq9fv/DKvB9fX0hk8nanstkMgiFwoe2uX79Onx9fTvt7/7A
+JwbEwgJvjV2GkNQQZMmzMNh3MNcVGZeqKqCwUBXoUVGdh8777wN5eYC3t+rh5aXaq3V17dC0sqES
+m16OxH9PngDfgo85A17Hi2EvPnw+vo+R30mOx1PtofO7GFm91Lw39lNPqdd+4sSH/prH48HBygEO
+bg4IcAsA3uv8Asa/nwrBMAxqm2tVp6o216CmqQY1zTWoa65DXUsdRjXXIdI7EgO8BwAAkpOT1aub
+YaGlpYXp3bs3U1hYyDQ1NTERERFMbm5uuza7d+9mxowZwzAMwxw/fpx57LHHOu2LZSlED9Zlr2Me
+++YxRtmqVP3g+nWGyc7mtihD9dlnDDNgAMO4uDCMoyPDhIczzHPPMUxmpsZd5pXnMfN/nc+4pLgw
+U3dMZY5eO8q0trZqsWhibNTNTVZ7+Hw+H6mpqRg1ahSUSiUSExMhEomQlpYGAJg3bx6eeeYZ7Nmz
+B4GBgbC3t8f69TQlYKwS+icg7VQavs3+FnMHzgVyc4FZs1RzoosXAzEx9+YcTVFjI5CfrzpAefcx
+cSIwfnzHtsOGAU8+qVqywt1d49eFYRgcuXYEK/5cgVOlpzB/4Hzk/TOPjqUQjdCFV0Qt52+eR8zG
+GJyZdwa+Tr6qA39btgCffKI6GyMxEZg2TXUvXVPy2WfA//0f4O8PiESq+wQHBwNDh6o/fdAFrUwr
+dl3eheV/LMet+lv41+P/wvSI6WZ5NSl5MLrSluhckjQJ2aXZyIjPuHcAvrUV+P13YP164NNPH3xw
+zFAwjOpA6f1763l5qrnczo4l1daqDnDq6JTBu1qZVvxy8RckH06GJU91r+EJogkmd4Uo0Q4KfKJz
+TYomDPx6IN4f+j4m95vctY1aWgCpFBg8GHB21ml9bRhGFdSdncmxbRvw+uv39tRDQlR77uHhqoOm
+esYwDH6++DOSDydDYCFAkjgJ/wj6By1cRx6KAp/oxYnrJzBu2zice/kcutl1e/QGpaVAfDxw6pRq
+LX6RSBW0UVGPPOOhS65dA779VjVOcbHqeXExMGaM6g5ff8cwBnG8gWEY/H7ld7x38D20Mq34MOZD
+CnrSZRT4RG/e/O1NFN8pxvaJ27seUC0tqqmTS5dUD0A1N/53J08CY8eqvmcY1ZRRYyMQEQEcPdqx
+fVGR6lxwb2/VdFLPnqqvnV3laSAyr2finf3voKy2DB/FfITnQ5+nReqIWijwid40Khox5NsheGXQ
+K6qzdrSpuRmoqFB9b2Gh2hu3sVEFeFfPxTZQl29dxpIDS5B5PRPJ4mQk9E9QXV1JiJoo8IleXaq4
+hCfXP4lDCYfQr3s/rssxaOV15Ug+nIyt57fizeg3sXDIQtgJOlmXhpAuUjc36fMjYSW4WzA+GfEJ
+4n+MR31LPdflGKRGRSM++fMThP6/UFjwLHBxwUW8+9S7FPZE72gPn7DGMAym/jQVDlYO+Hrs11yX
+YzAYhsGOvB14e9/bCPMMwycjPkFwt2CuyyImhKZ0CCfuNN3BkG+HYMHgBXhl0Ctcl8O5UyWnsOi3
+RbjddBurRq3CsF7DuC6JmCC9rodPyF1O1k74dcqveGLdEwhyC0JsQCzXJXGitKYUSw4ugaRAgo9i
+PsKs/rPooiliMGgOn2hNgFsAfnjhB0z7eRouVlzkuhy9alQ0YtnRZQj7Kgzd7brj0oJLeGnASxT2
+xKBQ4BOteqrnU1gxYgWe/f5ZlNeVc12OzjEMg23ntyEkNQQnS07ixEsnsCJ2BZysTWwtIWISaEqH
+aN3M/jNRVF2E4ZuG42DCwa5diWuE/pL/hUW/LUJ9Sz02jNsAsb+Y65IIeSg6aEt0gmEYvHfwPewt
+2IsDMw7AzdaN65K05lr1NSw5uASHCg9h6bClSIhIoKkbwgk6D58YBB6Ph4+HfYzY3rGI3RyLqoYq
+rktirbqxGu/sfwcDvh6AQNdAXH71MmZHzqawJ0aDAp/oDI/Hw4oRKyDuKcbQDUNxrfoa1yVppFHR
+iJXHVqLPmj64WXcTZ+efRXJMMhysHLgujRC1UOATneLxeFg5ciVm95+N6LXROHH9BNcldVmLsgVr
+s9eiz5o++KP4DxxKOIR1z61T3fiFECNEc/hEb3699CsSdyZizZg1XV9HnwOKVgW+O/sdPjryEfxd
+/PFRzEd43O9xrssipAO60pYYtJyyHIzfNh5ifzG+GP2FQZ2+2KhoxKacTfj02KcQOgmRLE7G0J5D
+uS6LkAfS20HbyspKxMbGok+fPhg5ciSqq6s7bTd79mx4enoiLCxM06GICYnwikDO/BwILAQI/yoc
+hwoPcV0SqhqqkPJHCnqt7oWMSxlYG7cWhxIOUdgTk6Nx4KekpCA2NhaXL1/G8OHDkZKS0mm7WbNm
+QSKRaFwgMT2O1o5IG5uGr/7xFab/PB3TfpqGq1VX9V5Hdmk2EjMS0Wt1L1wov4Dfpv2G3S/upqAn
+JkvjKZ2QkBAcPnwYnp6eKCsrg1gsxsWLnV9OX1RUhLFjx+LcuXMPLoSmdMxSTVMNPj/+OdZkrcHk
+vpOx5KklOj0oWlZbhq3nt2LLuS24WXcT8wfOR+KARHS3766zMQnRFb3N4bu6uqKqSnVuNcMwcHNz
+a3v+dxT45FEq6iuw/OhyrDuzDk/4PYFZ/WdhbPBYWFlaseqXYRjkV+Zjb/5e7MrfhZMlJxEXHIep
+YVMxrNcwutMUMWpaXS0zNjYWZWVlHX7+8ccfdxhUGzddTkpKavteLBZDLBaz7pMYh2523fDZqM/w
+YcyH+DH3R6zJWoO5u+ZiaM+hGNpjKIb2HIpQj1DYCmwf2s+dpjs4d+McTpWewqnSUzh67Sialc0Y
+HTga8wfOx5j4MXTjEWK0pFIppFKpxtuzmtKRSqXw8vJCaWkpYmJiaEqHaFVJTQmOXDvS9iioLICj
+tSP8nPzarc/T0tqCstoyyO/IoWSUCPUIxUDvgYjyicIQ4RD09eirlR0SQgyN3tbDj4uLw8aNG7F4
+8WJs3LgR48aN07QrQjrl4+iD+H7xiO8XDwBoZVpRXlcO2R0ZbtXfagtxC54FvBy8IHQSwtnamcKd
+kAfQeA+/srISkyZNQnFxMfz9/bF9+3a4uLigpKQEc+bMwe7duwEAU6ZMweHDh3Hr1i10794dH374
+IWbNmtWxENrDJ4QQtdCFV4QQYiZotUxCCCGdosAnhBAzQYFPCCFmggKfEELMBAU+IYSYCQp8Qggx
+ExT4hBBiJijwCSHETFDgE0KImaDAJ4QQM0GBTwghZoICnxBCzAQFPiGEmAkKfEIIMRMU+IQQYiYo
+8AkhxExQ4BNCiJmgwCeEEDOhceBXVlYiNjYWffr0wciRI1FdXd2hjUwmQ0xMDPr27Yt+/frhyy+/
+ZFUsIYQQzWkc+CkpKYiNjcXly5cxfPhwpKSkdGgjEAiwatUqXLhwAZmZmfjPf/6DvLw8VgWbOqlU
+ynUJBoNei3votbiHXgvNaRz4O3fuREJCAgAgISEBv/zyS4c2Xl5e6N+/PwDAwcEBIpEIJSUlmg5p
+Fugf8z30WtxDr8U99FpoTuPAv3HjBjw9PQEAnp6euHHjxkPbFxUV4fTp03jsscc0HZIQQggL/If9
+MjY2FmVlZR1+/vHHH7d7zuPxwOPxHthPbW0tJk6ciNWrV8PBwUHDUgkhhLDCaCg4OJgpLS1lGIZh
+SkpKmODg4E7bNTc3MyNHjmRWrVr10P4CAgIYAPSgBz3oQY8uPgICAtTKbR7DMAw08Pbbb8Pd3R2L
+Fy9GSkoKqqurOxy4ZRgGCQkJcHd3x6pVqzQZhhBCiJZoHPiVlZWYNGkSiouL4e/vj+3bt8PFxQUl
+JSWYM2cOdu/ejT/++ANDhw5FeHh425TP8uXLMXr0aK3+EYQQQh5N48AnhBBiXDi/0lYikSAkJARB
+QUFYsWIF1+Vwhi5S60ipVCIyMhJjx47luhROVVdXY+LEiRCJRAgNDUVmZibXJXFm+fLl6Nu3L8LC
+wvDiiy+iqamJ65L0Zvbs2fD09ERYWFjbz7pyAez9OA18pVKJBQsWQCKRIDc3F+np6WZ7YRZdpNbR
+6tWrERoa+tAzwMzBwoUL8cwzzyAvLw9nz56FSCTiuiROFBUV4ZtvvkF2djbOnTsHpVKJrVu3cl2W
+3syaNQsSiaTdz7pyAez9OA38rKwsBAYGwt/fHwKBAPHx8cjIyOCyJM7QRWrtXb9+HXv27MFLL70E
+c551vH37No4ePYrZs2cDAPh8PpydnTmuihtOTk4QCASor6+HQqFAfX09fH19uS5Lb5566im4urq2
++1lXLoC9H6eBL5fL4efn1/ZcKBRCLpdzWJFhoIvUgEWLFuHTTz+FhQXns46cKiwshIeHB2bNmoUB
+AwZgzpw5qK+v57osTri5ueHNN99Ejx494OPjAxcXF4wYMYLrsjil7gWwnP7fZO4f1TtDF6kBu3bt
+Qvfu3REZGWnWe/cAoFAokJ2djVdeeQXZ2dmwt7d/5Md2U3XlyhV88cUXKCoqQklJCWpra7Flyxau
+yzIYj7oAFuA48H19fSGTydqey2QyCIVCDiviVktLC55//nlMmzYN48aN47oczhw7dgw7d+5Er169
+MGXKFBw8eBAzZszguixOCIVCCIVCDBo0CAAwceJEZGdnc1wVN06ePInHH38c7u7u4PP5mDBhAo4d
+O8Z1WZzy9PRsWw2htLQU3bt3f2h7TgM/KioK+fn5KCoqQnNzM7Zt24a4uDguS+IMwzBITExEaGgo
+Xn/9da7L4dSyZcsgk8lQWFiIrVu3YtiwYdi0aRPXZXHCy8sLfn5+uHz5MgBg//796Nu3L8dVcSMk
+JASZmZloaGgAwzDYv38/QkNDuS6LU3Fxcdi4cSMAYOPGjY/eUVTrulwd2LNnD9OnTx8mICCAWbZs
+GdflcObo0aMMj8djIiIimP79+zP9+/dn9u7dy3VZnJNKpczYsWO5LoNTZ86cYaKiopjw8HBm/Pjx
+THV1NdclcWbFihVMaGgo069fP2bGjBlMc3Mz1yXpTXx8POPt7c0IBAJGKBQy69atY27dusUMHz6c
+CQoKYmJjY5mqqqqH9kEXXhFCiJkw71MgCCHEjFDgE0KImaDAJ4QQM0GBTwghZoICnxBCzAQFPiGE
+mAkKfEIIMRMU+IQQYib+PzEbThmjpftxAAAAAElFTkSuQmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="end-of-ipython-notebook">End of IPython notebook</h2>
+</div>
+</div>
+</div></p><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+
+            </div><!-- /.entry-content -->
+    <hr />
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52a901090a703633"></script>
+    <!-- AddThis Button END -->
+            <div class="comments">
+              <h3>Comments</h3>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                var disqus_identifier = "blog/2014/05/27/ipython-notebook-pelican/";
+                (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://mypelicansite.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            </div>
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<section>
+    <h4><i class="icon-home icon-large"></i>Hello</h4>
+    <h6>
+    <a href="http://www.flickr.com/photos/xavierweathertoplai/9468924220/" title="LCT_3372 by ChenYen.Lai, on Flickr"><img src="http://farm3.staticflickr.com/2824/9468924220_28cf488b58_m.jpg" width="240" height="159" alt="LCT_3372"></a>
+    </h6>
+    <p>
+        We are <a href="http://www.chenyen-yaoan.tk/pages/1-chenyen.html">Chen-Yen Lai (賴承彥)</a> and <a href="http://www.chenyen-yaoan.tk/pages/1-yaoan.html">Yao-An Chan (詹堯安)</a>. 
+        We are here to share our life with our friends. 
+        We are currently living in Riverside, CA USA. 
+    </p>
+</section><section>
+    <h4>
+<a href="http://babygraph.com/index_e.php" target="_blank">K Growth Chart</a>
+    </h4>
+<div style="text-align:center;">
+<embed src="http://data.sub.jp/baby/bagra.swf" FlashVars="number=35821" width="480" height="640" 
+quality="high" wmode="transparent" name="baby" align="middle" type="application/x-shockwave-flash" />
+</div>
+</section>
+<h4><i class="icon-link icon-large"></i>Blog roll</h4>
+
+<ul id="side-list">
+      <li><a href="http://hpwange.pixnet.net/blog">老百姓HP的部落格</a></li>
+      <li><a href="http://jimmyblanca.blogspot.com">La Casa de JimmyBlanca</a></li>
+      <li><a href="http://thousandchen.blogspot.com">A Free Seeker</a></li>
+      <li><a href="http://marykey-all.blogspot.com">sally's little world</a></li>
+      <li><a href="http://vilina.blogspot.com/">Sentimental Reasons</a></li>
+      <li><a href="http://markdown.tw/">Markdown語法</a></li>
+      <li><a href="http://daringfireball.net/projects/markdown/dingus">Dingus Tryout</a></li>
+      <li><a href="http://michelf.ca/projects/php-markdown/extra/">PHP Markdown Extra</a></li>
+  <!--      <li><a href="http://www.chenyen-yaoan.tk/pages/8-git.html">Git</a></li>
+      <li><a href="http://www.chenyen-yaoan.tk/pages/9-links.html">Links</a></li>
+-->
+  </ul>
+
+<h4><i class="icon-folder icon-large"></i>Categories</h4>
+<ul id="side-list">
+		<li><a href="http://www.chenyen-yaoan.tk/category/cooking-backing.html">Cooking-Backing (49)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/food.html">Food (12)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/gimp.html">Gimp (2)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/git.html">Git (5)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/kessler.html">Kessler (6)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/lifetw.html">Life@TW (41)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/lifeus.html">Life@US (25)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/lo-ma-ji.html">Lo-ma-ji (1)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/misc.html">misc (42)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/movie-drama-book.html">Movie-Drama-Book (9)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/osx.html">OSX (8)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/pregnancy.html">Pregnancy (24)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/python.html">Python (6)
+        </a></li>
+		<li><a href="http://www.chenyen-yaoan.tk/category/travel.html">Travel (52)
+        </a></li>
+</ul>
+
+
+<h4><i class="icon-tag icon-large"></i>Tags</h4>
+    <ul id="cloud">
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/zhai-jing-ji-shi-wang-dao.html">宅經濟是王道</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/zion.html">Zion</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/craterlake.html">CraterLake</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/canyonlands.html">Canyonlands</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nationalpark.html">NationalPark</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-mei-shi.html">台灣美食</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-mei-shi.html">美國美食</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/cu-jin-jing-ji-fa-zhan.html">促進經濟發展</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/yosemite.html">Yosemite</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/mian-bao.html">麵包</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/grandcanyon.html">GrandCanyon</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/blendtexguo-zhi-ji.html">Blendtex果汁機</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/yu-er-le.html">育兒樂</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/dian-ying-dian-shi-xin-de.html">電影電視心得</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/nei-xin-xiao-xiao-du-bai.html">內心小小獨白</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/bao-zi-man-tou.html">包子饅頭</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/fusion.html">Fusion</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ut.html">UT</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/nv.html">NV</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tu-shu-gu-chang-tui-jian.html">圖書股長推薦</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-lu-xing.html">台灣旅行</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/websitebuilder.html">WebsiteBuilder</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/xi-dian-dan-gao.html">西點蛋糕</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huo-shi-hen-hao-de-zheng-ju.html">伙食很好的證據</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/tai-wan-sheng-huo-dian-di.html">台灣生活點滴</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/arches.html">Arches</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/latex.html">Latex</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/ri-ben-lu-xing.html">日本旅行</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/huai-yun-sheng-zi-za-ji.html">懷孕生子雜記</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/brycecanyon.html">BryceCanyon</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/you-yin-le-bu-ji-mo.html">有音樂不寂寞</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/lassenvolcanic.html">LassenVolcanic</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/or.html">OR</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/deathvalley.html">DeathValley</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/ca.html">CA</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/wo-de-lu-shou-zhi.html">我的綠手指</a></li>
+            <li class="tag-2"><a href="http://www.chenyen-yaoan.tk/tag/games.html">Games</a></li>
+            <li class="tag-4"><a href="http://www.chenyen-yaoan.tk/tag/capitolreef.html">CapitolReef</a></li>
+            <li class="tag-1"><a href="http://www.chenyen-yaoan.tk/tag/mei-guo-lu-xing.html">美國旅行</a></li>
+            <li class="tag-3"><a href="http://www.chenyen-yaoan.tk/tag/az.html">AZ</a></li>
+    </ul>
+<!-- /.Tags -->
+
+<nav class="widget">
+  <h4><i class="icon-info icon-large"></i>Social</h4>
+  <ul id="side-list">
+    <li><a href="http://www.facebook.com/chenyenlai"><i class="icon-facebook icon-large"></i>Chen-Yen's facebook</a></li>
+    <li><a href="http://www.flickr.com/photos/xavierweathertoplai/"><i class="icon-flickr icon-large"></i>Chen-Yen's flickr</a></li>
+    <li><a href="https://github.com/chengyanlai"><i class="icon-github icon-large"></i>Chen-Yen's github</a></li>
+    <li><a href="https://twitter.com/chenyenlai"><i class="icon-twitter icon-large"></i>Chen-Yen's twitter</a></li>
+    <li><a href="http://www.linkedin.com/pub/chenyen-lai/52/568/901"><i class="icon-linkedin icon-large"></i>Chen-Yen's linkedin</a></li>
+    <li><a href="https://plus.google.com/+ChenYenLai"><i class="icon-gplus icon-large"></i>Chen-Yen's gplus</a></li>
+    <li><a href="mailto:chengyanlai@gmail.com"><i class="icon-email icon-large"></i>Chen-Yen's email</a></li>
+    <li><a href="http://www.facebook.com/yaoanchan"><i class="icon-facebook icon-large"></i>Yao-An's facebook</a></li>
+  </ul>
+</nav>
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License
+                    <i class="icon-cc-nc icon-large"></i></a>
+                    <br />
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a> - 
+                    Domain name provided by <a href="http://my.dot.tk/cgi-bin/amb/landing.dottk?nr=747808::13091085::1" target="_new">Dot.TK</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                <li><div class="btn primary"><a href="https://github.com/chengyanlai" target="_blank">Github</a></div></li>
+
+                <li><div class="btn twitter"><a href="https://twitter.com/chenyenlai" target="_blank">Twitter</a></div></li>
+
+                <li><div class="btn facebook"><a href="https://www.facebook.com/chenyenlai" target="_blank">Facebook</a></div></li>
+
+                <li><div class="btn danger"><a href="https://plus.google.com/+ChenYenLai" target="_blank">Google+</a></div></li>
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'mypelicansite';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+  <script src="http://www.chenyen-yaoan.tk/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.chenyen-yaoan.tk/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.chenyen-yaoan.tk/theme/js/plugins.js"></script>
+
+</body>
+</html>
