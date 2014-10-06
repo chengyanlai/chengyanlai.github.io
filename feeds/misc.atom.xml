@@ -18,37 +18,7 @@ Run一行Command，複製匯出的檔案到octopress的&lt;code&gt;_post&lt;/cod
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;就大功告成了！&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 2</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="alternate"></link><updated>2013-11-15T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-15:blog/2013/11/15/my-octopress-and-heroku-2/</id><summary type="html">&lt;p&gt;Octopress的好處就是可以隨意的更改以及裝自己想要的plugin，或是你熟&lt;code&gt;Ruby&lt;/code&gt;，你也可以自己寫plugin，剛設置好的blog其實已經很夠用，但是當你的blog漸漸壯大或是你要匯入你之前的文章(數百篇)，那加一些有用的plugin就變得很必要了！&lt;/p&gt;
+&lt;p&gt;就大功告成了！&lt;/p&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 2</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="alternate"></link><updated>2013-11-15T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-15:blog/2013/11/15/my-octopress-and-heroku-2/</id><summary type="html">&lt;p&gt;Octopress的好處就是可以隨意的更改以及裝自己想要的plugin，或是你熟&lt;code&gt;Ruby&lt;/code&gt;，你也可以自己寫plugin，剛設置好的blog其實已經很夠用，但是當你的blog漸漸壯大或是你要匯入你之前的文章(數百篇)，那加一些有用的plugin就變得很必要了！&lt;/p&gt;
 &lt;h3&gt;建立中文 Categories Sidebar&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;Octopress 2.1&lt;/code&gt; 已經提供中文category，我們只要使用正確的url就可以了！&lt;br /&gt;
 有幾件事必須要先完成  &lt;/p&gt;
@@ -178,37 +148,7 @@ new_cicle_gordita_italic-webfont.woff
 &lt;/figure&gt;
 
 &lt;p&gt;再來就是把這個檔案的內容加到&lt;code&gt;sass/custom/_typography.css&lt;/code&gt;，如果你沒有這個檔案就建立他吧！&lt;br /&gt;
-現在你已經建立了自己的FontFace，使用的話就跟上面用WebFont一樣，更改&lt;code&gt;sass/custom/_fonts.scss&lt;/code&gt;就可以了！&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 1</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="alternate"></link><updated>2013-11-13T22:46:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-13:blog/2013/11/13/my-octopress-and-heroku-1/</id><summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+現在你已經建立了自己的FontFace，使用的話就跟上面用WebFont一樣，更改&lt;code&gt;sass/custom/_fonts.scss&lt;/code&gt;就可以了！&lt;/p&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 1</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="alternate"></link><updated>2013-11-13T22:46:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-13:blog/2013/11/13/my-octopress-and-heroku-1/</id><summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://octopress.org"&gt;Octopress&lt;/a&gt; 是一套Blog Framework。也是這個 Blog 正在用的系統。&lt;br /&gt;
 可以參考名人xdite的&lt;a href="http://blog.xdite.net/posts/2011/10/08/what-is-octopress"&gt;早期文章&lt;/a&gt;，市面上還有其他做static site的package，像是python做的&lt;a href="http://github.com/hyde/hyde"&gt;hyde&lt;/a&gt;跟&lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt;，以及一樣是&lt;code&gt;Ruby&lt;/code&gt;的&lt;a href="http://middlemanapp.com"&gt;MIDDLEMAN&lt;/a&gt;  &lt;br /&gt;
 這篇文章記錄我自己從零開始的設置，從clone octopress到把最基本的blog製造出來～&lt;/p&gt;
@@ -452,37 +392,7 @@ Add the gems to &lt;code&gt;Gemfile&lt;/code&gt;, and install it.&lt;/p&gt;
 &lt;p&gt;Please see original post &lt;a href="http://joshuawood.net/how-to-deploy-jekyll-slash-octopress-to-heroku/"&gt;here&lt;/a&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>明天就要回台灣了！</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/" rel="alternate"></link><updated>2010-08-22T09:37:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-22:blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/</id><summary type="html">&lt;div class='post'&gt;
+&lt;/div&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>明天就要回台灣了！</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/" rel="alternate"></link><updated>2010-08-22T09:37:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-22:blog/2010/08/22/ming-tian-jiu-yao-hui-tai-wan-liao/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/_mvtDPM7iODU/THFQAX8W1aI/AAAAAAAAIMQ/JE4QsK_EqZ4/s1600/Screen+shot+2010-08-22+at+9.26.11+AM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://3.bp.blogspot.com/_mvtDPM7iODU/THFQAX8W1aI/AAAAAAAAIMQ/JE4QsK_EqZ4/s320/Screen+shot+2010-08-22+at+9.26.11+AM.png" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;因為明天就要去搭飛機了，想說來對照一下現在台灣的天氣，結果在早上9點半的現在，兩地的氣溫竟然是一樣的耶！但台灣這打雷的圖示倒是讓我心驚了一下！這到底是怎樣，是叫我趕快把本來沒有要帶的傘放進包包嗎？&lt;br /&gt;&lt;br /&gt;話說傘在這裡幾乎無用武之地，除了冬天幾乎不下雨，下雨也不一定大到要撐傘（通常從停車場走到家裡只要幾十秒），更別說要遮陽啦！這裡的女孩們不來這一套的...&lt;br /&gt;&lt;br /&gt;總之，想念的台灣，終於要回去了，希望今晚不要高興得睡不著耶！哈哈！&lt;/div&gt;</summary><category term="內心小小獨白"></category></entry><entry><title>回台灣的購物清單</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/21/hui-tai-wan-de-gou-wu-qing-dan/" rel="alternate"></link><updated>2010-08-21T18:58:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-21:blog/2010/08/21/hui-tai-wan-de-gou-wu-qing-dan/</id><summary type="html">&lt;div class='post'&gt;
 在加州生活其實很方便，很少有什麼是買不到的，只要有錢＄＄＄！&lt;br /&gt;&lt;br /&gt;這次回台灣，想買的都是美國很貴的或是很不滿意的，雖然現在列了一些，但回台灣後，在價值觀嚴重偏差的狀態下，應該是看到什麼都會覺得便宜得想要都買回家吧！希望屆時行李箱不要爆炸了！XD&lt;br /&gt;&lt;br /&gt;暫列一下預計要買的東西：&lt;br /&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;相機＋閃燈&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;保養品雜貨：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;化妝棉&lt;/li&gt;&lt;li&gt;瘦臉霜&lt;/li&gt;&lt;li&gt;面膜&lt;/li&gt;&lt;li&gt;Naive洗面乳&lt;/li&gt;&lt;li&gt;眼藥水&lt;/li&gt;&lt;li&gt;隱形眼鏡&lt;/li&gt;&lt;li&gt;髮飾&lt;/li&gt;&lt;li&gt;浴簾&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;廚房用品：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;菜刀&lt;/li&gt;&lt;li&gt;大瓢羹&lt;/li&gt;&lt;li&gt;剝蒜頭橡皮管&lt;/li&gt;&lt;li&gt;碗夾&lt;/li&gt;&lt;li&gt;開罐器&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;調味料：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;蓮藕粉&lt;/li&gt;&lt;li&gt;菜脯&lt;/li&gt;&lt;li&gt;豆薣&lt;/li&gt;&lt;li&gt;忠字號眷村醬料-麻婆香辣醬&lt;/li&gt;&lt;li&gt;辣豆瓣醬&lt;/li&gt;&lt;li&gt;XO醬&lt;/li&gt;&lt;li&gt;福源白芝麻醬、花生醬&lt;/li&gt;&lt;li&gt;台酒豆腐乳&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;吃的：&lt;/li&gt;&lt;ul&gt;&lt;li&gt;關廟麵&lt;/li&gt;&lt;li&gt;意麵&lt;/li&gt;&lt;li&gt;馬玉山 抹綠奶茶x5&lt;/li&gt;&lt;li&gt;蜂蜜&lt;/li&gt;&lt;li&gt;香草巷40號紅茶&lt;/li&gt;&lt;li&gt;餅乾零食&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/div&gt;</summary><category term="內心小小獨白"></category></entry><entry><title>回台灣想吃的清單</title><link href="http://www.chenyen-yaoan.tk/blog/2010/08/17/hui-tai-wan-xiang-chi-de-qing-dan/" rel="alternate"></link><updated>2010-08-17T23:25:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-08-17:blog/2010/08/17/hui-tai-wan-xiang-chi-de-qing-dan/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;在美國思鄉，想的都是親友跟美食，回台灣有好-多-好-多-想吃的東西，才回去兩週多一點點，好像不夠吃完這些我一時想到的東西，能吃多少就吃多少吧！但感覺我回家後，應該是看到什麼都想吃吧！:D （寫得好像來美國被餓到了:P）&lt;br /&gt;&lt;br /&gt;以下列個小小清單：&lt;br /&gt;&lt;ul&gt;&lt;li&gt;念念不忘小吃：&lt;/li&gt;&lt;/ul&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;鹽酥雞&lt;/li&gt;&lt;li&gt;雞排&lt;/li&gt;&lt;li&gt;滷味&lt;/li&gt;&lt;li&gt;武廟前肉圓&lt;/li&gt;&lt;li&gt;黑白切&lt;/li&gt;&lt;li&gt;土地公臭豆腐&lt;/li&gt;&lt;li&gt;阿川土魠魚羹&lt;/li&gt;&lt;li&gt;阿鳳浮水魚羹&lt;/li&gt;&lt;li&gt;要早起才能吃到的粿仔&lt;/li&gt;&lt;li&gt;黑輪米血&lt;/li&gt;&lt;li&gt;大腸包小腸&lt;/li&gt;&lt;li&gt;蚵仔煎&lt;/li&gt;&lt;li&gt;肉粽&lt;/li&gt;&lt;li&gt;花園夜市亂吃&lt;/li&gt;&lt;li&gt;板橋的肉羹麵&lt;/li&gt;&lt;li&gt;板橋義順蚵仔麵線&lt;/li&gt;&lt;li&gt;台北滷味王的大腸&lt;/li&gt;&lt;li&gt;繕魚意麵&lt;/li&gt;&lt;li&gt;虱目魚湯 / 粥&lt;/li&gt;&lt;li&gt;肉燥飯&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;正餐：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;家裡的菜&lt;/li&gt;&lt;li&gt;老四川麻辣鍋&lt;/li&gt;&lt;li&gt;榕樹下&lt;/li&gt;&lt;li&gt;鼎泰豐&lt;/li&gt;&lt;li&gt;沒吃過的乾杯&lt;/li&gt;&lt;li&gt;牛肉麵&lt;/li&gt;&lt;li&gt;MoMo Paradise 其實我是想念薄片的肉&lt;/li&gt;&lt;li&gt;勺勺客&lt;/li&gt;&lt;li&gt;日本料理&lt;/li&gt;&lt;li&gt;泡麵：味味一品或滿漢大餐&lt;/li&gt;&lt;li&gt;鍋燒意麵&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;甜點：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;神旺巧克力蛋糕，我想我可以吃掉六吋的一半&lt;/li&gt;&lt;li&gt;吊鐘燒&lt;/li&gt;&lt;li&gt;黑砂糖挫冰&lt;/li&gt;&lt;li&gt;還沒有吃到過的香帥芋泥卷&lt;/li&gt;&lt;li&gt;老公說他一定要吃菠蘿麵包跟棋盤蛋糕，我進去麵包店看到喜歡的都要買！！&lt;/li&gt;&lt;li&gt;舊振南喜餅，我的喜餅太好吃了:P&lt;/li&gt;&lt;li&gt;泡芙&lt;/li&gt;&lt;li&gt;依蕾特布丁&lt;/li&gt;&lt;li&gt;統一布丁&lt;/li&gt;&lt;li&gt;豆花&lt;/li&gt;&lt;li&gt;紅豆餅&lt;/li&gt;&lt;li&gt;雞蛋糕&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;餅乾之類來不及吃可以帶來米國的：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;福義軒或是喜年來的蛋捲&lt;/li&gt;&lt;li&gt;脆笛酥&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;飲料：&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;ol&gt;&lt;li&gt;波哥：珍珠鮮奶茶、綜合新味、叮哥、茉綠凍飲...等，我想要至少喝個10杯&lt;/li&gt;&lt;li&gt;五十嵐：粉條紅茶、葡萄柚綠&lt;/li&gt;&lt;li&gt;青蛙撞奶&lt;/li&gt;&lt;li&gt;雙全紅茶，去吃榕樹下的時候可以順便喝一下&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;ul&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;
@@ -542,37 +452,7 @@ To jenniferchen0915@yahoo.com.tw&lt;br /&gt;已經回信給你囉:D&lt;br /&gt;�
 &lt;div class='content'&gt;
 沒錯!給你一個讚!&lt;br /&gt;我在英國也陷入了價值觀扭曲的窘境中.......:S&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="促進經濟發展"></category></entry><entry><title>春天小白花開</title><link href="http://www.chenyen-yaoan.tk/blog/2010/06/10/chun-tian-xiao-bai-hua-kai/" rel="alternate"></link><updated>2010-06-10T22:38:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-06-10:blog/2010/06/10/chun-tian-xiao-bai-hua-kai/</id><summary type="html">&lt;div class='post'&gt;
+&lt;/div&gt;</summary><category term="促進經濟發展"></category></entry><entry><title>春天小白花開</title><link href="http://www.chenyen-yaoan.tk/blog/2010/06/10/chun-tian-xiao-bai-hua-kai/" rel="alternate"></link><updated>2010-06-10T22:38:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-06-10:blog/2010/06/10/chun-tian-xiao-bai-hua-kai/</id><summary type="html">&lt;div class='post'&gt;
 &lt;center&gt;&lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/ptpTb4N4Jqm_lQNsG7w71w?feat=embedwebsite"&gt;&lt;img src="http://lh5.ggpht.com/_mvtDPM7iODU/TA1343RAeRI/AAAAAAAAHfU/r7-vsJgzoeM/s400/YAN_8679.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這是之前在學校的Botanic Gardens買(最後變成送)的種子，名字叫....印象中有Alice？已經忘記了，總之包裝介紹說是會在春天開滿白色小花的的一種常見野花，但在開花之前，誰也不知道他到底是會長怎樣。&lt;br /&gt;&lt;br /&gt;從種子開始，想想除了綠豆之外也沒有種過什麼是從種子開始的，想當年綠豆也種得很失敗，沒有長到開花的印象。這次好像是去年10月種的？經過兩週後，陸續發了芽，讓我高興了一下，然後就停滯了很久，我都不覺得它有在長，感覺好像養了一盆雜草。&lt;br /&gt;&lt;br /&gt;猜測大概是因為冬天加上我放在比較沒日照的地方，所以它不想長大，換了地點後有長得比較高。之前還一度因為我經常性地忘記澆水，感覺快要枯死了。五月的時候，猛然一看才發現，有點枯萎的葉子中竟然隱藏著花苞！這下可激發起認真澆水的動力了！:D&lt;br /&gt;&lt;br /&gt;最近花越開越多了，原來花開出來是長這樣啊！&lt;br /&gt;&lt;center&gt;&lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/K2eqbJOi7h7EBbjZb2wx0w?feat=embedwebsite"&gt;&lt;img src="http://lh4.ggpht.com/_mvtDPM7iODU/TA13_jlYHCI/AAAAAAAAHfg/AGNWkC-kU_4/s400/YAN_8890.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;很可愛吧！ &lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/H8pzydo2qm398C32hnIvUw?feat=embedwebsite"&gt;&lt;img src="http://lh5.ggpht.com/_mvtDPM7iODU/TA139KnfWlI/AAAAAAAAHfc/XfcJcfqWSlU/s400/YAN_8889.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;想不到我也可以從種子種出花來，真是太感人了！雖然說當時一起買的蘆薈、黃金葛、還有茉莉盆栽都死光了....所以我還是不能說自己擁有綠手指(&amp;lt;--還差的遠咧！這花會開是僥倖吧！)。&lt;br /&gt;&lt;br /&gt;最後，如果有人知道它到底是叫什麼名字，麻煩請告訴我一下。謝謝！:D&lt;/div&gt;</summary><category term="我的綠手指"></category></entry><entry><title>[Blendtec果汁機妙用] 快速用黑胡椒粒製作黑胡椒粉</title><link href="http://www.chenyen-yaoan.tk/blog/2010/05/03/blendtecguo-zhi-ji-miao-yong-kuai-su-yong-hei-hu-jiao-li-zhi-zuo-hei-hu-jiao-fen/" rel="alternate"></link><updated>2010-05-03T12:21:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-05-03:blog/2010/05/03/blendtecguo-zhi-ji-miao-yong-kuai-su-yong-hei-hu-jiao-li-zhi-zuo-hei-hu-jiao-fen/</id><summary type="html">&lt;div class='post'&gt;
 &lt;center&gt;&lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/7GQ8GWZnQDk8uJG7lb8aYA?feat=embedwebsite"&gt;&lt;img src="http://lh4.ggpht.com/_mvtDPM7iODU/S95dl9wWbpI/AAAAAAAAHJY/VGA5r6fCb28/s400/YAN_8487.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;用果汁機打黑胡椒粉！給你猜猜需要幾秒？&lt;br /&gt;&lt;br /&gt;家裡本來是用Costco的自有品牌KIRKLAND的研磨黑胡椒罐，只要開蓋子，倒過來旋轉就可以把罐內的黑胡椒粒磨成粉，現磨的很香。很好用！推薦給用量不大的人。對我來說，唯二的缺點：&lt;br /&gt;&lt;ol&gt;&lt;li&gt;頭不能拆，用完無法重複利用罐子。&lt;/li&gt;&lt;li&gt;比沒有附研磨頭的的貴多了！如果只買黑胡椒粒，容量倍增兩倍不只吧！還更便宜！&lt;/li&gt;&lt;/ol&gt;因為本來的剩下不多，所以後來我們就新買了沒有研磨頭的黑胡椒粒(如圖)，準備之後再去買磨黑胡椒的罐子。但昨天為了做黑胡椒醬，消耗了大量的黑胡椒，轉啊轉到我的手都快斷了！結果那罐黑胡椒用完了，黑胡椒醬還不夠黑，只有黑胡椒粒，沒有磨的罐子，怎辦？&lt;br /&gt;&lt;center&gt; &lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/gjylcJ6wQg7GRk6A9jpr7A?feat=embedwebsite"&gt;&lt;img src="http://lh3.ggpht.com/_mvtDPM7iODU/S95doSN_y8I/AAAAAAAAHJc/2rY7SpJwX_0/s400/YAN_8491.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;想起之前用Blendtec果汁機打芝麻粉，打黑胡椒粉應該也沒問題吧！&lt;br /&gt;放了一些，想說用時間最長的鍵打90秒看看，結果才沒多久，黑胡椒粒就都化為粉末了！而且有的已經太細緻了，我只是要拿來做黑胡椒醬啊...緊急的按暫停，結果只花了不到...&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;span class="Apple-style-span" style="color: red;"&gt;30秒！&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;我剛剛轉半天手很痠，轉掉的量還比我放進果汁機裡的少，頓時又覺得自己剛剛有點愚蠢。有大量使用黑胡椒的時機，記得好好利用一下家裡的果汁機。&lt;br /&gt;&lt;br /&gt;p.s.聲明一下，我沒有在幫Blendtec打廣告，它沒有付我錢！純粹好用推薦。其他果汁機不確定能不能達到一樣效果，請大家自行嘗試。:)&lt;/div&gt;
 

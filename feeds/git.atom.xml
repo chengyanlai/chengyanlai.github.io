@@ -67,37 +67,7 @@ Thanks to &lt;a href="http://stackoverflow.com/a/1307969/3011790"&gt;this post a
 
 &lt;p&gt;Finally, remove it from working tree by&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm --cached foo
-&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
 &lt;p&gt;通常有兩種情況會需要這個功能......  &lt;/p&gt;
 &lt;h3&gt;Pulling into a dirty tree&lt;/h3&gt;
 &lt;p&gt;例如你正在更改的東西和線上的更新有密切關聯，最好的情況是&lt;code&gt;move forward merge&lt;/code&gt;，這樣就不需要更動任何檔案。  &lt;/p&gt;
@@ -139,37 +109,7 @@ file foobar not up to date, cannot merge.
 &lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;git stash pop
 &lt;span class="c"&gt;# ... continue hacking ...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Git tag for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/16/git-tag/" rel="alternate"></link><updated>2013-12-16T15:18:17-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-16:blog/2013/12/16/git-tag/</id><summary type="html">&lt;h2&gt;為重要的版本或是更新標上標簽&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git tag for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/16/git-tag/" rel="alternate"></link><updated>2013-12-16T15:18:17-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-16:blog/2013/12/16/git-tag/</id><summary type="html">&lt;h2&gt;為重要的版本或是更新標上標簽&lt;/h2&gt;
 &lt;h4&gt;列出所有的標簽&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git tag
 &lt;/pre&gt;&lt;/div&gt;
@@ -223,37 +163,7 @@ file foobar not up to date, cannot merge.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Git branch for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/18/git-branch/" rel="alternate"></link><updated>2013-10-18T15:13:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-18:blog/2013/10/18/git-branch/</id><summary type="html">&lt;p&gt;俗話說：用Git不開brach乾脆不要用！
+&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;</summary></entry><entry><title>Git branch for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/18/git-branch/" rel="alternate"></link><updated>2013-10-18T15:13:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-18:blog/2013/10/18/git-branch/</id><summary type="html">&lt;p&gt;俗話說：用Git不開brach乾脆不要用！
 Opening a new branch in Git is like nothing, comparing to svn! It is a good habit to working on the branch other than &lt;code&gt;master&lt;/code&gt; in order to keep &lt;code&gt;mater&lt;/code&gt; intact.&lt;/p&gt;
 &lt;h2&gt;Check your current branch&lt;/h2&gt;
 &lt;p&gt;Let's try it. To check what brach you currently have&lt;/p&gt;
@@ -374,37 +284,7 @@ If you want to add it to remote, you will need to do&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;to get updated.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Basic Git Setting</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/" rel="alternate"></link><updated>2013-10-17T10:29:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-17:blog/2013/10/17/basic-git-setting/</id><summary type="html">&lt;p&gt;First of all, you need to know that you have installed 'git' on you computer!
+&lt;p&gt;to get updated.&lt;/p&gt;</summary></entry><entry><title>Basic Git Setting</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/" rel="alternate"></link><updated>2013-10-17T10:29:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-17:blog/2013/10/17/basic-git-setting/</id><summary type="html">&lt;p&gt;First of all, you need to know that you have installed 'git' on you computer!
 You can search on Google "git osx" if you are on Mac. Usually you can find a &lt;code&gt;.dmg&lt;/code&gt; to install.&lt;/p&gt;
 &lt;p&gt;If you are on linux, for example Debian, you can use the &lt;code&gt;apt&lt;/code&gt;. Like&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;apt-cache search git
@@ -530,34 +410,4 @@ git config --global merge.tool opendiff
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;to check your setting.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry></feed>
+&lt;p&gt;to check your setting.&lt;/p&gt;</summary></entry></feed>

@@ -71,7 +71,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;基本上，這裡用了很多 &lt;code&gt;liquid tag&lt;/code&gt; plugins ， 還有 &lt;code&gt;render_math&lt;/code&gt; 是用來顯示 $\LaTeX$.&lt;/p&gt;
+&lt;p&gt;基本上，這裡用了很多 &lt;code&gt;liquid tag&lt;/code&gt; plugins ， 還有 &lt;code&gt;render_math&lt;/code&gt; 是用來顯示 &lt;span class="math"&gt;\(\LaTeX\)&lt;/span&gt;.&lt;/p&gt;
 &lt;h3&gt;Publish IPython notebook by Liquid Tag&lt;/h3&gt;
 &lt;p&gt;Configure Notebook path in &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pdf&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -84,621 +84,34 @@
 &lt;p&gt;以下就是使用 &lt;code&gt;liquid tag&lt;/code&gt; 嵌入 IPython notebook 的實例......&lt;br /&gt;
 只需要加上 &lt;code&gt;{ % notebook blogging-with-the-ipython-notebook-example.ipynb %}&lt;/code&gt; 在 post 裡面就可以了！&lt;br /&gt;
 請注意上面 &lt;code&gt;{ %&lt;/code&gt; 的空格必需要拿掉！  &lt;/p&gt;
-&lt;p&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="start-ipython-notebook"&gt;Start IPython notebook&lt;/h2&gt;
-&lt;h3 id="bsic-python-tesing"&gt;Bsic Python Tesing&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[10]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;IPython notebook work with pelican blog by using liquid tag plugin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;
-IPython notebook work with pelican blog by using liquid tag plugin
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="inline-plotting-test"&gt;Inline Plotting Test&lt;/h3&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[11]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Simply plot the sine function like $\sin(x)$&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[12]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,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
-QmCC
-"
-&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Other functions like $f(\alpha,x)=e^{-\alpha x}\sin(x)$.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[13]:
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;alpha&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;alpha&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;g-&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;g(x)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;r--&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;h(x)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_wrapper"&gt;
-&lt;div class="output"&gt;
-
-
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_png output_subarea "&gt;
-&lt;img src="data:image/png;base64,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
-"
-&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="end-of-ipython-notebook"&gt;End of IPython notebook&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python Virtual Environment</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/" rel="alternate"></link><updated>2014-05-21T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-21:blog/2014/05/21/python-virtualenv/</id><summary type="html">&lt;p&gt;如何根據 Project 管理 Python 使用環境?&lt;/p&gt;
+&lt;p&gt;{% notebook blogging-with-the-ipython-notebook-example.ipynb %}&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python Virtual Environment</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/21/python-virtualenv/" rel="alternate"></link><updated>2014-05-21T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-21:blog/2014/05/21/python-virtualenv/</id><summary type="html">&lt;p&gt;如何根據 Project 管理 Python 使用環境?&lt;/p&gt;
 &lt;h2&gt;Homebrew python&lt;/h2&gt;
 &lt;h3&gt;使用 virtualenv 以及 virtualenvwrapper&lt;/h3&gt;
 &lt;p&gt;確定你已經安裝了這兩個套件，如果還沒&lt;/p&gt;
@@ -785,37 +198,7 @@ mAkKfEIIMRMU+IQQYib+PzEbThmjpftxAAAAAElFTkSuQmCC
 &lt;p&gt;&lt;code&gt;-n {name}&lt;/code&gt; 這裡的 name 是環境的名字，上面的例子名字就是 &lt;code&gt;py27&lt;/code&gt;，後面接上了 python version &lt;code&gt;2.7&lt;/code&gt; 以及package_spec &lt;code&gt;anaconda&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;To be continued......&lt;/p&gt;
 &lt;h2&gt;Canopy&lt;/h2&gt;
-&lt;p&gt;To be continued......&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
+&lt;p&gt;To be continued......&lt;/p&gt;</summary></entry><entry><title>Python package for OSX - Update!</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/20/homebrew-python/" rel="alternate"></link><updated>2014-05-20T11:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-20:blog/2014/05/20/homebrew-python/</id><summary type="html">&lt;p&gt;在 OSX 上使用 Homebrew 安裝 Python - Updated!&lt;br /&gt;
 安裝順序是重要的！如果發現有問題，請重新安裝。&lt;/p&gt;
 &lt;h2&gt;Set up some taps and update Homebrew&lt;/h2&gt;
 &lt;p&gt;確保 Homebrew 運作正常，加入安裝 Python 需要的 repo。 並且更新 Homebrew！&lt;/p&gt;
@@ -935,37 +318,7 @@ If you are a theoretical physicist, you must try ipython notebook!&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Those steps are referenced from &lt;a href="http://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/"&gt;Jorn's blog&lt;/a&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>2013 冬季公路旅行 Grand Loop Canyonlands - Day5: Island in the Sky</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/02/np-canyonlands-day5/" rel="alternate"></link><updated>2014-05-02T12:35:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-02:blog/2014/05/02/np-canyonlands-day5/</id><summary type="html">&lt;p&gt;從 Moab 開車到 Canyonlands 需要大約40 mins，所以可以提早出門就提早出門，無窮無盡的峽谷地形不會讓你失望的！&lt;br /&gt;
+&lt;p&gt;Those steps are referenced from &lt;a href="http://joernhees.de/blog/2014/02/25/scientific-python-on-mac-os-x-10-9-with-homebrew/"&gt;Jorn's blog&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>2013 冬季公路旅行 Grand Loop Canyonlands - Day5: Island in the Sky</title><link href="http://www.chenyen-yaoan.tk/blog/2014/05/02/np-canyonlands-day5/" rel="alternate"></link><updated>2014-05-02T12:35:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-05-02:blog/2014/05/02/np-canyonlands-day5/</id><summary type="html">&lt;p&gt;從 Moab 開車到 Canyonlands 需要大約40 mins，所以可以提早出門就提早出門，無窮無盡的峽谷地形不會讓你失望的！&lt;br /&gt;
 因為時間上的安排，我們只瀏覽了 Island in the Sky，這是屬於四驅車的公園，如果有四輪傳動，可以開到更接近峽谷。&lt;/p&gt;
 &lt;h2&gt;Mesa Arch&lt;/h2&gt;
 &lt;p&gt;這是一個可以走到上面的Arch，只要你沒有懼高症！&lt;/p&gt;
@@ -1147,37 +500,7 @@ If you need to copy two or more files, just change the number&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Enjoy!&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>2013 冬季公路旅行 Grand Loop Capitol Reef - Day3: Scenic Drive</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/08/np-capitol-reef-day3/" rel="alternate"></link><updated>2014-02-08T01:00:10-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-08:blog/2014/02/08/np-capitol-reef-day3/</id><summary type="html">&lt;p&gt;其實出發前我們並沒有對這個國家公園做任何的功課，這天基本上是趕路的停下來休息的一樣，所性這樣的行程並沒有讓我們太失望！&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</summary></entry><entry><title>2013 冬季公路旅行 Grand Loop Capitol Reef - Day3: Scenic Drive</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/08/np-capitol-reef-day3/" rel="alternate"></link><updated>2014-02-08T01:00:10-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-08:blog/2014/02/08/np-capitol-reef-day3/</id><summary type="html">&lt;p&gt;其實出發前我們並沒有對這個國家公園做任何的功課，這天基本上是趕路的停下來休息的一樣，所性這樣的行程並沒有讓我們太失望！&lt;/p&gt;
 &lt;p&gt;這裡的地形似乎是由河流沖刷所形成，有很多河道是乾枯的，但是還是有flash floods！&lt;/p&gt;
 &lt;p&gt;長得像這樣！&lt;/p&gt;
 &lt;iframe src="http://www.flickr.com/photos/xavierweathertoplai/11632004925/in/set-72157639175034913/player/" width="500" height="332" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
@@ -1338,37 +661,7 @@ Thanks to &lt;a href="http://stackoverflow.com/a/1307969/3011790"&gt;this post a
 
 &lt;p&gt;Finally, remove it from working tree by&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm --cached foo
-&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
 &lt;p&gt;通常有兩種情況會需要這個功能......  &lt;/p&gt;
 &lt;h3&gt;Pulling into a dirty tree&lt;/h3&gt;
 &lt;p&gt;例如你正在更改的東西和線上的更新有密切關聯，最好的情況是&lt;code&gt;move forward merge&lt;/code&gt;，這樣就不需要更動任何檔案。  &lt;/p&gt;
@@ -1410,37 +703,7 @@ file foobar not up to date, cannot merge.
 &lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;$ &lt;/span&gt;git stash pop
 &lt;span class="c"&gt;# ... continue hacking ...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>2013 夏季公路旅行 Summer Road Trip Crater Lake - Day6 : Watchman Overlook, Phantom Ship Viewpoint</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/04/np-crater-lake-day6/" rel="alternate"></link><updated>2014-01-04T23:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-04:blog/2014/01/04/np-crater-lake-day6/</id><summary type="html">&lt;p&gt;&lt;a href="../np-crater-lake-day5"&gt;Crater Lake Day1&lt;/a&gt;.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>2013 夏季公路旅行 Summer Road Trip Crater Lake - Day6 : Watchman Overlook, Phantom Ship Viewpoint</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/04/np-crater-lake-day6/" rel="alternate"></link><updated>2014-01-04T23:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-04:blog/2014/01/04/np-crater-lake-day6/</id><summary type="html">&lt;p&gt;&lt;a href="../np-crater-lake-day5"&gt;Crater Lake Day1&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Wizard Island from Watchman Overlook&lt;/h2&gt;
 &lt;p&gt;Watchman Overlook 是看 Wizard Island 的好地點，這裡還有一個 Watchman Trail，通常下午會有 Ranger lead hike看日落的行程，但是有鑑於前一天實在是太累了而且空氣很糟，所以就早早回旅館，想說隔天早上拍View Point就好了！  &lt;/p&gt;
 &lt;p&gt;Wizard Island 本身是一座 Cinder Cone 火山，島上有放風行程，可以讓你有足夠的時間上 summit，但是因為是 Cinder Cone，所以可以想像又會是爬三步滑一步的景況。  &lt;/p&gt;
@@ -1617,37 +880,7 @@ Let's go......&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
+&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;</summary></entry><entry><title>繁體中文slug</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/13/easy-way-to-convert-character-to-slug/" rel="alternate"></link><updated>2013-12-13T15:50:01-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-13:blog/2013/12/13/easy-way-to-convert-character-to-slug/</id><summary type="html">&lt;p&gt;通常，網頁連結不支持中文字體，所以我們需要拼音跟unicode的協助來把我們的中文標題換成unicode或是ascii！&lt;br /&gt;
 這裡介紹如何使用&lt;code&gt;Python&lt;/code&gt;來做這件事情！&lt;/p&gt;
 &lt;h2&gt;安裝 django and uuslug&lt;/h2&gt;
 &lt;p&gt;這個方法需要用到兩個套件，都可以由&lt;code&gt;pip&lt;/code&gt;來安裝&lt;/p&gt;
@@ -1756,37 +989,7 @@ zhong-wen
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;/figure&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
+&lt;/figure&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
 &lt;p&gt;You need to pay for the Paper app, it only has OSX and Windows(WTF!) version, sorry.&lt;/p&gt;
 &lt;h3&gt;Export bib from Papers&lt;/h3&gt;
 &lt;p&gt;Papers allow you to export your entire library to single file &lt;/p&gt;
@@ -1809,7 +1012,7 @@ zhong-wen
 &lt;p&gt;. This is just an example. Because I am using RevTex, so the style is &lt;code&gt;apsrev4-1&lt;/code&gt;. Second line means you have a file called and located at &lt;code&gt;${HOME}/Library/texmf/bibtex/bib/My_Ref.bib&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Maintain the title&lt;/h3&gt;
 &lt;p&gt;If You import an article which has some latex form, for example, name of compound like
-&lt;code&gt;La_2CuO_4&lt;/code&gt; or atoms &lt;code&gt;^{40}K&lt;/code&gt; should appear like $La_2CuO_4\text{ or } ^{40}K$.  &lt;/p&gt;
+&lt;code&gt;La_2CuO_4&lt;/code&gt; or atoms &lt;code&gt;^{40}K&lt;/code&gt; should appear like &lt;span class="math"&gt;\(La_2CuO_4\text{ or } ^{40}K\)&lt;/span&gt;.  &lt;/p&gt;
 &lt;p&gt;This would, however, cause error message during compile of Bibtex. We need to manually edit it in 
 the &lt;code&gt;Papers&lt;/code&gt; to become &lt;code&gt;La$_2$CuO$_4$&lt;/code&gt; or &lt;code&gt;$^{40}$K&lt;/code&gt;. The small edit would ease the problem that you need to edit the &lt;code&gt;.bib&lt;/code&gt; every time Bibtex compile.&lt;/p&gt;
 &lt;h4&gt;Style list&lt;/h4&gt;
@@ -1821,37 +1024,36 @@ the &lt;code&gt;Papers&lt;/code&gt; to become &lt;code&gt;La$_2$CuO$_4$&lt;/code
 
 &lt;p&gt;. Just copy all &lt;code&gt;.bst&lt;/code&gt; files into it and &lt;code&gt;LaTeX&lt;/code&gt; will find find it. All you need to do in &lt;code&gt;.tex&lt;/code&gt; file is the following&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="se"&gt;\b&lt;/span&gt;ibliographystyle&lt;span class="o"&gt;{&lt;/span&gt;nature&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="Latex"></category></entry><entry><title>My Octopress and Heroku - 3</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/17/my-octopress-and-heroku-3/" rel="alternate"></link><updated>2013-11-17T15:14:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-17:blog/2013/11/17/my-octopress-and-heroku-3/</id><summary type="html">&lt;h2&gt;Blogspot Posts 到 Octopress&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="Latex"></category></entry><entry><title>My Octopress and Heroku - 3</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/17/my-octopress-and-heroku-3/" rel="alternate"></link><updated>2013-11-17T15:14:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-17:blog/2013/11/17/my-octopress-and-heroku-3/</id><summary type="html">&lt;h2&gt;Blogspot Posts 到 Octopress&lt;/h2&gt;
 &lt;p&gt;如果你已經有Blog，而且並不想要放棄你的心血結晶，在GitHub可以找到一個Ruby程式，基本上你只需要匯出你的posts！&lt;br /&gt;
 Run一行Command，複製匯出的檔案到octopress的&lt;code&gt;_post&lt;/code&gt;檔案夾！你就可成功從Blogspot轉換到octopress！  &lt;/p&gt;
 &lt;p&gt;到你的Blogspot control center，匯出你的Blog！&lt;br /&gt;
@@ -1870,37 +1072,7 @@ Run一行Command，複製匯出的檔案到octopress的&lt;code&gt;_post&lt;/cod
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;就大功告成了！&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 2</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="alternate"></link><updated>2013-11-15T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-15:blog/2013/11/15/my-octopress-and-heroku-2/</id><summary type="html">&lt;p&gt;Octopress的好處就是可以隨意的更改以及裝自己想要的plugin，或是你熟&lt;code&gt;Ruby&lt;/code&gt;，你也可以自己寫plugin，剛設置好的blog其實已經很夠用，但是當你的blog漸漸壯大或是你要匯入你之前的文章(數百篇)，那加一些有用的plugin就變得很必要了！&lt;/p&gt;
+&lt;p&gt;就大功告成了！&lt;/p&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 2</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/15/my-octopress-and-heroku-2/" rel="alternate"></link><updated>2013-11-15T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-15:blog/2013/11/15/my-octopress-and-heroku-2/</id><summary type="html">&lt;p&gt;Octopress的好處就是可以隨意的更改以及裝自己想要的plugin，或是你熟&lt;code&gt;Ruby&lt;/code&gt;，你也可以自己寫plugin，剛設置好的blog其實已經很夠用，但是當你的blog漸漸壯大或是你要匯入你之前的文章(數百篇)，那加一些有用的plugin就變得很必要了！&lt;/p&gt;
 &lt;h3&gt;建立中文 Categories Sidebar&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;Octopress 2.1&lt;/code&gt; 已經提供中文category，我們只要使用正確的url就可以了！&lt;br /&gt;
 有幾件事必須要先完成  &lt;/p&gt;
@@ -2030,37 +1202,7 @@ new_cicle_gordita_italic-webfont.woff
 &lt;/figure&gt;
 
 &lt;p&gt;再來就是把這個檔案的內容加到&lt;code&gt;sass/custom/_typography.css&lt;/code&gt;，如果你沒有這個檔案就建立他吧！&lt;br /&gt;
-現在你已經建立了自己的FontFace，使用的話就跟上面用WebFont一樣，更改&lt;code&gt;sass/custom/_fonts.scss&lt;/code&gt;就可以了！&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 1</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="alternate"></link><updated>2013-11-13T22:46:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-13:blog/2013/11/13/my-octopress-and-heroku-1/</id><summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
+現在你已經建立了自己的FontFace，使用的話就跟上面用WebFont一樣，更改&lt;code&gt;sass/custom/_fonts.scss&lt;/code&gt;就可以了！&lt;/p&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>My Octopress and Heroku - 1</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/13/my-octopress-and-heroku-1/" rel="alternate"></link><updated>2013-11-13T22:46:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-13:blog/2013/11/13/my-octopress-and-heroku-1/</id><summary type="html">&lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://octopress.org"&gt;Octopress&lt;/a&gt; 是一套Blog Framework。也是這個 Blog 正在用的系統。&lt;br /&gt;
 可以參考名人xdite的&lt;a href="http://blog.xdite.net/posts/2011/10/08/what-is-octopress"&gt;早期文章&lt;/a&gt;，市面上還有其他做static site的package，像是python做的&lt;a href="http://github.com/hyde/hyde"&gt;hyde&lt;/a&gt;跟&lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt;，以及一樣是&lt;code&gt;Ruby&lt;/code&gt;的&lt;a href="http://middlemanapp.com"&gt;MIDDLEMAN&lt;/a&gt;  &lt;br /&gt;
 這篇文章記錄我自己從零開始的設置，從clone octopress到把最基本的blog製造出來～&lt;/p&gt;
@@ -2304,37 +1446,7 @@ Add the gems to &lt;code&gt;Gemfile&lt;/code&gt;, and install it.&lt;/p&gt;
 &lt;p&gt;Please see original post &lt;a href="http://joshuawood.net/how-to-deploy-jekyll-slash-octopress-to-heroku/"&gt;here&lt;/a&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2013-11-09T21:00:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
+&lt;/div&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>Python function *arg and **kwarg</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/09/python-function-arg-and-kwarg/" rel="alternate"></link><updated>2014-01-10T12:29:00-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-09:blog/2013/11/09/python-function-arg-and-kwarg/</id><summary type="html">&lt;p&gt;In python, we can use this special syntax to pass a number of arguments to a function. There are two kinds of them, choose the  best fit for your code.&lt;/p&gt;
 &lt;h3&gt;The single asterisk form (&lt;code&gt;*arg&lt;/code&gt;)&lt;/h3&gt;
 &lt;p&gt;This form gives you to pass several variables into a function. This following example pass one formal argument &lt;code&gt;x=1.0&lt;/code&gt; and three non-keyword arguments, &lt;code&gt;2.0,3.0,4.0&lt;/code&gt;,&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;  
@@ -2420,7 +1532,7 @@ I think both Anaconda and EPD provide the installer for Windows and Linux&lt;sup
 &lt;p&gt;The similar alternatives are &lt;a href="http://www.macports.org/"&gt;Macport&lt;/a&gt; and &lt;a href="http://fink.thetis.ig42.org/"&gt;Fink&lt;/a&gt;. Th detail difference are compared by &lt;a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/"&gt;Ted Wise&lt;/a&gt;
 Example(Homebrew):
 Installation is super easy, it is depended on ruby and git. &lt;br /&gt;
-Please check the Software Installation section in &lt;a href="{{ root_url }}/blog/2013/10/24/osx-mavericks/"&gt;my another post&lt;/a&gt; for installation.&lt;br /&gt;
+Please check the Software Installation section in &lt;a href="{{%20root_url%20}}/blog/2013/10/24/osx-mavericks/"&gt;my another post&lt;/a&gt; for installation.&lt;br /&gt;
 Xcode command-line tool(CLT) and XQartz(X11) are beforehand.  &lt;/p&gt;
 &lt;h4&gt;Installation&lt;/h4&gt;
 &lt;p&gt;Once installation success, check this before we start&lt;/p&gt;
@@ -2491,37 +1603,7 @@ It is not as difficult as you think.&lt;/p&gt;
 &lt;p&gt;The actual files are in the folder called &lt;code&gt;Cellar&lt;/code&gt;, but a symbolic link is created in the &lt;code&gt;/usr/local/bin/&lt;/code&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>OSX Folder Icon</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/30/osx-folder-icon/" rel="alternate"></link><updated>2013-10-30T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-30:blog/2013/10/30/osx-folder-icon/</id><summary type="html">&lt;p&gt;Sometimes you just can't find the right folder icon for yourself. Why not make one from scratch?
+&lt;/div&gt;</summary></entry><entry><title>OSX Folder Icon</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/30/osx-folder-icon/" rel="alternate"></link><updated>2013-10-30T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-30:blog/2013/10/30/osx-folder-icon/</id><summary type="html">&lt;p&gt;Sometimes you just can't find the right folder icon for yourself. Why not make one from scratch?
     :::ruby&lt;/p&gt;
 &lt;h3&gt;Obtain the plain folder icon image&lt;/h3&gt;
 &lt;p&gt;This is what we need. Click &lt;code&gt;Cmd-i&lt;/code&gt; on a folder with bare folder icon.&lt;/p&gt;
@@ -2604,7 +1686,7 @@ It is not as difficult as you think.&lt;/p&gt;
 &lt;p&gt;剩下的就改天吧！&lt;/p&gt;</summary></entry><entry><title>OSX Mavericks Installation and Setup</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/24/osx-mavericks-installation-and-setup/" rel="alternate"></link><updated>2013-10-24T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-24:blog/2013/10/24/osx-mavericks-installation-and-setup/</id><summary type="html">&lt;p&gt;I run all the following in order to setup my OSX Mavericks. I prefer clean install!&lt;/p&gt;
 &lt;p&gt;Since I have remove my SuperDrive on my 2009 Macbook Pro, I have two harddrives. One is the SSD shipped with Apple, the other HD is installed on the slot of old SuperDrive. I would like to move my home folder to the 2nd HD.&lt;/p&gt;
 &lt;p&gt;The following setup is also worked if you try to do partition on single harddrive.&lt;/p&gt;
-&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{ root_url }}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{%20root_url%20}}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Move Home Folder&lt;/h2&gt;
 &lt;p&gt;After clean install, there is basically nothing new on home folder. You still have to move it, however, due to the reason that the Library folder.&lt;/p&gt;
 &lt;h3&gt;Copy the home folder to the other drive&lt;/h3&gt;
@@ -2729,37 +1811,7 @@ The python command can be set in the &lt;code&gt;Variables&lt;/code&gt; of &lt;c
 &lt;h3&gt;&lt;a href="http://www.openoffice.org/"&gt;OpenOffice&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I need this to open xls files used in iLearn (Fuck!).&lt;/p&gt;
 &lt;h3&gt;&lt;a href="https://code.google.com/p/macfuse/"&gt;Mackfuse&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The only purpose is to read NTFS files.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>OSX Mavericks bootable USB drive</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/23/osx-mavericks-bootable-usb-drive/" rel="alternate"></link><updated>2013-10-23T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-23:blog/2013/10/23/osx-mavericks-bootable-usb-drive/</id><summary type="html">&lt;p&gt;I don't know if you like to do the clean install, but it is always good to have the bootable usb drive. If you have multiple MACs, you can take advantage for not downloading the 5.5G Mavericaks installer.&lt;/p&gt;
+&lt;p&gt;The only purpose is to read NTFS files.&lt;/p&gt;</summary></entry><entry><title>OSX Mavericks bootable USB drive</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/23/osx-mavericks-bootable-usb-drive/" rel="alternate"></link><updated>2013-10-23T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-23:blog/2013/10/23/osx-mavericks-bootable-usb-drive/</id><summary type="html">&lt;p&gt;I don't know if you like to do the clean install, but it is always good to have the bootable usb drive. If you have multiple MACs, you can take advantage for not downloading the 5.5G Mavericaks installer.&lt;/p&gt;
 &lt;p&gt;OSX Marvericks provides a very easy way to create the bootable USB drive.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -2974,37 +2026,7 @@ If you want to add it to remote, you will need to do&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;to get updated.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Basic Git Setting</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/" rel="alternate"></link><updated>2013-10-17T10:29:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-17:blog/2013/10/17/basic-git-setting/</id><summary type="html">&lt;p&gt;First of all, you need to know that you have installed 'git' on you computer!
+&lt;p&gt;to get updated.&lt;/p&gt;</summary></entry><entry><title>Basic Git Setting</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/" rel="alternate"></link><updated>2013-10-17T10:29:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-17:blog/2013/10/17/basic-git-setting/</id><summary type="html">&lt;p&gt;First of all, you need to know that you have installed 'git' on you computer!
 You can search on Google "git osx" if you are on Mac. Usually you can find a &lt;code&gt;.dmg&lt;/code&gt; to install.&lt;/p&gt;
 &lt;p&gt;If you are on linux, for example Debian, you can use the &lt;code&gt;apt&lt;/code&gt;. Like&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;apt-cache search git
@@ -3130,37 +2152,7 @@ git config --global merge.tool opendiff
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;to check your setting.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>SSH login without password</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/" rel="alternate"></link><updated>2013-10-15T16:05:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-15:blog/2013/10/15/ssh-tricks/</id><summary type="html">&lt;h2&gt;Create SSH key&lt;/h2&gt;
+&lt;p&gt;to check your setting.&lt;/p&gt;</summary></entry><entry><title>SSH login without password</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/" rel="alternate"></link><updated>2013-10-15T16:05:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-15:blog/2013/10/15/ssh-tricks/</id><summary type="html">&lt;h2&gt;Create SSH key&lt;/h2&gt;
 &lt;p&gt;Beforehand - You need to know where is the server (It's not helping!), and you need to create a new ssh-key like the following command at your home directory&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ssh-keygen -t rsa -C &lt;span class="s2"&gt;&amp;quot;{Your email}&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -3235,37 +2227,7 @@ git config --global merge.tool opendiff
 &lt;p&gt;it should be there. &lt;/p&gt;
 &lt;h3&gt;Notes&lt;/h3&gt;
 &lt;p&gt;You can also refer to &lt;a href="http://www-uxsup.csx.cam.ac.uk/~aia21/osx/leopard-ssh.html"&gt;this page&lt;/a&gt;.&lt;br /&gt;
-As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
+As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
 &lt;h4&gt;&lt;code&gt;Go to&lt;/code&gt; function&lt;/h4&gt;
 &lt;p&gt;When you are in Finder, simply just use &lt;code&gt;Command-Shift-g&lt;/code&gt;. There will be a pop-up on your finder, we then type &lt;code&gt;~/Library/&lt;/code&gt;, the library folder will be opened.&lt;/p&gt;
 &lt;h4&gt;In the &lt;code&gt;Go&lt;/code&gt; menu&lt;/h4&gt;
@@ -3297,37 +2259,7 @@ Open your terminal and type&lt;/p&gt;
 &lt;p&gt;BSD command &lt;code&gt;chflags&lt;/code&gt; -- change file flags.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Fusion Drive on OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/01/fusion-drive-on-osx/" rel="alternate"></link><updated>2013-10-01T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-01:blog/2013/10/01/fusion-drive-on-osx/</id><summary type="html">&lt;h2&gt;Setup Fusion Drive&lt;/h2&gt;
+&lt;/div&gt;</summary></entry><entry><title>Fusion Drive on OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/01/fusion-drive-on-osx/" rel="alternate"></link><updated>2013-10-01T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-01:blog/2013/10/01/fusion-drive-on-osx/</id><summary type="html">&lt;h2&gt;Setup Fusion Drive&lt;/h2&gt;
 &lt;p&gt;First of all, you will need to reinstall os and everything you needed, so start backup your files.
 You need to boot from a flash drive or the installation dmg, then you need to go to the terminal to do the following.&lt;/p&gt;
 &lt;h3&gt;Check your storage&lt;/h3&gt;
@@ -3382,37 +2314,7 @@ If you want to split this logic volume, type the following&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;After destroying the CoreStorage Logical Volume Group, system formats the drives for you as normal OSX Extended (Journaled) volumes (JHFS+). This is the normal type of volume that you would install OS X on or use to format an external drive.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="Fusion"></category></entry><entry><title>9-10M寶寶的戒奶睡＆戒夜奶與自行入睡訓練</title><link href="http://www.chenyen-yaoan.tk/blog/2013/03/19/9-10mbao-bao-de-jie-nai-shui-jie-ye-nai-yu-zi-xing-ru-shui-xun-lian/" rel="alternate"></link><updated>2013-03-19T23:56:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2013-03-19:blog/2013/03/19/9-10mbao-bao-de-jie-nai-shui-jie-ye-nai-yu-zi-xing-ru-shui-xun-lian/</id><summary type="html">&lt;div class='post'&gt;
+&lt;p&gt;After destroying the CoreStorage Logical Volume Group, system formats the drives for you as normal OSX Extended (Journaled) volumes (JHFS+). This is the normal type of volume that you would install OS X on or use to format an external drive.&lt;/p&gt;</summary><category term="Fusion"></category></entry><entry><title>9-10M寶寶的戒奶睡＆戒夜奶與自行入睡訓練</title><link href="http://www.chenyen-yaoan.tk/blog/2013/03/19/9-10mbao-bao-de-jie-nai-shui-jie-ye-nai-yu-zi-xing-ru-shui-xun-lian/" rel="alternate"></link><updated>2013-03-19T23:56:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2013-03-19:blog/2013/03/19/9-10mbao-bao-de-jie-nai-shui-jie-ye-nai-yu-zi-xing-ru-shui-xun-lian/</id><summary type="html">&lt;div class='post'&gt;
 &lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;&lt;a href="http://4.bp.blogspot.com/-yol74SC1E9g/UUTB85cCGoI/AAAAAAAAP7M/K5WAgd873Lc/s1600/_1060566.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"&gt;&lt;img border="0" height="300" src="http://4.bp.blogspot.com/-yol74SC1E9g/UUTB85cCGoI/AAAAAAAAP7M/K5WAgd873Lc/s400/_1060566.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;媽媽我不要睡覺 &amp;gt;_&amp;lt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;雖然印象中我們家小k從10週大左右就逐漸地睡過夜，到了4個月左右，幾乎都可以從晚上11點睡到隔天早上6.7點。但到了快6個月的時候，睡過夜的次數卻越來越少了...&lt;br /&gt;&lt;br /&gt;平常小睡的狀況也很不好，有的時候可以自己玩一玩睡著，或是在揹巾裡睡著，但比較多的時候是奶喝一喝睡著。而且很快就會醒來，可以睡一個小時爸媽就偷笑了，睡到兩小時的話，就覺得那天真的是很幸運。久而久之，我們就開始對外宣稱，我們家小寶寶就是不愛睡覺，他真的睡得好少。&lt;br /&gt;&lt;br /&gt;小k六個多月大的時候，我們帶他回台灣一個月。因為公婆就在隔壁房間，所以只要小k半夜一醒，我就奶睡他，大概每兩三個小時就要起來一次。那時候我天真的想著，一定是時差吧！加上有時候我們下午把寶寶托給公婆帶一下，有時就蓄意的讓他只吃副食品（因為是全母乳親餵的寶寶，不會用奶瓶 &amp;gt;_&amp;lt;），白天最長有9個小時沒餵奶的紀錄。所以我想寶寶晚上補奶也是挺正常的，他應該就是吃得不夠吧？過了三個禮拜，小k的作息終於穩定下來，晚上變成只夜奶一次，一個禮拜後，我們又回美國了。&lt;br /&gt;&lt;br /&gt;哈哈，一定是時差吧？！晚上小k根本不睡啊！&amp;gt;_&amp;lt; 有時候奶睡也不管用的時候，我們就把他放在大人的中間，有時候他也不願意躺著，就坐著一直坐到睡著。又過了三個禮拜，好像作息又趨於穩定了，可是夜奶卻沒有減少，尤其是晚上12點多，簡直就像是鬧鐘一樣，剛好差不多就是我們大人要去睡的時候，小k就醒來，之後又每三小時就醒來一次，實在好累。那一個月，小k最長的連續睡眠是5個多小時，只發生兩次。=.=&lt;br /&gt;&lt;br /&gt;這時小k已經快9個月大了。以前總想著小寶寶長大了就可以睡過夜，嗚嗚，沒想到我們家的寶寶都這麼大了還要夜奶這麼多次。可惡，但養成奶睡習慣的也是我自己，怨不了別人，畢竟奶睡太方便了，都不用聽小孩的哭聲，又可以很快的放倒小孩。現在報應來了，小k變成了沒有奶就不會自己睡的小孩。&lt;br /&gt;&lt;br /&gt;有時候覺得他根本不餓，不想餵他，但哄睡常常失敗。也曾經想要嘗試保母崔西的P.U.P.D法，我抱起抱下搞了快兩小時，小k毫不領情，而且一放躺就立刻翻身爬起，抓著欄杆站起來。沒錯，會站以後的寶寶更難纏，半夜醒來也是一直要站起來不肯躺回去，後來半夜奶睡或抱抱哄睡失敗的話，我就選擇在小孩房的客床陪睡，把小k壓住，他才不會立刻要翻身爬走去探險，過一陣子他才會默默睡著，但常常媽媽就先被哄睡了。/_\&lt;br /&gt;&lt;br /&gt;終於，我去看了傳說中瓜老師的blog，開始想著，莫非是小k白天都太累，所以小睡才睡不好嗎？另外也買了「睡得好的寶寶最優秀」回來看，希望可以讓小k多睡一點，媽媽也好想多睡一點。&lt;br /&gt;&lt;br /&gt;以上是不愛睡寶寶的前情提要。&lt;br /&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;戒奶睡之一&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;我決定先從小睡開始戒奶睡。計畫首先就是進行吃、玩、睡的作息（蛤？這個媽媽現在才打算認真執行啊！），然後在小k想睡的時候就不要再跟他玩了，盡量讓他安靜。&lt;br /&gt;&lt;br /&gt;第一次小睡，剛好他想睡的時間我都正好要去晾衣服，所以我就把他用揹巾揹起來，因為有很多布尿布跟紗布巾，所以要晾蠻久的，大概10幾分鐘，在晾到快完的時候，他就會睡著，早上的奶睡就這樣戒掉了。&lt;br /&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/-CEDhVEhaz7E/UUlVZt3IgLI/AAAAAAAAP7c/CKSEPDEthg0/s1600/_1060575.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"&gt;&lt;img border="0" height="400" src="http://3.bp.blogspot.com/-CEDhVEhaz7E/UUlVZt3IgLI/AAAAAAAAP7c/CKSEPDEthg0/s400/_1060575.jpg" width="300" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="tr-caption" style="text-align: center;"&gt;每次盪鞦韆都非常開心^_^&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;第二次小睡，我就把小k揹去社區的公園盪鞦韆，玩一下，通常在散步回來的時候，他就會睡著，很快下午的奶睡也順利戒掉了。&lt;br /&gt;&lt;br /&gt;白天奶睡戒掉後，意外發現他小睡時間就變長了！第一次小睡可以睡一個半小時，第二次小睡則通常可以睡一個小時，然後就會被我煮晚餐的聲音吵醒。囧&lt;br /&gt;&lt;br /&gt;我都是等他睡著後才放進嬰兒床，有的時候會稍微搖醒他，讓他知道他是在小床上，希望可以減少他因為環境改變而驚醒的可能。這是媽媽不想跟小孩衝突的作法，因為我知道他還不會自行入睡，一放躺在嬰兒床就會站起來哭哭，而且會哭很久。&lt;br /&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;戒夜奶與自行入睡訓練&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;9m26d 意外的開始戒夜奶的第一天&lt;br /&gt;半夜12點多，小寶寶又像鬧鐘一樣的醒來叫人，餵完奶後只睡了1個小時就又醒來，媽媽再度奶睡，可是失敗了，歡了兩個多小時還是不睡。爸爸怒了，把媽媽趕走，獨自跟小寶寶對峙，爸爸在嬰兒床旁邊鋪床墊躺著，一直跟小k說：「哭沒有用！」然後基本上都不理他。結果小寶寶就崩潰的大哭了40幾分鐘，我還在隔壁房間錄下淒慘的哭聲。差不多凌晨4點，終於哭完睡著。睡了五個小時起床。&lt;br /&gt;&lt;br /&gt;9m27d&lt;br /&gt;凌晨2點，寶寶大哭，距離上次餵奶已經五小時，媽媽不想聽小孩哭，所以還是又餵奶了。不過從兩三個小時就醒來一次，變成睡5+5小時，感覺已經有卓越的進步。&lt;br /&gt;&lt;br /&gt;9m28d&lt;br /&gt;又是快凌晨2點的大哭，媽媽太捨不得，所以還是餵奶了。但是4點寶寶又醒，這次肯定不是因為肚子餓，於是我在嬰兒床邊打地舖，像催眠一般地一直叫小孩睡覺，小k在嬰兒床裡站著、坐著、爬來爬去、翻來翻去、偶爾叫喊幾聲，一小時後終於睡了。睡到7點，因為天也亮了，距離上一餐也五小時，所以媽媽還是又餵奶了，吃飽繼續睡到9點半。&lt;br /&gt;&lt;br /&gt;9m29d&lt;br /&gt;咦？到底有沒有要戒夜奶啊？怎麼連續又餵了兩天？&lt;br /&gt;於是今天寶寶凌晨2點再度呼喚，媽媽就不想餵了，可是躺在旁邊的床墊安慰喊話一小時都沒有用。結果媽媽又被爸爸趕走了，小k看到大魔王，又哭了20分鐘，之後安靜了一陣，又斷續哭了好幾次。等爸爸回到房間才說寶寶睡著了又醒來6次，因為坐著太累到睡著，睡姿太詭異，後來自己想要喬一個舒服一點的姿勢，手摸到欄杆就又站起來！結果就驚醒了！XD 或是爸爸看他坐著睡著，想要幫他放躺好，結果也是驚醒。要不然就是坐著睡著，頭撞到欄杆而醒。像這樣醒了又睡睡了又醒搞了半個小時，才終於好好地睡到天亮了。&lt;br /&gt;&lt;br /&gt;10m&lt;br /&gt;凌晨2點的魔咒也終於破除，4點半醒來哀哀叫了一陣，但我們都沒有理他，正當我猶豫著要不要去隔壁看的時候，小寶寶就安靜了，繼續睡到了早上10點（因為日光節約調整的關係，所以其實是以前的9點）。所以訓練已經成功了嗎？&lt;br /&gt;&lt;br /&gt;10m1d&lt;br /&gt;這天比較晚睡。整個晚上小k都沒有起來討奶了...好感人啊！不過倒是被火車吵醒了幾次，還有被他自己詭異的睡姿弄醒，不過都馬上自己睡回去了，真是太棒啦！早上9點起床，奇怪，這小子沒有日光節約的時差嗎？&lt;br /&gt;&lt;br /&gt;10m2d&lt;br /&gt;早上5點左右有醒來一下，不過很快就又睡回去了，早上10點起床，不連續地睡了12小時。&lt;br /&gt;&lt;br /&gt;10m3d&lt;br /&gt;一覺到天亮，連續睡了10個半小時。&lt;br /&gt;&lt;br /&gt;終於在小寶寶10個月大的時候，一家三口都可以一夜好眠了！真是太感人啦！好開心！早知道只要讓他哭四天，大家以後就都可以睡得開心，我早該發狠讓小孩哭一哭的啊...而且那幾天他白天一樣很開心，心情完全沒有受到半夜哭哭的影響。XD&lt;br /&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;戒奶睡之二&lt;/li&gt;&lt;/ul&gt;本來的睡前儀式一直都是洗澡、按摩、穿睡衣、睡前奶，然後就睡著了。在夜奶戒除過後一個禮拜，我把睡前奶的順序改到洗澡前，穿完睡衣後，他也可以自己乖乖在嬰兒床上翻滾到睡著了。奶睡byebye! 自行入睡萬歲！:D&lt;br /&gt;&lt;br /&gt;接下來要攻略的就是小睡的自行入睡了，希望可以順利成功。:)&lt;/div&gt;</summary><category term="育兒樂"></category></entry><entry><title>產後歡樂母乳減肥記</title><link href="http://www.chenyen-yaoan.tk/blog/2013/03/15/chan-hou-huan-le-mu-ru-jian-fei-ji/" rel="alternate"></link><updated>2013-03-15T17:15:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2013-03-15:blog/2013/03/15/chan-hou-huan-le-mu-ru-jian-fei-ji/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://4.bp.blogspot.com/--oqO25UKZw8/ULPIfaExbQI/AAAAAAAAP5w/uSqfYL8xClU/s1600/_1060147.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="320" src="http://4.bp.blogspot.com/--oqO25UKZw8/ULPIfaExbQI/AAAAAAAAP5w/uSqfYL8xClU/s320/_1060147.jpg" width="227" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;本人到產前才增加不到13公斤，並不算多（真的嗎？）。但是生完之後還留著一個大肚子，好像還懷孕八個月，雖然我八個月的時候肚子不算大，但這大肚還是超乎我想像啊！&amp;gt;___&amp;lt; &amp;nbsp;而且臉非常水腫，回家一量，生完竟然只少了3公斤！而且體脂肪有34.x%，體內年齡38歲。（驚！）&lt;br /&gt;&lt;br /&gt;記得懷孕前的體內年齡才25歲啊！生個小孩竟然讓我老了這麼多...&lt;br /&gt;&lt;br /&gt;直到產後兩週才又掉了快7公斤，我堅持剛生完一定是持續的靜脈注射讓我很水腫，應該不是我吃太多。&lt;br /&gt;&lt;br /&gt;總之滿月後還比孕前重兩三公斤，這我承認這應該是我亂吃來的。畢竟生之前如此頻繁的拿巧克力蛋糕當宵夜，確實是有點太囂張。驚覺再這樣下去不行，開始偶爾去健身房運動。&lt;br /&gt;&lt;br /&gt;產後3個半月，體重終於開始比懷孕前輕了一點，真的只有一點，0.1公斤。最後1公斤上上下下停滯了1個月左右，下降的速度很緩慢，應該要歸咎於做完月子後肆無忌憚的吃零食，是我冰淇淋吃太多了嗎？現在體脂肪27.5%。&lt;br /&gt;&lt;br /&gt;產後4個月，帶寶寶去國家公園Hiking，步行超過35公里，幾天後體脂激降，來到26%，顯示是24歲了耶！喔耶！&lt;br /&gt;&lt;br /&gt;產後5個月，比孕前少2公斤了。以一個月一公斤的龜速在下降，大概是因為這樣，所以皮膚也沒有變得很鬆垮，儘管我幾乎都沒有鍛鍊我的腹部，也沒有穿塑身衣，但小腹上的肥肉也不算太鬆軟，雖然也沒有多平啦，但還算是可以繼續穿比基尼去游泳的肚子。&lt;br /&gt;&lt;br /&gt;產後6個半月，今天又來到了體重的新低點，目前已經比孕前少4公斤了，體脂肪24.4%，體內年齡來到了20歲！雖然不是當年體內年齡19歲的身體，但也已經可以輕鬆穿下衣櫥裡最小號的牛仔褲，人生真是美好。^___^*&lt;br /&gt;&lt;br /&gt;接著要搭飛機回台灣啦～這樣應該算是有很多額度可以大吃大喝吧！喔耶！&lt;br /&gt;&lt;br /&gt;飛回台灣的分隔線&lt;br /&gt;&lt;br /&gt;在台灣暴飲暴食一個月後，胖了兩公斤，體脂肪不爭氣的又上升2個百分點。&lt;br /&gt;&lt;br /&gt;過了兩個月，只減掉1公斤就開始持平，體脂肪上上下下停在25%左右。不得不說寶寶副食品吃得越好，奶喝得越少（現在一天只剩下2次親餵），母奶減肥法的效用就越來越低，像我這樣亂吃宵夜又常常荒廢運動是無法繼續瘦下去的（不變胖就該偷笑了吧！)。/_\&lt;br /&gt;&lt;br /&gt;以上，我想我若有心要當辣媽，已經沒有辦法再靠母乳減肥啦...該從飲食跟運動下手了。&amp;gt;_&amp;lt;&lt;/div&gt;</summary><category term="育兒樂"></category></entry><entry><title>寶寶的第一口！副食品上路啦～</title><link href="http://www.chenyen-yaoan.tk/blog/2012/11/04/bao-bao-de-di-yi-kou-fu-shi-pin-shang-lu-la/" rel="alternate"></link><updated>2012-11-04T23:44:00-08:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2012-11-04:blog/2012/11/04/bao-bao-de-di-yi-kou-fu-shi-pin-shang-lu-la/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://4.bp.blogspot.com/-PiH4k6WOIB4/UJMSyCmKtxI/AAAAAAAAP3I/NvZGMPM6B60/s1600/_1060048.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="297" src="http://4.bp.blogspot.com/-PiH4k6WOIB4/UJMSyCmKtxI/AAAAAAAAP3I/NvZGMPM6B60/s400/_1060048.jpg" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;雖然小兒科醫生跟WIC的工作人員都要求我等寶寶6個月以後再開始餵副食品，不過媽媽還是偷跑了。5個月又23天，提早一週開始，心想可以先讓他習慣一下湯匙，當做練習也好。&lt;br /&gt;&lt;br /&gt;準備早餐的時候順便煮了一點10倍粥，到刻度2的米加上兩杯水，用小小的砂鍋燉了半小時。再用手持攪拌器打一下，給寶寶吃的10倍粥就完成啦。&lt;br /&gt;&lt;br /&gt;先打了100ml，放在碗裡，媽媽開始餵....爸爸開始錄影...&lt;br /&gt;&lt;br /&gt;看起來他吃得蠻高興的，餵得比想像中順利，兒子雖然也是一邊吃粥一邊吃手，再把手上的粥塗到臉上，但還是吃了好幾湯匙。餵了20分鐘，開始不太賞臉了，我也就收起來。秤了一下，碗裡的粥減少了50ml左右，應該算是一個很好的開始吧！: )&lt;br /&gt;&lt;br /&gt;剩下沒有打碎的10倍粥，中午媽媽加了高麗菜跟香菇跟一些水再煮一下，搭配一點肉鬆跟荷包蛋，就是簡單的午餐。:D&lt;br /&gt;&lt;br /&gt;寶寶真的長大了，好快好快，心裡高興又小小的感傷，希望你快快長大又捨不得你快快長大，心情很複雜。想當初你還那麼小，現在已經在吃副食品了，很快很快你就會走了。今天幫小孩換穿的新衣服，上面寫著：When I can walk, I will run to you. 很甜蜜也很感傷，等你長到很大，也要記得常常跑回來呀...T_T&lt;/div&gt;
@@ -3570,37 +2472,7 @@ If you want to split this logic volume, type the following&lt;/p&gt;
 我也被抽超多血的&lt;br /&gt;8管(4大1中3小)&lt;br /&gt;抽到我都快暈了的感覺&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</summary><category term="懷孕生子雜記"></category></entry><entry><title>2011春遊死谷 Death Valley National Park - Day2</title><link href="http://www.chenyen-yaoan.tk/blog/2011/12/01/death-valley-np-2/" rel="alternate"></link><updated>2011-12-01T16:13:00-08:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-12-01:blog/2011/12/01/death-valley-np-2/</id><summary type="html">&lt;div class='post'&gt;
-&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-uTwLuegbsJ0/TsAz1mmpAjI/AAAAAAAAMJI/cOGTm9zqj8w/s1600/5566987543_abafd80f76.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-uTwLuegbsJ0/TsAz1mmpAjI/AAAAAAAAMJI/cOGTm9zqj8w/s1600/5566987543_abafd80f76.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;因為是二日遊，所以這篇就完結了，文末附錄交通建議等給需要的朋友。第二天早起從Beatty的Motel6出發，這是當日的景點流程：&lt;br /&gt;&lt;b&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;Sand Dune -&amp;gt; Dente's View&lt;/span&gt;-&amp;gt; Twenty Mule Team Canyon-&amp;gt; Harmony Borax Works&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;-&amp;gt; Salt Creek -&amp;gt; Mosaic Canyon-&amp;gt;Home&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 12px;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Sand Dune&amp;nbsp;&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;第一站先前往據說除了早上跟傍晚之後，白天其他時間會很熱的沙丘。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-q0ima98wQ6s/TtQMoTcSqQI/AAAAAAAAMO4/ptn3bpiguUo/s1600/5567081777_0cd80055fe.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-q0ima98wQ6s/TtQMoTcSqQI/AAAAAAAAMO4/ptn3bpiguUo/s1600/5567081777_0cd80055fe.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;這是老公拍的，可以看到沙地上很漂亮的紋路。&lt;br /&gt;&lt;br /&gt;這也是建議早點去的另一個原因，越晚去越多之前遊客的足跡，就會拍到很多腳印，漂亮的沙地紋路...就要走到很遠很遠還沒被踩過的地方才能拍到了。&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/qr-Luv7QDx-1CFNOWRgYZNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-zv6gER1_JUY/TZLX-cFLbKI/AAAAAAAAKQQ/l2AjBy4o5HE/s400/P1010931.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這裡據說並不算是很厲害的沙丘，跟其他國家公園比起來這裡並不算太壯觀，不過對於沒去過沙漠的人，還是蠻推薦去走一走的，我覺得在沙丘上爬來爬去其實蠻好玩，可以想像自己身處於沙漠之中，演一下"我會不會死在這裡？"的內心戲。XD&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;&lt;br /&gt;&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Dente's View&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/Dprh9zc-IakApWDTGwXPhNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-N0k2uWmG1Nw/TZLYgHcAsTI/AAAAAAAAKUM/DTzzlVMM7kc/s400/P1010997.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;Dente's View這裡是我覺得Death Valley最值得一遊的景點！真的非常漂亮！現在回想起來，還是覺得看到的那一瞬間超級感動，我好像還在車上大叫了，哈哈。而且開車就可直達，很方便。這裡是Death Valley最高的地方，山頂溫度會下降，記得穿多一 點，因為太冷而不能好好下去逛就太可惜了，有小小的一段路可以走，我們在上面逗留很久。當天不太冷也沒有風，算運氣很好。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-D83yO0nQrOQ/TtbUE9doq8I/AAAAAAAAMPA/-6MvyF8sAB0/s1600/5566997417_78d2ed24e0.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-D83yO0nQrOQ/TtbUE9doq8I/AAAAAAAAMPA/-6MvyF8sAB0/s1600/5566997417_78d2ed24e0.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;底下白色區域就是前一天去的Badwater basin，很大一片吧！據說日落前太陽就在西邊的山邊，往西看有點刺眼。建議早晨去。我們接近中午的時候抵達，光線也還蠻適合拍照的。三月底山頂也還有雪，拍起來很棒！&lt;br /&gt;&lt;br /&gt;離開後，我們在附近有廁所跟椅子的地方野餐。&lt;br /&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;Twenty Mule Team Canyon&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;br /&gt;&lt;center&gt; &lt;a href="https://picasaweb.google.com/lh/photo/kuT7BzWla8VhNxkHCInGdtMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-7YIWiq3vSg4/TZLY2dj7fPI/AAAAAAAAKWc/ove5jl27g-U/s400/P1020038.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;Twenty Mule Team Canyon就在Zabriskie Point不遠處，從Dente's View往回開剛好可以彎進去，開車進去大概10分鐘就可以繞完全程。據說Twenty Mule Team是當年採硼砂(borax)的一種車隊,也被當作是硼砂的品牌。雖說號稱20隻mule(騾)，但其實是18隻mule(騾)加上2匹馬，馬靠近車伕比較好駕馭，而騾子比馬適合在沙漠活動，所以採這種混合編制。&lt;br /&gt;&lt;br /&gt;&lt;center&gt; &lt;a href="https://picasaweb.google.com/lh/photo/gsTpkhxF6PZ7WXf0_pKhf9MTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh4.googleusercontent.com/-SCOZo6c1zME/TZLY4I9BH7I/AAAAAAAAKWk/U512tGPluuo/s400/P1020040.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;這邊的地形跟Zabriskie Point有點像，可以隨意停車下來拍照，在這裡拍車子好像還蠻有汽車廣告的感覺。XD&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;Harmony Borax Works&lt;/u&gt;&lt;/b&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;center&gt;&lt;a href="https://picasaweb.google.com/lh/photo/Tc8y9n5j4PWdyr1RkIbSntMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-vlFuKmuXZbg/TZLY6tK9sHI/AAAAAAAAKXA/tKkd6vlpehc/s400/P1020048.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;以妙麗為名。XD 這裡是當年採硼砂的礦場，只留下一點點遺跡。說實在沒什麼好看，但還是可以順便到此一遊啦。&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;a href="https://picasaweb.google.com/lh/photo/DXKqULZ8jRuyoC-CdTsSBNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-iclObx4nxsI/TZLY7WPW2OI/AAAAAAAAKXE/euQOvSd95W0/s400/P1020049.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;據說這附近還有步道可以到Mustard Canyon，春天會開滿大片芥末色的黃花，所以被叫做芥末谷，其實我是為了看這個來的啊！但我們走了一小段都沒有看到。附近的風景就這樣，所以我們待一下就走了。&lt;br /&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Salt Creek&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;center&gt;&lt;a href="https://picasaweb.google.com/lh/photo/WW-C8Ax6cJPIoaLyfOjoINMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh3.googleusercontent.com/-OlqyoeC4l0U/TZLY-dnXQsI/AAAAAAAAKXY/1zR8c2zKAAE/s400/P1020055.jpg" width="300" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;Salt Creek是天然湧泉水形成的溪流，真的是很淺的小溪啊！蒸發實在太旺盛了，我想還有水就值得慶幸了吧。這邊有木頭步道可以走，一小時內可以走完一圈。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-8DjdUCyQPEE/TtbWe_oC9vI/AAAAAAAAMPM/N3Ir26fZHcQ/s1600/5567078715_f3f5c603f7.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="266" src="http://2.bp.blogspot.com/-8DjdUCyQPEE/TtbWe_oC9vI/AAAAAAAAMPM/N3Ir26fZHcQ/s400/5567078715_f3f5c603f7.jpg" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;因為Salt Creek鹽分很高，只有pupfish這種魚可以存活在溪水裡，據說pupfish冬天不活動，只有春天後才看得到，我們來的正是時候。這張是老公拍的，可愛的pupfish是色彩繽紛的小魚。&lt;br /&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Mosaic Canyon&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-iGmzeKQjwyw/TtbXiCeC0DI/AAAAAAAAMPU/9kDNbzuyCZk/s1600/5567587354_ccf59ffd45.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-iGmzeKQjwyw/TtbXiCeC0DI/AAAAAAAAMPU/9kDNbzuyCZk/s1600/5567587354_ccf59ffd45.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;可惜我的相機在這裡沒拍幾張就沒電了...在此附上老公拍的照片。歡迎再次來到地理實察課程，這裡有很多馬賽克圖案、片狀的岩石、或是大岩壁。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://1.bp.blogspot.com/-EZDD5D0aJ4A/TtbXizvNkfI/AAAAAAAAMPc/5dQijtLxlCw/s1600/5567591936_26211c01cb.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://1.bp.blogspot.com/-EZDD5D0aJ4A/TtbXizvNkfI/AAAAAAAAMPc/5dQijtLxlCw/s1600/5567591936_26211c01cb.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;我覺得Mosaic Canyon這條Trail走起來風景也不錯，而且不是平整的路，有的地方需要稍微攀爬一下。大概走到一個看起來是終點的地方我們就折返了，但因為這條Trail也沒有明確的說哪裡是終點，大家可以爬個高興就折回去。&lt;br /&gt;&lt;br /&gt;走完Mosaic Canyon我們就準備離開Death Valley了，大概傍晚5點離開。本來就計畫要放棄的scotty’s castle跟火山口Ubehebe Crater就真的放棄啦，因為再折返那條路真的太遠了。我覺得二日遊這樣的行程差不多剛好，想去的重點也都有玩到。這次去的行程都是小車可以到達的景點，日後有租到四輪傳動的話，想要去看岩石走路的痕跡。期待下次再去，如果去露營看星星應該也會很好玩吧！&lt;br /&gt;&lt;br /&gt;遊記到此差不多結束啦！接下來是附錄給日後想去的朋友們，還有我自己下次再去可以看一下，可以估算旅費等等，應該還是有點用吧。&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;&lt;b&gt;&lt;u&gt;交通&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-cWeJ_TvS_aA/TtgTtGg6jFI/AAAAAAAAMPk/2SQ0oFGzaU4/s1600/Screen+Shot+2011-12-01+at+3.53.23+PM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-cWeJ_TvS_aA/TtgTtGg6jFI/AAAAAAAAMPk/2SQ0oFGzaU4/s1600/Screen+Shot+2011-12-01+at+3.53.23+PM.png" /&gt;&lt;/a&gt;&lt;/div&gt;這是我們這次旅程大概的來回路線，從東邊去走15-127，回程從西邊走395，單程的時間大概需要4～4.5小時。從Riverside出發來回，按照上述路線，大約需要加4次油。以下是這次加油記錄：&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;ul&gt;&lt;li&gt;油0(出發前加滿costco price $4.019)：31.88&lt;/li&gt;&lt;li&gt;油1(Shoshone $4.999):35.04&lt;/li&gt;&lt;li&gt;油2(Stovepipe $?):24.03&lt;/li&gt;&lt;li&gt;油3(395途中 $?):48.67&lt;/li&gt;&lt;li&gt;共計：139.62&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;如果出發走395，可於入園前在Olancha加油，回程路上我們看到油價，比走15-127在shoshone加油便宜一些，但是西面入園會是一連串的上坡路。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;395的景色比15漂亮，但是有一段路有紅綠燈，這次回程的時候還遇到很多貨車，覺得開起來沒有走15順暢。如果回程傍晚往西走395，會對著太陽開，記得帶墨鏡。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;￼&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;住宿&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;若不住在園內，可考慮去住在Beatty，我們這次住在Beatty的Motel 6，路程不算太遠，隔日開回園內的路上風景很好。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;ul&gt;&lt;li&gt;Motel 6：2 full bed稅後價格約70美金。若能湊3、4人一起住就很便宜。&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;飲食&lt;/u&gt;&lt;/b&gt;￼&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;Visitor Center旁有幾間餐廳跟商店。但建議一定要帶足夠的食物跟飲水，從景點折返Visitor Center會非常耗時間，有帶食物可以隨時野餐比較方便。出園區回程路上也要開很久才會有店家。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;Beatty的Motel 6旁邊有Subway。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;/div&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;推薦參考網頁&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://itchiang.blogspot.com/2008/03/death-valley-national-park.html" target="_blank"&gt;Thor’s Hammer&lt;/a&gt;  &amp;nbsp;&lt;/li&gt;&lt;li&gt;&lt;a href="http://tw.traveleredge.com/USNP/Death_Valley/Default.asp" target="_blank"&gt;旅人行腳 死谷國家公園&lt;/a&gt;  &lt;/li&gt;&lt;li&gt;&lt;a href="http://www.blogger.com/%E2%80%A8http://www.nps.gov/deva/index.htm" target="_blank"&gt;nps.gov&lt;/a&gt; &amp;nbsp; &amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;更多照片請見：&lt;br /&gt;&lt;table style="width: 194px;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="center" style="background: url(https://picasaweb.google.com/s/c/transparent_album_background.gif) no-repeat left; height: 194px;"&gt;&lt;a href="https://picasaweb.google.com/yaoanchan/DeathValley_Day2?authuser=0&amp;amp;feat=embedwebsite"&gt;&lt;img height="160" src="https://lh5.googleusercontent.com/-jRxmt10GgR8/TZLXWp2tdDE/AAAAAAAAKoE/jQYc2TbFQEo/s160-c/DeathValley_Day2.jpg" style="margin: 1px 0 0 4px;" width="160" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="font-family: arial,sans-serif; font-size: 11px; text-align: center;"&gt;&lt;a href="https://picasaweb.google.com/yaoanchan/DeathValley_Day2?authuser=0&amp;amp;feat=embedwebsite" style="color: #4d4d4d; font-weight: bold; text-decoration: none;"&gt;春遊DeathValley_Day2&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;或是老公的flickr相簿：&lt;a href="http://www.flickr.com/photos/xavierweathertoplai/sets/72157626248280169/"&gt;11/03/27_DeathValley - Day 2&lt;/a&gt;&lt;br /&gt;--&lt;br /&gt;延伸閱讀：&lt;a href="http://yaoanchan.blogspot.com/2011/11/death-valley-national-park-day1.html"&gt;春遊Death Valley National Park - Day1&lt;/a&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="美國旅行"></category><category term="NationalPark"></category><category term="DeathValley"></category><category term="CA"></category></entry><entry><title>2011春遊死谷 Death Valley National Park - Day1</title><link href="http://www.chenyen-yaoan.tk/blog/2011/11/11/death-valley-np-1/" rel="alternate"></link><updated>2011-11-11T15:44:00-08:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-11-11:blog/2011/11/11/death-valley-np-1/</id><summary type="html">&lt;div class='post'&gt;
+&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-uTwLuegbsJ0/TsAz1mmpAjI/AAAAAAAAMJI/cOGTm9zqj8w/s1600/5566987543_abafd80f76.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-uTwLuegbsJ0/TsAz1mmpAjI/AAAAAAAAMJI/cOGTm9zqj8w/s1600/5566987543_abafd80f76.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;因為是二日遊，所以這篇就完結了，文末附錄交通建議等給需要的朋友。第二天早起從Beatty的Motel6出發，這是當日的景點流程：&lt;br /&gt;&lt;b&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;Sand Dune -&amp;gt; Dente's View&lt;/span&gt;-&amp;gt; Twenty Mule Team Canyon-&amp;gt; Harmony Borax Works&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;-&amp;gt; Salt Creek -&amp;gt; Mosaic Canyon-&amp;gt;Home&lt;/span&gt;&lt;/b&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 12px;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Sand Dune&amp;nbsp;&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;第一站先前往據說除了早上跟傍晚之後，白天其他時間會很熱的沙丘。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-q0ima98wQ6s/TtQMoTcSqQI/AAAAAAAAMO4/ptn3bpiguUo/s1600/5567081777_0cd80055fe.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-q0ima98wQ6s/TtQMoTcSqQI/AAAAAAAAMO4/ptn3bpiguUo/s1600/5567081777_0cd80055fe.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;這是老公拍的，可以看到沙地上很漂亮的紋路。&lt;br /&gt;&lt;br /&gt;這也是建議早點去的另一個原因，越晚去越多之前遊客的足跡，就會拍到很多腳印，漂亮的沙地紋路...就要走到很遠很遠還沒被踩過的地方才能拍到了。&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/qr-Luv7QDx-1CFNOWRgYZNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-zv6gER1_JUY/TZLX-cFLbKI/AAAAAAAAKQQ/l2AjBy4o5HE/s400/P1010931.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這裡據說並不算是很厲害的沙丘，跟其他國家公園比起來這裡並不算太壯觀，不過對於沒去過沙漠的人，還是蠻推薦去走一走的，我覺得在沙丘上爬來爬去其實蠻好玩，可以想像自己身處於沙漠之中，演一下"我會不會死在這裡？"的內心戲。XD&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;&lt;br /&gt;&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Dente's View&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/Dprh9zc-IakApWDTGwXPhNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-N0k2uWmG1Nw/TZLYgHcAsTI/AAAAAAAAKUM/DTzzlVMM7kc/s400/P1010997.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;Dente's View這裡是我覺得Death Valley最值得一遊的景點！真的非常漂亮！現在回想起來，還是覺得看到的那一瞬間超級感動，我好像還在車上大叫了，哈哈。而且開車就可直達，很方便。這裡是Death Valley最高的地方，山頂溫度會下降，記得穿多一 點，因為太冷而不能好好下去逛就太可惜了，有小小的一段路可以走，我們在上面逗留很久。當天不太冷也沒有風，算運氣很好。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-D83yO0nQrOQ/TtbUE9doq8I/AAAAAAAAMPA/-6MvyF8sAB0/s1600/5566997417_78d2ed24e0.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-D83yO0nQrOQ/TtbUE9doq8I/AAAAAAAAMPA/-6MvyF8sAB0/s1600/5566997417_78d2ed24e0.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;底下白色區域就是前一天去的Badwater basin，很大一片吧！據說日落前太陽就在西邊的山邊，往西看有點刺眼。建議早晨去。我們接近中午的時候抵達，光線也還蠻適合拍照的。三月底山頂也還有雪，拍起來很棒！&lt;br /&gt;&lt;br /&gt;離開後，我們在附近有廁所跟椅子的地方野餐。&lt;br /&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;Twenty Mule Team Canyon&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;br /&gt;&lt;center&gt; &lt;a href="https://picasaweb.google.com/lh/photo/kuT7BzWla8VhNxkHCInGdtMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-7YIWiq3vSg4/TZLY2dj7fPI/AAAAAAAAKWc/ove5jl27g-U/s400/P1020038.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;Twenty Mule Team Canyon就在Zabriskie Point不遠處，從Dente's View往回開剛好可以彎進去，開車進去大概10分鐘就可以繞完全程。據說Twenty Mule Team是當年採硼砂(borax)的一種車隊,也被當作是硼砂的品牌。雖說號稱20隻mule(騾)，但其實是18隻mule(騾)加上2匹馬，馬靠近車伕比較好駕馭，而騾子比馬適合在沙漠活動，所以採這種混合編制。&lt;br /&gt;&lt;br /&gt;&lt;center&gt; &lt;a href="https://picasaweb.google.com/lh/photo/gsTpkhxF6PZ7WXf0_pKhf9MTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh4.googleusercontent.com/-SCOZo6c1zME/TZLY4I9BH7I/AAAAAAAAKWk/U512tGPluuo/s400/P1020040.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;這邊的地形跟Zabriskie Point有點像，可以隨意停車下來拍照，在這裡拍車子好像還蠻有汽車廣告的感覺。XD&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;Harmony Borax Works&lt;/u&gt;&lt;/b&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;center&gt;&lt;a href="https://picasaweb.google.com/lh/photo/Tc8y9n5j4PWdyr1RkIbSntMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-vlFuKmuXZbg/TZLY6tK9sHI/AAAAAAAAKXA/tKkd6vlpehc/s400/P1020048.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;以妙麗為名。XD 這裡是當年採硼砂的礦場，只留下一點點遺跡。說實在沒什麼好看，但還是可以順便到此一遊啦。&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;a href="https://picasaweb.google.com/lh/photo/DXKqULZ8jRuyoC-CdTsSBNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-iclObx4nxsI/TZLY7WPW2OI/AAAAAAAAKXE/euQOvSd95W0/s400/P1020049.jpg" width="400" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;據說這附近還有步道可以到Mustard Canyon，春天會開滿大片芥末色的黃花，所以被叫做芥末谷，其實我是為了看這個來的啊！但我們走了一小段都沒有看到。附近的風景就這樣，所以我們待一下就走了。&lt;br /&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Salt Creek&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;center&gt;&lt;a href="https://picasaweb.google.com/lh/photo/WW-C8Ax6cJPIoaLyfOjoINMTjNZETYmyPJy0liipFm0?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh3.googleusercontent.com/-OlqyoeC4l0U/TZLY-dnXQsI/AAAAAAAAKXY/1zR8c2zKAAE/s400/P1020055.jpg" width="300" /&gt;&lt;/a&gt;&lt;/center&gt;&lt;br /&gt;Salt Creek是天然湧泉水形成的溪流，真的是很淺的小溪啊！蒸發實在太旺盛了，我想還有水就值得慶幸了吧。這邊有木頭步道可以走，一小時內可以走完一圈。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-8DjdUCyQPEE/TtbWe_oC9vI/AAAAAAAAMPM/N3Ir26fZHcQ/s1600/5567078715_f3f5c603f7.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="266" src="http://2.bp.blogspot.com/-8DjdUCyQPEE/TtbWe_oC9vI/AAAAAAAAMPM/N3Ir26fZHcQ/s400/5567078715_f3f5c603f7.jpg" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;因為Salt Creek鹽分很高，只有pupfish這種魚可以存活在溪水裡，據說pupfish冬天不活動，只有春天後才看得到，我們來的正是時候。這張是老公拍的，可愛的pupfish是色彩繽紛的小魚。&lt;br /&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;span class="Apple-style-span" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;"&gt;&lt;b&gt;&lt;u&gt;Mosaic Canyon&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-iGmzeKQjwyw/TtbXiCeC0DI/AAAAAAAAMPU/9kDNbzuyCZk/s1600/5567587354_ccf59ffd45.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-iGmzeKQjwyw/TtbXiCeC0DI/AAAAAAAAMPU/9kDNbzuyCZk/s1600/5567587354_ccf59ffd45.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;可惜我的相機在這裡沒拍幾張就沒電了...在此附上老公拍的照片。歡迎再次來到地理實察課程，這裡有很多馬賽克圖案、片狀的岩石、或是大岩壁。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://1.bp.blogspot.com/-EZDD5D0aJ4A/TtbXizvNkfI/AAAAAAAAMPc/5dQijtLxlCw/s1600/5567591936_26211c01cb.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://1.bp.blogspot.com/-EZDD5D0aJ4A/TtbXizvNkfI/AAAAAAAAMPc/5dQijtLxlCw/s1600/5567591936_26211c01cb.jpg" /&gt;&lt;/a&gt;&lt;/div&gt;我覺得Mosaic Canyon這條Trail走起來風景也不錯，而且不是平整的路，有的地方需要稍微攀爬一下。大概走到一個看起來是終點的地方我們就折返了，但因為這條Trail也沒有明確的說哪裡是終點，大家可以爬個高興就折回去。&lt;br /&gt;&lt;br /&gt;走完Mosaic Canyon我們就準備離開Death Valley了，大概傍晚5點離開。本來就計畫要放棄的scotty’s castle跟火山口Ubehebe Crater就真的放棄啦，因為再折返那條路真的太遠了。我覺得二日遊這樣的行程差不多剛好，想去的重點也都有玩到。這次去的行程都是小車可以到達的景點，日後有租到四輪傳動的話，想要去看岩石走路的痕跡。期待下次再去，如果去露營看星星應該也會很好玩吧！&lt;br /&gt;&lt;br /&gt;遊記到此差不多結束啦！接下來是附錄給日後想去的朋友們，還有我自己下次再去可以看一下，可以估算旅費等等，應該還是有點用吧。&lt;br /&gt;&lt;br /&gt;&lt;/div&gt;&lt;b&gt;&lt;u&gt;交通&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-cWeJ_TvS_aA/TtgTtGg6jFI/AAAAAAAAMPk/2SQ0oFGzaU4/s1600/Screen+Shot+2011-12-01+at+3.53.23+PM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://2.bp.blogspot.com/-cWeJ_TvS_aA/TtgTtGg6jFI/AAAAAAAAMPk/2SQ0oFGzaU4/s1600/Screen+Shot+2011-12-01+at+3.53.23+PM.png" /&gt;&lt;/a&gt;&lt;/div&gt;這是我們這次旅程大概的來回路線，從東邊去走15-127，回程從西邊走395，單程的時間大概需要4～4.5小時。從Riverside出發來回，按照上述路線，大約需要加4次油。以下是這次加油記錄：&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;ul&gt;&lt;li&gt;油0(出發前加滿costco price $4.019)：31.88&lt;/li&gt;&lt;li&gt;油1(Shoshone $4.999):35.04&lt;/li&gt;&lt;li&gt;油2(Stovepipe $?):24.03&lt;/li&gt;&lt;li&gt;油3(395途中 $?):48.67&lt;/li&gt;&lt;li&gt;共計：139.62&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;如果出發走395，可於入園前在Olancha加油，回程路上我們看到油價，比走15-127在shoshone加油便宜一些，但是西面入園會是一連串的上坡路。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;395的景色比15漂亮，但是有一段路有紅綠燈，這次回程的時候還遇到很多貨車，覺得開起來沒有走15順暢。如果回程傍晚往西走395，會對著太陽開，記得帶墨鏡。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;￼&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;住宿&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;若不住在園內，可考慮去住在Beatty，我們這次住在Beatty的Motel 6，路程不算太遠，隔日開回園內的路上風景很好。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;ul&gt;&lt;li&gt;Motel 6：2 full bed稅後價格約70美金。若能湊3、4人一起住就很便宜。&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;飲食&lt;/u&gt;&lt;/b&gt;￼&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;Visitor Center旁有幾間餐廳跟商店。但建議一定要帶足夠的食物跟飲水，從景點折返Visitor Center會非常耗時間，有帶食物可以隨時野餐比較方便。出園區回程路上也要開很久才會有店家。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;Beatty的Motel 6旁邊有Subway。&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;/div&gt;&lt;br /&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;b&gt;&lt;u&gt;推薦參考網頁&lt;/u&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://itchiang.blogspot.com/2008/03/death-valley-national-park.html" target="_blank"&gt;Thor’s Hammer&lt;/a&gt;  &amp;nbsp;&lt;/li&gt;&lt;li&gt;&lt;a href="http://tw.traveleredge.com/USNP/Death_Valley/Default.asp" target="_blank"&gt;旅人行腳 死谷國家公園&lt;/a&gt;  &lt;/li&gt;&lt;li&gt;&lt;a href="http://www.blogger.com/%E2%80%A8http://www.nps.gov/deva/index.htm" target="_blank"&gt;nps.gov&lt;/a&gt; &amp;nbsp; &amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;更多照片請見：&lt;br /&gt;&lt;table style="width: 194px;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="center" style="background: url(https://picasaweb.google.com/s/c/transparent_album_background.gif) no-repeat left; height: 194px;"&gt;&lt;a href="https://picasaweb.google.com/yaoanchan/DeathValley_Day2?authuser=0&amp;amp;feat=embedwebsite"&gt;&lt;img height="160" src="https://lh5.googleusercontent.com/-jRxmt10GgR8/TZLXWp2tdDE/AAAAAAAAKoE/jQYc2TbFQEo/s160-c/DeathValley_Day2.jpg" style="margin: 1px 0 0 4px;" width="160" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="font-family: arial,sans-serif; font-size: 11px; text-align: center;"&gt;&lt;a href="https://picasaweb.google.com/yaoanchan/DeathValley_Day2?authuser=0&amp;amp;feat=embedwebsite" style="color: #4d4d4d; font-weight: bold; text-decoration: none;"&gt;春遊DeathValley_Day2&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;或是老公的flickr相簿：&lt;a href="http://www.flickr.com/photos/xavierweathertoplai/sets/72157626248280169/"&gt;11/03/27_DeathValley - Day 2&lt;/a&gt;&lt;br /&gt;--&lt;br /&gt;延伸閱讀：&lt;a href="http://yaoanchan.blogspot.com/2011/11/death-valley-national-park-day1.html"&gt;春遊Death Valley National Park - Day1&lt;/a&gt;&lt;/div&gt;</summary><category term="美國旅行"></category><category term="NationalPark"></category><category term="DeathValley"></category><category term="CA"></category></entry><entry><title>2011春遊死谷 Death Valley National Park - Day1</title><link href="http://www.chenyen-yaoan.tk/blog/2011/11/11/death-valley-np-1/" rel="alternate"></link><updated>2011-11-11T15:44:00-08:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-11-11:blog/2011/11/11/death-valley-np-1/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/-zMJUBFTQX54/TrXDKDqfzPI/AAAAAAAAMDg/TJAId277OP4/s1600/5567545768_1c01d27de1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="266" src="http://3.bp.blogspot.com/-zMJUBFTQX54/TrXDKDqfzPI/AAAAAAAAMDg/TJAId277OP4/s400/5567545768_1c01d27de1.jpg" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;三月底，利用Spring Break最後一個週末，前往Death Valley，短短兩天一夜行程滿滿的攝影之旅。春天的Death Valley很漂亮，氣候也很舒適。真是令人開心的小旅行！:D （又是篇拖很久的遊記，四月的時候寫到了一半，因為網路太慢，放照片放到生氣就暫時擱到一邊，後來辦了飛快網路後，以為終於可以重新完稿了，但還是一直忘記。）&lt;br /&gt;&lt;br /&gt;簡短介紹Death Valley的由來：&lt;br /&gt;1848年加州發現到黃金，其中有一批淘金客們前往加州的途中遇到了秋冬積雪，所以想要繞路而行，但因為貪快所以走了未經證實的捷徑，結果深陷沙漠、周圍還環繞高山，於是他們派兩個人去洛杉磯求救，其他人則做了等死的心理準備。奇蹟似的，兩人在步行250哩後尋得救援，落難的人幾乎全數脫困，離開的時候，有人對著受困的地方說："Goodbye,  Death Valley." 從此這裡就被稱為Death Valley。 從Death Valley開車到LA至少也要5個小時吧！我只能說那兩人真的太偉大了！&lt;br /&gt;&lt;br /&gt;雖然是前人受困之地，但我覺得Death Valley National Park是一個很特別的地方，可以好好欣賞荒蕪的美，驚嘆奇特的自然地形景觀，是不同於青山綠水的另一番好風景。&lt;br /&gt;&lt;br /&gt;第一天的景點：&lt;br /&gt;&lt;b&gt;Zabriskie Point -&amp;gt;Devils Golf Course -&amp;gt;Natural Bridge (Trail:0.5 mile:1hr) -&amp;gt;Badwater Basin(Trail) -&amp;gt;Artist Palette -&amp;gt;Golden Canyon (Trail:1hr)&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;&lt;u&gt;&lt;b&gt;Zabriskie Point&lt;/b&gt;&lt;/u&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/sYqxRR5ebkL30UChu6IcNQ?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh4.googleusercontent.com/-SeywPGcsrpg/TZFznDeqsnI/AAAAAAAAKFA/wz8G-aFzQCo/s400/P1010761.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;這邊算是順著路進來的第一個景點，是觀賞被侵蝕成Badland地形的好所在。Death Valley是非常適合做地理實察的地方，很多地方都讓我稍稍回想以前地理課或是地球科學課程的片段內容，當然大部分還是都還給老師了。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/MkbmQ7aIL2bT3eon6t5QtQ?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh4.googleusercontent.com/-HBW7QbWy9Gs/TZFzqNky5RI/AAAAAAAAKFM/lsG5YOhor6s/s400/P1010764.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;第一次看到這種地形，非常特別，算是禿的很有型的XD。真的很讓人佩服大自然的鬼斧神工，就算什麼植被都沒有，還是很美麗。&lt;br /&gt;&lt;br /&gt;&lt;u&gt;&lt;b&gt;Devils Golf Course&lt;/b&gt;&lt;/u&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/I5fel0UHr30BGEgOr_nicQ?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh5.googleusercontent.com/--BsJ3Ieq8Bg/TZFzwCwDraI/AAAAAAAAKFc/cGv3cYJ_wEc/s400/P1010768.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;第二站來到惡魔的高爾夫球場。照片中間的超小黑點是一台車，後方有著五顏六色的山。在Death Valley裡面遊走很容易就覺得自己很渺小，因為這裡真的太大了！而且除了不算太多的遊客之外，很難遇到其他生物，連植物都很少。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/p7unnMWScWBg6S0qKyyilg?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-SlnCDwJaPNA/TZGS3IcVG2I/AAAAAAAAKGU/cGt26xLl8K8/s400/P1010777.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;這裡的地上有很多像是打高爾夫球的洞，但應該沒有人可以在這裡打高爾夫球吧...&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/pUKwi6rCs-3s4hYz4K9y8Q?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-MGpmyYjFDCY/TZF0MpriD3I/AAAAAAAAKFo/-QTf8coh33o/s400/P1010772.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;地面不僅是被侵蝕的奇特地形，上面還佈滿了鹽的結晶，非常讓人驚奇。&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Natural Bridge (Trail:0.5 mile:1hr)&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/u4f-br_9rfcOFhY2wLMeOA?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh4.googleusercontent.com/-arpcCNBIp8Y/TZGUecABaKI/AAAAAAAAKHo/I9u6LdnSTIA/s400/P1010797.jpg" width="300" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這段Trail可以往下繼續走，但我們只有走到Natural Bridge就折返了，就是照片看到的很像石橋的景觀。以今天的行程來說，我覺得Golden Canyon那條Trail走起來感覺比較漂亮，Natural Bridge這條比起來就沒那麼特別。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt; &lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/9eiFCp1LOxXYbC5ZjCUNsg?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh6.googleusercontent.com/-g-EwxQkXkw4/TZGUfaU3YpI/AAAAAAAAKHw/2IFAWjHko2U/s400/P1010801.jpg" width="300" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這個景點就這樣啦！這是我覺得所有Trail裡面最沒賣點的一條，除非再走下去還有什麼好看的，不然我覺得把時間花在別的景點比較值得。&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Badwater Basin (Trail) &lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://1.bp.blogspot.com/-mmILU10gp7M/TrR41gnw9hI/AAAAAAAAMDU/fTCqSG5k3bE/s1600/5566937665_051cc29ffa.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="266" src="http://1.bp.blogspot.com/-mmILU10gp7M/TrR41gnw9hI/AAAAAAAAMDU/fTCqSG5k3bE/s400/5566937665_051cc29ffa.jpg" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;照片上山脈前的白色區域，全是鹽，非常令人驚奇。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/G6o6gXgoXvrsHzoFtmqgIw?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-26vdQYo95_Y/TZGUzt2P-1I/AAAAAAAAKI0/y7GsL8xNuCA/s400/P1010816.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;這裡位置已經低於海平面855公尺，旁邊的山上還可以看到"SEA LEVEL"標示牌。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/yvjFzcKBl2l8SPfrPmoLuA?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-M211iNWI7HA/TZGU5mSehnI/AAAAAAAAKJA/xIBZirR-TD4/s400/P1010820.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;就像雪白的沙灘一樣，只是這是鹽，踩起來的觸感也很奇特。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/at7p1n9pUip54VLn2xeSLA?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh5.googleusercontent.com/-YrI_uf92PMo/TZGU-pjtD6I/AAAAAAAAKJQ/rEyjuj1w5M8/s400/P1010824.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;近拍可以看到鹽上的紋路，在網路上有看到有人在此拍到很驚人的結晶紋，但我想可能因為三月底的天氣還不夠熱，鹽巴上仍有微微水氣的感覺，所以紋路也比較不明顯。&lt;br /&gt;&lt;br /&gt;&lt;b&gt;&lt;u&gt;Artist Palett&lt;/u&gt;&lt;/b&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/2VEigvzAHC4DjyvMqNnZpA?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh5.googleusercontent.com/-9SA08U6YYn8/TZGVZ0RIlXI/AAAAAAAAKK8/FZx9p53f5iw/s400/P1010854.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;因為岩石中富含礦物質，造成色彩斑斕的景色，是就像是藝術家的調色盤。這是一開始停車看到的景，後來再開一小段就又發現了下面的地方，色彩更豐富，距離更近。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/8FF1xjg3DPVIdqM3Wod9zw?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh6.googleusercontent.com/-GFT07hEo8U8/TZGVgmXipvI/AAAAAAAAKL0/SkGSrPVqgOY/s400/P1010869.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;到這裡後我們隨意亂走，就發現了可以更靠近"調色盤"的小路。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/WTkcfuyI2k-JBNbpKe25Rw?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh5.googleusercontent.com/-EnSaCCUq9so/TZGVojMBH8I/AAAAAAAAKMU/n9r-oXF3eZA/s400/P1010876.jpg" width="300" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;走了一陣就會發現"調色盤"已經在腳下了。&lt;br /&gt;&lt;br /&gt;&lt;u&gt;&lt;b&gt;Golden Canyon (Trail:1hr)&lt;/b&gt;&lt;/u&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/nSOZ-Jpn8bJneUWb6fC6zw?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh4.googleusercontent.com/-1SNhaBXbbr0/TZGVucjpIkI/AAAAAAAAKMk/CINHC6KVKig/s400/P1010880.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;Golden Canyon是當天最後一個景點，黃昏的日光照在山頭上，就像是黃金一樣閃閃發亮！&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/6y-gXBTq7oismQ5liWGNFQ?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh5.googleusercontent.com/-Uixkc25qiVY/TdMAF1S6iII/AAAAAAAAKlw/yGvoL_5saZ4/s400/IMG_9672_1.jpg" width="267" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這張是同行的朋友Jean拍的作品，很像黃金吧！不得不說這條Trail在傍晚的時候來走真的很漂亮，可惜我們到的時候已經有點晚了，只好一直追個閃閃發亮的山頭走，但很快太陽就幾乎下山，金色的山頭也黯淡了下來。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/8cO1OnuJXTrXF3GooT1Ufw?feat=embedwebsite"&gt;&lt;img height="267" src="https://lh3.googleusercontent.com/-dRsAs8p925c/TdMAT0p0wGI/AAAAAAAAKl0/DI59a36smg0/s400/IMG_9678.JPG" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;就算沒有閃閃發亮的金山，這條Trail走起來風景也很壯觀，這張也是朋友Jean拍的作品，我是照片中小小的比例尺。&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/mxZtfd0SsCzaK495avqrWA?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/-occUj68aQbc/TZGWGY_snqI/AAAAAAAAKOc/YtkB-iy_JZc/s400/P1010909.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;追到山都不亮了之後折返，剛好可以欣賞一下美麗的晚霞。之後我們就去遊客中心用晚餐啦！&lt;br /&gt;&lt;br /&gt;這邊的景點大多很方便，除了一些要四輪傳動的車子才能抵達（這次我們沒有去，只排了自己車可到的二日遊景點），其他大多是開車、車停好下車就可以在景點拍到此一遊照，如果你不只想走馬看花，也有長短不一的Trail可以走。唯一美中不足的是，愛車之人可能會很心疼小老婆，因為有不少小石子路之類的非柏油路，沾滿灰塵是免不了了，如果捨不得的話可以乾脆租車前往，記得租四輪傳動的還可以去看特殊景點。---&amp;gt;Day2待續&lt;br /&gt;&lt;br /&gt;更多相片請見：&lt;br /&gt;&lt;table style="width: 194px;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="center" style="background: url(https://picasaweb.google.com/s/c/transparent_album_background.gif) no-repeat left; height: 194px;"&gt;&lt;a href="https://picasaweb.google.com/yaoanchan/DeathValley_Day1?authuser=0&amp;amp;feat=embedwebsite"&gt;&lt;img height="160" src="https://lh6.googleusercontent.com/-uOvu9HKrs-I/TZFyTb3gf2E/AAAAAAAAKl8/scBWFUe60CE/s160-c/DeathValley_Day1.jpg" style="margin: 1px 0 0 4px;" width="160" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="font-family: arial,sans-serif; font-size: 11px; text-align: center;"&gt;&lt;a href="https://picasaweb.google.com/yaoanchan/DeathValley_Day1?authuser=0&amp;amp;feat=embedwebsite" style="color: #4d4d4d; font-weight: bold; text-decoration: none;"&gt;春遊DeathValley_Day1&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;或是老公的flickr相簿：&lt;a href="http://www.flickr.com/photos/xavierweathertoplai/sets/72157626373238262/with/5563027365/"&gt;11/03/26_DeathValley - Day 1 &lt;/a&gt;&lt;br /&gt;--&lt;br /&gt;延伸閱讀：&lt;a href="http://yaoanchan.blogspot.com/2011/12/death-valley-national-park-day2-end.html"&gt;春遊Death Valley National Park - Day2 end (附錄)&lt;/a&gt;&lt;/div&gt;</summary><category term="美國旅行"></category><category term="NationalPark"></category><category term="DeathValley"></category><category term="CA"></category></entry><entry><title>[食譜] 焦糖烤布丁</title><link href="http://www.chenyen-yaoan.tk/blog/2011/10/03/shi-pu-jiao-tang-kao-bu-ding/" rel="alternate"></link><updated>2011-10-03T22:24:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-10-03:blog/2011/10/03/shi-pu-jiao-tang-kao-bu-ding/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-T3ZxECFy52A/Tanic97jblI/AAAAAAAALv0/JyoyZWwWlLk/s1600/P1020215.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="240" src="http://2.bp.blogspot.com/-T3ZxECFy52A/Tanic97jblI/AAAAAAAALv0/JyoyZWwWlLk/s320/P1020215.jpg" width="320" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;這是很久之前寫到一半的，真的很久。XD 記錄一下三種不同的容器烤出來的結果：&lt;/span&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;推測這次最厚的布丁最好吃，是ikea小杯烤出來的。正常白色布丁杯最寬扁最快熟，同時出爐反而有點太結實了。一般玻璃小杯因為底太厚，杯外的水無法淹到上層，烤出來有點上下熟度不太均一的感覺。上圖是ikea小杯烤的，下圖的是白色布丁杯成品。&lt;/span&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-hRq1NLSosNI/Tanicvj7ldI/AAAAAAAALv0/waZZ3TzFFZw/s1600/P1020214.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="240" src="http://2.bp.blogspot.com/-hRq1NLSosNI/Tanicvj7ldI/AAAAAAAALv0/waZZ3TzFFZw/s320/P1020214.jpg" width="320" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: x-small;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;附上簡易作法，食譜比例出自網路上某人的分享，但出處因為太久遠不可考了&amp;gt;_&amp;lt;&lt;/span&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;，原來的食譜只用了香草莢，不是用香草精加萊姆酒，我覺得加了酒比較香啦！因為我只有香草精，沒有高貴的香草莢。作法是我憑印象寫的，最近再來做看看吧！&lt;/span&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;焦糖漿：&lt;/span&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;砂糖60g&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;水50g&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;熱水10g&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;布丁：&lt;/span&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;砂糖50g&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;牛奶400g&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;全蛋3個&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;蛋黃1個&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;香草精、萊姆酒各一小匙（可以的話用香草莢半支比較好）&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;作法：&lt;/span&gt;&lt;br /&gt;&lt;ol&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;先做焦糖漿，砂糖加水50g煮滾到呈焦糖色，熄火加入熱水10g，趁熱倒入模子。&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;牛奶加糖加熱到糖融化（不要沸騰），蛋液加入牛奶、香草精等過篩即可倒入布丁杯約9分滿。&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;烤盤加水到布丁杯的一半滿以上，325度烤半小時左右，但實際時間須視布丁高度調整。&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class="Apple-style-span" style="font-family: Futura; font-size: 13px;"&gt;冷藏幾個小時即可享用:D&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</summary><category term="西點蛋糕"></category></entry><entry><title>新盆栽 - Sweet Basil &amp; Cornflower</title><link href="http://www.chenyen-yaoan.tk/blog/2011/10/01/xin-pen-zai-sweet-basil-cornflower/" rel="alternate"></link><updated>2011-10-01T00:22:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-10-01:blog/2011/10/01/xin-pen-zai-sweet-basil-cornflower/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://2.bp.blogspot.com/-521Z5LWzEYU/Toa163E9amI/AAAAAAAAL84/c9HKxktPt9Q/s1600/P1030675-2.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="240" src="http://2.bp.blogspot.com/-521Z5LWzEYU/Toa163E9amI/AAAAAAAAL84/c9HKxktPt9Q/s320/P1030675-2.jpg" width="320" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;好不容易電動終於破關了，終於有空來寫點小散文（是有沒有這麼忙啊？）。但一時間要寫出圖文並茂的長篇遊記...動作也沒那麼快，就先分享一下我最近的園藝活動吧！:D 這次為了填補把地鼠洞埋掉的空地，特選了三包種子回來，分別是Sweet Basil（甜羅勒）, Cornflower（矢車菊）還有草，沒錯，就是一般的草。&lt;br /&gt;&lt;br /&gt;草灑在地鼠住過的地方，不確定有沒有長出來，似乎土壤被地鼠"污染"後，變得不宜生長作物，有一些草長出來，但跟旁邊原來的雜草長得一樣，所以我想那應該不是我們播下的種子吧...&lt;br /&gt;&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/-UdZHuGkYz9I/Toa1-SyqwQI/AAAAAAAAL88/3gWxO36nDl0/s1600/P1030674-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="240" src="http://3.bp.blogspot.com/-UdZHuGkYz9I/Toa1-SyqwQI/AAAAAAAAL88/3gWxO36nDl0/s320/P1030674-1.jpg" width="320" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;其他兩包種子種在盆子裡，發芽率都還蠻好的，不過大概長到4片葉子的時候，Cornflower生長就變遲緩了，而Sweet Basil則是開始被不知名的蟲偷吃葉子！&amp;gt;_&amp;lt; &lt;br /&gt;&lt;br /&gt;想說不然多種一些吧！卻找不到當初買的種子，似乎是跟嶄新的鏟子一起放在紙類回收的袋子附近，在我勤勞的打掃之下，一起被丟掉了...囧rz （真是晴天霹靂！）&lt;br /&gt;&lt;br /&gt;無奈之餘，又去買了一包薰衣草的種子，但是一兩個禮拜過去了，毫無發芽跡象，懷疑是挖到了地鼠污染的土，所以長不出來，之後要換土再試一下。&lt;br /&gt;&lt;br /&gt;希望過一陣子可以更新他們長大的照片，不要全部死光了啊！XD&lt;/div&gt;</summary><category term="我的綠手指"></category></entry><entry><title>終於又花錢辦了網路</title><link href="http://www.chenyen-yaoan.tk/blog/2011/09/20/zhong-yu-you-hua-qian-ban-liao-wang-lu/" rel="alternate"></link><updated>2011-09-20T16:50:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-09-20:blog/2011/09/20/zhong-yu-you-hua-qian-ban-liao-wang-lu/</id><summary type="html">&lt;div class='post'&gt;
@@ -3617,37 +2489,7 @@ If you want to split this logic volume, type the following&lt;/p&gt;
 &lt;div class='content'&gt;
 呵呵呵~台灣的麵包真好吃!&lt;br /&gt;巧克力法國土司~讚唷!&lt;br /&gt;下次可以去買來吃唷!!&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="美國美食"></category></entry><entry><title>[食譜] 值得紀念的一天。終於成功的菠蘿麵包</title><link href="http://www.chenyen-yaoan.tk/blog/2011/05/09/shi-pu-zhi-de-ji-nian-de-yi-tian-zhong-yu-cheng-gong-de-bo-luo-mian-bao/" rel="alternate"></link><updated>2011-05-09T16:54:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-05-09:blog/2011/05/09/shi-pu-zhi-de-ji-nian-de-yi-tian-zhong-yu-cheng-gong-de-bo-luo-mian-bao/</id><summary type="html">&lt;div class='post'&gt;
+&lt;/div&gt;</summary><category term="美國美食"></category></entry><entry><title>[食譜] 值得紀念的一天。終於成功的菠蘿麵包</title><link href="http://www.chenyen-yaoan.tk/blog/2011/05/09/shi-pu-zhi-de-ji-nian-de-yi-tian-zhong-yu-cheng-gong-de-bo-luo-mian-bao/" rel="alternate"></link><updated>2011-05-09T16:54:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2011-05-09:blog/2011/05/09/shi-pu-zhi-de-ji-nian-de-yi-tian-zhong-yu-cheng-gong-de-bo-luo-mian-bao/</id><summary type="html">&lt;div class='post'&gt;
 &lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/hMGR_Eg2EScDpsRWhNle0Q?feat=embedwebsite"&gt;&lt;img height="400" src="https://lh3.googleusercontent.com/_mvtDPM7iODU/Ta5R5FOkjEI/AAAAAAAAKeA/2hW8wMwVS7Y/s400/P1020266.jpg" width="311" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;老公很喜歡菠蘿麵包，對於菠蘿麵包的愛遠遠超越蔥花麵包等其他麵包，每次去麵包店一定要買的就是菠蘿麵包。但我做的菠蘿麵包挑戰失敗多次，曾經做出很像墨西哥麵包的皮，或是很軟不酥的菠蘿皮，加上隔夜就乾巴巴的麵包體，不及格啊！後來老公就死心了，大概就是有所覺悟，要吃菠蘿麵包就開車去很遠很遠的小雅屋吧...&lt;br /&gt;&lt;br /&gt;4月19日，終於做出有史以來最成功的菠蘿麵包。我的菠蘿皮終於會酥了！而且麵包體也好好吃，剛出爐的時候，咬下的瞬間真的好感動。分給朋友也是人人稱讚，我終於出運了！喔耶！:D 老公在被限制的情況下一口氣吃了三個，這樣下次要做菠蘿麵包的話，該做幾個好呢？&lt;br /&gt;&lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="https://picasaweb.google.com/lh/photo/qCQBaFwlQPJ2jBmzSG35sQ?feat=embedwebsite"&gt;&lt;img height="300" src="https://lh3.googleusercontent.com/_mvtDPM7iODU/Ta5R6-j5TQI/AAAAAAAAKeE/AkcJZiS6MyY/s400/P1020267.jpg" width="400" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;晚上老公發現我出現了很多白頭髮，幫我拔了幾根，說："是為了要做出好吃的菠蘿麵包嗎？你可以不必這樣的。" 我知道我可以不必這樣，但做出好吃的東西讓身邊的人感到幸福，是主婦目前最得意的事（志氣好小XD）。以後身在米國也能吃到好吃的菠蘿麵包囉！哈哈哈！&lt;/div&gt;
 
 &lt;h2&gt;Comments&lt;/h2&gt;
@@ -3984,37 +2826,7 @@ c c c &lt;br /&gt;我家從來沒有出現過這道菜，&lt;br /&gt;因為大�
 &lt;div class='content'&gt;
 下次在房間內到幾杯水&lt;br /&gt;才不會變枯萎的花朵阿~&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="美國旅行"></category><category term="CA"></category></entry><entry><title>返鄉</title><link href="http://www.chenyen-yaoan.tk/blog/2010/09/24/fan-xiang/" rel="alternate"></link><updated>2010-09-24T11:44:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-09-24:blog/2010/09/24/fan-xiang/</id><summary type="html">&lt;div class='post'&gt;
+&lt;/div&gt;</summary><category term="美國旅行"></category><category term="CA"></category></entry><entry><title>返鄉</title><link href="http://www.chenyen-yaoan.tk/blog/2010/09/24/fan-xiang/" rel="alternate"></link><updated>2010-09-24T11:44:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-09-24:blog/2010/09/24/fan-xiang/</id><summary type="html">&lt;div class='post'&gt;
 &lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/G9xQx5yzViKgUWCtI00mhA?feat=embedwebsite"&gt;&lt;img src="http://lh3.ggpht.com/_mvtDPM7iODU/TIvHZNhfYMI/AAAAAAAAITM/2FdnoS2oEHw/s400/P1000171.jpg" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;&lt;br /&gt;這次返鄉，只短短地待了兩個多禮拜。抵達時，迎接的是久違的濕熱空氣。還好有先查了天氣，記得把折傘帶回家，在美國只開不到五次的傘，在台灣卻幾乎天天撐著。經常性的午後大雨讓夏天不那麼熱，也順便毀了我的花園夜市行程。&lt;br /&gt;&lt;br /&gt;滿載而歸，裝的都不是自己的東西。空掉的行李箱又迅速地再度被塞滿。在美國扭曲的價值觀，使得在台購物欲大開。之前列在購物清單上的幾乎都買了，沒列的也買了。帶來的是行李超重的焦慮，再度後悔不該買那麼大的行李箱。&lt;br /&gt;&lt;br /&gt;家裡附近小7的店員還記得我們，還問我們是否一如往常的要點抹綠，說我一點都沒有變，驚訝於已經過了一年。我也很驚訝，真的也只是好像休了一個長假，但卻好像已經錯過很多事，無緣參加的親友婚禮、入厝...，弟弟退伍，家裡的小田也變了模樣。很多時候，真想要在你們身邊，高興的時候、悲傷的時候。這次回去相聚的時間很短，沒有很多機會好好敘舊，很多想見的人也只能下次再見了，但總之，各位親友們，要記得我心與你們同在啊！&lt;br /&gt;&lt;br /&gt;在台灣胖了，清單上的也幾乎都吃了，沒在清單上的也吃了不少。因為太常喝波哥的飲料，還被婆婆問說：波哥裡面是有放安非他命嗎？XD 但不知道是不是太久沒有喝這些有的沒的，大概一半的飲料都在路上打翻了吧...真是對不起光南跟相機行等無辜店家。直到上飛機的前一刻，我還在滿腹之下硬多吃了一顆蛋黃酥。又要告別物美價廉的方便美食了，回到自力救濟的狀態，今年的廚藝又會進步不少吧！&lt;br /&gt;&lt;br /&gt;雖然只是短短相聚，但真的很高興！明年希望可以在台灣待一個月（發願），下次見面時，大家都要一樣很健康唷！:D&lt;/div&gt;
 
 &lt;h2&gt;Comments&lt;/h2&gt;
@@ -4157,37 +2969,7 @@ To jenniferchen0915@yahoo.com.tw&lt;br /&gt;已經回信給你囉:D&lt;br /&gt;�
 &lt;div class='content'&gt;
 沒錯!給你一個讚!&lt;br /&gt;我在英國也陷入了價值觀扭曲的窘境中.......:S&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="促進經濟發展"></category></entry><entry><title>[食譜] 自製蘿蔔糕，家鄉味菜頭粿</title><link href="http://www.chenyen-yaoan.tk/blog/2010/06/17/shi-pu-zi-zhi-luo-bo-gao-jia-xiang-wei-cai-tou-guo/" rel="alternate"></link><updated>2010-06-17T15:15:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-06-17:blog/2010/06/17/shi-pu-zi-zhi-luo-bo-gao-jia-xiang-wei-cai-tou-guo/</id><summary type="html">&lt;div class='post'&gt;
+&lt;/div&gt;</summary><category term="促進經濟發展"></category></entry><entry><title>[食譜] 自製蘿蔔糕，家鄉味菜頭粿</title><link href="http://www.chenyen-yaoan.tk/blog/2010/06/17/shi-pu-zi-zhi-luo-bo-gao-jia-xiang-wei-cai-tou-guo/" rel="alternate"></link><updated>2010-06-17T15:15:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-06-17:blog/2010/06/17/shi-pu-zi-zhi-luo-bo-gao-jia-xiang-wei-cai-tou-guo/</id><summary type="html">&lt;div class='post'&gt;
 &lt;center&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;br /&gt;&lt;a href="http://picasaweb.google.com/lh/photo/umxYx--dgo2O-Ik_3Qf0eA?feat=embedwebsite"&gt;&lt;img src="http://lh4.ggpht.com/_mvtDPM7iODU/TBpmgdlMMrI/AAAAAAAAHng/3-3w58RuZPQ/s400/YAN_8907.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;去大華買了菜頭，一直不知道要做什麼，天氣熱了不想喝湯，想想來做菜頭粿吧！還沒有做過，很想要試試看。&lt;br /&gt;&lt;br /&gt;在網路上參考一下別人的作法，像是&lt;a href="http://www.wretch.cc/blog/cllinbaby/16645063"&gt;TPC復活日記：台式蘿蔔糕II&lt;/a&gt;、&lt;a href="http://miniyuan.pixnet.net/blog/post/26770941"&gt;吼不行嗎？：曾媽媽廚房－菜頭跪&lt;/a&gt;等。使用在來米粉的作法看起來很簡易，基本上只有料跟水量的不同，老公說他喜歡沒料的、硬一點的口感，跟我喜歡的相反。哈哈！但反正沒做過，我也不知道按譜做出來的是多硬。&lt;br /&gt;&lt;br /&gt;這次用了：&lt;br /&gt;&lt;ul&gt;&lt;li&gt;一根大菜頭，去皮後切掉頭尾前有700多克，剉籤後再稍微切一下。&lt;/li&gt;&lt;li&gt;一些香菇切丁。&lt;/li&gt;&lt;li&gt;一包500克在來米粉，折衷加了7杯半量米杯的水。估計大概1300c.c.&lt;/li&gt;&lt;/ul&gt;炒過菜頭跟香菇、悶軟後，加入調好的在來米粉水，小火攪拌到郵局的漿糊狀，就可以倒入模子去蒸了。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://picasaweb.google.com/lh/photo/eIMay-aMn7eMDNNPTTIbeg?feat=embedwebsite" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img src="http://lh3.ggpht.com/_mvtDPM7iODU/TBpmX8zFwRI/AAAAAAAAHnM/rUZEbPeWtkk/s400/YAN_8898.JPG" /&gt;&lt;/a&gt;&lt;/div&gt;記得鍋子要抹油，比較好脫模。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://picasaweb.google.com/lh/photo/gTZDsPpD5lRXTD07eTTBJw?feat=embedwebsite" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img src="http://lh4.ggpht.com/_mvtDPM7iODU/TBpmZbmcA3I/AAAAAAAAHnQ/yWysAMknaCU/s400/YAN_8899.JPG" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style="text-align: center;"&gt;&lt;div style="text-align: left;"&gt;我用電鍋蒸的，外鍋放兩杯水，跳起後看不太出來好了沒。應該要蓋蓋子蒸的，因為沒蓋的時候表面有水氣，不太確定有沒有熟，用筷子測有一點點沾黏，天知道是不是因為表面被水氣弄糊的關係，所以我就又再加一杯水蒸一次。&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://picasaweb.google.com/lh/photo/ijEgA558yCMdTy6t4H4RZQ?feat=embedwebsite" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img src="http://lh6.ggpht.com/_mvtDPM7iODU/TBpmam3hsPI/AAAAAAAAHnU/m9_9M8GSnLM/s400/YAN_8901.JPG" /&gt;&lt;/a&gt;&lt;/div&gt;蒸好後要放涼再切。我冰到隔天，比剛蒸好硬很多，因為有抹油，脫模很順利。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://picasaweb.google.com/lh/photo/8m1TIvmWX9MHNrIwNi_pZA?feat=embedwebsite" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img src="http://lh6.ggpht.com/_mvtDPM7iODU/TBpmd2SkgyI/AAAAAAAAHnc/jXlkIqArjU4/s400/YAN_8904.JPG" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;我把大圓切三刀，分成四份，感覺是去大華買的好幾倍份量，但成本似乎是好幾分之一。吃了兩餐午餐，還有一次晚上的Potluck。&lt;br /&gt;&lt;br /&gt;煎到恰恰，有沒有好吃的感覺？圓形的邊邊切成小方塊，好像比較酥脆。&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://picasaweb.google.com/lh/photo/82eKkA4KfaO5l0muPbBWlw?feat=embedwebsite" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img src="http://lh6.ggpht.com/_mvtDPM7iODU/TBpmjMJPP-I/AAAAAAAAHnk/XBIrIUBA4mE/s400/YAN_8924.JPG" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style="text-align: center;"&gt;&lt;div style="text-align: left;"&gt;老公說這次的硬度差不多剛好，但他覺得蘿蔔太甜了，下次可以加少一點。我想這根菜頭的確是漢草很好，下次買嬌小一點的好了。但這跟我理想的綿密的粿口感似乎還有一段差距，是應該要從米做起嗎？&lt;/div&gt;&lt;/div&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br /&gt;&lt;div&gt;Potluck還做了油飯，為了應景替代粽子，吃吃油飯就好。本來想包粽子卻被阻止了，但反正我的確是不會包，暫時就不要浪費材料錢吧！油飯只做三杯米的份量好像太少了，狀似很受歡迎，但是當天忙著煎菜頭粿，就沒有油飯的照片啦！&lt;/div&gt;&lt;/div&gt;</summary><category term="伙食很好的證據"></category></entry><entry><title>重操舊業做網頁</title><link href="http://www.chenyen-yaoan.tk/blog/2010/06/17/zhong-cao-jiu-ye-zuo-wang-ye/" rel="alternate"></link><updated>2010-06-17T11:01:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-06-17:blog/2010/06/17/zhong-cao-jiu-ye-zuo-wang-ye/</id><summary type="html">&lt;div class='post'&gt;
 &lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/_mvtDPM7iODU/TBkdmU8CdcI/AAAAAAAAHmc/YxmmbFWNggA/s1600/Screen+shot+2010-06-16+at+11.50.32+AM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://3.bp.blogspot.com/_mvtDPM7iODU/TBkdmU8CdcI/AAAAAAAAHmc/YxmmbFWNggA/s320/Screen+shot+2010-06-16+at+11.50.32+AM.png" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;4月中接了TGSA UCR(加州大學河濱分校 台灣研究生同學會)的幹部，要幫忙改版官網跟論壇。算是最近稍稍忙碌的事，這幾天終於算是告個段落了吧？&lt;br /&gt;&lt;br /&gt;&lt;strike&gt;(被消音了...刪)&lt;/strike&gt;&lt;br /&gt;&lt;br /&gt;那我幹嘛去當義工呢？感覺有點是路見不平，拔刀相助的心情。因為本來的網頁實在是太醜了...這陽春到宛如是沒有美術細胞的學生第一次網頁實作練習，讓我寄予無限同情。也因為它長得太不像樣了，還經常性的被人以為是廢棄的，認為論壇是正式的官網。身為MIS出身的人，不出手拯救一下，有愧於自己的正義感。加上今年的會長感覺是個有心人，狀似很辛苦，口口聲聲說沒有人會做網頁(CS的人以前都不做網頁打工的嗎？為什麼都說不會？)，我有點同情心氾濫，所以才幫這個小忙。只有要改版而已，一年任期。明年，再找我的話，我要收錢。&lt;br /&gt;&lt;br /&gt;感謝阿強葛格，告訴我某網站是用Joomla!的套件做的。畢竟我也跟玩網頁的生活脫離很久了，那只是我當年拿來賺零用錢用的。&lt;br /&gt;&lt;br /&gt;舊網頁用的Bluehost網頁空間，可以直接選擇使用Joomla!套件。大概幾分鐘安裝設定完，就可以使用可任意變換版型的網頁跟後台管理系統，裡面的功能非常多，像是投票系統(無記名)、廣告輪播系統等，還可以裝更多有的沒的，相當方便。&lt;br /&gt;&lt;br /&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://1.bp.blogspot.com/_mvtDPM7iODU/TBkmRygiJHI/AAAAAAAAHmk/yKoH4HFVBp0/s1600/Screen+shot+2010-06-16+at+11.51.06+AM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://1.bp.blogspot.com/_mvtDPM7iODU/TBkmRygiJHI/AAAAAAAAHmk/yKoH4HFVBp0/s320/Screen+shot+2010-06-16+at+11.51.06+AM.png" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;然後，就花點時間，真的很少，研究一下功能的架構，改一下內容，新網站就做完了。無挑戰性。然後等待著內容，等了一個多月(是發生了什麼事？)，才又開始動工。看來我還是寶刀未老，只有最近做租屋資訊的地圖跟表格比較花時間罷了，但最後受不了，還是去抓了Dreamweaver的試用版，只用陽春編輯器跟土法練code實在很浪費青春。&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;另一部分，改版了論壇，本來舊的版本，保守估計已經7年以上未更新了！到底是什麼時候安裝的？每天都有廣告機器人來註冊，註冊未開通的垃圾帳號高達三萬個，該說什麼好呢？總之，升級完後，垃圾註冊的症頭也消失了。這是我第一次裝phpBB，一樣是個方便好裝的套件。另外還開了相簿外掛，倒是想不到開外掛這麼複雜，應該說我選擇開了一個不建議新手安裝的外掛，光是要修改code的檔案就高達20幾個，一邊改一邊想起以前上班的生活，研究說明文件、改code上新版，深怕改錯一個地方就要一切重來，深陷抓bug的窘境，還好一次就開成功了。&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://3.bp.blogspot.com/_mvtDPM7iODU/TBpYcd4V9YI/AAAAAAAAHm4/FmU8fv5GNuY/s1600/Screen+shot+2010-06-16+at+11.51.28+AM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://3.bp.blogspot.com/_mvtDPM7iODU/TBpYcd4V9YI/AAAAAAAAHm4/FmU8fv5GNuY/s320/Screen+shot+2010-06-16+at+11.51.28+AM.png" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;好像做了很多事又好像沒有，說實在也沒花多少時間，感覺有點像是重溫舊夢，順便學點沒用過的新東西。然後，仔細想想，自己似乎應該要乾脆接case回來寫，至少可以賺點錢。/__\&lt;/div&gt;&lt;/div&gt;</summary><category term="WebsiteBuilder"></category></entry><entry><title>春天小白花開</title><link href="http://www.chenyen-yaoan.tk/blog/2010/06/10/chun-tian-xiao-bai-hua-kai/" rel="alternate"></link><updated>2010-06-10T22:38:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-06-10:blog/2010/06/10/chun-tian-xiao-bai-hua-kai/</id><summary type="html">&lt;div class='post'&gt;
 &lt;center&gt;&lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/ptpTb4N4Jqm_lQNsG7w71w?feat=embedwebsite"&gt;&lt;img src="http://lh5.ggpht.com/_mvtDPM7iODU/TA1343RAeRI/AAAAAAAAHfU/r7-vsJgzoeM/s400/YAN_8679.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;這是之前在學校的Botanic Gardens買(最後變成送)的種子，名字叫....印象中有Alice？已經忘記了，總之包裝介紹說是會在春天開滿白色小花的的一種常見野花，但在開花之前，誰也不知道他到底是會長怎樣。&lt;br /&gt;&lt;br /&gt;從種子開始，想想除了綠豆之外也沒有種過什麼是從種子開始的，想當年綠豆也種得很失敗，沒有長到開花的印象。這次好像是去年10月種的？經過兩週後，陸續發了芽，讓我高興了一下，然後就停滯了很久，我都不覺得它有在長，感覺好像養了一盆雜草。&lt;br /&gt;&lt;br /&gt;猜測大概是因為冬天加上我放在比較沒日照的地方，所以它不想長大，換了地點後有長得比較高。之前還一度因為我經常性地忘記澆水，感覺快要枯死了。五月的時候，猛然一看才發現，有點枯萎的葉子中竟然隱藏著花苞！這下可激發起認真澆水的動力了！:D&lt;br /&gt;&lt;br /&gt;最近花越開越多了，原來花開出來是長這樣啊！&lt;br /&gt;&lt;center&gt;&lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/K2eqbJOi7h7EBbjZb2wx0w?feat=embedwebsite"&gt;&lt;img src="http://lh4.ggpht.com/_mvtDPM7iODU/TA13_jlYHCI/AAAAAAAAHfg/AGNWkC-kU_4/s400/YAN_8890.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;很可愛吧！ &lt;br /&gt;&lt;table style="width: auto;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://picasaweb.google.com/lh/photo/H8pzydo2qm398C32hnIvUw?feat=embedwebsite"&gt;&lt;img src="http://lh5.ggpht.com/_mvtDPM7iODU/TA139KnfWlI/AAAAAAAAHfc/XfcJcfqWSlU/s400/YAN_8889.JPG" /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/center&gt;&lt;br /&gt;想不到我也可以從種子種出花來，真是太感人了！雖然說當時一起買的蘆薈、黃金葛、還有茉莉盆栽都死光了....所以我還是不能說自己擁有綠手指(&amp;lt;--還差的遠咧！這花會開是僥倖吧！)。&lt;br /&gt;&lt;br /&gt;最後，如果有人知道它到底是叫什麼名字，麻煩請告訴我一下。謝謝！:D&lt;/div&gt;</summary><category term="我的綠手指"></category></entry><entry><title>手工Pizza的祕密武器：Pizza Stone &amp; Pizza Peel</title><link href="http://www.chenyen-yaoan.tk/blog/2010/05/17/shou-gong-pizzade-mi-mi-wu-qi-pizza-stone-pizza-peel/" rel="alternate"></link><updated>2010-05-17T14:26:00-07:00</updated><author><name>Yao-An Chan</name></author><id>tag:www.chenyen-yaoan.tk,2010-05-17:blog/2010/05/17/shou-gong-pizzade-mi-mi-wu-qi-pizza-stone-pizza-peel/</id><summary type="html">&lt;div class='post'&gt;

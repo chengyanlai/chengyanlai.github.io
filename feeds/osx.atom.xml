@@ -35,37 +35,7 @@ If you need to copy two or more files, just change the number&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Enjoy!&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</summary></entry><entry><title>LaTeX and BibTeX from Papers</title><link href="http://www.chenyen-yaoan.tk/blog/2013/11/21/latex-and-bibtex-from-papers/" rel="alternate"></link><updated>2013-11-21T16:14:35-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-11-21:blog/2013/11/21/latex-and-bibtex-from-papers/</id><summary type="html">&lt;p&gt;This is just convenient if you are using LaTeX and BibTex, also you have a lot of references.&lt;/p&gt;
 &lt;p&gt;You need to pay for the Paper app, it only has OSX and Windows(WTF!) version, sorry.&lt;/p&gt;
 &lt;h3&gt;Export bib from Papers&lt;/h3&gt;
 &lt;p&gt;Papers allow you to export your entire library to single file &lt;/p&gt;
@@ -88,7 +58,7 @@ If you need to copy two or more files, just change the number&lt;/p&gt;
 &lt;p&gt;. This is just an example. Because I am using RevTex, so the style is &lt;code&gt;apsrev4-1&lt;/code&gt;. Second line means you have a file called and located at &lt;code&gt;${HOME}/Library/texmf/bibtex/bib/My_Ref.bib&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Maintain the title&lt;/h3&gt;
 &lt;p&gt;If You import an article which has some latex form, for example, name of compound like
-&lt;code&gt;La_2CuO_4&lt;/code&gt; or atoms &lt;code&gt;^{40}K&lt;/code&gt; should appear like $La_2CuO_4\text{ or } ^{40}K$.  &lt;/p&gt;
+&lt;code&gt;La_2CuO_4&lt;/code&gt; or atoms &lt;code&gt;^{40}K&lt;/code&gt; should appear like &lt;span class="math"&gt;\(La_2CuO_4\text{ or } ^{40}K\)&lt;/span&gt;.  &lt;/p&gt;
 &lt;p&gt;This would, however, cause error message during compile of Bibtex. We need to manually edit it in 
 the &lt;code&gt;Papers&lt;/code&gt; to become &lt;code&gt;La$_2$CuO$_4$&lt;/code&gt; or &lt;code&gt;$^{40}$K&lt;/code&gt;. The small edit would ease the problem that you need to edit the &lt;code&gt;.bib&lt;/code&gt; every time Bibtex compile.&lt;/p&gt;
 &lt;h4&gt;Style list&lt;/h4&gt;
@@ -100,40 +70,39 @@ the &lt;code&gt;Papers&lt;/code&gt; to become &lt;code&gt;La$_2$CuO$_4$&lt;/code
 
 &lt;p&gt;. Just copy all &lt;code&gt;.bst&lt;/code&gt; files into it and &lt;code&gt;LaTeX&lt;/code&gt; will find find it. All you need to do in &lt;code&gt;.tex&lt;/code&gt; file is the following&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="se"&gt;\b&lt;/span&gt;ibliographystyle&lt;span class="o"&gt;{&lt;/span&gt;nature&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="Latex"></category></entry><entry><title>OSX Mavericks Installation and Setup</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/24/osx-mavericks-installation-and-setup/" rel="alternate"></link><updated>2013-10-24T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-24:blog/2013/10/24/osx-mavericks-installation-and-setup/</id><summary type="html">&lt;p&gt;I run all the following in order to setup my OSX Mavericks. I prefer clean install!&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="Latex"></category></entry><entry><title>OSX Mavericks Installation and Setup</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/24/osx-mavericks-installation-and-setup/" rel="alternate"></link><updated>2013-10-24T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-24:blog/2013/10/24/osx-mavericks-installation-and-setup/</id><summary type="html">&lt;p&gt;I run all the following in order to setup my OSX Mavericks. I prefer clean install!&lt;/p&gt;
 &lt;p&gt;Since I have remove my SuperDrive on my 2009 Macbook Pro, I have two harddrives. One is the SSD shipped with Apple, the other HD is installed on the slot of old SuperDrive. I would like to move my home folder to the 2nd HD.&lt;/p&gt;
 &lt;p&gt;The following setup is also worked if you try to do partition on single harddrive.&lt;/p&gt;
-&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{ root_url }}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The details on how to do bootable USB drive and clean install, please refer to &lt;a href="{{%20root_url%20}}/blog/2013/10/23/osx-mavericks-bootable-usb-drive/"&gt;my another post&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Move Home Folder&lt;/h2&gt;
 &lt;p&gt;After clean install, there is basically nothing new on home folder. You still have to move it, however, due to the reason that the Library folder.&lt;/p&gt;
 &lt;h3&gt;Copy the home folder to the other drive&lt;/h3&gt;
@@ -258,37 +227,7 @@ The python command can be set in the &lt;code&gt;Variables&lt;/code&gt; of &lt;c
 &lt;h3&gt;&lt;a href="http://www.openoffice.org/"&gt;OpenOffice&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I need this to open xls files used in iLearn (Fuck!).&lt;/p&gt;
 &lt;h3&gt;&lt;a href="https://code.google.com/p/macfuse/"&gt;Mackfuse&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The only purpose is to read NTFS files.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>OSX Mavericks bootable USB drive</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/23/osx-mavericks-bootable-usb-drive/" rel="alternate"></link><updated>2013-10-23T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-23:blog/2013/10/23/osx-mavericks-bootable-usb-drive/</id><summary type="html">&lt;p&gt;I don't know if you like to do the clean install, but it is always good to have the bootable usb drive. If you have multiple MACs, you can take advantage for not downloading the 5.5G Mavericaks installer.&lt;/p&gt;
+&lt;p&gt;The only purpose is to read NTFS files.&lt;/p&gt;</summary></entry><entry><title>OSX Mavericks bootable USB drive</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/23/osx-mavericks-bootable-usb-drive/" rel="alternate"></link><updated>2013-10-23T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-23:blog/2013/10/23/osx-mavericks-bootable-usb-drive/</id><summary type="html">&lt;p&gt;I don't know if you like to do the clean install, but it is always good to have the bootable usb drive. If you have multiple MACs, you can take advantage for not downloading the 5.5G Mavericaks installer.&lt;/p&gt;
 &lt;p&gt;OSX Marvericks provides a very easy way to create the bootable USB drive.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -383,37 +322,7 @@ Type the following in the terminal&lt;/p&gt;
 &lt;p&gt;it should be there. &lt;/p&gt;
 &lt;h3&gt;Notes&lt;/h3&gt;
 &lt;p&gt;You can also refer to &lt;a href="http://www-uxsup.csx.cam.ac.uk/~aia21/osx/leopard-ssh.html"&gt;this page&lt;/a&gt;.&lt;br /&gt;
-As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
+As of Leopard 10.5.1, the ssh agent will be launched during the start-up.&lt;/p&gt;</summary></entry><entry><title>OSX Library folder</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/03/osx-library-folder/" rel="alternate"></link><updated>2013-10-03T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-03:blog/2013/10/03/osx-library-folder/</id><summary type="html">&lt;p&gt;The &lt;code&gt;~/Library/&lt;/code&gt; folder is default hidden in your finder and other place in OSX. If you are terminal user, there is no trouble for you to access it. However, you can let it appear in Finder by just several simple tips.&lt;/p&gt;
 &lt;h4&gt;&lt;code&gt;Go to&lt;/code&gt; function&lt;/h4&gt;
 &lt;p&gt;When you are in Finder, simply just use &lt;code&gt;Command-Shift-g&lt;/code&gt;. There will be a pop-up on your finder, we then type &lt;code&gt;~/Library/&lt;/code&gt;, the library folder will be opened.&lt;/p&gt;
 &lt;h4&gt;In the &lt;code&gt;Go&lt;/code&gt; menu&lt;/h4&gt;
@@ -445,37 +354,7 @@ Open your terminal and type&lt;/p&gt;
 &lt;p&gt;BSD command &lt;code&gt;chflags&lt;/code&gt; -- change file flags.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary></entry><entry><title>Fusion Drive on OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/01/fusion-drive-on-osx/" rel="alternate"></link><updated>2013-10-01T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-01:blog/2013/10/01/fusion-drive-on-osx/</id><summary type="html">&lt;h2&gt;Setup Fusion Drive&lt;/h2&gt;
+&lt;/div&gt;</summary></entry><entry><title>Fusion Drive on OSX</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/01/fusion-drive-on-osx/" rel="alternate"></link><updated>2013-10-01T21:00:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-01:blog/2013/10/01/fusion-drive-on-osx/</id><summary type="html">&lt;h2&gt;Setup Fusion Drive&lt;/h2&gt;
 &lt;p&gt;First of all, you will need to reinstall os and everything you needed, so start backup your files.
 You need to boot from a flash drive or the installation dmg, then you need to go to the terminal to do the following.&lt;/p&gt;
 &lt;h3&gt;Check your storage&lt;/h3&gt;
@@ -530,34 +409,4 @@ If you want to split this logic volume, type the following&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;After destroying the CoreStorage Logical Volume Group, system formats the drives for you as normal OSX Extended (Journaled) volumes (JHFS+). This is the normal type of volume that you would install OS X on or use to format an external drive.&lt;/p&gt;&lt;script type= "text/javascript"&gt;
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-&lt;/script&gt;
-</summary><category term="Fusion"></category></entry></feed>
+&lt;p&gt;After destroying the CoreStorage Logical Volume Group, system formats the drives for you as normal OSX Extended (Journaled) volumes (JHFS+). This is the normal type of volume that you would install OS X on or use to format an external drive.&lt;/p&gt;</summary><category term="Fusion"></category></entry></feed>
