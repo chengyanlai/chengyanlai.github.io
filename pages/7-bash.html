@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>Git</title>
+        <title>Bash</title>
         <meta charset="utf-8" />
         <link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Full Atom Feed" />
 
@@ -49,8 +49,8 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="http://www.chenyen-yaoan.tk/pages/7-bash.html">Bash</a></li>
-                <li class="active"><a href="http://www.chenyen-yaoan.tk/pages/8-git.html">Git</a></li>
+                <li class="active"><a href="http://www.chenyen-yaoan.tk/pages/7-bash.html">Bash</a></li>
+                <li><a href="http://www.chenyen-yaoan.tk/pages/8-git.html">Git</a></li>
                 <li><a href="http://www.chenyen-yaoan.tk/pages/9-links.html">Links</a></li>
                 <li><a href="http://www.chenyen-yaoan.tk/archives.html">Archives</a>
                     <div class="dropdown">
@@ -64,84 +64,41 @@
               </ul>
             </div>
 
-    <h2>Git</h2>
+    <h2>Bash</h2>
     
 
-    <p>Here is my favorite Git command and some git related posts.<br />
-Some prior setups needed, please see <a href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/">Git Setup</a>.</p>
-<h3>Commands</h3>
-<p>Super basic ...</p>
-<div class="highlight"><pre><span class="nv">$ </span>git ci <span class="o">[</span>--amend<span class="o">]</span> <span class="c"># Don&#39;t amend published commit!</span>
-<span class="nv">$ </span>git add <span class="o">[</span>-u<span class="o">]</span> <span class="o">[</span>-A<span class="o">]</span>
-<span class="nv">$ </span>git st <span class="c"># status</span>
-<span class="nv">$ </span>git bh <span class="c"># branch</span>
-<span class="nv">$ </span>git remote add &lt;remote&gt; &lt;url&gt;
+    <p>Here is my bash cheat sheet</p>
+<h2>Terminal shortcut</h2>
+<ul>
+<li>'ctrl-a': Cursor to start of line  </li>
+<li>'ctrl-e': Cursor to end of line  </li>
+<li>'ctrl-u': Delete left of the cursor  </li>
+<li>'ctrl-k': Delete right of the cursor  </li>
+</ul>
+<h2>Batch rename</h2>
+<div class="highlight"><pre><span class="nv">$ </span>rename <span class="s1">&#39;s/{old string}/{new string}/&#39;</span> <span class="o">{</span>file pattern<span class="o">}</span>
 </pre></div>
 
 
-<p>Tags</p>
-<div class="highlight"><pre><span class="c"># To add</span>
-<span class="nv">$ </span>git tag -a &lt;tag name&gt; <span class="o">{</span>SHA<span class="o">}</span>
-<span class="c"># To delete</span>
-<span class="nv">$ </span>git tag -d &lt;tag name&gt;
-<span class="c"># To push all tags</span>
-<span class="nv">$ </span>git push origin --tags
-<span class="c"># To list all tags</span>
-<span class="nv">$ </span>git tag
-<span class="c"># pattern?</span>
-<span class="nv">$ </span>git tag -l &lt;pattern&gt;
-<span class="c"># To check out tag into new branch</span>
-<span class="nv">$ </span>git checkout -b &lt;new_branch_name&gt; &lt;tag name&gt;
+<h2>multiple copy</h2>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="o">{</span>folder pattern<span class="o">}</span> | xargs -n 2 cp foo1.txt foo2.txt
 </pre></div>
 
 
-<p>Branch</p>
-<div class="highlight"><pre><span class="c"># To create</span>
-<span class="nv">$ </span>git branch &lt;branch name&gt;
-<span class="c"># To delete</span>
-<span class="nv">$ </span>git branch -d &lt;branch name&gt;
-<span class="c"># To update</span>
-<span class="nv">$ </span>git rebase master
+<p>, which will copy foo1.txt and foo2.txt to {folder pattern}</p>
+<h2>free linux cache</h2>
+<div class="highlight"><pre><span class="nv">$ </span>sudo sh -c <span class="s1">&#39;echo 1 &gt;/proc/sys/vm/drop_caches&#39;</span>
 </pre></div>
 
 
-<p>Rebase/Merge tool</p>
-<div class="highlight"><pre><span class="nv">$ </span>git mergetool
-</pre></div>
-
-
-<p>Stash</p>
-<div class="highlight"><pre><span class="nv">$ </span>git stash
-<span class="nv">$ </span>git stash pop
-</pre></div>
-
-
-<p>See log</p>
-<div class="highlight"><pre><span class="nv">$ </span>git slog <span class="c"># git log --oneline -20</span>
-<span class="c"># or</span>
-<span class="nv">$ </span>git last <span class="c"># git log -1 HEAD</span>
-<span class="c"># on specific file</span>
-<span class="nv">$ </span>git log -p &lt;filename&gt;
-</pre></div>
-
-
-<p>Reset</p>
-<div class="highlight"><pre><span class="nv">$ </span>git reset --soft HEAD^<span class="o">{</span>some number<span class="o">}</span>
-<span class="nv">$ </span>git reset --hard HEAD <span class="c"># remove all changes</span>
-</pre></div>
-
-
-<p>List files under version control</p>
-<div class="highlight"><pre><span class="nv">$ </span>git ls-files
+<p>, which might cost several minutes. Check result by</p>
+<div class="highlight"><pre><span class="nv">$ </span>free -g
 </pre></div>
 
 
 <h3>Posts</h3>
-<p><a href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/">Git Setup</a><br />
-<a href="http://www.chenyen-yaoan.tk/blog/2013/10/18/git-branch/">Git Branch</a><br />
-<a href="http://www.chenyen-yaoan.tk/blog/2013/12/16/git-tag/">Git Tag</a><br />
-<a href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/">Git Stash</a><br />
-<a href="http://www.chenyen-yaoan.tk/blog/2014/02/06/git-subtree-split/">Git Subtree</a>  </p>
+<p><a href="http://www.chenyen-yaoan.tk/blog/2014/03/14/bash-cp-xargs/">Multiple copy</a><br />
+<a href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/">SSH</a>  </p>
 
        </div><!-- /.row -->
     </div><!-- /.container -->
