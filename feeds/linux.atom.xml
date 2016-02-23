@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://chengyanlai.github.io/" rel="alternate"></link><link href="http://chengyanlai.github.io/feeds/linux.atom.xml" rel="self"></link><id>http://chengyanlai.github.io/</id><updated>2015-10-23T10:07:01-07:00</updated><entry><title>CentOS Installation and Setup Notes</title><link href="http://chengyanlai.github.io/blog/2015/10/23/centos-install/" rel="alternate"></link><updated>2015-10-23T10:07:01-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2015-10-23:blog/2015/10/23/centos-install/</id><summary type="html">&lt;h2&gt;Install from USB drive&lt;/h2&gt;
+&lt;h3&gt;The image not found problem!&lt;/h3&gt;
+&lt;h2&gt;ZSH shell&lt;/h2&gt;
+&lt;p&gt;This is my favorite shell script! Simply install it from &lt;code&gt;yum&lt;/code&gt;, and use &lt;code&gt;oh-my-zsh&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Devtoolset&lt;/h2&gt;
+&lt;p&gt;The default CentOS 6 does not ship the updated gcc compiler and git, so we need to update it with the &lt;code&gt;devtoolset&lt;/code&gt;. You may need to install &lt;code&gt;wget&lt;/code&gt; and &lt;code&gt;curl&lt;/code&gt; before this. Of cause, you need to be &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /etc/yum.repos.d/  
+$ wget http://people.centos.org/tru/devtools-2/devtools-2.repo  
+$ yum install devtoolset-2-gcc  
+$ yum install devtoolset-2-binutils  
+$ yum install devtoolset-2-gcc-c++ devtoolset-2-gfortran  
+$ yum install devtoolset-2-gfortran  
+$ yum install devtoolset-2-gcc-gfortran  
+$ yum install devtoolset-2-git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After the installation, we need to make sure the system is using it!&lt;br /&gt;
+I do it in my own zsh plugin, by setting&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; /opt/rh/devtoolset-2/enable
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can put this inside your &lt;code&gt;.bashrc&lt;/code&gt; or the corresponding shell config file.&lt;/p&gt;
+&lt;h2&gt;Ack&lt;/h2&gt;
+&lt;p&gt;This is a alternative command for &lt;code&gt;grep&lt;/code&gt;, very easy to use and fast. It is shipped within EPEL repo.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm  
+$ sudo rpm -Uvh epel-release-6*.rpm  
+$ sudo yum install ack
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Torque Installation&lt;/h2&gt;</summary></entry></feed>

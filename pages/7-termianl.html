@@ -4,18 +4,18 @@
 
         <title>Terminal</title>
         <meta charset="utf-8" />
-        <link href="http://www.chenyen-yaoan.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Full Atom Feed" />
+        <link href="http://chengyanlai.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Little Things about Everything Full Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/pygment.css" />
-        <link rel="stylesheet" type="text/css" href="http://www.chenyen-yaoan.tk/theme/custom.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="http://chengyanlai.github.io/theme/custom.css" />
 
-        <script src="http://www.chenyen-yaoan.tk/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="http://chengyanlai.github.io/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -32,35 +32,35 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="http://www.chenyen-yaoan.tk">Little Things about Everything <strong>Never Stop Learning</strong></a></h1>
+                  <h1><a href="http://chengyanlai.github.io">Little Things about Everything <strong>Never Stop Learning</strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="pretty navbar">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
 
               <ul class="columns">
-                <li><a href="http://www.chenyen-yaoan.tk">Home</a></li>
+                <li><a href="http://chengyanlai.github.io">Home</a></li>
                 <li><a href="#">About</a>
                     <div class="dropdown">
                         <ul>
-                          <li><a href="http://www.chenyen-yaoan.tk/pages/chenyen.html">Chen-Yen Lai</a></li>
-                          <li><a href="http://www.chenyen-yaoan.tk/pages/yaoan.html">Yao-An Chan</a></li>
-                          <li><a href="http://www.chenyen-yaoan.tk/pages/kessler.html">Kessler Lai</a></li>
+                          <li><a href="http://chengyanlai.github.io/pages/chenyen.html">Chen-Yen Lai</a></li>
+                          <li><a href="http://chengyanlai.github.io/pages/yaoan.html">Yao-An Chan</a></li>
+                          <li><a href="http://chengyanlai.github.io/pages/kessler.html">Kessler Lai</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="active"><a href="http://www.chenyen-yaoan.tk/pages/7-termianl.html">Terminal</a></li>
-                <li><a href="http://www.chenyen-yaoan.tk/pages/8-git.html">Git</a></li>
-                <li><a href="http://www.chenyen-yaoan.tk/pages/9-links.html">Links</a></li>
-                <li><a href="http://www.chenyen-yaoan.tk/archives.html">Archives</a>
+                <li class="active"><a href="http://chengyanlai.github.io/pages/7-termianl.html">Terminal</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/8-git.html">Git</a></li>
+                <li><a href="http://chengyanlai.github.io/pages/9-links.html">Links</a></li>
+                <li><a href="http://chengyanlai.github.io/archives.html">Archives</a>
                     <div class="dropdown">
                         <ul>
-                          <li><a href="http://www.chenyen-yaoan.tk/author/chen-yen-lai.html">Chen-Yen's Archives</a></li>
-                          <li><a href="http://www.chenyen-yaoan.tk/author/yao-an-chan.html">Yao-An's Archives</a></li>
+                          <li><a href="http://chengyanlai.github.io/author/chen-yen-lai.html">Chen-Yen's Archives</a></li>
+                          <li><a href="http://chengyanlai.github.io/author/yao-an-chan.html">Yao-An's Archives</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="http://www.chenyen-yaoan.tk/tags.html">Tag Cloud</a>
+                <li><a href="http://chengyanlai.github.io/tags.html">Tag Cloud</a>
               </ul>
             </div>
 
@@ -82,68 +82,68 @@
 <li>'ctrl-k': Delete right of the cursor  </li>
 </ul>
 <h2>Batch rename</h2>
-<div class="highlight"><pre><span class="nv">$ </span>rename <span class="s1">&#39;s/{old string}/{new string}/&#39;</span> <span class="o">{</span>file pattern<span class="o">}</span>
+<div class="highlight"><pre><span></span>$ rename <span class="s1">&#39;s/{old string}/{new string}/&#39;</span> <span class="o">{</span>file pattern<span class="o">}</span>
 </pre></div>
 
 
 <h2>multiple copy</h2>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="o">{</span>folder pattern<span class="o">}</span> | xargs -n 2 cp foo1.txt foo2.txt
+<div class="highlight"><pre><span></span>$ <span class="nb">echo</span> <span class="o">{</span>folder pattern<span class="o">}</span> <span class="p">|</span> xargs -n <span class="m">2</span> cp foo1.txt foo2.txt
 </pre></div>
 
 
 <p>, which will copy foo1.txt and foo2.txt to {folder pattern}</p>
 <h2>wird search - ack</h2>
 <p>to give exact match</p>
-<div class="highlight"><pre><span class="nv">$ </span>ack -w <span class="o">{</span>PATTERN<span class="o">}</span>
+<div class="highlight"><pre><span></span>$ ack -w <span class="o">{</span>PATTERN<span class="o">}</span>
 </pre></div>
 
 
 <h2>check linked library</h2>
 <p>on an executable or dynamical linked library</p>
 <h3>OSX</h3>
-<div class="highlight"><pre><span class="nv">$ </span>otool -L <span class="o">{</span>target<span class="o">}</span>
+<div class="highlight"><pre><span></span>$ otool -L <span class="o">{</span>target<span class="o">}</span>
 </pre></div>
 
 
 <h3>Linux</h3>
-<div class="highlight"><pre><span class="nv">$ </span>ldd <span class="o">{</span>target<span class="o">}</span>
+<div class="highlight"><pre><span></span>$ ldd <span class="o">{</span>target<span class="o">}</span>
 </pre></div>
 
 
 <h2>free linux cache</h2>
-<div class="highlight"><pre><span class="nv">$ </span>sudo sh -c <span class="s1">&#39;echo 1 &gt;/proc/sys/vm/drop_caches&#39;</span>
+<div class="highlight"><pre><span></span>$ sudo sh -c <span class="s1">&#39;echo 1 &gt;/proc/sys/vm/drop_caches&#39;</span>
 </pre></div>
 
 
 <p>, which might cost several minutes. Check result by</p>
-<div class="highlight"><pre><span class="nv">$ </span>free -g
+<div class="highlight"><pre><span></span>$ free -g
 </pre></div>
 
 
 <h2>check linux env</h2>
-<div class="highlight"><pre><span class="nv">$ </span>printenv
+<div class="highlight"><pre><span></span>$ printenv
 </pre></div>
 
 
 <h2>show apt history</h2>
-<div class="highlight"><pre><span class="nv">$ </span>less /var/log/apt/history.log
+<div class="highlight"><pre><span></span>$ less /var/log/apt/history.log
 </pre></div>
 
 
 <h1>Grid Engine</h1>
 <h2>change queue</h2>
-<div class="highlight"><pre><span class="nv">$ </span>qalter -q <span class="o">{</span>quene.q<span class="o">}</span> <span class="o">{</span>job id<span class="o">}</span>
+<div class="highlight"><pre><span></span>$ qalter -q <span class="o">{</span>quene.q<span class="o">}</span> <span class="o">{</span>job id<span class="o">}</span>
 </pre></div>
 
 
 <h2>batch delete queue</h2>
-<div class="highlight"><pre><span class="nv">$ </span>qdel <span class="sb">`</span>seq <span class="o">{</span>from job id<span class="o">}</span> <span class="o">{</span>to job id<span class="o">}</span><span class="sb">`</span>
+<div class="highlight"><pre><span></span>$ qdel <span class="sb">`</span>seq <span class="o">{</span>from job id<span class="o">}</span> <span class="o">{</span>to job id<span class="o">}</span><span class="sb">`</span>
 </pre></div>
 
 
 <h1>Posts</h1>
-<p><a href="http://www.chenyen-yaoan.tk/blog/2014/03/14/bash-cp-xargs/">Multiple copy</a><br />
-<a href="http://www.chenyen-yaoan.tk/blog/2013/10/15/ssh-tricks/">SSH</a>  </p>
+<p><a href="http://chengyanlai.github.io/blog/2014/03/14/bash-cp-xargs/">Multiple copy</a><br />
+<a href="http://chengyanlai.github.io/blog/2013/10/15/ssh-tricks/">SSH</a>  </p>
 
        </div><!-- /.row -->
     </div><!-- /.container -->
@@ -197,9 +197,9 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
-  <script src="http://www.chenyen-yaoan.tk/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="http://www.chenyen-yaoan.tk/theme/js/libs/gumby.min.js"></script>
-  <script src="http://www.chenyen-yaoan.tk/theme/js/plugins.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/libs/gumby.min.js"></script>
+  <script src="http://chengyanlai.github.io/theme/js/plugins.js"></script>
 
 </body>
 </html>

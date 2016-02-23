@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://www.chenyen-yaoan.tk/" rel="alternate"></link><link href="http://www.chenyen-yaoan.tk/feeds/git.atom.xml" rel="self"></link><id>http://www.chenyen-yaoan.tk/</id><updated>2014-02-06T07:38:29-08:00</updated><entry><title>Git subtree for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/02/06/git-subtree-split/" rel="alternate"></link><updated>2014-02-06T07:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-02-06:blog/2014/02/06/git-subtree-split/</id><summary type="html">&lt;h2&gt;Submodule&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Little Things about Everything</title><link href="http://chengyanlai.github.io/" rel="alternate"></link><link href="http://chengyanlai.github.io/feeds/git.atom.xml" rel="self"></link><id>http://chengyanlai.github.io/</id><updated>2014-02-06T07:38:29-08:00</updated><entry><title>Git subtree for dummy</title><link href="http://chengyanlai.github.io/blog/2014/02/06/git-subtree-split/" rel="alternate"></link><updated>2014-02-06T07:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2014-02-06:blog/2014/02/06/git-subtree-split/</id><summary type="html">&lt;h2&gt;Submodule&lt;/h2&gt;
 &lt;p&gt;If you have some sub-programs like plotting tool, which only produces visuals of data generated from original main program, 
 you can make it as a submodule.&lt;/p&gt;
 &lt;p&gt;Just make a folder and initialize, then add your remote (you need to create it somewhere like GitHub)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir foo
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;foo
-&lt;span class="nv"&gt;$ &lt;/span&gt;git init
-&lt;span class="nv"&gt;$ &lt;/span&gt;git remote add origin git@github.com:my-user/new-project.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ mkdir foo
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; foo
+$ git init
+$ git remote add origin git@github.com:my-user/new-project.git
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;This is nothing like create a project. &lt;br /&gt;
 However, you would need to do one more step for the submodule. Go back to the project folder and add it. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ..
-&lt;span class="nv"&gt;$ &lt;/span&gt;git submodule add git@github.com:my-user/new-project.git foo
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; ..
+$ git submodule add git@github.com:my-user/new-project.git foo
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -22,33 +22,33 @@ However, you would need to do one more step for the submodule. Go back to the pr
 &lt;p&gt;Let's say if you didn't do it as a submodule at the beginning, then you want to separate it from super-project.&lt;br /&gt;
 We would need &lt;code&gt;git subtree split&lt;/code&gt;!&lt;/p&gt;
 &lt;p&gt;Go into the project root&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;path-to-my-project
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; path-to-my-project
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Create a branch which only contains commits of 'foo'&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git subtree split --prefix&lt;span class="o"&gt;=&lt;/span&gt;foo --branch&lt;span class="o"&gt;=&lt;/span&gt;foo-only
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git subtree split --prefix&lt;span class="o"&gt;=&lt;/span&gt;foo --branch&lt;span class="o"&gt;=&lt;/span&gt;foo-only
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Remove folder 'foo' from the super-project&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm -rf ./foo
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git rm -rf ./foo
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Create a git repo for new folder 'foo' (you need to create a repo somewhere like GitHub). In project folder,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mkdir foo
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;pushd &lt;/span&gt;foo
-&lt;span class="nv"&gt;$ &lt;/span&gt;git init
-&lt;span class="nv"&gt;$ &lt;/span&gt;git remote add origin git@github.com:my-user/new-project.git
-&lt;span class="nv"&gt;$ &lt;/span&gt;git pull ../ foo-only
-&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin -u master
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;popd&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ mkdir foo
+$ &lt;span class="nb"&gt;pushd&lt;/span&gt; foo
+$ git init
+$ git remote add origin git@github.com:my-user/new-project.git
+$ git pull ../ foo-only
+$ git push origin -u master
+$ &lt;span class="nb"&gt;popd&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add folder as a git submodule to super-project&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git submodule add git@github.com:my-user/new-project.git foo
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git submodule add git@github.com:my-user/new-project.git foo
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -56,74 +56,74 @@ We would need &lt;code&gt;git subtree split&lt;/code&gt;!&lt;/p&gt;
 Thanks to &lt;a href="http://stackoverflow.com/a/1307969/3011790"&gt;this post at StackOverflow&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Delete a submodule&lt;/h2&gt;
 &lt;p&gt;First, following command removes the whole &lt;code&gt;submodule.&amp;lt;name&amp;gt;&lt;/code&gt; section from &lt;code&gt;.git/config&lt;/code&gt; for the given submodule.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git submodule deinit foo
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git submodule deinit foo
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Next, Let &lt;code&gt;git rm&lt;/code&gt; help us by not only removing the submodule from the work tree but by also removing the &lt;code&gt;submodule.&amp;lt;submodule name&amp;gt;&lt;/code&gt; section from the &lt;code&gt;.gitmodules&lt;/code&gt; file and stage both.  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm -rf foo
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git rm -rf foo
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Finally, remove it from working tree by&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rm --cached foo
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git rm --cached foo
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git stash for dummy</title><link href="http://chengyanlai.github.io/blog/2014/01/06/git-stash/" rel="alternate"></link><updated>2014-01-06T17:38:29-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2014-01-06:blog/2014/01/06/git-stash/</id><summary type="html">&lt;h2&gt;暫時存放&lt;/h2&gt;
 &lt;p&gt;通常有兩種情況會需要這個功能......  &lt;/p&gt;
 &lt;h3&gt;Pulling into a dirty tree&lt;/h3&gt;
 &lt;p&gt;例如你正在更改的東西和線上的更新有密切關聯，最好的情況是&lt;code&gt;move forward merge&lt;/code&gt;，這樣就不需要更動任何檔案。  &lt;/p&gt;
 &lt;p&gt;但是如果出現了&lt;code&gt;conflict&lt;/code&gt;，那就會需要用這個&lt;code&gt;stash&lt;/code&gt;的功能......&lt;br /&gt;
 最簡單的使用，像下面的例子。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git pull
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git pull
  ...
 file foobar not up to date, cannot merge.
-&lt;span class="nv"&gt;$ &lt;/span&gt;git stash
-&lt;span class="nv"&gt;$ &lt;/span&gt;git pull
-&lt;span class="nv"&gt;$ &lt;/span&gt;git stash pop
+$ git stash
+$ git pull
+$ git stash pop
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;Interrupted workflow&lt;/h3&gt;
 &lt;p&gt;第二個情況是你正在處理某個問題，例如在某個&lt;code&gt;branch&lt;/code&gt;，但是卻要緊急的回到&lt;code&gt;master&lt;/code&gt;處理一個bug，通常你可以先開個臨時的&lt;code&gt;branch&lt;/code&gt;然後&lt;code&gt;commit&lt;/code&gt;你的files，像這樣  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout -b my_wip
-&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;WIP&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout -b my_wip
+$ git commit -a -m &lt;span class="s2"&gt;&amp;quot;WIP&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;回到&lt;code&gt;master&lt;/code&gt;處理bug&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout master
-&lt;span class="nv"&gt;$ &lt;/span&gt;edit emergency fix
-&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout master
+$ edit emergency fix
+$ git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;再回到剛剛的&lt;code&gt;branch&lt;/code&gt;繼續開發&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout my_wip
-&lt;span class="nv"&gt;$ &lt;/span&gt;git reset --soft HEAD^
-&lt;span class="c"&gt;# ... continue hacking ...&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout my_wip
+$ git reset --soft HEAD^
+&lt;span class="c1"&gt;# ... continue hacking ...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;使用&lt;code&gt;stash&lt;/code&gt;可以簡化上面的步驟，像這樣&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git stash
-&lt;span class="nv"&gt;$ &lt;/span&gt;edit emergency fix
-&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;git stash pop
-&lt;span class="c"&gt;# ... continue hacking ...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git tag for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/12/16/git-tag/" rel="alternate"></link><updated>2013-12-16T15:18:17-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-12-16:blog/2013/12/16/git-tag/</id><summary type="html">&lt;h2&gt;為重要的版本或是更新標上標簽&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git stash
+$ edit emergency fix
+$ git commit -a -m &lt;span class="s2"&gt;&amp;quot;Fix in a hurry&amp;quot;&lt;/span&gt;
+$ git stash pop
+&lt;span class="c1"&gt;# ... continue hacking ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Git tag for dummy</title><link href="http://chengyanlai.github.io/blog/2013/12/16/git-tag/" rel="alternate"></link><updated>2013-12-16T15:18:17-08:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-12-16:blog/2013/12/16/git-tag/</id><summary type="html">&lt;h2&gt;為重要的版本或是更新標上標簽&lt;/h2&gt;
 &lt;h4&gt;列出所有的標簽&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git tag
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git tag
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h4&gt;列出所有符合&lt;code&gt;pattern&lt;/code&gt;的標簽&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git tag -l &amp;lt;pattern&amp;gt;
-&lt;span class="c"&gt;# for instance&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;git tag -l v*
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git tag -l &amp;lt;pattern&amp;gt;
+&lt;span class="c1"&gt;# for instance&lt;/span&gt;
+$ git tag -l v*
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h4&gt;下標簽&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git tag -a &lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;commit SHA&lt;span class="o"&gt;}&lt;/span&gt; -m &lt;span class="s2"&gt;&amp;quot;message&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git tag -a &lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;commit SHA&lt;span class="o"&gt;}&lt;/span&gt; -m &lt;span class="s2"&gt;&amp;quot;message&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -137,37 +137,37 @@ file foobar not up to date, cannot merge.
 &lt;/ul&gt;
 &lt;h4&gt;刪標簽&lt;/h4&gt;
 &lt;p&gt;必須是要在還沒有commit你的標簽之前！&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git tag -d &lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git tag -d &lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h4&gt;上傳標簽&lt;/h4&gt;
 &lt;p&gt;只上傳某個標簽&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin &lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git push origin &lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;上傳所有本地的標簽&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin --tags
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git push origin --tags
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h4&gt;checkout&lt;/h4&gt;
 &lt;p&gt;如果只是要看某個tag的文擋&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout tags/&lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout tags/&lt;span class="o"&gt;{&lt;/span&gt;tag name&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;checkout 某個 tag 並開分支&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout -b &lt;span class="o"&gt;{&lt;/span&gt;new_branch_name&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;start_point&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout -b &lt;span class="o"&gt;{&lt;/span&gt;new_branch_name&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;start_point&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;</summary></entry><entry><title>Git branch for dummy</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/18/git-branch/" rel="alternate"></link><updated>2013-10-18T15:13:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-18:blog/2013/10/18/git-branch/</id><summary type="html">&lt;p&gt;俗話說：用Git不開brach乾脆不要用！
+&lt;p&gt;&lt;code&gt;{start_point}&lt;/code&gt; 可以是 &lt;code&gt;{tag name}&lt;/code&gt;.&lt;/p&gt;</summary></entry><entry><title>Git branch for dummy</title><link href="http://chengyanlai.github.io/blog/2013/10/18/git-branch/" rel="alternate"></link><updated>2013-10-18T15:13:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:chengyanlai.github.io,2013-10-18:blog/2013/10/18/git-branch/</id><summary type="html">&lt;p&gt;俗話說：用Git不開brach乾脆不要用！
 Opening a new branch in Git is like nothing, comparing to svn! It is a good habit to working on the branch other than &lt;code&gt;master&lt;/code&gt; in order to keep &lt;code&gt;mater&lt;/code&gt; intact.&lt;/p&gt;
 &lt;h2&gt;Check your current branch&lt;/h2&gt;
 &lt;p&gt;Let's try it. To check what brach you currently have&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git branch
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git branch
  * master
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -175,28 +175,28 @@ Opening a new branch in Git is like nothing, comparing to svn! It is a good habi
 &lt;p&gt;for now, we are still doing nothing!&lt;/p&gt;
 &lt;h2&gt;Open New brach&lt;/h2&gt;
 &lt;p&gt;Using the following command, we can create a new branch and switch to it.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout -b newmodel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout -b newmodel
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Above command is the shorthand of the two&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git branch newmodel
-&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout newmodel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git branch newmodel
+$ git checkout newmodel
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;After that, we get&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; Switched to a new branch &lt;span class="s1"&gt;&amp;#39;newmodel&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; Switched to a new branch &lt;span class="s1"&gt;&amp;#39;newmodel&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;What's left now?&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git branch
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git branch
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;and see&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; master
  * newmodel
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -204,13 +204,13 @@ Opening a new branch in Git is like nothing, comparing to svn! It is a good habi
 &lt;p&gt;That is what I am talking about.&lt;/p&gt;
 &lt;h2&gt;Fifth grade Merge back&lt;/h2&gt;
 &lt;p&gt;If I just change README.md file&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git status
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git status
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;I will see&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;On branch newmodel
-Changes not staged &lt;span class="k"&gt;for &lt;/span&gt;commit:
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;On branch newmodel
+Changes not staged &lt;span class="k"&gt;for&lt;/span&gt; commit:
 &lt;span class="o"&gt;(&lt;/span&gt;use &lt;span class="s2"&gt;&amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot;&lt;/span&gt; to update what will be committed&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;use &lt;span class="s2"&gt;&amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot;&lt;/span&gt; to discard changes in working directory&lt;span class="o"&gt;)&lt;/span&gt;
 
@@ -221,14 +221,14 @@ no changes added to commit &lt;span class="o"&gt;(&lt;/span&gt;use &lt;span clas
 
 
 &lt;p&gt;so let's add and commit it to the branch &lt;code&gt;mewmodel&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git commit -a -m &lt;span class="s2"&gt;&amp;quot;Test branch function in README.md file.&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git commit -a -m &lt;span class="s2"&gt;&amp;quot;Test branch function in README.md file.&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now, I go back to &lt;code&gt;master&lt;/code&gt; branch and see what's going on&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git checkout master
-&lt;span class="nv"&gt;$ &lt;/span&gt;Switched to branch &lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;git status
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git checkout master
+$ Switched to branch &lt;span class="s1"&gt;&amp;#39;master&amp;#39;&lt;/span&gt;
+$ git status
  On branch master
  nothing to commit &lt;span class="o"&gt;(&lt;/span&gt;working directory clean&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -236,25 +236,25 @@ no changes added to commit &lt;span class="o"&gt;(&lt;/span&gt;use &lt;span clas
 
 &lt;p&gt;Oops, this is the idea and power of branch! Suppose you open a branch and create some bugs, you can just abandon it!(OMG)
 If you want to keep the changes, I will need to merge it by&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git merge newmodel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git merge newmodel
  Updating 69007a5..6a71d52
  Fast-forward
- README | 2 ++
- 1 file changed, 2 insertions&lt;span class="o"&gt;(&lt;/span&gt;+&lt;span class="o"&gt;)&lt;/span&gt;
+ README &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt; ++
+ &lt;span class="m"&gt;1&lt;/span&gt; file changed, &lt;span class="m"&gt;2&lt;/span&gt; insertions&lt;span class="o"&gt;(&lt;/span&gt;+&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Therefore,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git st
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git st
  On branch master
- Your branch is ahead of &lt;span class="s1"&gt;&amp;#39;origin/master&amp;#39;&lt;/span&gt; by 1 commit.
+ Your branch is ahead of &lt;span class="s1"&gt;&amp;#39;origin/master&amp;#39;&lt;/span&gt; by &lt;span class="m"&gt;1&lt;/span&gt; commit.
  nothing to commit &lt;span class="o"&gt;(&lt;/span&gt;working directory clean&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;Delete branch&lt;/h2&gt;
 &lt;p&gt;Once you finish with the modify and merge, than you can delete the branch by&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git branch -d newmodel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git branch -d newmodel
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -262,152 +262,26 @@ If you want to keep the changes, I will need to merge it by&lt;/p&gt;
 &lt;h3&gt;You need to try this before you merge them!&lt;/h3&gt;
 &lt;p&gt;So far, the branch is local on your computer and is not tracked with server.
 If you want to add it to remote, you will need to do&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push --set-upstream origin newmodel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git push --set-upstream origin newmodel
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Then you create a new branch on server!&lt;/p&gt;
 &lt;h2&gt;Do following with caution&lt;/h2&gt;
 &lt;p&gt;Make sure what you are doing now. This is going to delete the branch on remote server.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git push origin :newmodel
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git push origin :newmodel
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;Update branch from mater&lt;/h2&gt;
 &lt;p&gt;If someone update the &lt;code&gt;master&lt;/code&gt; branch and you want to that part of change in your own branch. You will need to update it. First, check your current branch&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git branch
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git branch
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;If you are on the branch you want to update, simply try&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git rebase master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git rebase master
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;to get updated.&lt;/p&gt;</summary></entry><entry><title>Basic Git Setting</title><link href="http://www.chenyen-yaoan.tk/blog/2013/10/17/basic-git-setting/" rel="alternate"></link><updated>2013-10-17T10:29:00-07:00</updated><author><name>Chen-Yen Lai</name></author><id>tag:www.chenyen-yaoan.tk,2013-10-17:blog/2013/10/17/basic-git-setting/</id><summary type="html">&lt;p&gt;First of all, you need to know that you have installed 'git' on you computer!
-You can search on Google "git osx" if you are on Mac. Usually you can find a &lt;code&gt;.dmg&lt;/code&gt; to install.&lt;/p&gt;
-&lt;p&gt;If you are on linux, for example Debian, you can use the &lt;code&gt;apt&lt;/code&gt;. Like&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;apt-cache search git
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;to find the proper name for the package. Usually, the following command would work&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;sudo apt-get install git
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;. Make sure you are a &lt;code&gt;sudoer&lt;/code&gt;! Then you are going through the installation.&lt;/p&gt;
-&lt;p&gt;After that, we can start to set up.&lt;/p&gt;
-&lt;h2&gt;Choose your name, and email.&lt;/h2&gt;
-&lt;p&gt;Basic setup before everything.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global user.name &lt;span class="s2"&gt;&amp;quot;{Your Name Here}&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global user.email &lt;span class="s2"&gt;&amp;quot;{Your Email Here}&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;After this, you can see a file called &lt;code&gt;.gitconfig&lt;/code&gt; at directory &lt;code&gt;${HOME}&lt;/code&gt;. If you read it&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cat &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.gitconfig
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;, the file reads&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;user&lt;span class="o"&gt;]&lt;/span&gt;
-  &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;Your Name Here&lt;span class="o"&gt;}&lt;/span&gt;
-  &lt;span class="nv"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;Your Email Here&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Alias setup&lt;/h2&gt;
-&lt;p&gt;For my personal favorite, I will setup the following alias for convenience.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global alias.st status
-&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global alias.ci commit
-&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global alias.co checkout
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In such a way, I can use like &lt;code&gt;git st&lt;/code&gt; to check status.&lt;/p&gt;
-&lt;h2&gt;Make it colorful&lt;/h2&gt;
-&lt;p&gt;By using the following command simply,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
-&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt; &lt;span class="k"&gt;auto&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Default editor&lt;/h2&gt;
-&lt;p&gt;I am not a hard core &lt;code&gt;vim&lt;/code&gt; user, so I choose &lt;code&gt;nano&lt;/code&gt; or the TextMate command-line version.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global core.editor &lt;span class="s2"&gt;&amp;quot;mate -w&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Global usage&lt;/h2&gt;
-&lt;p&gt;If you want to have your own submit message, and do not want to type the same thing every time, try to organize the file like following&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;Subject Title&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;Description of changes&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="o"&gt;[&lt;/span&gt;END&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;and save it as &lt;code&gt;{Your own directory}/gitmessage.txt&lt;/code&gt;. Someone would like to save it at &lt;code&gt;${HOME}/.gitmessage.txt&lt;/code&gt;.
-Then you need to do the following&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global commit.template &lt;span class="o"&gt;{&lt;/span&gt;Your own directory&lt;span class="o"&gt;}&lt;/span&gt;/gitmessage.txt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;My personal favorite is to put the file in Dropbox, and set the directory there. In this way, I can have the same setting on each computer and all link to my Dropbox.&lt;/p&gt;
-&lt;p&gt;You can do the same thing to the &lt;code&gt;.gitignore_global&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git config --global core.excludesfile &lt;span class="o"&gt;{&lt;/span&gt;Your own directory&lt;span class="o"&gt;}&lt;/span&gt;/gitignore_global
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Just make sure the file is there!&lt;/p&gt;
-&lt;h2&gt;Do it all at once!&lt;/h2&gt;
-&lt;p&gt;Actually, you can write a file to execute and do all the above commands at once. Write a file like following and name it &lt;code&gt;Git_config.sh&lt;/code&gt;&lt;/p&gt;
-&lt;figure class='code'&gt;
-&lt;figcaption&gt;&lt;span&gt;Git_Config.sh&lt;/span&gt; &lt;a href='/code/bash/Git_Config.sh'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
-
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash  &lt;/span&gt;
-git config --global user.name &lt;span class="s2"&gt;&amp;quot;chenyenlai&amp;quot;&lt;/span&gt;
-git config --global user.email &lt;span class="s2"&gt;&amp;quot;chengyanlai@gmail.com&amp;quot;&lt;/span&gt;
-git config --global color.ui &lt;span class="nb"&gt;true&lt;/span&gt;
-git config --global color.log auto
-git config --global core.editor &lt;span class="s2"&gt;&amp;quot;mate -w&amp;quot;&lt;/span&gt;
-git config --global alias.st status
-git config --global alias.ci commit
-git config --global alias.co checkout
-git config --global alias.bh branch
-git config --global alias.last &lt;span class="s1"&gt;&amp;#39;log -1 HEAD&amp;#39;&lt;/span&gt;
-git config --global alias.slog &lt;span class="s1"&gt;&amp;#39;log --oneline -20&amp;#39;&lt;/span&gt;
-git config --global alias.clni &lt;span class="s1"&gt;&amp;#39;clean -i&amp;#39;&lt;/span&gt;
-git config --global commit.template path/to/the/file/gitmessage.txt
-git config --global core.excludesfile path/to/the/file/gitignore_global
-git config --global push.default simple
-git config --global merge.tool opendiff
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;/figure&gt;
-
-&lt;p&gt;, it will do it for you. You can save this file and use it in every computer basically.&lt;/p&gt;
-&lt;h2&gt;The end&lt;/h2&gt;
-&lt;p&gt;At the end you will see the file &lt;code&gt;${HOME}/.gitcong&lt;/code&gt; by just&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cat &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/.gitconfig
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;to check your setting.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;to get updated.&lt;/p&gt;</summary></entry></feed>
