@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OQS on Chen-Yen Lai</title>
+    <link>http://chenyenlsi.gitlab.io/tags/oqs/</link>
+    <description>Recent content in OQS on Chen-Yen Lai</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chenyenlsi.gitlab.io/tags/oqs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Current circulation in triangle quantum-dot metastructures</title>
+      <link>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</guid>
+      <description>arXiv:1802.02121 (LA-UR-18-20615)
+In this work, we study transport in a simple triangle quantum-dot metastructures. By modeling the systems as open quantum systems, circulating current is found without external magnetic field / vector potential. The same finding is also discovered in isolated systems. The models and results can be tested in proposed experiments. This study reveals interesting transport phenomenon in non-trivial topology and geometry of the quantum systems.
+   Proposed Experiments     Current Circulation   </description>
+    </item>
+    
+  </channel>
+</rss>
