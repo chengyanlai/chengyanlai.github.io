@@ -5,76 +5,10 @@
     <link>http://chenyenlsi.gitlab.io/</link>
     <description>Recent content on Chen-Yen Lai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://chenyenlsi.gitlab.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Collaborators</title>
-      <link>http://chenyenlsi.gitlab.io/collaborators/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chenyenlsi.gitlab.io/collaborators/</guid>
-      <description>Dr. Jian-Xin Zhu Los Alamos National Laboratory
-Dr. Stuart A. Trugman Los Alamos National Laboratory
-Dr. Jhih-Shih You The Leibniz Institute for Solid State and Materials Research
-Prof. Chih-Chun Chien University of California, Merced
-Prof. Massimiliano Di Ventra University of California, San Diego
-Prof. Michael Scheibner University of California, Merced
-Prof. Shan-Wen Tsai University of California, Riverside
-Prof. Yannick Meurice University of Iowa
-Prof. Pochung Chen National Tsing Hua University</description>
-    </item>
-    
-    <item>
-      <title>Conference</title>
-      <link>http://chenyenlsi.gitlab.io/conference/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chenyenlsi.gitlab.io/conference/</guid>
-      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 CCP 2018, Davis CA 2018  Talks (Bold face are invited)  “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
-APS March Meeting, Los Angeles CA, 2018.
- “Quantum memory effects through interaction imbalance in ultracold bosonic and fermonic atoms.”
-DAMOP 48th Annual Meeting, Sacramento CA, 2017.
- “Close and open system approaches to ultracold Atoms: Implications For Atomtronics.</description>
-    </item>
-    
-    <item>
-      <title>Curriculum Vitae</title>
-      <link>http://chenyenlsi.gitlab.io/about/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chenyenlsi.gitlab.io/about/</guid>
-      <description>Research Appointments  (2017-) Postdoctoral Associate
-Theoretical division (T-4) and Center for integrated nanotechnologies
-Los Alamos National Laboratory, Los Alamos, NM 87545 USA
- (2014-2017) Postdoctoral Scholar
-School of Natural Science
-University of California, Merced, Merced CA 95340 USA
- (2008-2009) Research Assistance Department of Physics
-National Tsing Hua University, Hsinchu 300 Taiwan
-  Educations  (2009-2014) Doctor of Philosophy
-Department of Physics
-University of California, Riverside, Riverside CA 92521 USA</description>
-    </item>
-    
-    <item>
-      <title>Publication list</title>
-      <link>http://chenyenlsi.gitlab.io/publications/</link>
-      <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chenyenlsi.gitlab.io/publications/</guid>
-      <description>Preprint 3 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
-“Hysteresis-like behavior of current fluctuations in closed and open lattice systems”
-In preparation.
-2 Chen-Yen Lai, S. A. Trugman and Jian-Xin Zhu,
-“Optical absorption spectroscopy of plasmon exciton hybrid systems.”
-submitted to Nanoscale.
-1 Chen-Yen Lai, Massimiliano Di Ventra, Michael Scheibner and Chih-Chun Chien,
-“Tunable current circulation in triangular quantum-dot metastructures.”
-arXiv:1802.02121 submitted to Phys. Rev. Lett.</description>
-    </item>
     
     <item>
       <title>Optical absorption in plasmon-exciton hybrid systems</title>
@@ -106,6 +40,72 @@ In this work, we study transport in a simple triangle quantum-dot metastructures
       <description>Phys. Rev. A 96, 033628 (2017), also in arXiv:1706.00441
 Quantifying memory effect in quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observables. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
   Quantify Quantum Memory Effects   </description>
+    </item>
+    
+    <item>
+      <title>Collaborators</title>
+      <link>http://chenyenlsi.gitlab.io/collaborators/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlsi.gitlab.io/collaborators/</guid>
+      <description>Dr. Jian-Xin Zhu Los Alamos National Laboratory
+Dr. Stuart A. Trugman Los Alamos National Laboratory
+Dr. Jhih-Shih You The Leibniz Institute for Solid State and Materials Research
+Prof. Chih-Chun Chien University of California, Merced
+Prof. Massimiliano Di Ventra University of California, San Diego
+Prof. Michael Scheibner University of California, Merced
+Prof. Shan-Wen Tsai University of California, Riverside
+Prof. Yannick Meurice University of Iowa
+Prof. Pochung Chen National Tsing Hua University</description>
+    </item>
+    
+    <item>
+      <title>Conference</title>
+      <link>http://chenyenlsi.gitlab.io/conference/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlsi.gitlab.io/conference/</guid>
+      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 CCP 2018, Davis CA 2018  Talks (Bold face are invited)  “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
+APS March Meeting, Los Angeles CA, 2018.
+ “Quantum memory effects through interaction imbalance in ultracold bosonic and fermonic atoms.”
+DAMOP 48th Annual Meeting, Sacramento CA, 2017.
+ “Close and open system approaches to ultracold Atoms: Implications For Atomtronics.</description>
+    </item>
+    
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>http://chenyenlsi.gitlab.io/about/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlsi.gitlab.io/about/</guid>
+      <description>Research Appointments  (2017-) Postdoctoral Associate
+Theoretical division (T-4) and Center for integrated nanotechnologies
+Los Alamos National Laboratory, Los Alamos, NM 87545 USA
+ (2014-2017) Postdoctoral Scholar
+School of Natural Science
+University of California, Merced, Merced CA 95340 USA
+ (2008-2009) Research Assistance Department of Physics
+National Tsing Hua University, Hsinchu 300 Taiwan
+  Educations  (2009-2014) Doctor of Philosophy
+Department of Physics
+University of California, Riverside, Riverside CA 92521 USA</description>
+    </item>
+    
+    <item>
+      <title>Publication list</title>
+      <link>http://chenyenlsi.gitlab.io/publications/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlsi.gitlab.io/publications/</guid>
+      <description>Preprint 3 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
+“Hysteresis-like behavior of current fluctuations in closed and open lattice systems”
+In preparation.
+2 Chen-Yen Lai, S. A. Trugman and Jian-Xin Zhu,
+“Optical absorption spectroscopy of plasmon exciton hybrid systems.”
+submitted to Nanoscale.
+1 Chen-Yen Lai, Massimiliano Di Ventra, Michael Scheibner and Chih-Chun Chien,
+“Tunable current circulation in triangular quantum-dot metastructures.”
+arXiv:1802.02121 submitted to Phys. Rev. Lett.</description>
     </item>
     
   </channel>
