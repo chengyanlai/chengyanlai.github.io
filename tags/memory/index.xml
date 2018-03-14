@@ -17,7 +17,7 @@
       
       <guid>http://chenyenlsi.gitlab.io/post/2017-09-25-halfint/</guid>
       <description>Phys. Rev. A 96, 033628 (2017), also in arXiv:1706.00441
-Quantifying memory effect in quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observables. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
+Quantifying memory effect in a quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observable. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
   Quantify Quantum Memory Effects   </description>
     </item>
     

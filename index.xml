@@ -27,7 +27,7 @@ TBA.</description>
       
       <guid>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</guid>
       <description>arXiv:1802.02121 (LA-UR-18-20615)
-In this work, we study transport in a simple triangle quantum-dot metastructures. By modeling the systems as open quantum systems, circulating current is found without external magnetic field / vector potential. The same finding is also discovered in isolated systems. The models and results can be tested in proposed experiments. This study reveals interesting transport phenomenon in non-trivial topology and geometry of the quantum systems.
+In this work, we study transport in a simple triangle quantum-dot metastructures. By modeling the systems as open quantum systems, circulating current is found without external magnetic field/vector potential. The same finding is also discovered in isolated systems. The models and results can be tested in proposed experiments. This study reveals interesting transport phenomenon in non-trivial topology and geometry of the quantum systems.
    Proposed Experiments     Current Circulation   </description>
     </item>
     
@@ -38,7 +38,7 @@ In this work, we study transport in a simple triangle quantum-dot metastructures
       
       <guid>http://chenyenlsi.gitlab.io/post/2017-09-25-halfint/</guid>
       <description>Phys. Rev. A 96, 033628 (2017), also in arXiv:1706.00441
-Quantifying memory effect in quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observables. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
+Quantifying memory effect in a quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observable. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
   Quantify Quantum Memory Effects   </description>
     </item>
     
