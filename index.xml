@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chen-Yen Lai</title>
-    <link>http://chenyenlsi.gitlab.io/</link>
+    <link>http://chenyenlai.gitlab.io/</link>
     <description>Recent content on Chen-Yen Lai</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://chenyenlsi.gitlab.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenyenlai.gitlab.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CV</title>
-      <link>http://chenyenlsi.gitlab.io/cv/</link>
+      <link>http://chenyenlai.gitlab.io/cv/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/cv/</guid>
+      <guid>http://chenyenlai.gitlab.io/cv/</guid>
       <description>Research Appointments  (2017-) Postdoctoral Associate
 Theoretical division (T-4) and Center for integrated nanotechnologies
 Los Alamos National Laboratory, Los Alamos, NM 87545 USA
@@ -31,10 +31,10 @@ University of California, Riverside, Riverside CA 92521 USA</description>
     
     <item>
       <title>Publications</title>
-      <link>http://chenyenlsi.gitlab.io/publications/</link>
+      <link>http://chenyenlai.gitlab.io/publications/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/publications/</guid>
+      <guid>http://chenyenlai.gitlab.io/publications/</guid>
       <description>Preprint 3 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
 “Hysteresis-like behavior of current fluctuations in closed and open lattice systems”
 In preparation.
@@ -48,10 +48,10 @@ arXiv:1802.02121 submitted to Phys. Rev. Lett.</description>
     
     <item>
       <title>Conference</title>
-      <link>http://chenyenlsi.gitlab.io/conference/</link>
+      <link>http://chenyenlai.gitlab.io/conference/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/conference/</guid>
+      <guid>http://chenyenlai.gitlab.io/conference/</guid>
       <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 CCP 2018, Davis CA 2018  Talks (Bold face are invited)  “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
 APS March Meeting, Los Angeles CA, 2018.
  “Quantum memory effects through interaction imbalance in ultracold bosonic and fermonic atoms.”
@@ -61,10 +61,10 @@ DAMOP 48th Annual Meeting, Sacramento CA, 2017.
     
     <item>
       <title>Collaborators</title>
-      <link>http://chenyenlsi.gitlab.io/collaborators/</link>
+      <link>http://chenyenlai.gitlab.io/collaborators/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/collaborators/</guid>
+      <guid>http://chenyenlai.gitlab.io/collaborators/</guid>
       <description>Dr. Jian-Xin Zhu Los Alamos National Laboratory
 Dr. Stuart A. Trugman Los Alamos National Laboratory
 Dr. Jhih-Shih You The Leibniz Institute for Solid State and Materials Research
@@ -78,20 +78,20 @@ Prof. Yannick Meurice University of Iowa</description>
     
     <item>
       <title>Optical absorption in plasmon-exciton hybrid systems</title>
-      <link>http://chenyenlsi.gitlab.io/post/2018-02-10-oaseqm/</link>
+      <link>http://chenyenlai.gitlab.io/post/2018-02-10-oaseqm/</link>
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/post/2018-02-10-oaseqm/</guid>
+      <guid>http://chenyenlai.gitlab.io/post/2018-02-10-oaseqm/</guid>
       <description>[arXiv:]() (LA-UR-)
 TBA.</description>
     </item>
     
     <item>
       <title>Current circulation in triangle quantum-dot metastructures</title>
-      <link>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</link>
+      <link>http://chenyenlai.gitlab.io/post/2018-02-06-circulationtqdm/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</guid>
+      <guid>http://chenyenlai.gitlab.io/post/2018-02-06-circulationtqdm/</guid>
       <description>arXiv:1802.02121 (LA-UR-18-20615)
 In this work, we study transport in a simple triangle quantum-dot metastructures. By modeling the systems as open quantum systems, circulating current is found without external magnetic field/vector potential. The same finding is also discovered in isolated systems. The models and results can be tested in proposed experiments. This study reveals interesting transport phenomenon in non-trivial topology and geometry of the quantum systems.
    Proposed Experiments     Current Circulation   </description>
@@ -99,10 +99,10 @@ In this work, we study transport in a simple triangle quantum-dot metastructures
     
     <item>
       <title>Memory effect for interaction driven quantum gas</title>
-      <link>http://chenyenlsi.gitlab.io/post/2017-09-25-halfint/</link>
+      <link>http://chenyenlai.gitlab.io/post/2017-09-25-halfint/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/post/2017-09-25-halfint/</guid>
+      <guid>http://chenyenlai.gitlab.io/post/2017-09-25-halfint/</guid>
       <description>Phys. Rev. A 96, 033628 (2017), also in arXiv:1706.00441
 Quantifying memory effect in a quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observable. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
   Quantify Quantum Memory Effects   </description>

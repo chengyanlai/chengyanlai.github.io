@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Chen-Yen Lai</title>
-    <link>http://chenyenlsi.gitlab.io/post/</link>
+    <link>http://chenyenlai.gitlab.io/post/</link>
     <description>Recent content in Posts on Chen-Yen Lai</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 10 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://chenyenlsi.gitlab.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenyenlai.gitlab.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Optical absorption in plasmon-exciton hybrid systems</title>
-      <link>http://chenyenlsi.gitlab.io/post/2018-02-10-oaseqm/</link>
+      <link>http://chenyenlai.gitlab.io/post/2018-02-10-oaseqm/</link>
       <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/post/2018-02-10-oaseqm/</guid>
+      <guid>http://chenyenlai.gitlab.io/post/2018-02-10-oaseqm/</guid>
       <description>[arXiv:]() (LA-UR-)
 TBA.</description>
     </item>
     
     <item>
       <title>Current circulation in triangle quantum-dot metastructures</title>
-      <link>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</link>
+      <link>http://chenyenlai.gitlab.io/post/2018-02-06-circulationtqdm/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/post/2018-02-06-circulationtqdm/</guid>
+      <guid>http://chenyenlai.gitlab.io/post/2018-02-06-circulationtqdm/</guid>
       <description>arXiv:1802.02121 (LA-UR-18-20615)
 In this work, we study transport in a simple triangle quantum-dot metastructures. By modeling the systems as open quantum systems, circulating current is found without external magnetic field/vector potential. The same finding is also discovered in isolated systems. The models and results can be tested in proposed experiments. This study reveals interesting transport phenomenon in non-trivial topology and geometry of the quantum systems.
    Proposed Experiments     Current Circulation   </description>
@@ -33,10 +33,10 @@ In this work, we study transport in a simple triangle quantum-dot metastructures
     
     <item>
       <title>Memory effect for interaction driven quantum gas</title>
-      <link>http://chenyenlsi.gitlab.io/post/2017-09-25-halfint/</link>
+      <link>http://chenyenlai.gitlab.io/post/2017-09-25-halfint/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlsi.gitlab.io/post/2017-09-25-halfint/</guid>
+      <guid>http://chenyenlai.gitlab.io/post/2017-09-25-halfint/</guid>
       <description>Phys. Rev. A 96, 033628 (2017), also in arXiv:1706.00441
 Quantifying memory effect in a quantum system is not trivial. Although most of the quantum system exhibit memory effect, it does not emerge in every physical observable. Here, in 1D interacting Fermi and Bose gas, the steady state current show memory effect under an interaction quench on half of the system.
   Quantify Quantum Memory Effects   </description>
