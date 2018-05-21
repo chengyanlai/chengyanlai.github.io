@@ -41,10 +41,9 @@ In preparation
 2 Chen-Yen Lai and S. A. Trugman,
 “Charge pumping, circulating current and fractal geometry in strong coupling Holstein model at high temperature”
 In preparation.
-1 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
-“Hysteresis-like behavior of current fluctuations in closed and open lattice systems”
-In preparation.
-Preprint 2 Chen-Yen Lai, S.</description>
+Preprint 3 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
+“Many-body multi-valuedness of particle-current variance in closed and open cold-atom systems”
+arXiv:1805.06443 submitted to Phys.</description>
     </item>
     
     <item>
@@ -53,11 +52,11 @@ Preprint 2 Chen-Yen Lai, S.</description>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://chenyenlai.gitlab.io/conference/</guid>
-      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 CCP 2018, Davis CA 2018  Talks (Bold face are invited)  “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
+      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 CCP 2018, Davis CA 2018  Talks (Bold face are invited)  “Dynamics of Hostein model in strong coupling and high temperature: charge pumping and localization.”
+BLABS, Theoretical Division, Los Alamos National Laboratory, May 21, 2018.
+ “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
 APS March Meeting, Los Angeles CA, 2018.
- “Quantum memory effects through interaction imbalance in ultracold bosonic and fermonic atoms.”
-DAMOP 48th Annual Meeting, Sacramento CA, 2017.
- “Close and open system approaches to ultracold Atoms: Implications For Atomtronics.</description>
+ “Quantum memory effects through interaction imbalance in ultracold bosonic and fermonic atoms.</description>
     </item>
     
     <item>
@@ -78,13 +77,13 @@ Prof. Yannick Meurice University of Iowa</description>
     </item>
     
     <item>
-      <title>Optical absorption in plasmon-exciton hybrid systems</title>
-      <link>http://chenyenlai.gitlab.io/post/2018-02-10-oaseqm/</link>
-      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
+      <title>Variance of a quantum observable</title>
+      <link>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chenyenlai.gitlab.io/post/2018-02-10-oaseqm/</guid>
-      <description>[arXiv:]() (LA-UR-)
-TBA.</description>
+      <guid>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</guid>
+      <description>[arXiv:]() (LA-UR-18-23857)
+As we learned the basic notion of quantum mechanics, uncertainty principle, the measurement in quantum theory results in probability. As people usually discuss the average of an observable, its variance, however, is not discussed in the scope. We discuss a basic quantity in quantum transport - variance of the current. Two systems are discussed, 1) closed system with magnetic flux which is also known as persistent current; 2) open quantum system of simple connections.</description>
     </item>
     
     <item>

@@ -5,10 +5,20 @@
     <link>http://chenyenlai.gitlab.io/tags/transport/</link>
     <description>Recent content in Transport on Chen-Yen Lai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://chenyenlai.gitlab.io/tags/transport/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Variance of a quantum observable</title>
+      <link>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</guid>
+      <description>[arXiv:]() (LA-UR-18-23857)
+As we learned the basic notion of quantum mechanics, uncertainty principle, the measurement in quantum theory results in probability. As people usually discuss the average of an observable, its variance, however, is not discussed in the scope. We discuss a basic quantity in quantum transport - variance of the current. Two systems are discussed, 1) closed system with magnetic flux which is also known as persistent current; 2) open quantum system of simple connections.</description>
+    </item>
     
     <item>
       <title>Current circulation in triangle quantum-dot metastructures</title>
