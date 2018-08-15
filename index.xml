@@ -35,10 +35,10 @@ University of California, Riverside, Riverside CA 92521 USA</description>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://chenyenlai.gitlab.io/publications/</guid>
-      <description>WIP 3 Chen-Yen Laiand Jian-Xin Zhu,
+      <description>WIP 2 Chen-Yen Laiand Jian-Xin Zhu,
 “Time-resolved X-ray absorption spectrascopy of strongly correlated systems: core hole effect.”
 In preparation
-2 Chen-Yen Lai and S. A. Trugman,
+1 Chen-Yen Lai and S. A. Trugman,
 “Charge pumping, circulating current and fractal geometry in strong coupling Holstein model at high temperature”
 In preparation.
 Preprint 3 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
@@ -52,11 +52,10 @@ arXiv:1805.06443 submitted to Phys.</description>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://chenyenlai.gitlab.io/conference/</guid>
-      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 CCP 2018, Davis CA 2018  Talks (Bold face are invited)  “Dynamics of Hostein model in strong coupling and high temperature: charge pumping and localization.”
+      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 APS Four Corners Section, Salt Lake City UT, 2018  Talks (Bold face are invited)  “Dynamics of Hostein model in strong coupling and high temperature: charge pumping and localization.”
 BLABS, Theoretical Division, Los Alamos National Laboratory, May 21, 2018.
  “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
-APS March Meeting, Los Angeles CA, 2018.
- “Quantum memory effects through interaction imbalance in ultracold bosonic and fermonic atoms.</description>
+APS March Meeting, Los Angeles CA, 2018.</description>
     </item>
     
     <item>
@@ -82,7 +81,7 @@ Prof. Yannick Meurice University of Iowa</description>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</guid>
-      <description>[arXiv:]() (LA-UR-18-23857)
+      <description>arXiv:1805.06443 (LA-UR-18-23857)
 As we learned the basic notion of quantum mechanics, uncertainty principle, the measurement in quantum theory results in probability. As people usually discuss the average of an observable, its variance, however, is not discussed in the scope. We discuss a basic quantity in quantum transport - variance of the current. Two systems are discussed, 1) closed system with magnetic flux which is also known as persistent current; 2) open quantum system of simple connections.</description>
     </item>
     
