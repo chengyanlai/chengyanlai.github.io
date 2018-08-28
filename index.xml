@@ -35,15 +35,14 @@ University of California, Riverside, Riverside CA 92521 USA</description>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://chenyenlai.gitlab.io/publications/</guid>
-      <description>WIP 2 Chen-Yen Laiand Jian-Xin Zhu,
-“Time-resolved X-ray absorption spectrascopy of strongly correlated systems: core hole effect.”
-In preparation
-1 Chen-Yen Lai and S. A. Trugman,
-“Charge pumping, circulating current and fractal geometry in strong coupling Holstein model at high temperature”
+      <description>WIP 1 Chen-Yen Lai and S. A. Trugman,
+“Absence of diffusion and fractal geometry in Holstein model at high temperature.”
 In preparation.
-Preprint 3 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
-“Many-body multi-valuedness of particle-current variance in closed and open cold-atom systems”
-arXiv:1805.06443 submitted to Phys.</description>
+Preprint 3 Chen-Yen Lai and Jian-Xin Zhu,
+“Time-resolved x-ray absorption spectroscopy of strongly correlated systems: Core hole effect.”
+arXiv:1808.08243 submitted to Phys. Rev. Lett.
+2 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
+“Many-body multi-valuedness of particle-current variance in closed and open cold-atom systems”</description>
     </item>
     
     <item>
@@ -73,6 +72,16 @@ Prof. Massimiliano Di Ventra University of California, San Diego
 Prof. Michael Scheibner University of California, Merced
 Prof. Shan-Wen Tsai University of California, Riverside
 Prof. Yannick Meurice University of Iowa</description>
+    </item>
+    
+    <item>
+      <title>Time-resolved x-ray absorption spectroscopy</title>
+      <link>http://chenyenlai.gitlab.io/post/2018-08-28-timeresolvedxas/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlai.gitlab.io/post/2018-08-28-timeresolvedxas/</guid>
+      <description>arXiv:1808.08243 (LA-UR-17-29749)
+We investigate the ultrafast pump-probe phenomenon in strongly correlated systems. The static x-ray absorption spectroscopy (XAS) reveals the metal-insulator transition and strongly correlated effects in one-dimensional Fermi Hubbard model. The laser pump excites the system into a thermal state where the excitations can be measured from the probe pulse. The resonance between the frequency of the pump pulse and the Mott gap can be observed from both the frequency shift and the change of weight.</description>
     </item>
     
     <item>

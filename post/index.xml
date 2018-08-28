@@ -5,10 +5,20 @@
     <link>http://chenyenlai.gitlab.io/post/</link>
     <description>Recent content in Posts on Chen-Yen Lai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://chenyenlai.gitlab.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Time-resolved x-ray absorption spectroscopy</title>
+      <link>http://chenyenlai.gitlab.io/post/2018-08-28-timeresolvedxas/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlai.gitlab.io/post/2018-08-28-timeresolvedxas/</guid>
+      <description>arXiv:1808.08243 (LA-UR-17-29749)
+We investigate the ultrafast pump-probe phenomenon in strongly correlated systems. The static x-ray absorption spectroscopy (XAS) reveals the metal-insulator transition and strongly correlated effects in one-dimensional Fermi Hubbard model. The laser pump excites the system into a thermal state where the excitations can be measured from the probe pulse. The resonance between the frequency of the pump pulse and the Mott gap can be observed from both the frequency shift and the change of weight.</description>
+    </item>
     
     <item>
       <title>Variance of a quantum observable</title>
