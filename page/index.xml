@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on Chen-Yen Lai</title>
+    <title>Pages on Chenyen Lai</title>
     <link>http://chenyenlai.gitlab.io/page/</link>
-    <description>Recent content in Pages on Chen-Yen Lai</description>
+    <description>Recent content in Pages on Chenyen Lai</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
@@ -18,11 +18,12 @@
       <guid>http://chenyenlai.gitlab.io/cv/</guid>
       <description>Research Appointments  (2017-) Postdoctoral Associate
 Theoretical division (T-4) and Center for integrated nanotechnologies
-Los Alamos National Laboratory, Los Alamos, NM 87545 USA
+Los Alamos National Laboratory, Los Alamos NM 87545 USA
  (2014-2017) Postdoctoral Scholar
 School of Natural Science
 University of California, Merced, Merced CA 95340 USA
- (2008-2009) Research Assistance Department of Physics
+ (2008-2009) Research Assistance
+Department of Physics
 National Tsing Hua University, Hsinchu 30013 Taiwan
   Educations  (2009-2014) Doctor of Philosophy
 Department of Physics
@@ -38,11 +39,13 @@ University of California, Riverside, Riverside CA 92521 USA</description>
       <description>WIP 1 Chen-Yen Lai and S. A. Trugman,
 “Absence of diffusion and fractal geometry in Holstein model at high temperature.”
 In preparation.
-Preprint 3 Chen-Yen Lai and Jian-Xin Zhu,
-“Time-resolved x-ray absorption spectroscopy of strongly correlated systems: Core hole effect.”
-arXiv:1808.08243 submitted to Phys. Rev. Lett.
-2 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,
-“Many-body multi-valuedness of particle-current variance in closed and open cold-atom systems”</description>
+Preprint Peer-reviewed 18 Chen-Yen Lai and Jian-Xin Zhu,
+“Ultrafast x-ray absorption spectroscopy of strongly correlated systems: Core hole effect.”
+[Phys. Rev. Lett. 122, (2019)]()
+17 Chen-Yen Lai, S. A. Trugman and Jian-Xin Zhu,
+“Optical absorption spectroscopy of plasmon exciton hybrid systems.”
+Nanoscale 11, 2037-2047 (2019).
+16 Mekena Metcalf, Chen-Yen Lai, Massimiliano Di Ventra and Chih-Chun Chien,</description>
     </item>
     
     <item>
@@ -51,10 +54,11 @@ arXiv:1808.08243 submitted to Phys. Rev. Lett.
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://chenyenlai.gitlab.io/conference/</guid>
-      <description>Future Conference  APS March Meeting, Denver CO, 2020 APS March Meeting, Boston MA, 2019 APS Four Corners Section, Salt Lake City UT, 2018  Talks (Bold face are invited)  “Dynamics of Hostein model in strong coupling and high temperature: charge pumping and localization.”
-BLABS, Theoretical Division, Los Alamos National Laboratory, May 21, 2018.
- “Time-resolved X-ray Spectroscopy in One-dimensional Strongly Correlated Systems.”
-APS March Meeting, Los Angeles CA, 2018.</description>
+      <description>Future Conference  APS March Meeting, Denver CO, 2020  Talks (Bold face are invited)  “Ultrafast spectroscopy of strongly correlated systems.” (Poster)
+Strongly Correlated Quantum Materials, Santa Fe NM, Apr 29, 2019.
+ “Non-equilibrium dynamics of spin and charge correlation in strongly correlated systems from pump-probe spectroscopy.&amp;rdquo;
+APS March Meeting, Boston MA, Mar 6, 2019.
+ “Microscopic dynamics in the Holstein model at high temperature: Absence of diffusion.</description>
     </item>
     
     <item>
@@ -67,11 +71,21 @@ APS March Meeting, Los Angeles CA, 2018.</description>
 Dr. Stuart A. Trugman Los Alamos National Laboratory
 Dr. Jhih-Shih You The Leibniz Institute for Solid State and Materials Research
 Prof. Chih-Chun Chien University of California, Merced
-Dr. Mekena Metcalf Sandia National Laboratory
+Dr. Mekena Metcalf Lawrence Berkeley National Laboratory
 Prof. Massimiliano Di Ventra University of California, San Diego
 Prof. Michael Scheibner University of California, Merced
 Prof. Shan-Wen Tsai University of California, Riverside
 Prof. Yannick Meurice University of Iowa</description>
+    </item>
+    
+    <item>
+      <title>MISC</title>
+      <link>http://chenyenlai.gitlab.io/misc/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chenyenlai.gitlab.io/misc/</guid>
+      <description>Photography One of my long term habits since my childhood. Most of my work are on natural scene and wild animals. If you are interested, please pay a visit to my flickr page
+Hiking Downhill Skiing I learned how to ski on 16-17 winter with my son (he was 4 years old) at Ski China Peak. I admit that I am a slow learner on this (Yes, I fall all the time.</description>
     </item>
     
   </channel>

@@ -23,55 +23,13 @@
   </url>
   
   <url>
-    <loc>http://chenyenlai.gitlab.io/post/2018-08-28-timeresolvedxas/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</loc>
-    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/post/2018-02-06-circulationtqdm/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/post/2017-09-25-halfint/</loc>
-    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+    <loc>http://chenyenlai.gitlab.io/misc/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://chenyenlai.gitlab.io/</loc>
-    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/authors/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/tags/memory/</loc>
-    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/tags/oqs/</loc>
-    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://chenyenlai.gitlab.io/page/</loc>
-    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,7 +47,24 @@
   
   <url>
     <loc>http://chenyenlai.gitlab.io/tags/</loc>
-    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/post/2018-08-28-timeresolvedxas/</loc>
+    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/tags/ultrafast/</loc>
+    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/tags/oqs/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -100,8 +75,39 @@
   </url>
   
   <url>
-    <loc>http://chenyenlai.gitlab.io/tags/ultrafast/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    <loc>http://chenyenlai.gitlab.io/post/2018-05-01-currentfluctuations/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/post/2018-02-06-circulationtqdm/</loc>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/tags/memory/</loc>
+    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/post/2017-09-25-halfint/</loc>
+    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/page/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/authors/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://chenyenlai.gitlab.io/categories/</loc>
     <priority>0</priority>
   </url>
   
